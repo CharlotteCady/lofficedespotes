@@ -1,5 +1,6 @@
 class RessourcesController < ApplicationController
-  before_action :set_ressource, only: [:show, :edit, :destroy]
+  before_action :set_ressource, only: [:show, :edit, :update, :destroy]
+  before_filter :check_privileges!, only: [:new, :create, :edit, :update, :destroy]
   skip_before_filter :authenticate_user!, only: [:index, :show]
 
   def index
@@ -56,11 +57,13 @@ class RessourcesController < ApplicationController
   end
 
   def update
+    @ressource.update(ressource_params)
+    redirect_to ressource_path(@ressource)
   end
 
   def destroy
-    @ressource.delete
-    redirect_to ressource_path
+    @ressource.destroy
+    redirect_to ressources_path
   end
 
   def like

@@ -1,33 +1,35 @@
 <div class="container" id="info">
   <div class="row">
     <div class="col-xs-12">
-      <h1> Rédigez votre bon plan</h1>
-      <p class="explaination">Vous pouvez partager tous les bons plans, adresses, sites web, blogs, formations, événements que vous aimez à la communauté</p>
+      <h1> Rédigez votre article</h1>
+      <!-- <p class="explaination">Vous pouvez partager tous les bons plans, adresses, sites web, blogs, formations, événements que vous aimez à la communauté</p> -->
     </div>
   </div>
 </div>
 
-<div class="container" id="ressource-form">
-  <div class="row">
-    <div class="col-xs-4">
-      <div class="white-block">
-        <div class="row">
-          <div class="col-xs-4">
-            <%= image_tag current_user.picture, class: "img-circle" %>
-          </div>
-          <div class="col-xs-8">
-            <p id="nom">Création par <%= current_user.name %></p>
-            <p>Date : <%= Time.now %></p>
+<div id="form-new">
+  <div class="container" id="ressource-form">
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="white-block">
+          <div class="row">
+            <div class="col-xs-4">
+              <%= image_tag current_user.picture, class: "img-circle" %>
+            </div>
+            <div class="col-xs-8">
+              <p id="nom">Création par <%= current_user.name %></p>
+              <p>Date : <%= Time.now %></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="quote">
+        <div class="quote">
 
+        </div>
       </div>
-    </div>
-    <div class="col-xs-1"></div>
-    <div class="col-xs-7">
-      <%= render "ressource_form" %>
+      <div class="col-xs-1"></div>
+      <div class="col-xs-7">
+        <%= render "ressource_form" %>
+      </div>
     </div>
   </div>
 </div>

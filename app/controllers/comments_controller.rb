@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_filter :check_privileges!, only: [:destroy]
+  before_action :find_ressource, only: [:create, :destroy]
 
   def index
     @ressource = Ressource.find(params[:ressource_id])
@@ -6,7 +8,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @ressource = Ressource.find(params[:ressource_id])
     @comment = @ressource.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
@@ -26,8 +27,24 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.delete
+    redirect_to ressource_path(:ressource_id)
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:comment)
+  end
+
+  def find_ressource
+    @ressource = Ressource.friendly.find(params[:ressource_id])
   end
 end

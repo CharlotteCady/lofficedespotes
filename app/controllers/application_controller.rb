@@ -42,4 +42,8 @@ class ApplicationController < ActionController::Base
     flash[:error] = I18n.t('controllers.application.user_not_authorized', default: "You can't access this page.")
     redirect_to(root_path)
   end
+
+  def check_privileges!
+    redirect_to "/", notice: "Vous n'avez pas l'autorisation pour accéder à cette page, sorry..."  unless current_user.admin == true
+  end
 end
