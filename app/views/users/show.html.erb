@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-3 col-xs-6">
+      <div id="profil">
+        <% if current_user.picture? %>
+          <%= image_tag current_user.picture, class: "img-circle" %>
+        <% else %>
+          <%= image_tag "eight_horns.png", class: "img-circle" %>
+        <% end %>
+        <% if current_user.name? %>
+          <h1 id= "name"><%= current_user.name %></h1>
+        <% else %>
+          <h1 id= "name"><%= current_user.first_name + " " + current_user.last_name %></h1>
+        <% end %>
+        <% if current_user.description? %>
+          <p id= "bio">
+            <%= current_user.description %>
+          </p>
+        <% end %>
+        <p id= "mail"><%= current_user.email %></p>
+        <%= link_to("Modifier", edit_user_registration_path, class: "btn btn-primary btn-xs ") %>
+        </div>
+      </div>
+  </div>
+</div>
+

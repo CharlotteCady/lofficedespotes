@@ -1,0 +1,22 @@
+<% unless comment.comment.blank? %>
+  <div class="comment">
+    <div class="user">
+      <% if current_user.picture? %>
+        <%= image_tag current_user.picture, class: "img img-circle" %>
+      <% else %>
+        <%= image_tag "eight_horns.png", class: "img-circle" %>
+      <% end %>
+      <% if comment.user.name? %>
+        <%= comment.user.name.capitalize %>
+      <% else %>
+        <%= comment.user.first_name + " " + comment.user.last_name %>
+      <% end %>
+    </div>
+    <div class="writer-info">
+      <p class= "date"><%= comment.created_at.strftime("%d #{@mois[comment.created_at.strftime("%m").to_i - 1]} %Y") %></p>
+    </div>
+    <div class="content-comment">
+      <%= comment.comment %>
+    </div>
+  </div>
+<% end %>

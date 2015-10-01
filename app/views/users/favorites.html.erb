@@ -1,0 +1,105 @@
+<div id="container-menu">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs12">
+        <div id="menu-favorites">
+          <ul class= "list-inline text-center">
+            <li><%= link_to @categories[0],  {controller: "users", action: "favorites", category: @categories[0] } %></li>
+            <li><%= link_to @categories[1],  {controller: "users", action: "favorites", category: @categories[1] } %></li>
+            <li><%= link_to @categories[2],  {controller: "users", action: "favorites", category: @categories[2] } %></li>
+            <li><%= link_to @categories[3],  {controller: "users", action: "favorites", category: @categories[3] } %></li>
+            <li><%= link_to @categories[4],  {controller: "users", action: "favorites", category: @categories[4] } %></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-2 col-xs-8">
+      <div id="ressources-favorites">
+        <div id="category_menu">
+
+          <div class="listing_ressources">
+            <% if params[:category] %>
+              <% if @user_cat_vote.include? true %>
+                <% @ressources.each do |ress| %>
+                  <% if current_user.voted_up_on? ress %>
+                    <div class="col-xs-2">
+                      <ul class= "list-inline">
+                        <li>
+                          <div class="votes">
+                              <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                                <i class="fa fa-heart"></i>
+                              <% end %>
+                            <p class="vote_count"><%= ress.score %></p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="comments">
+                            <i class="fa fa-comment-o"></i>
+                            <p><%= ress.comments.count %></p>
+                          </div>
+                        </li>
+                        <li>
+                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-10">
+                      <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
+                      <p class="content-title"><%= ress.description %>.</p>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <p class ="nothing">
+                  Vous n'avez pas encore voté pour vos ressources préférées dans cette catégorie ! Pour retrouver facilement toutes vos ressources préférées, il vous suffit de cliquer sur le petit coeur à côté de chaque article et il apparaitra sur cette page :)
+                </p>
+              <% end %>
+            <% else %>
+              <% if @user_vote.include? true %>
+                <% @all_ressources.each do |ress| %>
+                  <% if current_user.voted_up_on? ress %>
+                    <div class="col-xs-2">
+                      <ul class= "list-inline">
+                        <li>
+                          <div class="votes">
+                              <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                                <i class="fa fa-heart"></i>
+                              <% end %>
+                            <p class="vote_count"><%= ress.score %></p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="comments">
+                            <i class="fa fa-comment-o"></i>
+                            <p><%= ress.comments.count %></p>
+                          </div>
+                        </li>
+                        <li>
+                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-10">
+                      <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
+                      <p class="content-title"><%= ress.content.split(".").first %>.</p>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <p class ="nothing">
+                  Vous n'avez pas encore voté pour vos ressources préférées ! Pour retrouver facilement toutes vos ressources préférées, il vous suffit de cliquer sur le petit coeur à côté de chaque article et il apparaitra sur cette page :)
+                </p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+# config/meta.yml
+default_title: "Trouver le job de vos rêves, c'est possible | WorkUp"
+meta_description: "Des histoires inspirantes, des rencontres et des outils pour oser créer le job qui vous passionne !"
+meta_image: "workup-job-de-reve.png" # Une image dans votre dossier app/assets/images/
+twitter_account: "@charlottecady" #indispensable pour les Twitter Cards

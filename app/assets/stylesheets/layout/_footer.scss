@@ -1,1 +1,10 @@
-// Your footer style
+#footer {
+  background-color: black;
+  height: 50px;
+  padding-top: 10px;
+  color: white;
+  font-family: $my-font;
+  font-size: 26px;
+  z-index: 1000;
+  clear: both;
+}

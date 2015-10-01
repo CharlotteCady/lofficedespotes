@@ -1,0 +1,160 @@
+<% content_for(:title) do %>
+  <% "#{@category_page} | WorkUp" %>
+<% end %>
+
+<%content_for(:meta_description) do %>
+  <% if @category_page == @categories[0] %>
+    Les meilleurs événements emploi, sites de recrutement, coach, conseils d'experts pour trouver un job qui vous plaît
+  <% elsif @category_page == @categories[1] %>
+    Les meilleures formations, témoignages, conseils, événements pour changer de métier sereinement
+  <% elsif @category_page == @categories[2] %>
+    Les meilleurs conseils pratiques et outils pour trouver une entreprise où vous pourrez enfin vous épanouir
+  <% elsif @category_page == @categories[3] %>
+    Des conseils, rencontres, outils pratiques et événements pour créer sa boite ou devenir indépendant simplement
+  <% elsif @category_page == @categories[4] %>
+    Des témoignages d'entreprises et de salariés, des conseils, des événements et plus encore pour intraprendre facilement
+  <% else %>
+    Osez passer à l'action avec nos outils, conseils, témoignages, événements pour trouver un job qui vous rend heureux(se)
+  <% end %>
+<% end %>
+
+<%content_for(:meta_image) do %>
+  <% @category_page.split.join.downcase.gsub("é", "e") + ".jpg" %>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="sidebar hidden-xs">
+        <%= render "ressource_sidebar_simple" %>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <div class="content">
+        <div id="category-description" class="padded text-center" style="background-image: url(<%= asset_path(@category_page.split.join.downcase.gsub("é", "e") + ".jpg") %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(50%); -moz-filter: brightness(40%);">
+
+          <h1>Découvrez les bons outils pour <%= @category_page %></h1>
+          <% if @category_page == @categories[0] %>
+            <p>Les meilleurs événements emploi, sites de recrutement, coach, conseils d'experts pour trouver un job qui vous plaît</p>
+          <% elsif @category_page == @categories[1] %>
+            <p>Les meilleures formations, témoignages, conseils, événements pour changer de métier sereinement</p>
+          <% elsif @category_page == @categories[2] %>
+            <p>Les meilleurs conseils pratiques et outils pour trouver une entreprise où vous pourrez enfin vous épanouir</p>
+          <% elsif @category_page == @categories[3] %>
+            <p>Des conseils, rencontres, outils pratiques et événements pour créer sa boite ou devenir indépendant simplement</p>
+          <% elsif @category_page == @categories[4] %>
+            <p>Des témoignages d'entreprises et de salariés, des conseils, des événements et plus encore pour intraprendre facilement</p>
+          <% else %>
+            <p>quote</p>
+          <% end %>
+          <div class="row">
+            <div class="col-xs-12">
+              <ul class= "list-inline">
+                <% @subcategories.each do |subcat| %>
+                  <li class= "btn"><%= link_to subcat, "##{subcat}" %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="last_ressources">
+          <p class="title">Les nouvelles découvertes pour <%= @category_page %></p>
+          <div class="listing_ressources">
+            <% @ressources.each do |ress| %>
+            <div class="row">
+              <div class="col-xs-2">
+                <ul class= "list-inline">
+                  <li>
+                    <div class="votes">
+                      <% if current_user.liked? ress %>
+                        <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                          <i class="fa fa-heart"></i>
+                        <% end %>
+                      <% else %>
+                        <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                          <i class="fa fa-heart-o"></i>
+                        <% end %>
+                      <% end %>
+                      <p class="vote_count"><%= ress.score %></p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="comments">
+                      <i class="fa fa-comment-o"></i>
+                      <p><%= ress.comments.count %></p>
+                    </div>
+                  </li>
+                  <li>
+                    <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xs-10">
+                <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
+                <p class="content-title"><%= ress.content.split(".").first %>.</p>
+              </div>
+            </div>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="content">
+        <div class="subcategories_ressources">
+          <% @subcategories.each do |subcat| %>
+          <div id= "<%= "#{subcat}" %>" class= "anchor"></div>
+            <p class="title"><%= subcat %></p>
+            <div class="listing_ressources">
+              <% @ressources.each do |ress| %>
+                <% if ress.subcategory == subcat %>
+                  <div class="row">
+                    <div class="col-xs-2">
+                      <ul class= "list-inline">
+                        <li>
+                          <div class="votes">
+                            <% if current_user.liked? ress %>
+                              <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                                <i class="fa fa-heart"></i>
+                              <% end %>
+                            <% else %>
+                              <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                                <i class="fa fa-heart-o"></i>
+                              <% end %>
+                            <% end %>
+                            <p class="vote_count"><%= ress.score %></p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="comments">
+                            <i class="fa fa-comment-o"></i>
+                            <p><%= ress.comments.count %></p>
+                          </div>
+                        </li>
+                        <li>
+                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-10">
+                      <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
+                      <p class="content-title"><%= ress.content.split(".").first %>.</p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -4,6 +4,24 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!, unless: :pages_controller?
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+   protected
+
+   def configure_permitted_parameters
+     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, :remember_me) }
+     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :name, :email, :password, :remember_me) }
+     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:picture, :name, :description, :email, :password, :password_confirmation, :current_password) }
+   end
+
+   def default_url_options
+     if Rails.env.production?
+       { host: 'lofficedespotes-production.herokuapp.com' }
+     else
+       { host: ENV['HOST'] || 'localhost:3000' }
+     end
+   end
+
   # Uncomment these lines to get pundit
   # include Pundit
   # after_action :verify_authorized, except:  :index, unless: :devise_or_pages_or_admin_controller?

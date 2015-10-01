@@ -1,0 +1,27 @@
+#ressources_new {
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+  // background-color: white;
+  p {
+    font-size: 16px;
+    &.explaination {
+      margin-top: 20px;
+      text-align: justify;
+    }
+  }
+  margin-top: 50px;
+  #info {
+    padding: 30px;
+  }
+  h1 {
+    border-bottom: 2px solid black;
+  }
+  .quote {
+    min-height: 1386px;
+    background: image-url("eight_horns.png") repeat;
+    border-radius: 3px;
+  }
+}

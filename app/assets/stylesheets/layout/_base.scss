@@ -1,0 +1,86 @@
+/* -------------------------------------
+ * Base elements style (h1, h2, p, a, ul..)
+ * ============= IMPORTANT =============
+ * Before writing in this file, look if there is not
+ * already a Bootstrap SCSS variable that does the same job
+ * ------------------------------------- */
+#banner {
+  h1 {
+    font-size: 60px;
+    color: white;
+  }
+}
+
+h1 {
+  font-size: 40px;
+  color: black;
+}
+
+
+h2 {
+  font-size: 60px;
+  color: white;
+  // background-color: rgba(0, 0, 0, 0.498039);
+}
+
+.home-header {
+  font-family: $my-font;
+  font-size: 40px;
+  color: black;
+  // margin-top: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.little-header {
+  font-family: $my-font;
+  font-size: 20px;
+  color: black;
+}
+
+.footer-header {
+  font-family: $my-font;
+  font-size: 25px;
+  color: black;
+  border-top: solid 1px $gray;
+  border-bottom: solid 1px $gray;
+}
+
+.title {
+ // border-bottom: solid 2px black;
+ font-size: 26px;
+ font-family: $my-font;
+ color: black;
+ border-radius: 3px;
+ background-color: #F1F1F1;
+ padding: 10px;
+ padding-left: 15px;
+ margin-top: 60px;
+}
+.first-title {
+  margin-top: 0px;
+}
+.sub-title {
+ font-family: $base-font;
+ font-size: 18px;
+ color: $gray;
+ font-weight: bolder;
+ a {
+  color: $gray;
+  &:hover {
+    color: $blue;
+  }
+ }
+}
+.content-title {
+  font-size: 16px;
+}
+.title-description {
+  font-family: $base-font;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  line-height: 1.5;
+}

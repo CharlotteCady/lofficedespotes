@@ -1,0 +1,28 @@
+#users_show {
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+  background: image-url('eight_horns.png') repeat;
+  margin-top: 100px;
+  #profil {
+    background-color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 3px;
+    img {
+      width: 150px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+    #bio {
+      background-color: #f1f1f1;
+      padding : 15 px;
+    }
+  }
+}
+

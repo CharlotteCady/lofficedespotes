@@ -1,0 +1,105 @@
+<div id="sidebar_simple">
+  <div class="menu">
+    <div class="sidebar-category">
+      <i class="fa fa-search"></i>
+      <h2><%= link_to @categories[0],  {controller: "ressources", action: "category", category: @categories[0] } %></h2>
+    </div>
+    <ul class="sidebar_sub_cat hidden list-unstyled">
+      <li><%= link_to "Toutes les ressources", ressources_path %></li>
+      <% Ressource.all.each do |r| %>
+        <% unless @subcat_sidebar.include?(r.subcategory) %>
+          <% if r.category == "Chercher un job" %>
+            <% @subcat_sidebar << r.subcategory %>
+            <li><%= link_to r.subcategory, ressources_path %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="menu">
+    <div class="sidebar-category">
+      <i class="fa fa-magic"></i>
+      <h2><%= link_to @categories[1],  {controller: "ressources", action: "category", category: @categories[1] } %></h2>
+    </div>
+    <ul class="sidebar_sub_cat hidden list-unstyled">
+      <li><%= link_to "Toutes les ressources", ressources_path %></li>
+      <% Ressource.all.each do |r| %>
+        <% unless @subcat_sidebar.include?(r.subcategory) %>
+          <% if r.category == "Changer de métier" %>
+            <% @subcat_sidebar << r.subcategory %>
+            <li><%= link_to r.subcategory, ressources_path %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="menu">
+    <div class="sidebar-category">
+      <i class="fa fa-archive"></i>
+      <h2><%= link_to @categories[2],  {controller: "ressources", action: "category", category: @categories[2] } %></h2>
+    </div>
+    <ul class="sidebar_sub_cat hidden list-unstyled">
+      <li><%= link_to "Toutes les ressources", ressources_path %></li>
+      <% Ressource.all.each do |r| %>
+        <% unless @subcat_sidebar.include?(r.subcategory) %>
+          <% if r.category == "Changer de boite" %>
+            <% @subcat_sidebar << r.subcategory %>
+            <li><%= link_to r.subcategory, ressources_path %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="menu">
+    <div class="sidebar-category">
+      <i class="fa fa-hand-peace-o"></i>
+      <h2><%= link_to @categories[3],  {controller: "ressources", action: "category", category: @categories[3] } %></h2>
+    </div>
+    <ul class="sidebar_sub_cat hidden list-unstyled">
+      <li><%= link_to "Toutes les ressources", ressources_path %></li>
+      <% Ressource.all.each do |r| %>
+        <% unless @subcat_sidebar.include?(r.subcategory) %>
+          <% if r.category == "Créer sa boite" %>
+            <% @subcat_sidebar << r.subcategory %>
+            <li><%= link_to r.subcategory, ressources_path %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="menu">
+    <div class="sidebar-category">
+      <i class="fa fa-flask"></i>
+      <h2><%= link_to @categories[4],  {controller: "ressources", action: "category", category: @categories[4] } %></h2>
+    </div>
+    <ul class="sidebar_sub_cat hidden list-unstyled">
+      <li><%= link_to "Toutes les ressources", ressources_path %></li>
+      <% Ressource.all.each do |r| %>
+        <% unless @subcat_sidebar.include?(r.subcategory) %>
+          <% if r.category == "Intraprendre" %>
+            <% @subcat_sidebar << r.subcategory %>
+            <li><%= link_to r.subcategory, ressources_path %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="follow-us">
+    <div class="social-media">
+      <%= link_to "https://www.facebook.com/pages/Workup/1569854826618353", target: "blank" do %>
+        <i class="fa fa-facebook"></i><p>Suivez WorkUp</p>
+      <% end %>
+    </div>
+    <div class="newsletter">
+      <div id="mc_embed_signup form-group">
+        <form action="//rocks.us10.list-manage.com/subscribe/post?u=93a8a8570acd0e6bdaf4f34e7&amp;id=4374f2502c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+            <input type="email" name="EMAIL" class="email form-control text-center" id="mce-EMAIL" placeholder="Newsletter" required>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <input type="submit" value="OK" name="subscribe" id="mc-embedded-subscribe" class="">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

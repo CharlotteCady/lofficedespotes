@@ -1,0 +1,44 @@
+#devise_registrations_edit {
+  #navbar-workup {
+    .navbar-nav {
+      margin-top: 15px;
+    }
+  }
+
+  background: image-url('eight_horns.png') repeat;
+  margin-top: 100px;
+  #edit {
+    background-color: white;
+    // text-align: center;
+    padding: 25px;
+    border-radius: 3px;
+    p {
+      font-size: 14px;
+    }
+    img {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    form {
+      padding-left: 80px;
+      padding-right: 80px;
+      padding-top: 10px;
+    }
+    input.email, input.password {
+      margin-top: 5px;
+      // width: 250px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+  }
+  p#important {
+    color: red;
+  }
+  .form-actions {
+    text-align: center;
+  }
+  #delete-account, #avatar {
+    text-align: center;
+  }
+}

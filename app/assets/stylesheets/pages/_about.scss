@@ -1,0 +1,55 @@
+#pages_about {
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+  // =============== BLOC IMAGE ET QUOTE
+  #quote {
+    background: image-url("dream.jpg") no-repeat fixed center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    height: 400px;
+    position: relative;
+  }
+  #quote::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  // =========== BLOC MISSION
+
+  #mission {
+    height: 500px;
+    // background-color: #f1f1f1;
+    img {
+      width: 100px;
+    }
+  }
+
+  // =========== BLOC TEAM
+  #team {
+    img {
+      width: 250px;
+      padding-top: 50px;
+      padding-bottom: 15px;
+    }
+    .btn {
+      width: 150px;
+    }
+    .fa-twitter {
+      font-size: 30px;
+      padding-top: 15px;
+    }
+  }
+  #title-h1 {
+    font-size: 60px;
+    color: white;
+  }
+}

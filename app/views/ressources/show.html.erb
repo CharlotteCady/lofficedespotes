@@ -1,0 +1,123 @@
+<% content_for(:title) do %>
+  <% @ressource.seotitle %>
+<% end %>
+
+<%content_for(:meta_description) do %>
+<% @ressource.seodescription %>
+<% end %>
+
+<%content_for(:meta_image) do %>
+  <% @ressource.picture.url %>
+<% end %>
+
+<!-- Réfléchir à faire deux vues pour le responsive design :
+utiliser les classes hidden-xs et visible-xs -->
+
+
+<div id="banner-image" style="background: url(<%= @ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
+      -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(50%); -moz-filter: brightness(50%);">
+</div>
+<div class="content-banner">
+  <div class= "btn btn-blue zindex"><%= @ressource.category %></div>
+  <div class= "btn btn-primary"><%= @ressource.subcategory %></div>
+  <h1><%= @ressource.title %></h1>
+  <div class="writer-info">
+    <p>
+      <% if @ressource.user.picture? %>
+        <%= image_tag(@ressource.user.picture, class: "img-circle") %>
+      <% else %>
+        <%=  image_tag "eight_horns.png", class: "img-circle" %>
+      <% end %>
+      Partagé par
+      <% if @ressource.user.name? %>
+        <%= @ressource.user.name %>
+      <% else %>
+        <%= @ressource.user.first_name + " " + @ressource.user.last_name %>
+      <% end %>
+    </p>
+  </div>
+  <div class="publishing-date">
+    <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="sidebar ">
+        <%= render "ressource_sidebar_simple" %>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+
+      <div class="content">
+
+        <div class="content-text">
+          <strong><h2 class="title-description"><%= @ressource.description %></h2></strong>
+          <% @paragraphes.each do |p| %>
+            <p><%= p %></p>
+          <% end %>
+        </div>
+<!--         <p class= "witness">
+          "   <%= @ressource.witness %>   "
+        </p> -->
+
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="addthis_sharing_toolbox" id="share"></div>
+        <div class="more-info">
+          <p>
+            <b>Site internet :</b> <%= link_to @ressource.website, @ressource.website %>
+          </p>
+          <p>
+            <b>Contact :</b> <%= @ressource.address %>
+          </p>
+          <p>
+            <% if @ressource.votes_for.size > 1 %>
+              <b>Ils recommendent :</b>
+              <div class="voter-avatar">
+                <% @list_of_voters.each do |voter| %>
+                  <% if voter.picture? %>
+                    <%= image_tag voter.picture, class: "img-circle" %>
+                  <% else %>
+                    <%= image_tag "eight_horns.png", class: "img-circle" %>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end %>
+          </p>
+        </div>
+        <% if user_signed_in? %>
+          <div class="add-comment">
+            <div class= "user">
+              <% if current_user.picture? %>
+                <%= image_tag current_user.picture, class: "img img-circle" %>
+              <% else %>
+                <%= image_tag "eight_horns.png", class: "img-circle" %>
+              <% end %>
+              <% if current_user.name? %>
+                <%= current_user.name.capitalize %>
+              <% else %>
+                <%= current_user.first_name + " " + current_user.last_name %>
+              <% end %>
+            </div>
+            <%= render "comments/form", ressource: @ressource, comment: @comment %>
+          </div>
+        <% else %>
+          <p class="add-comment">Vous devez être connecté pour commenter cet article :)</p>
+        <% end %>
+        <div class="footer-header">Tous les témoignages et commentaires</div>
+        <div id="comments">
+          <% if @comments == [] %>
+            <p>Partagez le 1er témoignage / commentaire auprès de la communauté de workupers</p>
+          <% else %>
+            <% @comments.each do |comment| %>
+              <%= render 'comments/show', comment: comment %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

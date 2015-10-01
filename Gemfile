@@ -25,6 +25,7 @@ gem "devise-i18n"
 gem "devise-i18n-views"
 gem 'acts_as_commentable', '~> 4.0.2'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 
 group :development, :test do
   gem "spring"

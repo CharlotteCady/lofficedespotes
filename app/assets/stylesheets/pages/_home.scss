@@ -1,4 +1,202 @@
-/* -------------------------------------
- * SASS code SPECIFIC TO your home page
- * (margin/padding adjustments, background image, etc..)
- * ------------------------------------- */
+#high_voltage_pages_show {
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+// Bannière
+// ===============================================================
+
+#banner {
+  background: image-url("home.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  height: 620px;
+  position: relative;
+  margin-top: 60px;
+  h1 {
+    margin-top: 150px;
+  }
+  p {
+    color: white;
+    font-size: 20px;
+  }
+  .btn {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+#banner::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.fa-angle-down {
+  font-size: 35px;
+  color: white;
+  &:hover {
+    color: $blue;
+  }
+}
+
+#guide-caroussel {
+  margin-top: -60px;
+}
+
+// Comment ça marche ?
+// ===============================================================
+#guide {
+  padding-top: 60px;
+  min-height: 650px;
+  .btn {
+    margin-top: 30px;
+  }
+}
+
+#guide i, #question-caroussel i {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 10px;
+  background-color: $blue;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding-top: 10px;
+}
+
+// Des initiatives géniales
+// ===============================================================
+
+#notre-mission {
+  background: image-url("initiative-emploi.png") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  min-height: 620px;
+  position: relative;
+  p {
+    color: white;
+    font-size: 18px;
+    font-family: $base-font;
+    line-height: 1.5;
+  }
+}
+#notre-mission::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// dernières découvertes
+// ===============================================================
+
+#discover {
+  h2 {
+    color: black;
+    font-family: $base-font;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  a:hover h2 {
+    color: $blue;
+  }
+  p {
+    font-size: 14px;
+    text-align: justify;
+  }
+  a:hover p {
+    color: $gray;
+  }
+  img {
+    height: 160px;
+  }
+  .item {
+    margin-right: 20px;
+  }
+  margin-bottom: 80px;
+}
+
+
+
+
+// osez
+// ===============================================================
+
+#pole-emploi {
+  background: image-url("dream.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  height: 400px;
+  position: relative;
+  .fa-facebook {
+    font-size: 40px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    margin-top: 20px;
+    padding-top: 5px;
+    &:hover {
+      background-color: $blue;
+    }
+  }
+}
+#pole-emploi::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// Contact
+// ===============================================================
+
+#contact {
+  background: image-url("pole-emploi.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  height: 500px;
+  position: relative;
+  .trait {
+    border-color: white;
+  }
+  .home-header {
+    color: white;
+  }
+  #form {
+    padding-top: 50px;
+    input {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+#contact::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+}

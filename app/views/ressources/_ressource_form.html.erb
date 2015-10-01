@@ -1,0 +1,38 @@
+<%= simple_form_for(@ressource, html: { multipart: true }) do |ressource| %>
+
+<!-- as: :select pour choix défilant
+as: :check_boxes pour multiple choix -->
+  <div class="white-block">
+    <%= ressource.input :title, label: "Titre", placeholder: 'Moonbar : Le meilleur agenda des événements pour entreprendre à Paris' %>
+  </div>
+  <div class="white-block">
+    <%= ressource.input :description, label: "Mini description", as: :text, placeholder: 'Moonbar, le numero 1 des événements startup' %>
+  </div>
+  <div class="white-block">
+    <%= ressource.input :content, label: "Description détaillée", as: :text, placeholder: 'Moonbar liste sur son site et sa newsletter hebdomadaire l’ensemble des évènements startup etc.' %>
+  </div>
+  <div class="white-block">
+    <%= ressource.input :category, collection: @categories, include_blank: false, label: "Catégorie" %>
+    <%= ressource.input :subcategory, collection: @subcategories, include_blank: false, label: "Sous-Catégorie" %>
+  </div>
+  <div class="white-block">
+    <%= ressource.input :witness, label: "Témoignage", placeholder: "J'ai rencontré mon futur patron lors d'un événement startup, merci Moonbar !" %>
+  </div>
+  <div class="white-block">
+    <%= ressource.input :website, label: "Site Web", placeholder: 'http://moonbar.org/', as: :url %>
+    <%= ressource.input :address, label: "Coordonnées", placeholder: 'Fondateur: Julien Picaud - contact@moonbar.org' %>
+  </div>
+  <div class="white-block">
+    <%= ressource.input :seotitle, label: "Titre pour Google" %>
+    <%= ressource.input :seodescription, label: "Description pour Google" %>
+  </div>
+  <div class="white-block">
+    <%= ressource.label :logo, label: "Logo" %>
+    <%= ressource.file_field :logo %>
+    <%= ressource.label :picture, label: "Photo" %>
+    <%= ressource.file_field :picture %>
+    <%= ressource.submit(class: "btn btn-primary", value: "Valider") %>
+  </div>
+<% end %>
+
+

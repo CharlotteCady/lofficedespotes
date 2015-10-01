@@ -1,0 +1,72 @@
+#users_favorites {
+  margin-top: 60px;
+  #container-menu {
+    .container {
+      margin-left: 0px;
+      margin-right: 0px;
+      width: 100%;
+      background-color: #f1f1f1;
+    }
+  }
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+
+
+  // =========  Affichage du Menu Favoris  =========
+
+  #menu-favorites {
+    li {
+      font-family: $my-font;
+      font-size: 24px;
+      padding-right: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      a {
+        color: black;
+        &:hover {
+          border-bottom: 2px solid $blue;
+        }
+      }
+    }
+  }
+
+  // =========  Affichage des Ressources  =========
+
+  .listing_ressources {
+    p {
+      font-size: 14px;
+      color: $gray_light;
+    }
+    p.nothing{
+      padding-top: 15px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 5px;
+    }
+  }
+  ul {
+    margin-top: 15px;
+    img.logo {
+      width: 50px;
+      vertical-align: middle;
+      margin-top: -15px;
+    }
+    .votes, .comments {
+      i {
+        color: black;
+      }
+      .fa-heart {
+        color: $blue;
+      }
+      p {
+        font-size: 14px;
+        color: $gray-light;
+        padding-left: 4px;
+      }
+    }
+  }
+}
