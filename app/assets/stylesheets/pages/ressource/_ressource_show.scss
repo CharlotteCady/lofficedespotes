@@ -37,6 +37,16 @@
       text-decoration: none;
       color: white;
     }
+    .btn-action {
+      background-color: $gray;
+      border: 1px solid $gray;
+      a {
+        color: white;
+      }
+      &:hover {
+        background-color: $gray-darker;
+      }
+    }
   }
   .publishing-date {
     display: block;
@@ -112,6 +122,9 @@
       width: 40px;
       margin-right: 10px;
     }
+    #info-avatar {
+      border: none;
+    }
   }
 
     .picture {
@@ -174,6 +187,7 @@
       font-weight: bold;
     }
   }
+  // ====== Affichage des commentaires
   #comments {
     margin-top: 10px;
     // padding: 15px;

@@ -11,10 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :ressources do
-    resources :comments, only: [:new, :create ]
+    resources :comments, only: [:index, :create, :destroy]
   end
-  # resources :comments, only: [:destroy]
-  delete "comments/:id", to: "comments#destroy"
 
   resources :ressources do
     member do

@@ -20,6 +20,11 @@ utiliser les classes hidden-xs et visible-xs -->
 <div class="content-banner">
   <div class= "btn btn-blue zindex"><%= @ressource.category %></div>
   <div class= "btn btn-primary"><%= @ressource.subcategory %></div>
+  <% if current_user.admin? %>
+  <div class="btn btn-action"><%= link_to "Editer", edit_ressource_path(@ressource.id) %></div>
+    <div class="btn btn-action"><%= link_to "Supprimer", ressource_path(@ressource),
+      method: :delete, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %></div>
+  <% end %>
   <h1><%= @ressource.title %></h1>
   <div class="writer-info">
     <p>
@@ -75,13 +80,15 @@ utiliser les classes hidden-xs et visible-xs -->
           <p>
             <% if @ressource.votes_for.size > 1 %>
               <b>Ils recommendent :</b>
-              <div class="voter-avatar">
+              <div class="voter-avatar" style="">
                 <% @list_of_voters.each do |voter| %>
-                  <% if voter.picture? %>
-                    <%= image_tag voter.picture, class: "img-circle" %>
-                  <% else %>
-                    <%= image_tag "eight_horns.png", class: "img-circle" %>
-                  <% end %>
+                  <button type="button" id="info-avatar" data-toggle="tooltip" data-placement="top" title="<% if voter.name? %><%= voter.name.capitalize %><% end %><% if voter.description? %>:<%= voter.description %><% end %>">
+                    <% if voter.picture? %>
+                      <%= image_tag voter.picture, class: "img-circle" %>
+                    <% else %>
+                      <%= image_tag "eight_horns.png", class: "img-circle" %>
+                    <% end %>
+                  </button>
                 <% end %>
               </div>
             <% end %>

@@ -12,8 +12,8 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       @comment.update(user_id: current_user.id)
-      redirect_to ressource_path(@ressource)
       puts "Merci pour votre témoignage / commentaire :)"
+      redirect_to ressource_path(@ressource)
       # respond_to do |format|
       #   format.html { redirect_to ressource_path(@ressource) }
       #   format.js
@@ -27,16 +27,20 @@ class CommentsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  #   @comment = @ressource.comments.find(params[:id])
+  # end
 
-  def update
-  end
+  # def update
+  #   @comment = @ressource.comments.find(params[:id])
+  #   @ressource.comments.update(comment_params)
+  #   redirect_to ressource_path(@ressource)
+  # end
 
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = @ressource.comments.find(params[:id])
     @comment.delete
-    redirect_to ressource_path(:ressource_id)
+    redirect_to ressource_path(@ressource)
   end
 
   private
