@@ -5,24 +5,14 @@
     }
   }
   // =============== BLOC IMAGE ET QUOTE
-  #quote {
-    background: image-url("dream.jpg") no-repeat fixed center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+  #souhait {
+    background: image-url("ecosysteme-emploi.png") repeat;
     height: 400px;
-    position: relative;
+    h1 {
+      padding-top: 30px;
+    }
   }
-  #quote::before {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+
   // =========== BLOC MISSION
 
   #mission {
@@ -32,6 +22,13 @@
       width: 100px;
     }
   }
+
+  // =========== L'emploi en france
+  #emploi {
+    background: image-url("acteurs-emploi.png") repeat;
+    height: 400px;
+  }
+
 
   // =========== BLOC TEAM
   #team {
@@ -51,5 +48,10 @@
   #title-h1 {
     font-size: 60px;
     color: white;
+  }
+  // =========== LOVE YOUR JOB
+  #loveyourjob {
+    background: image-url("ecosysteme-emploi.png") repeat;
+    height: 200px;
   }
 }

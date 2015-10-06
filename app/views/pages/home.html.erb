@@ -21,7 +21,7 @@ end %> -->
       </div>
       <div class="col-xs-12">
         <ul class="list-inline">
-          <li><%= link_to "c'est parti", ressources_path, class: "btn btn-primary"%></li>
+          <!--  <li> link_to "c'est parti", ressources_path, class: "btn btn-primary"</li>-->
           <li><%= link_to "Chercher un job", "category?category=Chercher+un+job", class: "btn btn-transparent" %></li>
           <li><%= link_to "Changer de métier", "category?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
           <li><%= link_to "Changer de boite", "category?category=Changer+de+boite", class: "btn btn-transparent" %></li>
@@ -46,12 +46,12 @@ end %> -->
       <div class="col-xs-3 trait"></div>
       <div class="col-xs-offset-1 col-xs-10 padded">
         <p>
-          Parce que nous sommes tous à la recherche d'un travail dans lequel s'épanouir, nous avons sélectionné pour vous les meilleures initiatives, structures d'accompagnement, événements, rencontres, témoignages, conseils d'experts pour vous aider à répondre aux questions que vous vous posez.
+          Parce que nous sommes tous à la recherche d'un travail dans lequel s'épanouir, nous avons sélectionné pour vous les meilleures initiatives, structures d'accompagnement, applications, événements, rencontres, témoignages, conseils d'experts pour vous aider à répondre aux questions que vous vous posez.
         </p>
         <br>
         <br>
         <b><p>
-          Que vous soyez à la recherche d'un emploi, encore en poste ou en création d'entreprise, découvrez les initiatives qui existent pour vous aider à trouver un job qui vous plaît ou être plus heureux dans votre travail !
+          Que vous soyez à la recherche d'un emploi, encore en poste ou en création d'entreprise, découvrez les initiatives qui existent pour vous aider à trouver ou créer un job qui vous plaît et être plus heureux dans votre travail !
           <!-- <i class= "fa fa-heart-o"></i> -->
         </p></b>
       </div>
@@ -97,7 +97,7 @@ end %> -->
   <div class="container block">
     <div class="row">
       <div class="col-xs-12">
-        <h2>DES INITIATIVES GENIALES POUR L'EMPLOI<h2>
+        <h2>Découvrez les initiatives qui peuvent vous aider<h2>
         <p>
           Tester un métier pendant une journée avec un artisan ?<br>
           Avoir des témoignages réels de professionnels concernant leur métier au quotidien ?<br>
@@ -150,13 +150,19 @@ end %> -->
 </div>
 
 
-<div id="pole-emploi" class="text-center">
+<div id="parceque" class="text-center">
   <div class="container block">
     <div class="row">
       <div class="col-xs-12">
-        <h2>Faites le grand plongeon pour trouver le job qui vous fait vibrer</h2>
-        <!-- osez passer à l'action -->
-          <p></p>
+        <h2>Tout est possible, alors osez</h2>
+        <p>
+          Parce que le monde du travail évolue<br>
+          Parce que nous exercerons plus de 5 métiers différents dans notre vie<br>
+          Parce que la moitié des métiers qui existent aujourd'hui auront disparus dans 20 ans<br>
+          Parce que notre génération ne voit pas le travail comme celle de nos parents<br>
+          Parce que nous sommes désormais à la recherche d'un travail qui a du sens et dans lequel nous pouvons nous épanouir
+        </p>
+        <%= link_to "découvrir maintenant", ressources_path, class: "btn btn-primary" %>
       </div>
     </div>
   </div>
@@ -171,7 +177,7 @@ end %> -->
       </div>
       <div class="col-xs-3 trait"></div>
       <div class="col-xs-offset-1 col-xs-10 padded">
-        <p>Une fois par semaine, nous vous envoyons les meilleures initiatives, événements, conseils, témoignages pour vous aider à trouver un job dans lequel vous vous épanouirez. Que vous soyez à la recherche d'un emploi, encore en poste ou en création d'entreprise, nos articles vous donneront de l'inspiration et des astuces concrètes pour passer à l'action ! <br>Restez informé des événements, conférences, ateliers à venir :)</p>
+        <p>Une fois par semaine, nous vous envoyons les meilleures initiatives, événements, conseils, témoignages pour vous aider à trouver un job dans lequel vous vous épanouirez. Que vous soyez à la recherche d'un emploi, encore en poste ou en création d'entreprise, nos articles vous donneront de l'inspiration et des astuces concrètes pour passer à l'action ! <br>Restez informé des événements, conférences et ateliers à venir :)</p>
       </div>
       <div class="col-xs-offset-3 col-xs-6">
         <!-- Mailchimp Form -->
@@ -205,7 +211,7 @@ end %> -->
       <div class="col-xs-offset-2 col-xs-8" id="form">
         <form action="https://formspree.io/team@workup.rocks" method="POST">
           <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="votrecontact@gmail.com">
-          <textarea class="form-control" name="message" rows="3" placeholder="N'hésitez pas à nous envoyer vos retours, partager des initiatives que vous aimez, ou même venir nous rencontrer, nous serions ravies de vous connaître :)" ></textarea>
+          <textarea class="form-control" name="message" rows="3" placeholder="N'hésitez pas à nous envoyer vos retours, partager des initiatives que vous aimez, nous dire celles que vous aimerez trouver, ou même venir nous rencontrer, nous serions ravies de vous connaître :)" ></textarea>
           <input type="submit" name="submit" id="send" class="btn btn-primary" value="Envoyer">
         </form>
       </div>
