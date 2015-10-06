@@ -1,32 +1,42 @@
 #ressources_show {
+  .navbar {
+    z-index: 4000;
+  }
   #navbar-workup {
     .navbar-nav, .navbar-toggle {
       margin-top: 15px;
+      z-index: 4000;
     }
   }
-
+  #container-nav {
+    ul {
+      padding-top: 15px;
+    }
+  }
     // ========   ARTICLE   ========
 
   background-color: white;
   margin-top: 60px;
   // padding-top: 20px;
   padding-bottom: 20px;
+  .banner {
+    margin-right: 0;
+  }
   #banner-image {
-    height: 550px;
-    margin-left: 200px;
+    min-height: 550px;
     margin-top: -5px;
     position: relative;
+    width: 100%;
   }
 
   .content-banner {
-    padding-left: 30px;
-    padding-top: 200px;
+    padding-left: 80px;
+    padding-top: 180px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    margin-left: 200px;
     margin-top: -5px;
     .btn {
       font-family: $base-font;
@@ -53,7 +63,7 @@
     background: #111;
     padding: 24px;
     position: absolute;
-    top: 20%;
+    top: -50px;
     right: 0;
     margin-bottom: 40px;
     font-size: 13px;
@@ -72,6 +82,7 @@
   }
 
   .sidebar {
+    z-index: 3000;
     position: fixed;
     top: 0;
     left: 0;
@@ -102,7 +113,6 @@
     }
   }
   .content {
-    margin-left: 200px;
     margin-top: -100px;
     background-color: white;
     padding-right: 25px;

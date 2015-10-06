@@ -10,17 +10,28 @@
   workup-bonheur-au-travail.png
 <% end %>
 
-<!-- faire une vue différente pour le md sm et xs -->
 
+<!-- MENU COTE POUR LES GRANDS ET MOYENS ECRANS -->
+<div class="sidebar hidden-xs">
+  <%= render "ressource_sidebar_simple" %>
+</div>
+
+<!-- SOUS MENU TOP POUR LES PETITS ECRANS -->
 <div class="container">
   <div class="row">
-    <div class="col-xs-4">
-      <div class="sidebar">
-        <%= render "ressource_sidebar_simple" %>
+    <div class="col-xs-12">
+      <div class="sidebar visible-xs">
+        <%= render "second_nav" %>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="col-xs-12">
+<!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES -->
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
       <div class="content">
         <div id="bonplan" class="padded text-center">
           <h1>Tous les bons outils pour vous aider à trouver le job de vos rêves</h1>
@@ -28,7 +39,7 @@
         </div>
         <!-- intégrer pour les user admin -->
         <!-- link_to "Partagez vos bons plans", new_ressource_path, class: "btn btn-primary" %> -->
-        <div class="searchbar">
+        <div class="searchbar hidden-xs">
           <%= render "search" %>
         </div>
 
@@ -56,7 +67,7 @@
                                 <% end %>
                               <% end %>
                             <% else %>
-                              <% link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote", id: "like" do %>
+                              <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote", id: "like" do %>
                               <i class="fa fa-heart-o"></i>
                               <% end %>
                             <% end %>
@@ -108,7 +119,7 @@
                               <% end %>
                             <% end %>
                           <% else %>
-                            <% link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote", id: "like" do %>
+                            <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote", id: "like" do %>
                             <i class="fa fa-heart-o"></i>
                             <% end %>
                           <% end %>

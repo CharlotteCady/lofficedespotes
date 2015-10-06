@@ -14,10 +14,12 @@
     </div>
     <div class="writer-info">
       <p class= "date"><%= comment.created_at.strftime("%d #{@mois[comment.created_at.strftime("%m").to_i - 1]} %Y") %>
-      <% if (comment.user_id == current_user.id) || current_user.admin? %>
-        <!-- link_to "Modifier", edit_ressource_comment_path(comment, ressource_id: @ressource.id) %> / -->
-        /
-        <%= link_to "Supprimer", ressource_comment_path(comment, ressource_id: @ressource.id), method: :delete, data: { confirm: 'Vous êtes sûr ?' } %>
+      <% if user_signed_in?  %>
+        <% if (comment.user_id == current_user.id) || current_user.admin? %>
+          <!-- link_to "Modifier", edit_ressource_comment_path(comment, ressource_id: @ressource.id) %> / -->
+          /
+          <%= link_to "Supprimer", ressource_comment_path(comment, ressource_id: @ressource.id), method: :delete, data: { confirm: 'Vous êtes sûr ?' } %>
+        <% end %>
       <% end %>
       </p>
     </div>

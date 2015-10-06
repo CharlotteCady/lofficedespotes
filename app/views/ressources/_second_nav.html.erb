@@ -1,0 +1,17 @@
+<div id="container-nav">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="menu-favorites">
+          <ul class= "list-inline text-center">
+            <li><%= link_to @categories[0],  {controller: "ressources", action: "category", category: @categories[0] } %></li>
+            <li><%= link_to @categories[1],  {controller: "ressources", action: "category", category: @categories[1] } %></li>
+            <li><%= link_to @categories[2],  {controller: "ressources", action: "category", category: @categories[2] } %></li>
+            <li><%= link_to @categories[3],  {controller: "ressources", action: "category", category: @categories[3] } %></li>
+            <li><%= link_to @categories[4],  {controller: "ressources", action: "category", category: @categories[4] } %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

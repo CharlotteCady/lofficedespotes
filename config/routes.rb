@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
   get '/about', to: "pages#about"
+  get '/test', to: "pages#test"
 
   resources :users, only: [:edit, :update] do
     collection do

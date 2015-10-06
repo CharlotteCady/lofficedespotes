@@ -12,49 +12,73 @@
 
 <!-- Réfléchir à faire deux vues pour le responsive design :
 utiliser les classes hidden-xs et visible-xs -->
-
-
-<div id="banner-image" style="background: url(<%= @ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
-      -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(50%); -moz-filter: brightness(50%);">
-</div>
-<div class="content-banner">
-  <div class= "btn btn-blue zindex"><%= @ressource.category %></div>
-  <div class= "btn btn-primary"><%= @ressource.subcategory %></div>
-  <% if current_user.admin? %>
-  <div class="btn btn-action"><%= link_to "Editer", edit_ressource_path(@ressource.id) %></div>
-    <div class="btn btn-action"><%= link_to "Supprimer", ressource_path(@ressource),
-      method: :delete, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %></div>
-  <% end %>
-  <h1><%= @ressource.title %></h1>
-  <div class="writer-info">
-    <p>
-      <% if @ressource.user.picture? %>
-        <%= image_tag(@ressource.user.picture, class: "img-circle") %>
-      <% else %>
-        <%=  image_tag "eight_horns.png", class: "img-circle" %>
-      <% end %>
-      Partagé par
-      <% if @ressource.user.name? %>
-        <%= @ressource.user.name %>
-      <% else %>
-        <%= @ressource.user.first_name + " " + @ressource.user.last_name %>
-      <% end %>
-    </p>
-  </div>
-  <div class="publishing-date">
-    <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
-  </div>
-</div>
-
-<div class="container">
+<div class="container banner">
   <div class="row">
-    <div class="col-xs-4">
-      <div class="sidebar ">
-        <%= render "ressource_sidebar_simple" %>
+    <div class="col-xs-12">
+      <div id="banner-image" style="background: url(<%= @ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
+            -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(50%); -moz-filter: brightness(50%);">
+      </div>
+      <div class="content-banner">
+        <div class="row">
+          <div class="col-xs-12 ">
+            <div class= "btn btn-blue zindex hidden-xs"><%= @ressource.category %></div>
+            <div class= "btn btn-primary hidden-xs"><%= @ressource.subcategory %></div>
+            <% if user_signed_in?  %>
+              <% if current_user.admin? %>
+              <div class="btn btn-action"><%= link_to "Editer", edit_ressource_path(@ressource.id) %></div>
+                <div class="btn btn-action"><%= link_to "Supprimer", ressource_path(@ressource),
+                  method: :delete, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %></div>
+              <% end %>
+            <% end %>
+            <h1><%= @ressource.title %></h1>
+            <div class="writer-info">
+              <p>
+                <% if @ressource.user.picture? %>
+                  <%= image_tag(@ressource.user.picture, class: "img-circle") %>
+                <% else %>
+                  <%=  image_tag "eight_horns.png", class: "img-circle" %>
+                <% end %>
+                Partagé par
+                <% if @ressource.user.name? %>
+                  <%= @ressource.user.name %>
+                <% else %>
+                  <%= @ressource.user.first_name + " " + @ressource.user.last_name %>
+                <% end %>
+              </p>
+            </div>
+            <div class="publishing-date">
+              <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
+
+
+<!-- MENU COTE POUR LES GRANDS ET MOYENS ECRANS -->
+<div class="sidebar hidden-xs">
+  <%= render "ressource_sidebar_simple" %>
+</div>
+
+<!-- SOUS MENU TOP POUR LES PETITS ECRANS -->
+<div class="container">
+  <div class="row">
     <div class="col-xs-12">
+      <div class="sidebar visible-xs">
+        <%= render "second_nav" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES -->
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
 
       <div class="content">
 

@@ -1,13 +1,15 @@
 #ressources_category {
   margin-top: 60px;
-  .content {
-    margin-left: 200px;
+
+  .navbar {
+    z-index: 4000;
   }
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     margin-top: 50px;
+    z-index: 3000;
   }
 
   #category-description {
@@ -27,6 +29,10 @@
       font-size: 20px;
       z-index: 10;
       // background-color: rgba(0,0,0, 0.5);
+    }
+    li {
+      margin: 0;
+      margin-bottom: 15px ;
     }
     .btn {
       // font-family: $base-font;

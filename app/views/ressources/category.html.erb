@@ -22,15 +22,27 @@
   <% @category_page.split.join.downcase.gsub("é", "e") + ".png" %>
 <% end %>
 
+<!-- MENU COTE POUR LES GRANDS ET MOYENS ECRANS -->
+<div class="sidebar hidden-xs">
+  <%= render "ressource_sidebar_simple" %>
+</div>
+
+<!-- SOUS MENU TOP POUR LES PETITS ECRANS -->
 <div class="container">
   <div class="row">
-    <div class="col-xs-4">
-      <div class="sidebar hidden-xs">
-        <%= render "ressource_sidebar_simple" %>
+    <div class="col-xs-12">
+      <div class="sidebar visible-xs">
+        <%= render "second_nav" %>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="col-xs-12">
+<!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES -->
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
       <div class="content">
         <div id="category-description" class="padded text-center" style="background-image: url(<%= asset_path(@category_page.split.join.downcase.gsub("é", "e") + ".png") %>); background-repeat: repeat;">
 
@@ -106,7 +118,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
       <div class="content">
         <div class="subcategories_ressources">
           <% @subcategories.each do |subcat| %>

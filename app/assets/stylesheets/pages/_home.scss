@@ -13,7 +13,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  height: 620px;
+  min-height: 620px;
   position: relative;
   margin-top: 60px;
   h1 {
@@ -22,9 +22,10 @@
   p {
     color: white;
     font-size: 20px;
+    margin-bottom: 50px;
   }
-  .btn {
-    margin-top: 50px;
+  ul {
+    // margin-top: 50px;
     margin-bottom: 50px;
   }
 }
@@ -58,6 +59,9 @@
   .btn {
     margin-top: 30px;
   }
+  .bot {
+    padding-bottom: 30px;
+  }
 }
 
 #guide i, #question-caroussel i {
@@ -75,7 +79,7 @@
 // ===============================================================
 
 #notre-mission {
-  background: image-url("initiative-emploi.png") no-repeat fixed center;
+  background: url(/assets/initiative-emploi.png) no-repeat fixed center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -104,6 +108,7 @@
 // ===============================================================
 
 #discover {
+  margin-bottom: 80px;
   h2 {
     color: black;
     font-family: $base-font;
@@ -120,13 +125,23 @@
   a:hover p {
     color: $gray;
   }
-  img {
-    height: 160px;
+  .img-ress {
+    min-height: 250px;
   }
   .item {
     margin-right: 20px;
   }
-  margin-bottom: 80px;
+  // .customNavigation{
+  //   text-align: center;
+  // }
+  // .customNavigation a{
+  //   -webkit-user-select: none;
+  //   -khtml-user-select: none;
+  //   -moz-user-select: none;
+  //   -ms-user-select: none;
+  //   user-select: none;
+  //   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  // }
 }
 
 
@@ -186,13 +201,13 @@
   }
 }
 
-#contact::before {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
+  #contact::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
