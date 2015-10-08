@@ -94,7 +94,7 @@ $navbar-profile-border-width: 1px;
     }
 
     a#logo.navbar-brand {
-      padding-top: 26px;
+      padding-top: 19px;
       padding-left: 10px;
       margin-bottom: 0px;
       padding-bottom: 0px;
@@ -117,15 +117,15 @@ $navbar-profile-border-width: 1px;
     }
 
     .navbar-brand img, .navbar-brand svg {
-      height: $navbar-height;
+      height: 32px;
       padding: 0px;
     }
 
     #logo {
-      font-family: $logo-font;
-      font-size: 40px;
-      color: white;
-      text-transform: lowercase;
+      // font-family: $logo-font;
+      // font-size: 40px;
+      // color: white;
+      // text-transform: lowercase;
       margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
       margin-bottom: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
     }

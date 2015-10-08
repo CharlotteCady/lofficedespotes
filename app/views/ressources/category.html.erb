@@ -64,51 +64,66 @@
             <div class="col-xs-12">
               <ul class= "list-inline">
                 <% @subcategories.each do |subcat| %>
-                  <li class= "btn"><%= link_to subcat, "##{subcat}" %></li>
+                  <li class= "btn"><%= subcat %></li>
+                  <!-- link_to subcat, "##{subcat}" -->
                 <% end %>
               </ul>
             </div>
           </div>
         </div>
 
+        <div class="searchbar hidden-xs">
+          <%= render "search_category_page" %>
+        </div>
+
         <div class="col-xs-12">
           <div class="last_ressources">
-            <p class="title">Les nouvelles découvertes pour <%= @category_page %></p>
+            <% if params[:search] %>
+              <p class="title first-title">Résultats de la recherche</p>
+            <% elsif params[:subcategory] %>
+              <p><%= @category_page %> : <%= subcategory %></p>
+            <% else %>
+              <p class="title first-title">Les nouvelles découvertes pour <%= @category_page %></p>
+            <% end %>
             <div class="listing_ressources">
-              <% @ressources.each do |ress| %>
-              <div class="row">
-                <div class="col-xs-2">
-                  <ul class= "list-inline">
-                    <li>
-                      <div class="votes">
-                        <% if current_user.liked? ress %>
-                          <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
-                            <i class="fa fa-heart"></i>
+              <% if @ressources.blank? %>
+                <p id="sorry">Il n'y a pas encore de résultats pour votre recherche, envoyez nous un petit message pour nous dire ce que vous recherchez :)</p>
+              <% else %>
+                <% @ressources.each do |ress| %>
+                <div class="row">
+                  <div class="col-xs-2">
+                    <ul class= "list-inline">
+                      <li>
+                        <div class="votes">
+                          <% if current_user.liked? ress %>
+                            <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                              <i class="fa fa-heart"></i>
+                            <% end %>
+                          <% else %>
+                            <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                              <i class="fa fa-heart-o"></i>
+                            <% end %>
                           <% end %>
-                        <% else %>
-                          <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
-                            <i class="fa fa-heart-o"></i>
-                          <% end %>
-                        <% end %>
-                        <p class="vote_count"><%= ress.score %></p>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="comments">
-                        <i class="fa fa-comment-o"></i>
-                        <p><%= ress.comments.count %></p>
-                      </div>
-                    </li>
-                    <li>
-                      <%= image_tag ress.logo.url(:thumb), class: "logo" %>
-                    </li>
-                  </ul>
+                          <p class="vote_count"><%= ress.score %></p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="comments">
+                          <i class="fa fa-comment-o"></i>
+                          <p><%= ress.comments.count %></p>
+                        </div>
+                      </li>
+                      <li>
+                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-10">
+                    <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
+                    <p class="content-title"><%= ress.content.split(".").first %>.</p>
+                  </div>
                 </div>
-                <div class="col-xs-10">
-                  <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
-                  <p class="content-title"><%= ress.content.split(".").first %>.</p>
-                </div>
-              </div>
+                <% end %>
               <% end %>
             </div>
           </div>
@@ -119,57 +134,61 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
-      <div class="content">
-        <div class="subcategories_ressources">
-          <% @subcategories.each do |subcat| %>
-          <div id= "<%= "#{subcat}" %>" class= "anchor"></div>
-            <p class="title"><%= subcat %></p>
-            <div class="listing_ressources">
-              <% @ressources.each do |ress| %>
-                <% if ress.subcategory == subcat %>
-                  <div class="row">
-                    <div class="col-xs-2">
-                      <ul class= "list-inline">
-                        <li>
-                          <div class="votes">
-                            <% if current_user.liked? ress %>
-                              <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
-                                <i class="fa fa-heart"></i>
-                              <% end %>
-                            <% else %>
-                              <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
-                                <i class="fa fa-heart-o"></i>
-                              <% end %>
-                            <% end %>
-                            <p class="vote_count"><%= ress.score %></p>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="comments">
-                            <i class="fa fa-comment-o"></i>
-                            <p><%= ress.comments.count %></p>
-                          </div>
-                        </li>
-                        <li>
-                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-xs-10">
-                      <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
-                      <p class="content-title"><%= ress.content.split(".").first %>.</p>
-                    </div>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-          <% end %>
+<div id="subcategory-filter">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
+        <div class="content">
+          <div class="subcategories_ressources">
+            <% @subcategories.each do |subcat| %>
+              <div class="subcategory-bloc" id= "<%= "#{subcat}" %>">
+                <p class="title"><%= subcat %></p>
+                <div class="listing_ressources">
+                  <% @ressources.each do |ress| %>
+                    <% if ress.subcategory == subcat %>
+                      <div class="row">
+                        <div class="col-xs-2">
+                          <ul class= "list-inline">
+                            <li>
+                              <div class="votes">
+                                <% if current_user.liked? ress %>
+                                  <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                                    <i class="fa fa-heart"></i>
+                                  <% end %>
+                                <% else %>
+                                  <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                                    <i class="fa fa-heart-o"></i>
+                                  <% end %>
+                                <% end %>
+                                <p class="vote_count"><%= ress.score %></p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="comments">
+                                <i class="fa fa-comment-o"></i>
+                                <p><%= ress.comments.count %></p>
+                              </div>
+                            </li>
+                            <li>
+                              <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-xs-10">
+                          <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
+                          <p class="content-title"><%= ress.content.split(".").first %>.</p>
+                        </div>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
+
+</div>

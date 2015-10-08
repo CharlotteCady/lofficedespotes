@@ -6,11 +6,12 @@
   }
   // =============== BLOC IMAGE ET QUOTE
   #souhait {
-    background: image-url("ecosysteme-emploi.png") repeat;
-    min-height: 400px;
+    background: image-url("acteurs-emploi.png") repeat;
+    // min-height: 400px;
     h1 {
-      padding-top: 30px;
-      padding-bottom: 30px;
+      margin: 0;
+      padding-top: 60px;
+      padding-bottom: 100px;                                                                                                                                                                                                                                             bottom: 30px;
     }
   }
 
@@ -56,7 +57,7 @@
   }
   // =========== LOVE YOUR JOB
   #loveyourjob {
-    background: image-url("ecosysteme-emploi.png") repeat;
+    background: image-url("acteurs-emploi.png") repeat;
     height: 200px;
   }
 }

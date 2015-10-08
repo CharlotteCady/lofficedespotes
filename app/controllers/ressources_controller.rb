@@ -87,9 +87,17 @@ class RessourcesController < ApplicationController
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'éclater"]
     @subcat_sidebar = ["Voir tout"]
-    # @ressources = Ressource.all.order('created_at DESC')
     @category_page = params[:category]
-    @ressources = Ressource.where(category: @category_page)
+    # @ressources = Ressource.where(category: @category_page)
+    # ====== Barre de recherche
+    category = @category_page
+    subcategory = params[:subcategory]
+    keyword = params[:search]
+    if keyword || category || subcategory
+      @ressources = Ressource.search(keyword, category, subcategory)
+    else
+      @ressources = Ressource.where(category: @category_page).order('created_at DESC')
+    end
   end
 
   private
