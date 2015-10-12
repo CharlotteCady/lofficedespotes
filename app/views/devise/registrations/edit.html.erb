@@ -3,29 +3,23 @@
     <div class="col-xs-12 col-md-offset-3 col-md-6">
       <div id="edit">
         <h1 class= "text-center">Modifier votre Profil</h1>
-        <p class= "text-center">Si vous ne voulez pas modifier votre mot de passe, laissez les champs "Nouveau Mot de Passe" et "Confirmation Nouveau Mot de Passe" vides.</p>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <div id="avatar">
-              <%= image_tag current_user.picture, class:  "img-circle text-center" %>
-            </div>
-            <%= f.file_field :picture, required: false, value: "Photo" %></br>
+            <%= image_tag current_user.avatar.url(:thumb), class:  "img-circle text-center" %>
+            <%= f.file_field :avatar, required: false, value: "Photo" %></br>
 
             <%= f.input :name, required: false, autofocus: true, placeholder: "Nouveau Nom d'Utilisateur", label: "Nom", id: "label-name" %>
             <%= f.input :description, required: false, autofocus: true, as: :text, placeholder: "Description, 140 caractères max", label: "Description", id: "label-description" %>
-            <%= f.input :email, required: true, autofocus: true, label: "Adresse Email", placeholder: "Adresse Email", id: "label-email" %>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
             <% end %>
             </br>
-            <%= f.input :password, autocomplete: "off", required: false, label: "Modifier votre mot de passe", placeholder: "Nouveau Mot de Passe" %>
-            <%= f.input :password_confirmation, required: false, label: false, placeholder: "Confirmation Nouveau Mot de Passe" %>
+            <%= f.input :email, required: true, autofocus: true, label: "Confimez votre identité", placeholder: "Adresse Email", id: "label-email" %>
             <%= f.input :current_password, required: true, label: false, placeholder: "Mot de Passe Actuel" %>
-            <p id= "important" class= "text-center">Vous devez rentrer votre adresse email et votre mot de passe actuel pour valider les modifications</p>
           </div>
 
           <div class="form-actions">
@@ -33,6 +27,7 @@
           </div>
         <% end %>
         <div id="delete-account">
+          <%= link_to "Modifier mon mot de passe", edit_user_path(current_user.id) %><br>
           <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Vous êtes sûr de vouloir nous quitter?" }, method: :delete %><br />
         </div>
       </div>

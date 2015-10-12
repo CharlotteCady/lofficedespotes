@@ -46,9 +46,9 @@
       <div class="content">
         <div id="category-description" class="padded text-center" style="background-image: url(<%= asset_path(@category_page.split.join.downcase.gsub("é", "e") + ".png") %>); background-repeat: repeat;">
 
-          <h1>Découvrez les bons outils pour <%= @category_page %></h1>
+          <h1><%= @category_page %></h1>
           <% if @category_page == @categories[0] %>
-            <p>Les meilleurs événements emploi, sites de recrutement, coach, conseils d'experts pour trouver un job qui vous plaît</p>
+            <p>Les meilleurs événements emploi, sites de recrutement, structures d'accompagnement, conseils d'experts pour trouver un job qui vous plaît</p>
           <% elsif @category_page == @categories[1] %>
             <p>Les meilleures formations, témoignages, conseils, événements pour changer de métier sereinement</p>
           <% elsif @category_page == @categories[2] %>

@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
 
-  actions :all, except: [:create, :edit, :update, :destroy]
+  actions :all, except: [:create]
   permit_params :name, :email, :description, :admin
 
   index do
