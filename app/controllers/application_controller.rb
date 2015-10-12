@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
-  before_filter :store_current_location, :unless => :devise_controller? #rediriger vers la dernière page visitée après authentification
+  # before_filter :store_current_location, :unless => :devise_controller? #rediriger vers la dernière page visitée après authentification
   before_action :authenticate_user!, unless: :pages_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -23,18 +23,20 @@ class ApplicationController < ActionController::Base
   end
 
   #rediriger vers la dernière page visitée après authentification
-  def store_current_location
-    store_location_for(:user, request.url)
-  end
+  # def store_current_location
+  #   store_location_for(:user, request.url)
+  # end
 
-  def after_sign_in_path_for(resource)
-    sign_in_url = new_user_session_url
-    if request.referer == sign_in_url
-      super
-    else
-      request.env['omniauth.origin'] || stored_location_for(resource) || request.referer || root_path
-    end
-  end
+  # def after_sign_in_path_for(resource)
+  #   sign_in_url = new_user_session_url
+  #   if request.referer == sign_in_url
+  #     super
+  #   else
+  #     request.env['omniauth.origin'] || stored_location_for(resource) || request.referer || root_path
+  #   end
+  # end
+
+
   # Uncomment these lines to get pundit
   # include Pundit
   # after_action :verify_authorized, except:  :index, unless: :devise_or_pages_or_admin_controller?
