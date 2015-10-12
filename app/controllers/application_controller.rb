@@ -9,14 +9,14 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-   devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, :remember_me) }
-   devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :name, :email, :password, :remember_me) }
+   devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation, :remember_me, :avatar) }
+   devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :name, :email, :password, :remember_me, :avatar) }
    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:avatar, :name, :description, :email, :password, :password_confirmation, :current_password) }
   end
 
   def default_url_options
     if Rails.env.production?
-      { host: 'lofficedespotes-production.herokuapp.com' }
+      { host: 'lofficedespotes.herokuapp.com' }
     else
       { host: ENV['HOST'] || 'localhost:3000' }
     end
@@ -35,7 +35,6 @@ class ApplicationController < ActionController::Base
   #     request.env['omniauth.origin'] || stored_location_for(resource) || request.referer || root_path
   #   end
   # end
-
 
   # Uncomment these lines to get pundit
   # include Pundit

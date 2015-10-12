@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   end
 
 # REDIRIGER VERS LA PAGE USER SHOW APRES MODIFICATIONS (USER EDIT et PASSWORD EDIT)
-  as :user do
-    get 'users/show', :to => 'devise/registrations#edit', :as => :user_root
-  end
+  # as :user do
+  #   get 'users/show', :to => 'devise/registrations#edit', :as => :user_root
+  # end
 
   resources :ressources do
     resources :comments, only: [:index, :create, :destroy]
