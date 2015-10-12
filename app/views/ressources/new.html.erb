@@ -14,7 +14,7 @@
         <div class="white-block">
           <div class="row">
             <div class="col-xs-4">
-              <%= image_tag current_user.picture, class: "img-circle" %>
+              <%= image_tag current_user.avatar.url(:thumb), class: "img-circle" %>
             </div>
             <div class="col-xs-8">
               <p id="nom">Création par <%= current_user.name %></p>

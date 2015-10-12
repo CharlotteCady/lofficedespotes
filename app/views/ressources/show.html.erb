@@ -33,8 +33,8 @@ utiliser les classes hidden-xs et visible-xs -->
             <h1><%= @ressource.title %></h1>
             <div class="writer-info">
               <p>
-                <% if @ressource.user.picture? %>
-                  <%= image_tag(@ressource.user.picture, class: "img-circle") %>
+                <% if @ressource.user.avatar? %>
+                  <%= image_tag(@ressource.user.avatar.url(:medium), class: "img-circle") %>
                 <% else %>
                   <%=  image_tag "eight_horns.png", class: "img-circle" %>
                 <% end %>
@@ -107,8 +107,8 @@ utiliser les classes hidden-xs et visible-xs -->
               <div class="voter-avatar" style="">
                 <% @list_of_voters.each do |voter| %>
                   <button type="button" id="info-avatar" data-toggle="tooltip" data-placement="top" title="<% if voter.name? %><%= voter.name.capitalize %><% end %><% if voter.description? %>:<%= voter.description %><% end %>">
-                    <% if voter.picture? %>
-                      <%= image_tag voter.picture, class: "img-circle" %>
+                    <% if voter.avatar? %>
+                      <%= image_tag voter.avatar.url(:thumb), class: "img-circle" %>
                     <% else %>
                       <%= image_tag "eight_horns.png", class: "img-circle" %>
                     <% end %>
@@ -121,8 +121,8 @@ utiliser les classes hidden-xs et visible-xs -->
         <% if user_signed_in? %>
           <div class="add-comment">
             <div class= "user">
-              <% if current_user.picture? %>
-                <%= image_tag current_user.picture, class: "img img-circle" %>
+              <% if current_user.avatar? %>
+                <%= image_tag current_user.avatar.url(:medium), class: "img img-circle" %>
               <% else %>
                 <%= image_tag "eight_horns.png", class: "img-circle" %>
               <% end %>

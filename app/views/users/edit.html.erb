@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-offset-3 col-md-6">
+      <div id="edit">
+        <h1 class= "text-center">Modifier votre Mot de Passe</h1>
+
+        <%= simple_form_for(@user, :url => { :action => "update_password" } ) do |f| %>
+
+          <div class="form-inputs">
+
+            <%= f.input :password, autofocus: false, required: false, label: "Nouveau Mot de Passe", placeholder: "Nouveau Mot de Passe" %>
+            <%= f.input :password_confirmation, required: false, label: false, placeholder: "Confirmation Nouveau Mot de Passe" %>
+            <!-- <p id= "important" class= "text-center">Vous devez rentrer votre adresse email et votre mot de passe actuel pour valider les modifications</p> -->
+          </div>
+
+          <div class="form-actions">
+            <%= f.submit(class: "btn btn-primary", value: "Valider les modifications") %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

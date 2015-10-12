@@ -14,16 +14,34 @@ class UsersController < ApplicationController
     @user_vote = @all_ressources.map { |r| current_user.voted_up_on? r }
   end
 
-  # def edit
-  # end
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
 
-  # def update
-  #     current_user = User.find(:id)
-  #     current_user.update(user_params)
-  # end
+    if @user.destroy
+      redirect_to root_url, notice: "User deleted."
+    end
+  end
 
-  # private
-  # def user_params
-  #   params.require(:user).permit(:name, :picture, :email, :password)
-  # end
+  def edit
+    @user = current_user
+  end
+
+  def update_password
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      # Sign in the user by passing validation in case their password changed
+      sign_in @user, :bypass => true
+      redirect_to users_path
+    else
+      render "edit"
+    end
+  end
+
+  private
+
+   def user_params
+     # NOTE: Using `strong_parameters` gem
+     params.require(:user).permit(:password, :password_confirmation)
+   end
 end

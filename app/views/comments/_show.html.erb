@@ -1,10 +1,10 @@
 <% unless comment.comment.blank? %>
   <div class="comment">
     <div class="user">
-      <% if User.find(comment.user_id).picture.blank? %>
+      <% if User.find(comment.user_id).avatar.blank? %>
         <%= image_tag "eight_horns.png", class: "img img-circle" %>
       <% else %>
-        <%= image_tag User.find(comment.user_id).picture, class: "img img-circle" %>
+        <%= image_tag User.find(comment.user_id).avatar.url(:thumb), class: "img img-circle" %>
       <% end %>
       <% if comment.user.name? %>
         <%= comment.user.name.capitalize %>

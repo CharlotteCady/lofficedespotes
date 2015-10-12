@@ -7,6 +7,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
+  has_attached_file :avatar,
+      styles: { medium: "500x500#", thumb: "100x100#" }
+
+    validates_attachment_content_type :avatar,
+      content_type: /\Aimage\/.*\z/
+
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
@@ -16,7 +22,7 @@ class User < ActiveRecord::Base
       user.name = auth.info.first_name + " " + auth.info.last_name
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
-      user.picture = auth.info.image
+      user.avatar = auth.info.image
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
