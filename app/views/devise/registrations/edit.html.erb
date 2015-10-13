@@ -4,7 +4,7 @@
       <div id="edit">
         <h1 class= "text-center">Modifier votre Profil</h1>
 
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">

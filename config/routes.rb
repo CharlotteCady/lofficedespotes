@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get '/about', to: "pages#about"
 
-  resources :users, only: [:edit, :update] do
+  resources :users, only: [:edit, :update, :destroy] do
     collection do
       get 'show'
       get 'favorites', to: "users#favorites"

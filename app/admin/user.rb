@@ -1,7 +1,6 @@
 ActiveAdmin.register User do
 
-  actions :all, except: [:create]
-  permit_params :name, :email, :description, :admin
+  permit_params :email, :name, :first_name, :last_name, :description, :admin, :provider, :avatar
 
   index do
     selectable_column
@@ -14,6 +13,7 @@ ActiveAdmin.register User do
     column :created_at
     column :admin
     column :provider
+    column :avatar
     actions
   end
 # See permitted parameters documentation:
