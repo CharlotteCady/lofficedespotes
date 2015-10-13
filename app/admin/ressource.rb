@@ -1,7 +1,10 @@
 ActiveAdmin.register Ressource do
 
-  permit_params :title, :description, :content, :witness, :website, :address, :category, :subcategory, :picture, :logo, :seotitle, :seodescription
-  # , comments: [:id, :comment]
+  permit_params :title, :description, :content, :witness, :website, :address, :category, :subcategory, :picture, :logo, :seotitle, :seodescription,
+  :user_id, :picture_file_name, :picture_content_type, :picture_file_size, :picture_updated_at, :picture_updated_at,
+  :picture_updated_at, :picture_updated_at, :picture_updated_at, :logo_file_name, :logo_content_type,
+  :logo_file_size, :logo_updated_at, :logo_updated_at, :logo_updated_at, :logo_updated_at, :logo_updated_at,
+  :slug
 
   index do
     selectable_column
@@ -28,18 +31,4 @@ ActiveAdmin.register Ressource do
       end
     end
   end
-
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
-
 end
