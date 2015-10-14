@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
-  get '/about', to: "pages#about"
-  get "category", to: "ressources#category"
+  get '/a-propos', to: "pages#about", as: '/about'
+  get "/categorie", to: "ressources#category", as: "/category"
   post "category", to: "ressources#category"
+  # get "/guide-de-l-emploi", to: "ressources#index", as: "/ressources"
 
   resources :users, only: [:edit, :update] do
     collection do
