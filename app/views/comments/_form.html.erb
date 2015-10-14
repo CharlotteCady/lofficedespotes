@@ -1,4 +1,4 @@
-<%= simple_form_for([@ressource, @comment], html: {multipart: true, class: "form-horizontal"}) do |comment| %>
+<%= simple_form_for([@ressource, @comment], remote: true , html: {multipart: true, class: "form-horizontal"}) do |comment| %>
   <div class="form-group">
     <%= comment.input :comment, placeholder: "Vous voulez témoigner ou faire un commentaire ? C'est ici :)", label: false, as: :text %>
   </div>

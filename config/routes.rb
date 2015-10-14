@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
   get '/about', to: "pages#about"
+  get "category", to: "ressources#category"
+  post "category", to: "ressources#category"
 
   resources :users, only: [:edit, :update] do
     collection do
@@ -26,6 +28,6 @@ Rails.application.routes.draw do
       put "dislike", to: "ressources#dislike"
     end
   end
-  get "category", to: "ressources#category"
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 end
