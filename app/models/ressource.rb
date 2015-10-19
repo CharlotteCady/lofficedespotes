@@ -1,5 +1,6 @@
 class Ressource < ActiveRecord::Base
   extend FriendlyId
+  include Bootsy::Container
   friendly_id :title, use: :slugged
 
   acts_as_commentable

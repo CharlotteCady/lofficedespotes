@@ -1,0 +1,30 @@
+fr:
+  bootsy:
+    action:
+      refresh: Actualiser
+      destroy: Supprimer
+      close: Fermer
+      load: Charger
+      or: ou
+      upload: Charger une nouvelle image
+      submit_upload: Go
+      enter_image_url: ENtrez une url pour le web...
+    image_gallery: Gallerie d'images
+    image:
+      s: Image
+      p: Images
+      size: Taille
+      large: Grand
+      medium: Moyen
+      small: Petit
+      original: Original
+      new: Nouvelle image
+      confirm:
+        destroy: Êtes-vous sûr de vouloir supprimer cette image ?
+      position:
+        left: Gauche
+        right: Droite
+        inline: Aligné
+    no_images_uploaded: Il n'y a pas d'image
+    js:
+      alert_unsaved: Vous n'avez pas sauvegardé les modifications

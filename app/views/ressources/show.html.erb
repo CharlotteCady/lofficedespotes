@@ -84,9 +84,8 @@ utiliser les classes hidden-xs et visible-xs -->
 
         <div class="content-text">
           <strong><h2 class="title-description"><%= @ressource.description %></h2></strong>
-          <% @paragraphes.each do |p| %>
-            <p><%= p %></p>
-          <% end %>
+          <p><%= sanitize @ressource.content %></p>
+
         </div>
 <!--         <p class= "witness">
           "   <%= @ressource.witness %>   "

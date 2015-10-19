@@ -1,7 +1,7 @@
 ActiveAdmin.register Ressource do
 
   permit_params :title, :description, :content, :witness, :website, :address, :category, :subcategory, :picture, :logo, :seotitle, :seodescription,
-  :user_id, :picture_file_name, :picture_content_type, :picture_file_size, :picture_updated_at, :picture_updated_at,
+  :bootsy_image_gallery_id, :user_id, :picture_file_name, :picture_content_type, :picture_file_size, :picture_updated_at, :picture_updated_at,
   :picture_updated_at, :picture_updated_at, :picture_updated_at, :logo_file_name, :logo_content_type,
   :logo_file_size, :logo_updated_at, :logo_updated_at, :logo_updated_at, :logo_updated_at, :logo_updated_at,
   :slug

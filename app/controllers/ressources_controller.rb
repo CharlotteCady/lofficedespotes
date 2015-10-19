@@ -8,7 +8,7 @@ class RessourcesController < ApplicationController
     subcategory = params[:subcategory]
     keyword = params[:search]
     if keyword || category || subcategory
-      @ressources = Ressource.search(keyword, category, subcategory)
+      @ressources = Ressource.search(keyword, category, subcategory).order('created_at DESC')
     else
       @ressources = Ressource.all.order('created_at DESC')
     end
@@ -94,7 +94,7 @@ class RessourcesController < ApplicationController
     subcategory = params[:subcategory]
     keyword = params[:search]
     if keyword || category || subcategory
-      @ressources = Ressource.search(keyword, category, subcategory)
+      @ressources = Ressource.search(keyword, category, subcategory).order('created_at DESC')
     else
       @ressources = Ressource.where(category: @category_page).order('created_at DESC')
     end
@@ -103,7 +103,7 @@ class RessourcesController < ApplicationController
   private
 
   def ressource_params
-    params.require(:ressource).permit(:title, :description, :content, :witness, :website, :address, :category, :subcategory, :picture, :logo, :seotitle, :seodescription)
+    params.require(:ressource).permit(:title, :description, :content, :witness, :website, :address, :category, :subcategory, :picture, :logo, :seotitle, :seodescription, :bootsy_image_gallery_id)
   end
 
   def set_ressource

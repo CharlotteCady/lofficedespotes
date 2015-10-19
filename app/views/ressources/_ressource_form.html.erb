@@ -3,28 +3,28 @@
 <!-- as: :select pour choix défilant
 as: :check_boxes pour multiple choix -->
   <div class="white-block">
-    <%= ressource.input :title, label: "Titre", placeholder: 'Moonbar : Le meilleur agenda des événements pour entreprendre à Paris' %>
+    <%= ressource.input :title, label: "Titre", placeholder: '55 caractères max' %>
   </div>
   <div class="white-block">
-    <%= ressource.input :description, label: "Mini description", as: :text, placeholder: 'Moonbar, le numero 1 des événements startup' %>
+    <%= ressource.input :description, label: "Mini description", as: :text, placeholder: '155 caractères max' %>
   </div>
   <div class="white-block">
-    <%= ressource.input :content, label: "Description détaillée", as: :text, placeholder: 'Moonbar liste sur son site et sa newsletter hebdomadaire l’ensemble des évènements startup etc.' %>
+    <%= ressource.input :content, label: "Description détaillée", as: :bootsy %>
   </div>
   <div class="white-block">
     <%= ressource.input :category, collection: @categories, include_blank: false, label: "Catégorie" %>
     <%= ressource.input :subcategory, collection: @subcategories, include_blank: false, label: "Sous-Catégorie" %>
   </div>
   <div class="white-block">
-    <%= ressource.input :witness, label: "Témoignage", placeholder: "J'ai rencontré mon futur patron lors d'un événement startup, merci Moonbar !" %>
+    <%= ressource.input :witness, label: "Témoignage", placeholder: "J'ai rencontré mon futur patron lors d'un événement startup, merci !" %>
   </div>
   <div class="white-block">
-    <%= ressource.input :website, label: "Site Web", placeholder: 'http://moonbar.org/', as: :url %>
-    <%= ressource.input :address, label: "Coordonnées", placeholder: 'Fondateur: Julien Picaud - contact@moonbar.org' %>
+    <%= ressource.input :website, label: "Site Web", placeholder: 'http://monsite.com/', as: :url %>
+    <%= ressource.input :address, label: "Coordonnées", placeholder: 'Fondateur: John Doe - contact@monsite.com' %>
   </div>
   <div class="white-block">
-    <%= ressource.input :seotitle, label: "Titre pour Google" %>
-    <%= ressource.input :seodescription, label: "Description pour Google" %>
+    <%= ressource.input :seotitle, label: "Titre pour Google : 55 caractères max" %>
+    <%= ressource.input :seodescription, label: "Description pour Google : 155 caractères max" %>
   </div>
   <div class="white-block">
     <%= ressource.label :logo, label: "Logo" %>
