@@ -22,11 +22,11 @@ end %> -->
       <div class="col-xs-12">
         <ul class="list-inline">
           <!--  <li> link_to "c'est parti", ressources_path, class: "btn btn-primary"</li>-->
-          <li><%= link_to "Chercher un job", "category?category=Chercher+un+job", class: "btn btn-transparent" %></li>
-          <li><%= link_to "Changer de métier", "category?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
-          <li><%= link_to "Changer de boite", "category?category=Changer+de+boite", class: "btn btn-transparent" %></li>
-          <li><%= link_to "Créer sa boite", "category?category=Créer+sa+boite", class: "btn btn-transparent" %></li>
-          <li><%= link_to "Intraprendre", "category?category=Intraprendre", class: "btn btn-transparent" %></li>
+          <li><%= link_to "Chercher un job", "categorie?category=Chercher+un+job", class: "btn btn-transparent" %></li>
+          <li><%= link_to "Changer de métier", "categorie?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
+          <li><%= link_to "Changer de boite", "categorie?category=Changer+de+boite", class: "btn btn-transparent" %></li>
+          <li><%= link_to "Créer sa boite", "categorie?category=Créer+sa+boite", class: "btn btn-transparent" %></li>
+          <li><%= link_to "Intraprendre", "categorie?category=Intraprendre", class: "btn btn-transparent" %></li>
         </ul>
       </div>
       <a href="#guide-caroussel"><i class="fa fa-angle-down pulse"></i></a>
@@ -56,31 +56,31 @@ end %> -->
       </div>
       <div class="col-xs-12 col-md-offset-1 col-md-2 bot">
         <% @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"] %>
-        <%= link_to "category?category=Chercher+un+job",  {controller: "ressources", action: "category", category: @categories[0] } do %>
+        <%= link_to "categorie?category=Chercher+un+job",  {controller: "ressources", action: "category", category: @categories[0] } do %>
           <i class="fa fa-search"></i>
           <p class= "little-header">Chercher un Job</p>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-2 bot">
-        <%= link_to "category?category=Changer+de+m%C3%A9tier",  {controller: "ressources", action: "category", category: @categories[1] } do %>
+        <%= link_to "categorie?category=Changer+de+m%C3%A9tier",  {controller: "ressources", action: "category", category: @categories[1] } do %>
           <i class="fa fa-magic"></i>
           <p class= "little-header">Changer de Métier</p>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-2 bot">
-        <%= link_to "category?category=Changer+de+boite",  {controller: "ressources", action: "category", category: @categories[2] } do %>
+        <%= link_to "categorie?category=Changer+de+boite",  {controller: "ressources", action: "category", category: @categories[2] } do %>
           <i class="fa fa-archive"></i>
           <p class= "little-header">Changer de Boite</p>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-2 bot">
-        <%= link_to "category?category=Créer+sa+boite",  {controller: "ressources", action: "category", category: @categories[3] } do %>
+        <%= link_to "categorie?category=Créer+sa+boite",  {controller: "ressources", action: "category", category: @categories[3] } do %>
           <i class="fa fa-hand-peace-o"></i>
           <p class= "little-header">Créer sa boite</p>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-2 bot">
-        <%= link_to "category?category=Intraprendre",  {controller: "ressources", action: "category", category: @categories[4] } do %>
+        <%= link_to "categorie?category=Intraprendre",  {controller: "ressources", action: "category", category: @categories[4] } do %>
           <i class="fa fa-flask"></i>
           <p class= "little-header">Intraprendre</p>
         <% end %>
