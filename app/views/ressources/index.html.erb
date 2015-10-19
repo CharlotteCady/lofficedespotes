@@ -34,10 +34,17 @@
     <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
       <div class="content">
         <div id="bonplan" class="padded text-center">
-          <h1>Des événements, des formations, des structures d'accompagnement,<br> des conseils d'experts et bien plus encore pour vous aider à<br>  <span style="color: #1ECBCA;">trouver le job de vos rêves</span></h1>
+
+          <div id="big-screen" class = "hidden-xs">
+            <h1>Des événements, des formations, des structures d'accompagnement,<br> des conseils d'experts et bien plus encore pour vous aider à<br>  <span style="color: #1ECBCA; font-family: langdonregular; font-size: 50px;">trouver le job de vos reves</span></h1>
+          </div>
+
+          <div id= "little-screen" class= "visible-xs">
+            <h1>Des événements, des formations, des structures d'accompagnement,<br> des conseils d'experts et bien plus encore pour vous aider à<br>  <span style="color: #1ECBCA; font-family: bebas_neueregular; font-size: 30px;">trouver le job de vos reves</span></h1>
+            <%= render "search_mobile" %>
+          </div>
         </div>
-        <!-- intégrer pour les user admin -->
-        <!-- link_to "Partagez vos bons plans", new_ressource_path, class: "btn btn-primary" %> -->
+
         <div class="searchbar hidden-xs">
           <%= render "search" %>
         </div>

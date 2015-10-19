@@ -24,9 +24,12 @@
     font-size: 20px;
     margin-bottom: 50px;
   }
-  ul {
+  ul, .btn-primary  {
     // margin-top: 50px;
     margin-bottom: 50px;
+  }
+  i {
+    margin-bottom: 20px;
   }
 }
 #banner::before {
@@ -176,6 +179,20 @@
   bottom: 0;
 }
 
+// Newsletter
+// ===============================================================
+
+#just-beginning {
+  background: image-url("acteurs-emploi.png") repeat;
+  p {
+    color: white;
+  }
+  .trait {
+    border-bottom-color: white;
+  }
+}
+
+
 // Contact
 // ===============================================================
 
@@ -185,7 +202,7 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  height: 500px;
+  min-height: 500px;
   position: relative;
   .trait {
     border-color: white;
@@ -198,6 +215,9 @@
     input {
       margin-bottom: 20px;
     }
+  }
+  textarea {
+    min-height: 200px;
   }
 }
 

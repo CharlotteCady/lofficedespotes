@@ -19,11 +19,9 @@
   }
 
   #category-description {
-    min-height: 325px;
-    margin-top: 50px;
-    // margin-bottom: 50px;
-    padding-right: 50px;
-    padding-left: 50px;
+    min-height: 300px;
+    margin-top: 30px;
+    padding: 20px 50px;
     position: relative;
     h1 {
       color: white;
@@ -36,9 +34,14 @@
       z-index: 10;
       font-family: "bebas_neuebook";
     }
+    ul {
+      margin: 0px;
+    }
     li {
       margin: 0;
-      margin-bottom: 15px ;
+      input {
+        margin: 0px;
+      }
     }
     .btn {
       // font-family: "bebas_neuebook";
@@ -54,6 +57,13 @@
       &:hover {
         background-color: $blue;
         border: 1px solid $blue;
+      }
+    }
+    button#looking_for {
+      cursor: default;
+      &:hover {
+        background-color: transparent;
+        border-color: white;
       }
     }
   }

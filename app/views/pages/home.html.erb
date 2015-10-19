@@ -20,7 +20,7 @@ end %> -->
         </p>
       </div>
       <div class="col-xs-12">
-        <ul class="list-inline">
+        <ul class="list-inline hidden-xs">
           <!--  <li> link_to "c'est parti", ressources_path, class: "btn btn-primary"</li>-->
           <li><%= link_to "Chercher un job", "categorie?category=Chercher+un+job", class: "btn btn-transparent" %></li>
           <li><%= link_to "Changer de métier", "categorie?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
@@ -28,6 +28,9 @@ end %> -->
           <li><%= link_to "Créer sa boite", "categorie?category=Créer+sa+boite", class: "btn btn-transparent" %></li>
           <li><%= link_to "Intraprendre", "categorie?category=Intraprendre", class: "btn btn-transparent" %></li>
         </ul>
+        <div class="visible-xs">
+          <%= link_to "Découvrir Maintenant", ressource_path, class: "btn btn-primary" %>
+        </div>
       </div>
       <a href="#guide-caroussel"><i class="fa fa-angle-down pulse"></i></a>
     </div>
@@ -49,50 +52,47 @@ end %> -->
           Il existe tant d'histoires inspirantes, d'initiatives encore méconnues, d'outils à portée de main pour vous aider dans votre projet professionnel.
           Que vous soyez à la recherche d'un emploi, en poste ou en création d'entreprise, nous voulons vous donner toutes les bonnes informations et les bons outils pour trouver ou créer le job qui vous convient.
         </p></b><br>
-        <p>
+        <p class="hidden-xs">
           Pour cela, nous vous invitons à découvrir les intiatives selon la catégorie et le type d'information que vous recherchez, vous pouvez aimer une initiative et l'enregistrer dans vos favoris, la commenter et même contacter les structures qui vous plaisent pour aller encore plus loin.
         </p>
 
       </div>
-      <div class="col-xs-12 col-md-offset-1 col-md-2 bot">
+      <div class="col-xs-4 col-md-offset-1 col-md-2 bot">
         <% @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"] %>
         <%= link_to "categorie?category=Chercher+un+job",  {controller: "ressources", action: "category", category: @categories[0] } do %>
           <i class="fa fa-search"></i>
           <p class= "little-header">Chercher un Job</p>
         <% end %>
       </div>
-      <div class="col-xs-12 col-md-2 bot">
+      <div class="col-xs-4 col-md-2 bot">
         <%= link_to "categorie?category=Changer+de+m%C3%A9tier",  {controller: "ressources", action: "category", category: @categories[1] } do %>
           <i class="fa fa-magic"></i>
           <p class= "little-header">Changer de Métier</p>
         <% end %>
       </div>
-      <div class="col-xs-12 col-md-2 bot">
+      <div class="col-xs-4 col-md-2 bot">
         <%= link_to "categorie?category=Changer+de+boite",  {controller: "ressources", action: "category", category: @categories[2] } do %>
           <i class="fa fa-archive"></i>
           <p class= "little-header">Changer de Boite</p>
         <% end %>
       </div>
-      <div class="col-xs-12 col-md-2 bot">
+      <div class="col-xs-4 col-md-2 bot">
         <%= link_to "categorie?category=Créer+sa+boite",  {controller: "ressources", action: "category", category: @categories[3] } do %>
           <i class="fa fa-hand-peace-o"></i>
           <p class= "little-header">Créer sa boite</p>
         <% end %>
       </div>
-      <div class="col-xs-12 col-md-2 bot">
+      <div class=" col-xs-4 col-md-2 bot">
         <%= link_to "categorie?category=Intraprendre",  {controller: "ressources", action: "category", category: @categories[4] } do %>
           <i class="fa fa-flask"></i>
           <p class= "little-header">Intraprendre</p>
         <% end %>
       </div>
     </div>
-    <div class="col-xs-12 col-md-12">
-      <!-- link_to "Découvrir maintenant", ressources_path, class: "btn btn-primary" %> -->
-    </div>
   </div>
 </div>
 
-<div id="notre-mission" class="text-center">
+<div id="notre-mission" class="text-center hidden-xs">
   <div class="container block">
     <div class="row">
       <div class="col-xs-12">
@@ -113,48 +113,49 @@ end %> -->
   </div>
 </div>
 
-<div class="text-center">
-  <div class="container padded">
-    <div class="row">
-      <div class="col-xs-3 trait"></div>
-      <div class="col-xs-6">
-        <p class="home-header">LES DERNIERES DECOUVERTES</p>
-      </div>
-      <div class="col-xs-3 trait"></div>
-    </div>
-  </div>
-</div>
-
-<div id="discover">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="owl-carousel">
-          <% @ressources = Ressource.order("created_at desc").limit(6) %>
-          <% @ressources.each do |ressource| %>
-            <div>
-              <div class="item">
-                <div class="img-ress" style="background: url(<%= ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(100%); -moz-filter: brightness(100%);">
-                </div>
-                <%= link_to ressource_path(ressource.id), {controller: "ressources", action: "show" } do %>
-                  <h2><%= ressource.title %></h2>
-                  <p><%= ressource.description %></p>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
+<div class= "hidden-xs">
+  <div class="text-center">
+    <div class="container padded">
+      <div class="row">
+        <div class="col-xs-3 trait"></div>
+        <div class="col-xs-6">
+          <p class="home-header">LES DERNIERES DECOUVERTES</p>
         </div>
-<!--         <div class="customNavigation">
-          <a class="btn prev">Précédent</a>
-          <a class="btn next">Suivant</a>
-        </div> -->
+        <div class="col-xs-3 trait"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="discover">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="owl-carousel">
+            <% @ressources = Ressource.order("created_at desc").limit(6) %>
+            <% @ressources.each do |ressource| %>
+              <div>
+                <div class="item">
+                  <div class="img-ress" style="background: url(<%= ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(100%); -moz-filter: brightness(100%);">
+                  </div>
+                  <%= link_to ressource_path(ressource.id), {controller: "ressources", action: "show" } do %>
+                    <h2><%= ressource.title %></h2>
+                    <p><%= ressource.description %></p>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+  <!--         <div class="customNavigation">
+            <a class="btn prev">Précédent</a>
+            <a class="btn next">Suivant</a>
+          </div> -->
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-
-<div id="parceque" class="text-center">
+<div id="parceque" class="text-center hidden-xs">
   <div class="container block">
     <div class="row">
       <div class="col-xs-12">
@@ -190,7 +191,7 @@ end %> -->
             <div id="mc_embed_signup_scroll">
               <input type="email" name="EMAIL" class="email form-control text-center" id="mce-EMAIL" placeholder="votrecontact@gmail.com" required><br>
               <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <input type="submit" value="S'inscrire" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+              <input type="submit" value="S'inscrire" name="subscribe" id="mc-embedded-subscribe" class="btn btn-transparent">
             </div>
           </form>
         </div>

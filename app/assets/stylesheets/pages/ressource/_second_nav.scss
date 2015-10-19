@@ -2,14 +2,15 @@
   background-color: white;
   position: fixed;
   width: 100%;
+  border-bottom: 1px solid $gray-lighter;
+
   li {
-    font-family: $my-font;
-    font-size: 18px;
-    padding-right: 10px;
+    font-size: 10px;
+    padding-right: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
     a {
-      color: black;
+      color: $gray-light;
       &:hover {
         border-bottom: 2px solid $blue;
       }
