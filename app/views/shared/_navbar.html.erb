@@ -66,15 +66,9 @@
             </ul>
           </li>
         <% else %>
-<!--           <li>
-            link_to t(".sign_up", default: "INSCRIPTION"), new_user_registration_path
-          </li> -->
-          <li>
+          <li class="little-screen">
             <%= link_to t(".sign_in", default: "SE CONNECTER"), new_user_session_path, class: "btn" %>
           </li>
-<!--           <li>
-            link_to "CONNEXION AVEC FACEBOOK", user_omniauth_authorize_path(:facebook)
-          </li> -->
         <% end %>
 
       </ul>

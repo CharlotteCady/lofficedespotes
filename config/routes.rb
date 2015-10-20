@@ -22,14 +22,18 @@ Rails.application.routes.draw do
 
   resources :ressources do
     resources :comments, only: [:index, :create, :destroy]
-  end
-
-  resources :ressources do
     member do
       put "like", to: "ressources#like"
       put "dislike", to: "ressources#dislike"
     end
   end
+
+  # resources :ressources do
+  #   member do
+  #     put "like", to: "ressources#like"
+  #     put "dislike", to: "ressources#dislike"
+  #   end
+  # end
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 end
