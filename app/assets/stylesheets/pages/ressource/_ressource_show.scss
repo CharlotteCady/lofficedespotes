@@ -13,24 +13,23 @@
       padding-top: 15px;
     }
   }
-    // ========   ARTICLE   ========
+    // ========   BANNIERE GRAND ECRAN   ========
 
   background-color: white;
   margin-top: 60px;
-  // padding-top: 20px;
   padding-bottom: 20px;
   .banner {
-    margin-right: 0;
+    // margin-left: 200px;
+    width: 100%;
   }
   #banner-image {
     min-height: 550px;
     margin-top: -5px;
     position: relative;
-    width: 100%;
   }
 
   .content-banner {
-    padding-left: 80px;
+    padding-left: 40px;
     padding-top: 180px;
     position: absolute;
     top: 0;
@@ -57,13 +56,19 @@
         background-color: $gray-darker;
       }
     }
+    .btn-primary {
+      &:hover {
+        background-color: $blue;
+        color: white;
+      }
+    }
   }
   .publishing-date {
     display: block;
     background: #111;
     padding: 24px;
     position: absolute;
-    top: -50px;
+    top: 80px;
     right: 0;
     margin-bottom: 40px;
     font-size: 13px;
@@ -102,7 +107,7 @@
   }
   .writer-info {
     p {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 30px;
     color: $gray-lighter;
     font-size: 12px;
@@ -111,6 +116,16 @@
       width: 30px;
       margin-right: 10px;
     }
+
+
+    // BANNIERE PETIT ECRAN
+
+    .banner-little-screen {
+      width: 100%;
+    }
+
+
+    // CONTENU DE L'ARTICLE
   }
   .content {
     margin-top: -100px;

@@ -17,21 +17,21 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
+      <ul class="nav navbar-nav navbar-right" id= "little-screen">
+        <li class="little-screen">
           <%= link_to t(".top_call_to_action", default: "Le guide de l'emploi"), ressources_path, class: "navbar-menu" %>
         </li>
-        <li>
+        <li class="little-screen">
           <%= link_to t(".top_call_to_action", default: "A propos"), about_path, class: "navbar-menu" %>
         </li>
-        <li>
+        <li class="little-screen">
           <%= link_to "https://www.facebook.com/pages/Workup/1569854826618353", class: "navbar-menu", target: "blank" do %>
             <i class="fa fa-facebook"></i>
           <% end %>
         </li>
         <% if user_signed_in? %>
 
-          <li class="dropdown">
+          <li class="dropdown little-screen">
             <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
               <% if current_user.avatar? %>
                 <%= image_tag current_user.avatar.url(:medium), class: "img-avatar" %>
@@ -57,9 +57,6 @@
                     <i class="fa fa-plus-square"></i>  <%= t ".profile", default: "Créer un article" %>
                   <% end %>
                 <% end %>
-              </li>
-              <li>
-                  <!-- <i class="fa fa-comments"></i>   t ".profile", default: "MES ECHANGES" %> -->
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>

@@ -182,13 +182,29 @@ $navbar-profile-border-width: 1px;
       .navbar-brand img, .navbar-brand svg {
         height: 30px;
       }
-      .navbar-brand, .navbar-brand:hover
+      // .navbar-brand, .navbar-brand:hover
+      .navbar-header
        {
         display: block;
         color: $navbar-color;
         padding-top: 0;
         padding-bottom: 0;
+        background: $navbar-bg;
+        padding: 0;
       }
+    }
+  }
+
+  // SOUS MENU DROPDOWN POUR PETITS ECRANS
+  #bs-example-navbar-collapse-1 {
+    ul#little-screen {
+      float: right;
+      li.little-screen {
+        float: left;
+      }
+    }
+    ul.dropdown-menu {
+      background-color: $gray-lighter;
     }
   }
 }
