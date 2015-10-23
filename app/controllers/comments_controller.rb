@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_filter :check_privileges!, only: [:destroy]
   before_action :find_ressource, only: [:create, :destroy]
+  # respond_to :html, :js
 
   def index
     @ressource = Ressource.find(params[:ressource_id])
@@ -11,19 +12,19 @@ class CommentsController < ApplicationController
     @comment = @ressource.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      @comment.update(user_id: current_user.id)
-      puts "Merci pour votre témoignage / commentaire :)"
-      redirect_to ressource_path(@ressource)
-      # respond_to do |format|
-      #   format.html { redirect_to ressource_path(@ressource) }
-      #   format.js
-      # end
+      # @comment.update(user_id: current_user.id)
+      # puts "Merci pour votre témoignage / commentaire :)"
+      # redirect_to ressource_path(@ressource)
+      respond_to do |format|
+        format.html { redirect_to ressource_path(@ressource) }
+        format.js # <-- will render `app/views/comments/create.js.erb`
+      end
     else
-      # respond_to do |format|
-      #   format.html { render 'ressource/show' }
-      #   format.js
-      # end
-      puts "Désolé, il y a eu un problème :("
+      respond_to do |format|
+        format.html { render 'ressources/show' }
+        format.js
+      end
+      # puts "Désolé, il y a eu un problème :("
     end
   end
 

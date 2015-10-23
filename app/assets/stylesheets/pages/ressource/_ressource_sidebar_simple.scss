@@ -1,8 +1,8 @@
 #sidebar_simple {
   margin-right: 200px;
   z-index: 1000;
-  padding-top: 25px;
-  padding-left: 20px;
+  padding-top: 15px;
+  // padding-left: 20px;
   background-color: #f1f1f1;
   // background: image-url('eight_horns.png') repeat;
 
@@ -13,19 +13,29 @@
   h2 {
     font-size: 22px;
     color: black;
+    font-family: $header-font;
+    letter-spacing: 0.5px;
+    // font-weight: bold;
   }
   i {
     float: left;
     padding-right: 15px;
     padding-top: 3px;
     color: black;
+    width: 30px;
   }
   a {
     color: black;
     &:hover {
-      color: black;
-      border-bottom: 2px solid $blue;
+      color: $blue;
     }
+  }
+  // .menu {
+  //   border-bottom: 1px solid #e8e5e5;
+  // }
+
+  .sidebar-category {
+    padding-left: 20px;
   }
 
   .sidebar_sub_cat {
@@ -39,6 +49,7 @@
   .follow-us {
     position: absolute;
     bottom: 80px;
+    padding-left: 20px;
     a, i {
       color: $gray;
     &:hover {

@@ -61,6 +61,30 @@
 
 }
 
+@font-face {
+    font-family: 'futura_condensedbold';
+    src: url('ufonts.com_futura-condensed-bold-webfont.eot');
+    src: url('ufonts.com_futura-condensed-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ufonts.com_futura-condensed-bold-webfont.woff2') format('woff2'),
+         url('ufonts.com_futura-condensed-bold-webfont.woff') format('woff'),
+         url('ufonts.com_futura-condensed-bold-webfont.ttf') format('truetype'),
+         url('ufonts.com_futura-condensed-bold-webfont.svg#futura_condensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura_condensedregular';
+    src: url('ufonts.com_futura-condensed-regular-webfont.eot');
+    src: url('ufonts.com_futura-condensed-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ufonts.com_futura-condensed-regular-webfont.woff2') format('woff2'),
+         url('ufonts.com_futura-condensed-regular-webfont.woff') format('woff'),
+         url('ufonts.com_futura-condensed-regular-webfont.ttf') format('truetype'),
+         url('ufonts.com_futura-condensed-regular-webfont.svg#futura_condensedregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $my-font: "bebas_neueregular", "sans-serif";
 $logo-font: "langdonregular", "sans-serif";
 $base-font: "Source Sans Pro", "Helvetica", "sans-serif";
@@ -79,7 +103,7 @@ $red: #EE5F5B;
 $blue: #1ECBCA;
 $yellow: #FDB631;
 $orange: #E67E22;
-$green: #32B796;
+$green: #043D44;
 $purple: #6452BD;
 $black: #000000;
 
@@ -89,3 +113,4 @@ $gray-dark:    lighten(#000, 20%);   // #333
 $gray:         lighten(#000, 33.5%); // #555
 $gray-light:   lighten(#000, 46.7%); // #777
 $gray-lighter: lighten(#000, 94.5%); // #eee
+

@@ -46,19 +46,18 @@
       <div class="content">
         <div id="category-description" class="padded text-center" style="background-image: url(<%= asset_path(@category_page.split.join.downcase.gsub("é", "e") + ".png") %>); background-repeat: repeat;">
 
-          <h1><%= @category_page %></h1>
           <% if @category_page == @categories[0] %>
-            <p>Les meilleurs événements emploi, sites de recrutement, structures d'accompagnement, conseils d'experts pour trouver un job qui vous plaît</p>
+            <h1>Les meilleurs événements emploi, sites de recrutement, structures d'accompagnement, conseils d'experts pour trouver un job qui vous plaît</h1>
           <% elsif @category_page == @categories[1] %>
-            <p>Les meilleures formations, témoignages, conseils, événements pour changer de métier sereinement</p>
+            <h1>Les meilleures formations, témoignages, conseils, événements pour changer de métier sereinement</h1>
           <% elsif @category_page == @categories[2] %>
-            <p>Les meilleurs conseils pratiques et outils pour trouver une entreprise où vous pourrez enfin vous épanouir</p>
+            <h1>Les meilleurs conseils pratiques et outils pour trouver une entreprise où vous pourrez enfin vous épanouir</h1>
           <% elsif @category_page == @categories[3] %>
-            <p>Des conseils, rencontres, outils pratiques et événements pour créer sa boite ou devenir indépendant simplement</p>
+            <h1>Des conseils, rencontres, outils pratiques et événements pour créer sa boite ou devenir indépendant simplement</h1>
           <% elsif @category_page == @categories[4] %>
-            <p>Des témoignages d'entreprises et de salariés, des conseils, des événements et plus encore pour intraprendre facilement</p>
+            <h1>Des témoignages d'entreprises et de salariés, des conseils, des événements et plus encore pour intraprendre facilement</h1>
           <% else %>
-            <p>quote</p>
+            <h1>quote</h1>
           <% end %>
           <div class="row">
             <div class="col-xs-12 hidden-xs">

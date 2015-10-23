@@ -81,8 +81,8 @@ $navbar-profile-border-width: 1px;
     }
 
     .navbar-menu:hover {
-      border-bottom: 2px solid $blue;
-      color: white;
+      // border-bottom: 2px solid $blue;
+      color: $blue;
     }
 
     .navbar-brand,

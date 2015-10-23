@@ -18,6 +18,7 @@
   margin-top: 60px;
   h1 {
     margin-top: 150px;
+    // margin-left: -100px;
   }
   p {
     color: white;
@@ -31,6 +32,69 @@
   i {
     margin-bottom: 20px;
   }
+  /*Vertical Sliding*/
+  // .slidingVertical{
+  //   display: inline;
+  //   text-indent: 8px;
+  // }
+  // .slidingVertical span{
+  //   animation: topToBottom 12s linear infinite 0s;
+  //   -ms-animation: topToBottom 12s linear infinite 0s;
+  //   -webkit-animation: topToBottom 12s linear infinite 0s;
+  //   color: #00abe9;
+  //   opacity: 0;
+  //   overflow: hidden;
+  //   position: absolute;
+  // }
+  // .slidingVertical span:nth-child(2){
+  //   animation-delay: 3s;
+  //   -ms-animation-delay: 3s;
+  //   -webkit-animation-delay: 3s;
+  // }
+  // .slidingVertical span:nth-child(3){
+  //   animation-delay: 6s;
+  //   -ms-animation-delay: 6s;
+  //   -webkit-animation-delay: 6s;
+  // }
+  // .slidingVertical span:nth-child(4){
+  //   animation-delay: 9s;
+  //   -ms-animation-delay: 9s;
+  //   -webkit-animation-delay: 9s;
+  // }
+  // .slidingVertical span:nth-child(5){
+  //   animation-delay: 12s;
+  //   -ms-animation-delay: 12s;
+  //   -webkit-animation-delay: 12s;
+  // }
+
+  // /*topToBottom Animation*/
+  // @-moz-keyframes topToBottom{
+  //   0% { opacity: 0; }
+  //   5% { opacity: 0; -moz-transform: translateY(-50px); }
+  //   10% { opacity: 1; -moz-transform: translateY(0px); }
+  //   25% { opacity: 1; -moz-transform: translateY(0px); }
+  //   30% { opacity: 0; -moz-transform: translateY(50px); }
+  //   80% { opacity: 0; }
+  //   100% { opacity: 0; }
+  // }
+  // @-webkit-keyframes topToBottom{
+  //   0% { opacity: 0; }
+  //   5% { opacity: 0; -webkit-transform: translateY(-50px); }
+  //   10% { opacity: 1; -webkit-transform: translateY(0px); }
+  //   25% { opacity: 1; -webkit-transform: translateY(0px); }
+  //   30% { opacity: 0; -webkit-transform: translateY(50px); }
+  //   80% { opacity: 0; }
+  //   100% { opacity: 0; }
+  // }
+  // @-ms-keyframes topToBottom{
+  //   0% { opacity: 0; }
+  //   5% { opacity: 0; -ms-transform: translateY(-50px); }
+  //   10% { opacity: 1; -ms-transform: translateY(0px); }
+  //   25% { opacity: 1; -ms-transform: translateY(0px); }
+  //   30% { opacity: 0; -ms-transform: translateY(50px); }
+  //   80% { opacity: 0; }
+  //   100% { opacity: 0; }
+  // }
 }
 #banner::before {
   content: "";
@@ -82,13 +146,12 @@
 // ===============================================================
 
 #notre-mission {
-  background: image-url("initiative-emploi.png") no-repeat fixed center;
+  background: image-url("initiative-pour-l-emploi.png") no-repeat fixed center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   min-height: 620px;
-  position: relative;
   p {
     color: white;
     font-size: 18px;
@@ -97,14 +160,17 @@
     padding: 40px;
   }
 }
-#notre-mission::before {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+
+
+.alternate_color{
+z-index: 0;
+}
+#socket {
+margin-top: 0px;
+z-index: 0;
+}
+.main_color {
+position: inherit;
 }
 
 // dernières découvertes
@@ -160,7 +226,6 @@
     -o-background-size: cover;
     background-size: cover;
   min-height: 620px;
-  position: relative;
   p {
     color: white;
     font-size: 18px;
@@ -169,15 +234,15 @@
     padding: 40px;
   }
 }
-#parceque::before {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
+// #parceque::before {
+//   content: "";
+//   background-color: rgba(0, 0, 0, 0.5);
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+// }
 
 // Newsletter
 // ===============================================================
@@ -203,7 +268,6 @@
     -o-background-size: cover;
     background-size: cover;
   min-height: 500px;
-  position: relative;
   .trait {
     border-color: white;
   }
@@ -221,13 +285,13 @@
   }
 }
 
-  #contact::before {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+  // #contact::before {
+  //   content: "";
+  //   background-color: rgba(0, 0, 0, 0.4);
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  // }
 }
