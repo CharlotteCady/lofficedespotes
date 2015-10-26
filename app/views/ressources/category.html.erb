@@ -47,15 +47,15 @@
         <div id="category-description" class="padded text-center" style="background-image: url(<%= asset_path(@category_page.split.join.downcase.gsub("é", "e") + ".png") %>); background-repeat: repeat;">
 
           <% if @category_page == @categories[0] %>
-            <h1>Les meilleurs événements emploi, sites de recrutement, structures d'accompagnement, conseils d'experts pour trouver un job qui vous plaît</h1>
+            <h1>Les meilleurs sites de recrutement, structures d'accompagnement, événements dédiés à l'emploi, conseils d'experts pour trouver un job qui vous rend heureux</h1>
           <% elsif @category_page == @categories[1] %>
-            <h1>Les meilleures formations, témoignages, conseils, événements pour changer de métier sereinement</h1>
+            <h1>Les meilleures formations, témoignages, conseils d'experts, événements pour changer de métier sereinement</h1>
           <% elsif @category_page == @categories[2] %>
-            <h1>Les meilleurs conseils pratiques et outils pour trouver une entreprise où vous pourrez enfin vous épanouir</h1>
+            <h1>Les meilleurs conseils pratiques, sites de recrutement, événements, initiatives pour trouver une entreprise où vous pourrez vous épanouir</h1>
           <% elsif @category_page == @categories[3] %>
-            <h1>Des conseils, rencontres, outils pratiques et événements pour créer sa boite ou devenir indépendant simplement</h1>
+            <h1>Les meilleurs conseils, outils pratiques, structures d'accompagnement, événements pour créer sa boite ou devenir indépendant tout simplement</h1>
           <% elsif @category_page == @categories[4] %>
-            <h1>Des témoignages d'entreprises et de salariés, des conseils, des événements et plus encore pour intraprendre facilement</h1>
+            <h1>Les meilleurs témoignages d'entreprises et de salariés, des conseils, des événements et plus encore pour intraprendre facilement</h1>
           <% else %>
             <h1>quote</h1>
           <% end %>

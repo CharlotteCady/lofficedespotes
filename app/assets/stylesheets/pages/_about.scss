@@ -18,11 +18,13 @@
   // =========== BLOC MISSION
 
   #mission {
+    margin-top: 60px;
     min-height: 500px;
     // background-color: #f1f1f1;
-    img {
-      width: 100px;
-    }
+
+  }
+  #edito p {
+    text-align: justify;
   }
 
   // =========== L'emploi en france
@@ -59,5 +61,10 @@
   #loveyourjob {
     background: image-url("acteurs-emploi.png") repeat;
     height: 150px;
+  }
+  .soutien {
+    img {
+      width: 100px;
+    }
   }
 }

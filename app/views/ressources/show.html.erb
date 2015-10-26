@@ -134,37 +134,65 @@
           </p>
         </div>
 
+
+<!-- COMMENTAIRE AVEC ACT_AS_COMMENTABLE -->
         <% if user_signed_in? %>
           <div class="add-comment">
-            <div class= "user">
-              <% if current_user.avatar? %>
-                <%= image_tag current_user.avatar.url(:medium), class: "img img-circle" %>
-              <% else %>
-                <%= image_tag "eight_horns.png", class: "img-circle" %>
-              <% end %>
-              <% if current_user.name? %>
-                <%= current_user.name.capitalize %>
-              <% else %>
-                <%= current_user.first_name + " " + current_user.last_name %>
-              <% end %>
-            </div>
-            <%= render "comments/form", ressource: @ressource, comment: @comment %>
+            <div class="footer-header">Tous les témoignages et commentaires</div>
+
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+                /*
+                var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() {  // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+
+                    s.src = '//workuper.disqus.com/embed.js';
+
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <!-- <div class= "user">
+               if current_user.avatar? %>
+                = image_tag current_user.avatar.url(:medium), class: "img img-circle" %>
+               else %>
+                = image_tag "eight_horns.png", class: "img-circle" %>
+               end %>
+               if current_user.name? %>
+                = current_user.name.capitalize %>
+               else %>
+                = current_user.first_name + " " + current_user.last_name %>
+               end %>
+            </div> -->
+            <!-- = render "comments/form", ressource: @ressource, comment: @comment %> -->
           </div>
         <% else %>
-          <p class="add-comment">Vous devez être connecté pour commenter cet article :)</p>
+          <p class="connect-to-comment">Vous devez être
+                        <%= link_to t(".sign_in", default: "connecté"), new_user_session_path %>
+                        pour commenter et voir les commentaires de cet article :)</p>
         <% end %>
-        <div class="footer-header">Tous les témoignages et commentaires</div>
-        <div id="comments">
-          <% if @comments == [] %>
+        <!-- <div id="comments">
+           if @comments == [] %>
             <p>Partagez le 1er témoignage / commentaire auprès de la communauté de workupers</p>
-          <% else %>
-            <% @comments.each do |comment| %>
-              <%= render 'comments/show', comment: comment %>
-            <% end %>
-          <% end %>
-        </div>
+           else %>
+             @comments.each do |comment| %>
+              = render 'comments/show', comment: comment %>
+             end %>
+           end %>
+        </div> -->
       </div>
     </div>
   </div>
 </div>
+
+
 
