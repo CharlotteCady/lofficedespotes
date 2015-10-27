@@ -1,4 +1,4 @@
-#devise_passwords_new, #devise_passwords_create {
+#devise_registrations_create {
   #navbar-workup {
     .navbar-nav {
       margin-top: 15px;
@@ -7,15 +7,12 @@
 
   background: image-url('eight_horns.png') repeat;
   margin-top: 100px;
-  #password {
+  #signup {
     background-color: white;
-    margin-bottom: 40px;
     text-align: center;
     padding: 25px;
+    margin-bottom: 40px;
     border-radius: 3px;
-    p {
-      font-size: 14px;
-    }
     img {
       margin-top: 20px;
       margin-bottom: 20px;
@@ -29,5 +26,9 @@
       margin-top: 5px;
       // width: 250px;
     }
+  }
+  .btn-facebook {
+    background-color: rgb(59, 89, 152);
+    color: white;
   }
 }

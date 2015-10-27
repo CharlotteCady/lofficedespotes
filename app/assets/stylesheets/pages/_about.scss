@@ -6,33 +6,40 @@
   }
   // =============== BLOC IMAGE ET QUOTE
   #souhait {
-    background: image-url("acteurs-emploi.png") repeat;
-    // min-height: 400px;
-    h1 {
-      margin: 0;
-      padding-top: 60px;
-      padding-bottom: 100px;                                                                                                                                                                                                                                             bottom: 30px;
+    background: image-url("initiatives-pour-lemploi.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 400px;
+    p {
+      margin-top: 60px;
+      padding-top: 100px;
+      font-size: 60px;
+      color: white;
+      font-family: $my-font;                                                                                                                                                                                                                                   bottom: 30px;
     }
   }
 
   // =========== BLOC MISSION
 
-  #mission {
-    margin-top: 60px;
-    min-height: 500px;
-    // background-color: #f1f1f1;
-
-  }
-  #edito p {
-    text-align: justify;
+  #edito {
+    p {
+      text-align: justify;
+    }
+    .paragraphe {
+      padding-bottom: 25px;
+    }
   }
 
   // =========== L'emploi en france
   #emploi {
     background: image-url("acteurs-emploi.png") repeat;
     min-height: 400px;
-    h2 {
+    h1 {
       padding-bottom: 50px;
+      font-size: 60px;
+      color: white;
     }
   }
 
@@ -57,14 +64,26 @@
     font-size: 60px;
     color: white;
   }
-  // =========== LOVE YOUR JOB
+  // =========== ILS NOUS SOUTIENNENT
   #loveyourjob {
     background: image-url("acteurs-emploi.png") repeat;
-    height: 150px;
+    // min-height: 300px;
+    p {
+      font-size: 60px;
+      color: white;
+      font-family: $my-font;
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
   }
   .soutien {
     img {
-      width: 100px;
+      height: 50px;
+      text-align: center;
+    }
+    ul {
+      padding-top: 50px;
+      padding-bottom: 50px;
     }
   }
 }
