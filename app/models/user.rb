@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  after_create :send_welcome_email
   acts_as_voter
 
   # Include default devise modules. Others available are:
@@ -28,4 +29,9 @@ class User < ActiveRecord::Base
     end
   end
 
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
 end
