@@ -29,6 +29,7 @@ gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.
 gem 'activeadmin', github: 'activeadmin'
 gem 'sitemap_generator'
 gem 'bootsy'
+gem 'gibbon'
 
 
 group :development, :test do
