@@ -49,20 +49,21 @@ p {
 }
 
 p.title {
-  color: white;
  // font-size: 26px;
  font-family: $my-font;
  // border-radius: 3px;
- background-color: $blue;
  padding: 10px;
  // padding-left: 15px;
  // margin-top: 60px;
 
  text-align: center;
- font-size: 36px;
- border: 2px solid $blue;
  margin-top: 50px;
  margin-bottom: 50px;
+ background-color: #FFF;
+ font-size: 30px;
+ color: #000;
+ border-top: 2px solid #000;
+ border-bottom: 2px solid #000;
 }
 .first-title {
   margin-top: 0px;

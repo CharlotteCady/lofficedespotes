@@ -51,14 +51,8 @@
     }
   }
 
-  #dream-job-video::before {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  video#dream-job-video {
+    filter: brightness(50%);
   }
 
   #banner {
@@ -70,9 +64,6 @@
     ul  {
       margin-bottom: 50px;
     }
-  }
-  .content {
-    background-color: rgba(0, 0, 0, 0.8);
   }
 
   .full{
