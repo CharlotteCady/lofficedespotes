@@ -84,6 +84,23 @@
       <% end %>
     </ul>
   </div>
+  <div class="menu">
+    <div class="sidebar-category">
+<!--       <i class="fa fa-heart"></i>
+ -->      <h2><% link_to @categories[5],  {controller: "ressources", action: "category", category: @categories[5] } %></h2>
+    </div>
+    <ul class="sidebar_sub_cat hidden list-unstyled">
+      <li><%= link_to "Toutes les ressources", ressources_path %></li>
+      <% Ressource.all.each do |r| %>
+        <% unless @subcat_sidebar.include?(r.subcategory) %>
+          <% if r.category == "Intraprendre" %>
+            <% @subcat_sidebar << r.subcategory %>
+            <li><%= link_to r.subcategory, ressources_path %></li>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
   <div class="follow-us">
     <div class="social-media">
       <%= link_to "https://www.facebook.com/pages/Workup/1569854826618353", target: "blank" do %>

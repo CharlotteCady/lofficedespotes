@@ -10,6 +10,13 @@ $(document).ready(function(){
     itemsTablet: [600,1], //2 items between 600 and 0
     itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
   });
+  $('.owl-carousel-big').owlCarousel({
+    // navigation : true,
+    // slideSpeed : 300,
+    // paginationSpeed : 400,
+    // singleItem:true
+    items : 2, //4 items above 1000px browser width
+  });
 
 // Custom Navigation Events
   // $(".next").click(function(){

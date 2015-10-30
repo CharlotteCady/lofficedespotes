@@ -77,12 +77,17 @@ $navbar-profile-border-width: 1px;
     .navbar-nav > li > a:hover,
     .navbar-nav > .open > a:hover {
       color: $navbar-hover-color;
-      background-color: transparent;
+      opacity: 0.8;
     }
 
-    .navbar-menu:hover {
-      // border-bottom: 2px solid $blue;
-      color: $blue;
+    .navbar-nav > li > a#login,
+    .navbar-nav > .open > a#login {
+      margin-left: 10px;
+    }
+
+    .navbar-nav > li > a#login:hover,
+    .navbar-nav > .open > a#login:hover {
+      opacity: 1;
     }
 
     .navbar-brand,
@@ -113,6 +118,7 @@ $navbar-profile-border-width: 1px;
       margin-bottom: 8px;
       &:hover{
         background-color: $blue;
+        border: 1px solid $blue;
       }
     }
 

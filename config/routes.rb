@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   ActiveAdmin.routes(self)
   get '/a-propos', to: "pages#about", as: '/about'
+  get '/comment-cela-marche', to: "pages#how", as: '/how'
   get "/categorie", to: "ressources#category", as: "/category"
   post "category", to: "ressources#category"
   # get "/guide-de-l-emploi", to: "ressources#index", as: "/ressources"

@@ -13,7 +13,7 @@ class RessourcesController < ApplicationController
       @ressources = Ressource.all.order('created_at DESC')
     end
 
-    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"]
+    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'éclater"]
     @subcat_sidebar = ["Voir tout"]
   end
@@ -24,7 +24,7 @@ class RessourcesController < ApplicationController
   # end
 
   def show
-    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"]
+    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'éclater"]
     @subcat_sidebar = ["Voir tout"]
     @comment = @ressource.comments.new
@@ -36,7 +36,7 @@ class RessourcesController < ApplicationController
 
   def new
     @ressource = Ressource.new
-    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"]
+    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'éclater"]
   end
 
@@ -84,7 +84,7 @@ class RessourcesController < ApplicationController
   end
 
   def category
-    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"]
+    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'éclater"]
     @subcat_sidebar = ["Voir tout"]
     @category_page = params[:category]

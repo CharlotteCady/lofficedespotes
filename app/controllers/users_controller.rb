@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def favorites
-    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"]
+    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'éclater"]
     @category = params[:category]
     @ressources = Ressource.where(category: @category)

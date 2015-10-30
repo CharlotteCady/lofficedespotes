@@ -7,281 +7,35 @@ content_for(:description) do %>
   Des histoires inspirantes, des rencontres et des outils pour oser créer le job qui vous passionne !
 end %> -->
 
-<div id="banner" class="text-center">
+<%= image_tag "home.jpg", class: "bg visible-xs" %>
+<%= video_tag "dreamjob.mp4", class: "hidden-xs", id: "dream-job-video", autoplay: true, loop: true, muted: true  %>
+<div id="banner" class="text-center full middle">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <h1 id= "baseline" class= "text-center">
-          A LA RECHERCHE DU JOB
-          <!-- <div class="slidingVertical"> -->
-            <span style="color: #1ECBCA;">IDEAL</span> ?
-<!--             <span style="color: #1ECBCA;">Passionne</span>
-            <span style="color: #1ECBCA;">Fait rêver</span>
-            <span style="color: #1ECBCA;">Epanouis</span>
-            <span style="color: #1ECBCA;">Fais souri</span> -->
-          <!-- </div> -->
-        </h1>
-        <p>
-          Nous avons sélectionné pour vous les meilleures initiatives, structures d'accompagnement, applications, événements, témoignages, conseils et bien plus encore, pour vous aider à trouver un job dans lequel vous épanouir. Découvrez les maintenant !
-        </p>
-      </div>
-      <div class="col-xs-12">
-        <ul class="list-inline hidden-xs">
-          <!--  <li> link_to "c'est parti", ressources_path, class: "btn btn-primary"</li>-->
-          <li><%= link_to "Chercher un job", "categorie?category=Chercher+un+job", class: "btn btn-transparent" %></li>
-          <li><%= link_to "Changer de métier", "categorie?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
-          <li><%= link_to "Changer de boite", "categorie?category=Changer+de+boite", class: "btn btn-transparent" %></li>
-          <li><%= link_to "Créer sa boite", "categorie?category=Créer+sa+boite", class: "btn btn-transparent" %></li>
-          <li><%= link_to "Intraprendre", "categorie?category=Intraprendre", class: "btn btn-transparent" %></li>
-        </ul>
-        <div class="visible-xs">
-          <%= link_to "Découvrir Maintenant", ressources_path, class: "btn btn-primary" %>
-        </div>
-      </div>
-      <a href="#guide-caroussel"><i class="fa fa-angle-down pulse"></i></a>
-    </div>
-  </div>
-</div>
-
-<div id="guide-caroussel"></div>
-
-<div id="guide" class="text-center">
-  <div class="container padded">
-    <div class="row">
-      <div class="col-xs-3 trait"></div>
-      <div class="col-xs-6">
-        <p class="home-header">COMMENT CA MARCHE ?</p>
-      </div>
-      <div class="col-xs-3 trait"></div>
-      <div class="col-xs-offset-1 col-xs-10 padded">
-        <b><p>
-          Que vous soyez à la recherche d'un emploi, en poste ou en création d'entreprise, nous voulons vous donner toutes les informations et les bons outils pour vous accompagner dans votre réflexion et vous aider à trouver ou créer le job qui vous convient.
-        </p></b><br>
-        <p class="hidden-xs">
-          Pour cela, nous testons des outils, des formations, des ateliers, des cours, des MOOCs, nous lisons des articles, des magazines, des blogs, des livres, nous visionnons de nombreuses vidéos et nous rencontrons les nouveaux acteurs de l'emploi pour vous offrir une sélection adaptée à vos besoins et surtout vous faire découvrir tout ce que l'on aime.</p>
-        <b><p>Et concrètement ?</p></b>
-        <p>Nous vous invitons à découvrir cette sélection selon votre situation. Vous pouvez aimer une initiative, l'enregistrer dans vos favoris, la commenter et même contacter les structures qui vous plaisent pour aller encore plus loin. <br>A vous de créer votre propre sélection !
-        <!-- <br> -->
-          <!-- N'hésitez pas à nous faire part de vos découvertes pour nous aider à enrichir notre sélection ! -->
-        </p>
-
-      </div>
-
-      <!-- GRAND ECRAN -->
-      <% @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"] %>
-
-      <div class="row hidden-xs">
-        <div class="col-sm-offset-1 col-sm-2 bot">
-          <%= link_to "categorie?category=Chercher+un+job",  {controller: "ressources", action: "category", category: @categories[0] } do %>
-            <i class="fa fa-search"></i>
-            <p class= "little-header">Chercher un Job</p>
-          <% end %>
-        </div>
-        <div class="col-sm-2 bot">
-          <%= link_to "categorie?category=Changer+de+m%C3%A9tier",  {controller: "ressources", action: "category", category: @categories[1] } do %>
-            <i class="fa fa-magic"></i>
-            <p class= "little-header">Changer de Métier</p>
-          <% end %>
-        </div>
-        <div class="col-sm-2 bot">
-          <%= link_to "categorie?category=Changer+de+boite",  {controller: "ressources", action: "category", category: @categories[2] } do %>
-            <i class="fa fa-archive"></i>
-            <p class= "little-header">Changer de Boite</p>
-          <% end %>
-        </div>
-        <div class="col-sm-2 bot">
-          <%= link_to "categorie?category=Créer+sa+boite",  {controller: "ressources", action: "category", category: @categories[3] } do %>
-            <i class="fa fa-hand-peace-o"></i>
-            <p class= "little-header">Créer sa boite</p>
-          <% end %>
-        </div>
-        <div class="col-sm-2 bot">
-          <%= link_to "categorie?category=Intraprendre",  {controller: "ressources", action: "category", category: @categories[4] } do %>
-            <i class="fa fa-flask"></i>
-            <p class= "little-header">Intraprendre</p>
-          <% end %>
-        </div>
-      </div>
-
-      <!-- PETIT ECRAND -->
-      <div class="row visible-xs" id= "process-little-screen">
+      <div class="content">
         <div class="col-xs-12">
-          <div class="btn-group">
-            <button type="button" class="btn btn-primary" id="looking_for">Que cherchez-vous ?</button>
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <%= link_to "categorie?category=Chercher+un+job",  {controller: "ressources", action: "category", category: @categories[0] } do %>
-                  <p class= "little-header">Chercher un Job</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to "categorie?category=Changer+de+m%C3%A9tier",  {controller: "ressources", action: "category", category: @categories[1] } do %>
-                  <p class= "little-header">Changer de Métier</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to "categorie?category=Changer+de+boite",  {controller: "ressources", action: "category", category: @categories[2] } do %>
-                  <p class= "little-header">Changer de Boite</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to "categorie?category=Créer+sa+boite",  {controller: "ressources", action: "category", category: @categories[3] } do %>
-                  <p class= "little-header">Créer sa boite</p>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to "categorie?category=Intraprendre",  {controller: "ressources", action: "category", category: @categories[4] } do %>
-                  <p class= "little-header">Intraprendre</p>
-                <% end %>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="notre-mission" class="text-center hidden-xs">
-  <div class="container block">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Pourquoi WorkUp ?</h2>
+          <h1 id= "baseline" class= "text-center">
+            A LA RECHERCHE DU JOB
+              <span style="color: #1ECBCA;">IDEAL</span> ?
+          </h1>
           <p>
-            Parce que le monde du travail évolue<br>
-            Parce que nous ferons face à plusieurs transitions professionnelles dans notre vie<br>
-            Parce que la moitié des métiers qui existent aujourd'hui auront disparus dans 20 ans<br>
-            Parce que notre génération ne voit pas le travail comme celle de nos parents<br>
-            Parce que nous sommes désormais à la recherche d'un travail qui a du sens et dans lequel nous pouvons nous épanouir
+            Nous avons sélectionné pour vous les meilleures initiatives, structures d'accompagnement, applications, événements, témoignages, conseils et bien plus encore, pour vous aider à trouver un job dans lequel vous épanouir. Découvrez les maintenant !
           </p>
-        <%= link_to "découvrir maintenant", ressources_path, class: "btn btn-primary" %>
-        <!-- </br> -->
-        <!-- VOUS GUIDER VERS LA VOIE QUI VOUS <span style="color: #1ECBCA;">CORRESPOND</span></h2> -->
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class= "hidden-xs">
-  <div class="text-center">
-    <div class="container padded">
-      <div class="row">
-        <div class="col-xs-3 trait"></div>
-        <div class="col-xs-6">
-          <p class="home-header">LES DERNIERES DECOUVERTES</p>
         </div>
-        <div class="col-xs-3 trait"></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="discover">
-    <div class="container">
-      <div class="row">
         <div class="col-xs-12">
-          <div class="owl-carousel">
-            <% @ressources = Ressource.order("created_at desc").limit(6) %>
-            <% @ressources.each do |ressource| %>
-              <div>
-                <div class="item">
-                  <div class="img-ress" style="background: url(<%= ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(100%); -moz-filter: brightness(100%);">
-                  </div>
-                  <%= link_to ressource_path(ressource.id), {controller: "ressources", action: "show" } do %>
-                    <h2><%= ressource.title %></h2>
-                    <p><%= ressource.description %></p>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
+          <ul class="list-inline hidden-xs">
+            <li><%= link_to "c'est parti", ressources_path, class: "btn btn-primary" %></li>
+            <li><%= link_to "Chercher un job", "categorie?category=Chercher+un+job", class: "btn btn-transparent" %></li>
+            <li><%= link_to "Changer de métier", "categorie?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
+            <li><%= link_to "Changer de boite", "categorie?category=Changer+de+boite", class: "btn btn-transparent" %></li>
+            <li><%= link_to "Créer sa boite", "categorie?category=Créer+sa+boite", class: "btn btn-transparent" %></li>
+            <li><%= link_to "Intraprendre", "categorie?category=Intraprendre", class: "btn btn-transparent" %></li>
+          </ul>
+          <div class="visible-xs">
+            <%= link_to "Découvrir Maintenant", ressources_path, class: "btn btn-primary" %>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<div id="parceque" class="text-center hidden-xs">
-  <div class="container block">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Toujours pas convaincu ?<h2>
-        <p>
-          <b>Saviez-vous que vous pouviez :</b><br>
-          Tester un métier pendant une journée avec un artisan ?<br>
-          Avoir des témoignages réels de professionnels concernant leur métier au quotidien ?<br>
-          Rencontrer d'autres chercheurs d'emploi et vous entraider dans vos recherches ?<br>
-          Découvrir des histoires de personnes comme vous qui ont monté leur boite ?<br>
-          Découvrir les nouveaux sites de recrutement qui cartonnent ?<br>
-          ...
-        </p>
-        <%= link_to "Je suis convaincu !", ressources_path, class: "btn btn-primary" %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="just-beginning" class="text-center">
-  <div class="container padded">
-    <div class="row">
-      <div class="col-xs-3 trait"></div>
-      <div class="col-xs-6">
-        <p class="home-header">RECEVEZ LA CRÈME DE LA CRÈME</p>
-      </div>
-      <div class="col-xs-3 trait"></div>
-      <div class="col-xs-offset-1 col-xs-10 padded">
-        <p>Une fois par semaine, nous vous envoyons les meilleures initiatives, événements, conseils, témoignages pour vous aider à trouver un job dans lequel vous vous épanouirez. Que vous soyez à la recherche d'un emploi, encore en poste ou en création d'entreprise, nos articles vous donneront de l'inspiration et des astuces concrètes pour passer à l'action !</p>
-      </div>
-      <div class="col-xs-offset-3 col-xs-6">
-        <!-- Mailchimp Form -->
-        <div id="mc_embed_signup form-group">
-          <form action="//rocks.us10.list-manage.com/subscribe/post?u=93a8a8570acd0e6bdaf4f34e7&amp;id=4374f2502c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-              <input type="email" name="EMAIL" class="email form-control text-center" id="mce-EMAIL" placeholder="votrecontact@gmail.com" required><br>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <input type="submit" value="S'inscrire" name="subscribe" id="mc-embedded-subscribe" class="btn btn-transparent">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="row">
-      <div class="col-xs-12">
-        <p>Faites parti de la grande communauté des workupers, accéder aux meilleures adresses et bons plans pour trouver le job de vos rêves.</p>
-      </div>
-    </div> -->
-  </div>
-</div>
-
-<div id="contact" class="text-center">
-  <div class="container padded">
-    <div class="row">
-      <div class="col-xs-3 trait"></div>
-      <div class="col-xs-6">
-        <p class= "home-header">CONTACTEZ-NOUS</p>
-      </div>
-      <div class="col-xs-3 trait"></div>
-      <div class="col-xs-offset-2 col-xs-8" id="form">
-        <form action="https://formspree.io/team@workup.rocks" method="POST">
-          <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="votrecontact@gmail.com">
-          <textarea class="form-control" name="message" rows="3" placeholder="N'hésitez pas à nous envoyer vos retours, partager des initiatives que vous aimez, nous dire celles que vous aimerez trouver, ou même venir nous rencontrer, nous serions ravies de vous connaître :)" ></textarea>
-          <input type="submit" name="submit" id="send" class="btn btn-primary" value="Envoyer">
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p class="text-center">MENTIONS LEGALES</p>
-      </div>
-    </div>
-  </div>
-</div>
-

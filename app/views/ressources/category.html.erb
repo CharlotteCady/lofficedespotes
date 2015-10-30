@@ -13,6 +13,8 @@
     Des conseils, rencontres, outils pratiques et événements pour créer sa boite ou devenir indépendant simplement
   <% elsif @category_page == @categories[4] %>
     Des témoignages d'entreprises et de salariés, des conseils, des événements et plus encore pour intraprendre facilement
+  <% elsif @category_page == @categories[5] %>
+    Nos coup de coeur pour être heureux au travail et dans sa vie en général !
   <% else %>
     Osez passer à l'action avec nos outils, conseils, témoignages, événements pour trouver un job qui vous rend heureux(se)
   <% end %>
@@ -56,6 +58,8 @@
             <h1>Les meilleurs conseils, outils pratiques, structures d'accompagnement, événements pour créer sa boite ou devenir indépendant tout simplement</h1>
           <% elsif @category_page == @categories[4] %>
             <h1>Les meilleurs témoignages d'entreprises et de salariés, des conseils, des événements et plus encore pour intraprendre facilement</h1>
+          <% elsif @category_page == @categories[5] %>
+            <h1>Nos coups de coeurs, bons plans, astuces pour être heureux au travail et dans sa vie en général !</h1>
           <% else %>
             <h1>quote</h1>
           <% end %>
@@ -90,10 +94,10 @@
 
           </div>
         </div>
-
+<!--
         <div class="searchbar hidden-xs">
-          <%= render "search_category_page" %>
-        </div>
+           render "search_category_page" %>
+        </div> -->
 
         <div class="col-xs-12">
           <div class="last_ressources">
