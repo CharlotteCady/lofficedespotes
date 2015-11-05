@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
   after_create :subscribe_to_newsletter
   acts_as_voter
 

@@ -29,6 +29,9 @@ Rails.application.routes.draw do
     end
   end
 
+# essayer cette route en elenvenant le show de resources : ressources
+  # get ':title' => "ressources#show"
+
   # resources :ressources do
   #   member do
   #     put "like", to: "ressources#like"
