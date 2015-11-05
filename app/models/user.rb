@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # after_create :send_welcome_email
-  after_create :subscribe_to_newsletter
+  # after_create :subscribe_to_newsletter
   acts_as_voter
 
   # Include default devise modules. Others available are:
