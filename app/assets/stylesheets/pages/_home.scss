@@ -6,6 +6,7 @@
   }
   .navbar-wagon {
     background-color: transparent;
+    box-shadow: none;
   }
   @media screen and (max-width: 768px) {
     .navbar-wagon {
@@ -56,6 +57,9 @@
   }
 
   #banner {
+    h1 {
+      margin-top: 250px;
+    }
     p {
       color: white;
       font-size: 20px;
@@ -82,7 +86,53 @@
       vertical-align: middle;
   }
 
+  // ======= MOBILE ========
+  #mobile {
+    .content {
+      margin-top: 150px;
+      h1 {
+        font-size: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      p {
+        font-size: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+    #btn-footer {
+      ul {
+        margin-bottom: 0px;
+        .btn {
+          margin-bottom: 0px;
+        }
+        li {
+          padding: 0px;
+        }
+
+        #btn-discover {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          border: 1px solid $blue;
+          width: 50%;
+        }
+        #btn-login {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          width: 50%;
+        }
+        a#btn-login:hover {
+          background-color: white;
+          color: $blue;
+        }
+      }
+    }
+  }
 }
+
 html, body{
     height: 100%; width: 100%;
     margin: 0; padding: 0;

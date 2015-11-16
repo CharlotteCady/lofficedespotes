@@ -17,15 +17,15 @@
 </div>
 
 <!-- SOUS MENU TOP POUR LES PETITS ECRANS -->
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-xs-12">
       <div class="sidebar visible-xs">
-        <%= render "second_nav" %>
+        render "second_nav" %>
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES -->
 <div class="container">
@@ -33,30 +33,22 @@
 
     <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
       <div class="content">
-        <p class="title first-title love">Nos Coups de Coeur</p>
-
+        <div id="img-mobile" class="visible-xs"></div>
           <div id="discover-favorites">
-            <!-- <div class="container"> -->
-              <!-- <div class="row"> -->
-                <!-- <div class="col-xs-12"> -->
-                  <div class="owl-carousel-big">
-
-                    <% Ressource.where(category: @categories[5]).order('created_at DESC').limit(6).each do |ressource| %>
-                      <div>
-                        <div class="item">
-                          <div class="img-ress" style="background: url(<%= ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(100%); -moz-filter: brightness(100%);">
-                          </div>
-                          <%= link_to ressource_path(ressource.id), {controller: "ressources", action: "show" } do %>
-                            <h2><%= ressource.title %></h2>
-                            <p><%= ressource.description %></p>
-                          <% end %>
-                        </div>
-                      </div>
+            <div class="owl-carousel-big">
+              <% Ressource.where(category: @categories[5]).order('created_at DESC').limit(6).each do |ressource| %>
+                <div>
+                  <div class="item">
+                    <div class="img-ress" style="background: url(<%= ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(100%); -moz-filter: brightness(100%);">
+                    </div>
+                    <%= link_to ressource_path(ressource.id), {controller: "ressources", action: "show" } do %>
+                      <h2><%= ressource.title %></h2>
+                      <p><%= ressource.description %></p>
                     <% end %>
                   </div>
-                <!-- </div> -->
-              <!-- </div> -->
-            <!-- </div> -->
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
 
@@ -72,9 +64,9 @@
           </div>
         </div> -->
 
-<!--         <div class="searchbar hidden-xs">
-           render "search" %>
-        </div> -->
+        <div class="searchbar hidden-xs white">
+          <%= render "search" %>
+        </div>
 
         <div class="col-xs-12">
           <div class="last_ressources">
@@ -87,8 +79,8 @@
               <% if @ressources.blank? %>
                 <p id="sorry">Il n'y a pas encore de résultats pour votre recherche, envoyez nous un petit message pour nous dire ce que vous recherchez :)</p>
               <% else %>
-                <% @ressources.each do |ress| %>
-                <div class="row item">
+                <% @ressources.order('created_at DESC').limit(15).each do |ress| %>
+                <div class="row item white">
                   <div class="col-xs-2">
                     <ul class= "list-inline">
                       <li>

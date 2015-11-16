@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     member do
       put "like", to: "ressources#like"
       put "dislike", to: "ressources#dislike"
+      # A TESTER
+      # get "ressources/index", as: "/like"
     end
   end
 

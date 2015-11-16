@@ -16,9 +16,6 @@
     <div class="col-xs-12">
       <div id="banner-image" style="background: url(<%= @ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
             -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(50%); -moz-filter: brightness(50%);">
-        <div class="publishing-date">
-          <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
-        </div>
       </div>
     </div>
   </div>
@@ -30,15 +27,15 @@
     <div class="col-xs-12">
       <div id="banner-image" style="background: url(<%= @ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
             -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(50%); -moz-filter: brightness(50%);">
-        <div class="publishing-date">
-          <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
-        </div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="content-banner">
+  <div class="publishing-date">
+    <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
+  </div>
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10 ">

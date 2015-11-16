@@ -15,7 +15,7 @@ $(document).ready(function(){
     // slideSpeed : 300,
     // paginationSpeed : 400,
     // singleItem:true
-    items : 2, //4 items above 1000px browser width
+    items : 1, //4 items above 1000px browser width
   });
 
 // Custom Navigation Events

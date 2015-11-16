@@ -7,35 +7,68 @@ content_for(:description) do %>
   Des histoires inspirantes, des rencontres et des outils pour oser créer le job qui vous passionne !
 end %> -->
 
-<%= image_tag "home.jpg", class: "bg visible-xs" %>
-<%= video_tag "dreamjob.mp4", class: "hidden-xs", id: "dream-job-video", autoplay: true, loop: true, muted: true  %>
-<div id="banner" class="text-center full middle">
-  <div class="container">
-    <div class="row">
-      <div class="content">
-        <div class="col-xs-12">
-          <h1 id= "baseline" class= "text-center">
-            A LA RECHERCHE DU JOB
-              <span style="color: #1ECBCA;">IDEAL</span> ?
-          </h1>
-          <p>
-            Nous avons sélectionné pour vous les meilleures initiatives, structures d'accompagnement, applications, événements, témoignages, conseils et bien plus encore, pour vous aider à trouver un job dans lequel vous épanouir. Découvrez les maintenant !
-          </p>
-        </div>
-        <div class="col-xs-12">
-          <ul class="list-inline hidden-xs">
-            <li><%= link_to "c'est parti", ressources_path, class: "btn btn-primary" %></li>
-            <li><%= link_to "Chercher un job", "categorie?category=Chercher+un+job", class: "btn btn-transparent" %></li>
-            <li><%= link_to "Changer de métier", "categorie?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
-            <li><%= link_to "Changer de boite", "categorie?category=Changer+de+boite", class: "btn btn-transparent" %></li>
-            <li><%= link_to "Créer sa boite", "categorie?category=Créer+sa+boite", class: "btn btn-transparent" %></li>
-            <li><%= link_to "Intraprendre", "categorie?category=Intraprendre", class: "btn btn-transparent" %></li>
-          </ul>
-          <div class="visible-xs">
-            <%= link_to "Découvrir Maintenant", ressources_path, class: "btn btn-primary" %>
+<!-- =========== DESKTOP =========== -->
+
+<div id="desktop" class= "hidden-xs">
+  <%= video_tag "dreamjob.mp4", id: "dream-job-video", autoplay: true, loop: true, muted: true  %>
+  <div id="banner" class="text-center full middle">
+    <div class="container">
+      <div class="row">
+        <div class="content">
+          <div class="col-xs-12">
+            <h1 id= "baseline" class= "text-center">
+              A LA RECHERCHE DU JOB
+                <span style="color: #1ECBCA;">IDEAL</span> ?
+            </h1>
+            <p>
+              Nous avons sélectionné pour vous les meilleures initiatives, structures d'accompagnement, applications, événements, témoignages, conseils et bien plus encore, pour vous aider à trouver un job dans lequel vous épanouir. Découvrez les maintenant !
+            </p>
+          </div>
+          <div class="col-xs-12">
+            <ul class="list-inline hidden-xs">
+              <li><%= link_to "c'est parti", ressources_path, class: "btn btn-primary" %></li>
+              <li><%= link_to "Chercher un job", "categorie?category=Chercher+un+job", class: "btn btn-transparent" %></li>
+              <li><%= link_to "Changer de métier", "categorie?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
+              <li><%= link_to "Changer de boite", "categorie?category=Changer+de+boite", class: "btn btn-transparent" %></li>
+              <li><%= link_to "Créer sa boite", "categorie?category=Créer+sa+boite", class: "btn btn-transparent" %></li>
+              <li><%= link_to "Intraprendre", "categorie?category=Intraprendre", class: "btn btn-transparent" %></li>
+            </ul>
+            <div class="visible-xs">
+              <%= link_to "Découvrir Maintenant", ressources_path, class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- =========== MOBILE =========== -->
+
+<div id="mobile" class="visible-xs">
+  <%= image_tag "home.jpg", class: "bg" %>
+  <div id="banner" class="text-center full middle">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="content">
+            <h1 id= "baseline" class= "text-center">
+              A LA RECHERCHE DU JOB
+                <span style="color: #1ECBCA;">IDEAL</span> ?
+            </h1>
+            <p>
+              Nous avons sélectionné pour vous les meilleures initiatives, structures d'accompagnement, applications, événements, témoignages, conseils et bien plus encore, pour vous aider à trouver un job dans lequel vous épanouir. Découvrez les maintenant !
+            </p>
+            <div id="btn-footer">
+              <ul class="list-inline">
+                <li><%= link_to "Découvrir Maintenant", ressources_path, id: "btn-discover", class: "btn btn-primary" %></li>
+                <li id="float"><%= link_to "Se Connecter", new_user_session_path, id: "btn-login", class: "btn btn-transparent" %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
