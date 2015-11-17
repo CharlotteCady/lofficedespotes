@@ -20,56 +20,31 @@
     left: 0;
     margin-top: 50px;
   }
-  // =========  Bannière bon plan  =========
-  // #bonplan {
-  //   background: image-url("bonplan-dark.jpg") no-repeat center;
-  //   -webkit-background-size: cover;
-  //   -moz-background-size: cover;
-  //   -o-background-size: cover;
-  //   background-size: cover;
-  //   // min-height: 300px;
-  //   margin-top: 50px;
-  //   padding-right: 50px;
-  //   padding-left: 50px;
-  //   position: relative;
-  //   // border-radius: 3px;
-  //   #big-screen {
-  //     h1 {
-  //       color: white;
-  //       z-index: 10;
-  //       font-size: 20px;
-  //       line-height: 1.5;
-  //       font-family: $base-font;
-  //     }
-  //   }
 
-  //   .btn {
-  //     z-index: 10;
-  //   }
-  //   #little-screen {
-  //     h1 {
-  //       font-size: 20px;
-  //       color: white;
-  //       line-height: 1.5;
-  //       font-family: $base-font;
-
-  //     }
-  //     .btn {
-  //       margin-top: 0px;
-  //     }
-  //   }
-  // }
-
-  // .love {
-  //   background-color: #FFF;
-  //   border: 2px solid #000;
-  //   font-size: 30px;
-  //   color: #000;
-  // }
 
   // ======== MOBILE / enlever le margin-top de 50px sur l'image sur mobile
   #img-mobile {
     margin-top: -50px;
+  }
+
+  // MOBILE / Search
+  #mobile-search {
+    margin-top: 40px;
+    text-align: center;
+    background: image-url('creersaboite.png') repeat;
+  }
+
+  #mobile-display {
+    .title {
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 16px;
+    }
+    p#content-title {
+      font-size: 14px;
+    }
   }
 
 

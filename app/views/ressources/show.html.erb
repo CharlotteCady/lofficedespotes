@@ -76,16 +76,7 @@
   <%= render "ressource_sidebar_simple" %>
 </div>
 
-<!-- SOUS MENU TOP POUR LES PETITS ECRANS -->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="sidebar visible-xs">
-        <%= render "second_nav" %>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES -->
 <div class="container">
@@ -173,9 +164,11 @@
             <!-- = render "comments/form", ressource: @ressource, comment: @comment %> -->
           </div>
         <% else %>
-          <p class="connect-to-comment">Vous devez être
-                        <%= link_to t(".sign_in", default: "connecté"), new_user_session_path %>
-                        pour commenter et voir les commentaires de cet article :)</p>
+          <p class="connect-to-comment">
+            Vous devez être
+            <%= link_to t(".sign_in", default: "connecté"), new_user_session_path %>
+            pour commenter et voir les commentaires de cet article :)
+          </p>
         <% end %>
         <!-- <div id="comments">
            if @comments == [] %>

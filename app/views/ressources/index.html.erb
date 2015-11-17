@@ -51,25 +51,81 @@
             </div>
           </div>
         </div>
-
-<!--         <div id="bonplan" class="padded text-center">
-
-          <div id="big-screen" class = "hidden-xs">
-            <h1>Des événements, des formations, des structures d'accompagnement,<br> des conseils d'experts et bien plus encore pour vous aider à<br>  <span style="font-family: bebas_neueregular; font-size: 50px;">trouver le job de vos reves</span></h1>
-          </div>
-
-          <div id= "little-screen" class= "visible-xs">
-            <h1>Des événements, des formations, des structures d'accompagnement,<br> des conseils d'experts et bien plus encore pour vous aider à<br>  <span style="font-family: bebas_neueregular; font-size: 30px;">trouver le job de vos reves</span></h1>
-             render "search_mobile" %>
-          </div>
-        </div> -->
-
+        <!-- ========= RECHERCHE SUR DESKTOP ========== -->
         <div class="searchbar hidden-xs white">
           <%= render "search" %>
         </div>
 
-        <div class="col-xs-12">
+        <!-- ========== LISTING DES INITIATIVES SUR DESKTOP ======= -->
+        <div class="hidden-xs">
           <div class="last_ressources">
+            <% if params[:search] %>
+              <p class="title first-title">Résultats de la recherche</p>
+            <% else %>
+              <p class="title first-title">Les nouvelles découvertes</p>
+            <% end %>
+            <div class="listing_ressources">
+              <% if @ressources.blank? %>
+                <p id="sorry">Il n'y a pas encore de résultats pour votre recherche, envoyez nous un petit message pour nous dire ce que vous recherchez :)</p>
+              <% else %>
+                <% @ressources.order('created_at DESC').limit(15).each do |ress| %>
+                <div class="row item white">
+                  <div class="col-xs-2">
+                    <ul class= "list-inline">
+                      <li>
+                        <div class="votes">
+                          <% if user_signed_in? %>
+                            <% if current_user.liked? ress %>
+                              <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                                <i class="fa fa-heart"></i>
+                              <% end %>
+                            <% else %>
+                              <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                                <i class="fa fa-heart-o"></i>
+                              <% end %>
+                            <% end %>
+                          <% else %>
+                            <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                              <i class="fa fa-heart-o"></i>
+                            <% end %>
+                          <% end %>
+                          <p class="vote_count"><%= ress.score %></p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="comments">
+                          <i class="fa fa-comment-o"></i>
+                          <p><%= link_to ress.slug, ressource_path(ress.slug) +'#disqus_thread' %></p>
+                        </div>
+                      </li>
+                      <li>
+                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-10">
+                    <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
+                    <p class="content-title"><%= ress.description %>.</p>
+                  </div>
+                </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-offset-1 col-xs-10">
+      <div class="content">
+        <!-- ======== RECHERCHE POUR LES PETITS ECRANS ========= -->
+        <div id="mobile-search" class= "visible-xs ">
+          <%= render "search_mobile" %>
+        </div>
+
+        <!-- ========== LISTING DES INITIATIVES SUR MOBILE ======= -->
+        <div class="visible-xs">
+          <div class="last_ressources" id="mobile-display">
             <% if params[:search] %>
               <p class="title first-title">Résultats de la recherche</p>
             <% else %>

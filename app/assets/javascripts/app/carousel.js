@@ -11,11 +11,10 @@ $(document).ready(function(){
     itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
   });
   $('.owl-carousel-big').owlCarousel({
-    // navigation : true,
-    // slideSpeed : 300,
-    // paginationSpeed : 400,
-    // singleItem:true
-    items : 1, //4 items above 1000px browser width
+    items : 1,
+  });
+  $('.owl-carousel-mobile').owlCarousel({
+    items : 2,
   });
 
 // Custom Navigation Events

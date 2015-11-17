@@ -29,23 +29,14 @@
   <%= render "ressource_sidebar_simple" %>
 </div>
 
-<!-- SOUS MENU TOP POUR LES PETITS ECRANS -->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="sidebar visible-xs">
-        <%= render "second_nav" %>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES -->
+<!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES  -->
 <div class="container">
   <div class="row">
 
     <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
       <div class="content">
+        <div id="img-mobile" class="visible-xs"></div>
         <div id="category-description" class="padded text-center" style="background-image: url(<%= asset_path(@category_page.split.join.downcase.gsub("é", "e") + ".png") %>); background-repeat: repeat;">
 
           <% if @category_page == @categories[0] %>
@@ -77,7 +68,7 @@
             <!-- BANNIERE PETIT ECRAN -->
             <div class="col-xs12 visible-xs">
               <div class="btn-group">
-                <button type="button" class="btn btn-transparent" id="looking_for">Que cherchez-vous ?</button>
+                <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" id="looking_for">Que cherchez-vous ?</button>
                 <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="caret"></span>
                   <span class="sr-only">Toggle Dropdown</span>
@@ -94,13 +85,67 @@
 
           </div>
         </div>
-<!--
-        <div class="searchbar hidden-xs">
-           render "search_category_page" %>
-        </div> -->
 
-        <div class="col-xs-12">
-          <div class="last_ressources">
+        <!-- ======= AFFICHAGE DES INITIATIVES POUR LES GRANDS ECRANS -->
+
+        <div class="last_ressources hidden-xs">
+          <% if params[:search] %>
+            <p class="title first-title">Résultats de la recherche</p>
+          <% elsif params[:subcategory] %>
+            <p class="title first-title"> <%= @category_page %> | <%= params[:subcategory] %></p>
+          <% else %>
+            <p class="title first-title">Les nouvelles découvertes pour <%= @category_page %></p>
+          <% end %>
+          <div class="listing_ressources">
+            <% if @ressources.blank? %>
+              <p id="sorry">Il n'y a pas encore de résultats pour votre recherche, envoyez nous un petit message pour nous dire ce que vous recherchez :)</p>
+            <% else %>
+              <% @ressources.each do |ress| %>
+              <div class="row white">
+                <div class="col-xs-2">
+                  <ul class= "list-inline">
+                    <li>
+                      <div class="votes">
+                        <% if current_user.liked? ress %>
+                          <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                            <i class="fa fa-heart"></i>
+                          <% end %>
+                        <% else %>
+                          <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                            <i class="fa fa-heart-o"></i>
+                          <% end %>
+                        <% end %>
+                        <p class="vote_count"><%= ress.score %></p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="comments">
+                        <i class="fa fa-comment-o"></i>
+                        <p><%= ress.comments.count %></p>
+                      </div>
+                    </li>
+                    <li>
+                      <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-xs-10">
+                  <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug) %></h2>
+                  <p class="content-title"><%= ress.description %>.</p>
+                </div>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- AFFICHAGE DES INTIATIVES POUR LES PETITS ECRANS -->
+    <div class="col-xs-offset-1 col-xs-10">
+      <div class="content">
+        <div class="visible-xs">
+          <div class="last_ressources" id="mobile-display">
             <% if params[:search] %>
               <p class="title first-title">Résultats de la recherche</p>
             <% elsif params[:subcategory] %>
@@ -151,7 +196,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>

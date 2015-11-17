@@ -68,6 +68,25 @@
     }
   }
 
+  // ======== MOBILE / enlever le margin-top de 50px sur l'image sur mobile
+  #img-mobile {
+    margin-top: -50px;
+  }
+
+  #mobile-display {
+    .title {
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 16px;
+    }
+    p#content-title {
+      font-size: 14px;
+    }
+  }
+
+
   // =========  Affichage des Ressources  =========
   .listing_ressources {
     margin-bottom: 30px;

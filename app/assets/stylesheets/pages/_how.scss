@@ -131,4 +131,20 @@
   //   bottom: 0;
   // }
 
+
+  // ========== MOBILE
+  #mobile {
+    .home-header {
+      font-size: 30px;
+    }
+    p {
+      font-size: 14px;
+    }
+    h2 {
+      font-size: 34px;
+    }
+    h2#title-article {
+      font-size: 16px;
+    }
+  }
 }

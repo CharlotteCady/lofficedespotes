@@ -15,9 +15,9 @@ as: :check_boxes pour multiple choix -->
     <%= ressource.input :category, collection: @categories, include_blank: false, label: "Catégorie" %>
     <%= ressource.input :subcategory, collection: @subcategories, include_blank: false, label: "Sous-Catégorie" %>
   </div>
-  <div class="white-block">
-    <%= ressource.input :witness, label: "Témoignage", placeholder: "J'ai rencontré mon futur patron lors d'un événement startup, merci !" %>
-  </div>
+<!--   <div class="white-block">
+    ressource.input :witness, label: "Témoignage", placeholder: "J'ai rencontré mon futur patron lors d'un événement startup, merci !" %>
+  </div> -->
   <div class="white-block">
     <%= ressource.input :website, label: "Site Web", placeholder: 'http://monsite.com/', as: :url %>
     <%= ressource.input :address, label: "Coordonnées", placeholder: 'Fondateur: John Doe - contact@monsite.com' %>
