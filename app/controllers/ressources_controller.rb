@@ -70,17 +70,21 @@ class RessourcesController < ApplicationController
     @ressource = Ressource.friendly.find(params[:id])
     @ressource.liked_by current_user
     # ajouter de l'ajax pour rafraichissement page instantané
-    # respond_to do |format|
-    #   format.html { redirect_to ressources_path }
-    #   format.js
-    # end
-    redirect_to ressources_path
+    respond_to do |format|
+      format.html { redirect_to ressources_path }
+      format.js { render layout: false }
+    end
+    # redirect_to ressources_path
   end
 
   def dislike
     @ressource = Ressource.friendly.find(params[:id])
     @ressource.disliked_by current_user
-    redirect_to ressources_path
+    # redirect_to ressources_path
+    respond_to do |format|
+      format.html { redirect_to ressources_path }
+      format.js { render layout: false }
+    end
   end
 
   def category

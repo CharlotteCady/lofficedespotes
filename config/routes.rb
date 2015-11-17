@@ -24,8 +24,8 @@ Rails.application.routes.draw do
   resources :ressources do
     resources :comments, only: [:index, :create, :destroy]
     member do
-      put "like", to: "ressources#like"
-      put "dislike", to: "ressources#dislike"
+      get "like", to: "ressources#like"
+      get "dislike", to: "ressources#dislike"
       # A TESTER
       # get "ressources/index", as: "/like"
     end

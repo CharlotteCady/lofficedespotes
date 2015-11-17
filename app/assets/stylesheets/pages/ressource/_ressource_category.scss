@@ -104,20 +104,20 @@
     h2 {
       margin-bottom: 5px;
     }
-  }
-  ul {
-    margin-top: 15px;
-    img.logo {
-      width: 50px;
-      vertical-align: middle;
-      margin-top: -15px;
-    }
-    .votes, .comments {
-      i {
-        color: $gray;
+    ul {
+      margin-top: 15px;
+      img.logo {
+        width: 50px;
+        vertical-align: middle;
+        margin-top: -15px;
       }
-      .fa-heart {
-        color: $blue;
+      .votes, .comments {
+        i {
+          color: $gray;
+        }
+        .fa-heart {
+          color: $blue;
+        }
       }
       p {
         font-size: 14px;
@@ -126,6 +126,7 @@
       }
     }
   }
+
 
   // =========== Affichage par Sous categorie ======
   // .subcategories_ressources {

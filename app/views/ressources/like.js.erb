@@ -1,3 +1,7 @@
-// $(document).ready(function(){
-//   $('#like').removeClass('fa-heart-o fa-heart').show();
-// });
+$('.like_ressource').bind('ajax:success', function(){
+   $(this).parent().parent().find('.vote_count').html('<%= escape_javascript @ressource.get_likes.size.to_s %>');
+   $(this).closest('.like_ressource').hide();
+   $(this).closest('.votes').html('<%= link_to dislike_ressource_path(@ressource), method: :get, remote: true, class: "dislike_ressource btn-vote" do %><i class="fa fa-heart"></i><% end %>'
+  );
+});
+

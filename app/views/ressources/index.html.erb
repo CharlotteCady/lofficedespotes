@@ -76,21 +76,21 @@
                         <div class="votes">
                           <% if user_signed_in? %>
                             <% if current_user.liked? ress %>
-                              <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                              <%= link_to dislike_ressource_path(ress), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
                                 <i class="fa fa-heart"></i>
                               <% end %>
                             <% else %>
-                              <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                              <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote" do %>
                                 <i class="fa fa-heart-o"></i>
                               <% end %>
                             <% end %>
                           <% else %>
-                            <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                            <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote" do %>
                               <i class="fa fa-heart-o"></i>
                             <% end %>
                           <% end %>
-                          <p class="vote_count"><%= ress.score %></p>
                         </div>
+                        <p class="vote_count"><%= ress.score %></p>
                       </li>
                       <li>
                         <div class="comments">
@@ -143,21 +143,21 @@
                         <div class="votes">
                           <% if user_signed_in? %>
                             <% if current_user.liked? ress %>
-                              <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                              <%= link_to dislike_ressource_path(ress), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
                                 <i class="fa fa-heart"></i>
                               <% end %>
                             <% else %>
-                              <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                              <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote" do %>
                                 <i class="fa fa-heart-o"></i>
                               <% end %>
                             <% end %>
                           <% else %>
-                            <%= link_to like_ressource_path(ress), method: :put, class: "like_ressource btn-vote" do %>
+                            <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote" do %>
                               <i class="fa fa-heart-o"></i>
                             <% end %>
                           <% end %>
-                          <p class="vote_count"><%= ress.score %></p>
                         </div>
+                        <p class="vote_count"><%= ress.score %></p>
                       </li>
                       <li>
                         <div class="comments">

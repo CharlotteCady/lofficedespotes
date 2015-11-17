@@ -1,0 +1,5 @@
+$('.dislike_ressource').bind('ajax:success', function(){
+   $(this).parent().parent().find('.vote_count').html('<%= escape_javascript @ressource.get_likes.size.to_s %>');
+   $(this).closest('.dislike_ressource').hide();
+   $(this).closest('.votes').html('<%= link_to like_ressource_path(@ressource), method: :get, remote: true, class: "like_ressource btn-vote" do %><i class="fa fa-heart-o"></i><% end %>');
+});
