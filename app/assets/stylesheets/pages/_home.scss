@@ -128,10 +128,12 @@
           bottom: 0;
           right: 0;
           width: 50%;
+          background-color: white;
+          color: $blue;
         }
         a#btn-login:hover {
           background-color: white;
-          color: $blue;
+          opacity: 0.8;
         }
       }
     }
