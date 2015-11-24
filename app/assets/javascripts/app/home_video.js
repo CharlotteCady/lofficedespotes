@@ -2,7 +2,7 @@ var isChrome = !!window.chrome;
 var isIE = /*@cc_on!@*/false;
 
 if( isChrome ) {
-$("#dream-job-video").replaceWith($('<img src="app/assets/images/dream.jpg" class="bg" />'));
+$("#dream-job-video").replaceWith($('<img src="http://lofficedespotes.herokuapp.com/app/assets/images/dream.jpg" class="bg" />'));
 }
 
 if( isIE ) {
