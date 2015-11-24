@@ -1,11 +1,10 @@
 class User < ActiveRecord::Base
   # after_create :send_welcome_email
-  after_create :subscribe_to_newsletter
   acts_as_voter
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  # :lockable, :timeoutable
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
@@ -32,11 +31,7 @@ class User < ActiveRecord::Base
 
   private
 
-  def send_welcome_email
-    UserMailer.welcome(self).deliver_now
-  end
-
-  def subscribe_to_newsletter
-    SubscribeToNewsletter.new(self).run
-  end
+  # def send_welcome_email
+  #   UserMailer.welcome(self).deliver_now
+  # end
 end

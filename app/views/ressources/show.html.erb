@@ -98,18 +98,22 @@
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div class="addthis_sharing_toolbox" id="share"></div>
         <div class="more-info">
+          <% if @ressource.website? %>
+            <p>
+              <b>Site internet :</b> <%= link_to @ressource.website, @ressource.website %>
+            </p>
+          <% end %>
+          <% if @ressource.address? %>
+            <p>
+              <b>Contact :</b> <%= @ressource.address %>
+            </p>
+          <% end %>
           <p>
-            <b>Site internet :</b> <%= link_to @ressource.website, @ressource.website %>
-          </p>
-          <p>
-            <b>Contact :</b> <%= @ressource.address %>
-          </p>
-          <p>
-            <% if @ressource.votes_for.size > 1 %>
+            <% if @ressource.votes_for.size > 0 %>
               <b>Ils recommendent :</b>
               <div class="voter-avatar" style="">
                 <% @list_of_voters.each do |voter| %>
-                  <button type="button" id="info-avatar" data-toggle="tooltip" data-placement="top" title="<% if voter.name? %><%= voter.name.capitalize %><% end %><% if voter.description? %>:<%= voter.description %><% end %>">
+                  <button type="button" id="info-avatar" data-toggle="tooltip" data-placement="top" title="<% if voter.name? %><%= voter.name.capitalize %><% end %><% if voter.description? %> : <%= voter.description %><% end %>">
                     <% if voter.avatar? %>
                       <%= image_tag voter.avatar.url(:thumb), class: "img-circle" %>
                     <% else %>
