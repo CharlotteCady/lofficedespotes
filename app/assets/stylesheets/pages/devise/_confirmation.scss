@@ -1,0 +1,35 @@
+#devise_confirmations_show {
+  #navbar-workup {
+    .navbar-nav {
+      margin-top: 15px;
+    }
+  }
+
+  background: image-url('eight_horns.png') repeat;
+  margin-top: 100px;
+
+  #confirmation {
+    background-color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 25px;
+    border-radius: 3px;
+    h2 {
+      color: black;
+      font-size: 30px;
+    }
+    form {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+    }
+    input.email, input.password {
+      margin-top: 5px;
+      // width: 250px;
+    }
+  }
+  .btn-facebook {
+    background-color: rgb(59, 89, 152);
+    color: white;
+  }
+}

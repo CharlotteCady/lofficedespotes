@@ -6,7 +6,7 @@ class SubscribeToNewsletter
   end
 
   def run
-    @gibbon.lists(@list_id).members.update_or_create(
+    @gibbon.lists(@list_id).members.create(
       body: {
         email_address: @user.email,
         status: "subscribed",
