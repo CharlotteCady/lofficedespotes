@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 # REDIRIGER VERS LA PAGE USER SHOW APRES MODIFICATIONS (USER EDIT et PASSWORD EDIT)
   as :user do
     get 'users/show', :to => 'devise/registrations#edit', :as => :user_root
+    # get 'users/sign_in', :to => 'devise/sessions#create'
   end
 
   resources :ressources do
@@ -26,8 +27,6 @@ Rails.application.routes.draw do
     member do
       get "like", to: "ressources#like"
       get "dislike", to: "ressources#dislike"
-      # A TESTER
-      # get "ressources/index", as: "/like"
     end
   end
 

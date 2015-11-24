@@ -12,7 +12,6 @@ class Ressource < ActiveRecord::Base
   validates :content, presence: true
   validates :category, presence: true
   validates :subcategory, presence: true
-  validates :website, presence: true
   validates :seotitle, presence: true, uniqueness: true
   validates :seodescription, presence: true, uniqueness: true
   # validates :slug, presence: true, uniqueness: true
