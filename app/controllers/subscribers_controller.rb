@@ -1,9 +1,9 @@
-class User < ActiveRecord::Base
-  after_create :subscribe_to_newsletter
+# class User < ActiveRecord::Base
+#   after_create :subscribe_to_newsletter
 
-  private
+#   private
 
-  def subscribe_to_newsletter
-    SubscribeToNewsletter.new(self).run
-  end
-end
+#   def subscribe_to_newsletter
+#     SubscribeToNewsletter.new(self).run
+#   end
+# end

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  after_create :subscribe_to_newsletter
   # after_create :send_welcome_email
   acts_as_voter
 
@@ -30,6 +31,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletter.new(self).run
+  end
 
   # def send_welcome_email
   #   UserMailer.welcome(self).deliver_now
