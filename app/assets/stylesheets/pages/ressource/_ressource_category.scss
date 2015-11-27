@@ -1,4 +1,7 @@
 #ressources_category {
+  // body {
+  //   background: image-url(<%= ressource.picture.url %>) repeat fixed;
+  // }
   margin-top: 60px;
 
   .navbar {
@@ -17,22 +20,45 @@
     margin-top: 50px;
     z-index: 3000;
   }
+  .banner {
+    // margin-left: 200px;
+    width: 100%;
+  }
+  #banner-image {
+    min-height: 350px;
+    margin-top: -5px;
+    position: relative;
+  }
+
+  .content-banner {
+    padding-left: 40px;
+    padding-top: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: -5px;
+  }
 
   #category-description {
     min-height: 300px;
     margin-top: 30px;
     padding: 50px 50px;
     position: relative;
-    h1 {
+    p {
       color: white;
       z-index: 10;
-      font-size: 30px;
+      font-size: 40px;
       line-height: 1.5;
+      font-family: $my-font;
     }
-    p {
+    h1 {
       color: white;
       font-size: 20px;
       z-index: 10;
+      font-family: $base-font;
+      margin-top: 0px;
     }
     ul {
       margin: 0px;
@@ -86,6 +112,18 @@
     }
   }
 
+  // ========== ETAPES
+
+  .last_ressources {
+    #step p{
+      font-size: 14px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+  p.title {
+    margin-bottom: 20px;
+  }
 
   // =========  Affichage des Ressources  =========
   .listing_ressources {

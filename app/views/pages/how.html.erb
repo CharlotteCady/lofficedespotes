@@ -25,31 +25,31 @@
         <% @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"] %>
 
         <div class="row hidden-xs">
-          <div class="col-sm-offset-1 col-sm-2 bot">
+          <div class="col-sm-3 bot">
             <%= link_to "categorie?category=Chercher+un+job",  {controller: "ressources", action: "category", category: @categories[0] } do %>
               <i class="fa fa-search"></i>
               <p class= "little-header">Chercher un Job</p>
             <% end %>
           </div>
-          <div class="col-sm-2 bot">
+          <div class="col-sm-3 bot">
             <%= link_to "categorie?category=Changer+de+m%C3%A9tier",  {controller: "ressources", action: "category", category: @categories[1] } do %>
               <i class="fa fa-magic"></i>
               <p class= "little-header">Changer de Métier</p>
             <% end %>
           </div>
-          <div class="col-sm-2 bot">
+          <div class="col-sm-3 bot">
             <%= link_to "categorie?category=Changer+de+boite",  {controller: "ressources", action: "category", category: @categories[2] } do %>
               <i class="fa fa-archive"></i>
               <p class= "little-header">Changer de Boite</p>
             <% end %>
           </div>
-          <div class="col-sm-2 bot">
+          <div class="col-sm-3 bot">
             <%= link_to "categorie?category=Créer+sa+boite",  {controller: "ressources", action: "category", category: @categories[3] } do %>
               <i class="fa fa-hand-peace-o"></i>
               <p class= "little-header">Créer sa boite</p>
             <% end %>
           </div>
-          <div class="col-sm-2 bot">
+          <div class="col-sm-2 bot hidden">
             <%= link_to "categorie?category=Intraprendre",  {controller: "ressources", action: "category", category: @categories[4] } do %>
               <i class="fa fa-flask"></i>
               <p class= "little-header">Intraprendre</p>
@@ -219,7 +219,7 @@
                     <p class= "little-header">Créer sa boite</p>
                   <% end %>
                 </li>
-                <li>
+                <li class="hidden">
                   <%= link_to "categorie?category=Intraprendre",  {controller: "ressources", action: "category", category: @categories[4] } do %>
                     <p class= "little-header">Intraprendre</p>
                   <% end %>

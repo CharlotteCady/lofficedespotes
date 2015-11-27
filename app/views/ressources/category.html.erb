@@ -24,32 +24,50 @@
   <% @category_page.split.join.downcase.gsub("é", "e") + ".png" %>
 <% end %>
 
-<!-- MENU COTE POUR LES GRANDS ET MOYENS ECRANS -->
-<div class="sidebar hidden-xs">
-  <%= render "ressource_sidebar_simple" %>
+<!-- BANNIERE POUR LES GRANDS ECRANS -->
+<div class="container banner hidden-xs">
+  <div class="row">
+    <div class="col-xs-12">
+      <div id="banner-image" style="background-image: url(<%= asset_path(@category_page.split.join.downcase.gsub("é", "e") + ".png") %>); background-repeat: repeat;">
+      </div>
+    </div>
+  </div>
 </div>
 
-
-<!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES  -->
-<div class="container">
+<!-- BANNIERE POUR LES PETITS ECRANS -->
+<div class="container banner-little-screen visible-xs">
   <div class="row">
+    <div class="col-xs-12">
+      <div id="banner-image" style="background-image: url(<%= asset_path(@category_page.split.join.downcase.gsub("é", "e") + ".png") %>); background-repeat: repeat;">
+      </div>
+    </div>
+  </div>
+</div>
 
-    <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
-      <div class="content">
+<div class="content-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10 ">
         <div id="img-mobile" class="visible-xs"></div>
-        <div id="category-description" class="padded text-center" style="background-image: url(<%= asset_path(@category_page.split.join.downcase.gsub("é", "e") + ".png") %>); background-repeat: repeat;">
+        <div id="category-description" class="padded text-center">
 
           <% if @category_page == @categories[0] %>
+            <p><%= @categories[0] %></p>
             <h1>Les meilleurs sites de recrutement, structures d'accompagnement, événements dédiés à l'emploi, conseils d'experts pour trouver un job qui vous rend heureux</h1>
           <% elsif @category_page == @categories[1] %>
+            <p><%= @categories[1] %></p>
             <h1>Les meilleures formations, témoignages, conseils d'experts, événements pour changer de métier sereinement</h1>
           <% elsif @category_page == @categories[2] %>
+            <p><%= @categories[2] %></p>
             <h1>Les meilleurs conseils pratiques, sites de recrutement, événements, initiatives pour trouver une entreprise où vous pourrez vous épanouir</h1>
           <% elsif @category_page == @categories[3] %>
+            <p><%= @categories[3] %></p>
             <h1>Les meilleurs conseils, outils pratiques, structures d'accompagnement, événements pour créer sa boite ou devenir indépendant tout simplement</h1>
           <% elsif @category_page == @categories[4] %>
+            <p><%= @categories[4] %></p>
             <h1>Les meilleurs témoignages d'entreprises et de salariés, des conseils, des événements et plus encore pour intraprendre facilement</h1>
           <% elsif @category_page == @categories[5] %>
+            <p><%= @categories[5] %></p>
             <h1>Nos coups de coeurs, bons plans, astuces pour être heureux au travail et dans sa vie en général !</h1>
           <% else %>
             <h1>quote</h1>
@@ -74,17 +92,35 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
-                  <% @subcategories.each do |subcat| %>
+                  <% @subcategories.each_with_index do |subcat, index| %>
                     <li>
-                      <%= link_to "#{subcat}", {controller: "ressources", action: "category", category: "#{@category_page}", subcategory: "#{subcat}"}  %>
+                      <%= link_to "index #{subcat}", {controller: "ressources", action: "category", category: "#{@category_page}", subcategory: "#{subcat}"}  %>
                     </li>
                   <% end %>
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- MENU COTE POUR LES GRANDS ET MOYENS ECRANS -->
+<div class="sidebar hidden-xs">
+  <%= render "ressource_sidebar_simple" %>
+</div>
+
+
+<!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES  -->
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
+      <div class="content">
+
 
         <!-- ======= AFFICHAGE DES INITIATIVES POUR LES GRANDS ECRANS -->
 
@@ -96,6 +132,27 @@
           <% else %>
             <p class="title first-title">Les nouvelles découvertes pour <%= @category_page %></p>
           <% end %>
+          <div id="step">
+            <% if params[:subcategory] == @subcategories[0] %>
+              <p class="white"><b>Etape 1 : S'inspirer</b><br> Tout d'abord un grand bravo ! Cette première étape est la plus dure car
+                elle demande une grande réflexion sur qui vous êtes et sur ce qui vous anime aujourd'hui. Nous vous avons sélectionné des sites, médias, blogs, histoires inspirantes pour vous montrer ce qu'il est possible de faire et ce que d'autres ont fait. Alors pourquoi pas vous ? Bonne découverte !
+              </p>
+            <% elsif params[:subcategory] == @subcategories[1] %>
+              <p class="white"><b>Etape 2 : S'informer</b><br> C'est bon, vous êtes déterminé à vous lancer ? Vous avez compris qu'avoir un job qui vous rend heureux, c'est possible, quelque soit votre situation ? Super, maintenant nous n'allons pas vous mentir, il va falloir se bouger pour y arriver. Cela demande du temps et de l'énergie. Heureusement, nous vous avons (un peu) facilité la tâche sur tous les sujets juridique, administratif et financier. On sait bien, ce n'est pas très sexy mais indispensable. Bonne lecture !
+              </p>
+            <% elsif params[:subcategory] == @subcategories[2] %>
+              <p class="white"><b>Etape 3 : Se Faire Aider</b></p>
+            <% elsif params[:subcategory] == @subcategories[3] %>
+              <p class="white"><b>Etape 4 : Se Former</b></p>
+            <% elsif params[:subcategory] == @subcategories[4] %>
+              <p class="white"><b>Etape 5 : Réseauter</b>/p>
+            <% elsif params[:subcategory] == @subcategories[5] %>
+              <p class="white"><b>Etape 6 : Postuler</b></p>
+            <% elsif params[:subcategory] == @subcategories[6] %>
+              <p class="white"><b>Etape 7 : S'éclater</b></p>
+            <% else %>
+            <% end %>
+          </div>
           <div class="listing_ressources">
             <% if @ressources.blank? %>
               <p id="sorry">Il n'y a pas encore de résultats pour votre recherche, envoyez nous un petit message pour nous dire ce que vous recherchez :)</p>
