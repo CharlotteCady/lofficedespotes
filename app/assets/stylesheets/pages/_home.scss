@@ -79,7 +79,25 @@
         margin-bottom: 50px;
       }
       ul  {
-        margin-bottom: 50px;
+        margin-bottom: 0px;
+      }
+      ul#test-here {
+        text-align: left;
+        margin-left: 250px;
+      }
+      img#step-arrow1 {
+        -moz-transform: scaleX(-1);
+          -o-transform: scaleX(-1);
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          filter: FlipH;
+          -ms-filter: "FlipH";
+          margin-bottom: 20px;
+      }
+      p#test {
+        font-family: 'Indie Flower', cursive;
+        font-size: 18px;
+        // margin-top: 30px;
       }
     }
     #newsletter {
@@ -183,6 +201,41 @@
         a#btn-login:hover {
           background-color: white;
           opacity: 0.8;
+        }
+      }
+    }
+    #newsletter {
+      position: absolute;
+      top: 0;
+      background-color: rgba(0,0,0,0.4);
+      text-align: right;
+      color: white;
+      width: 100%;
+      height: 35px;
+      input#mc-embedded-subscribe {
+        margin-top: 5px;
+        background-color: $blue;
+        border: 1px solid $blue;
+        color: white;
+        font-size: 12px;
+        border-radius: 3px;
+        height: 25px;
+        margin-right: 15px;
+      }
+      #mce-EMAIL.email {
+        font-size: 12px;
+        font-family: $base-font;
+        border-radius: 3px;
+        height: 25px;
+        border: 1px solid $blue;
+        background-color: white;
+        margin-top: 5px;
+        color: black;
+      }
+      #facebook a {
+        color: white;
+        &:hover {
+          color: $blue;
         }
       }
     }

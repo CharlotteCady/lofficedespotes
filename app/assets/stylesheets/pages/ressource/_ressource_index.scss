@@ -22,7 +22,6 @@
     margin-top: 50px;
   }
 
-
   // ======== MOBILE / enlever le margin-top de 50px sur l'image sur mobile
   #img-mobile {
     margin-top: -50px;
@@ -32,7 +31,7 @@
   #mobile-search {
     margin-top: 40px;
     text-align: center;
-    background: image-url('creersaboite.png') repeat;
+    background: image-url('search.png') repeat;
   }
 
   #mobile-display {
@@ -52,9 +51,12 @@
   // ======= Article coup de coeur
   #discover-favorites {
     margin-top: 50px;
-    background-color: white;
+    .owl-stage-outer {
+      background-color: white;
+    }
     div.img-ress {
       min-height: 350px;
+      position: relative;
     }
     h2 {
       color: black;
@@ -74,6 +76,34 @@
     }
     a:hover p {
       color: $gray;
+    }
+    // Selection du carousel
+    .owl-nav {
+      text-align: center;
+      font-size: 12px;
+      color: $gray-light;
+    }
+    div.owl-prev, div.owl-next {
+      display: inline-block;
+      img {
+        width: 18px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      font-family: 'Indie Flower', cursive;
+    }
+    div.owl-prev {
+      position: absolute;
+      top: 170px;
+      left: 0;
+    }
+    div.owl-next {
+      position: absolute;
+      top: 170px;
+      right: 0;
+    }
+    div.owl-controls {
+      background-color: transparent;
     }
   }
 

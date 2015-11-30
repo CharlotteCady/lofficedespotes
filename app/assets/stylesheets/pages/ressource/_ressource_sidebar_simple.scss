@@ -32,22 +32,17 @@
       color: $blue;
     }
   }
-  // .menu {
-  //   border-bottom: 1px solid #e8e5e5;
-  // }
-
-  .sidebar-category {
+  ul {
+    list-style: outside none none;
+    padding-left: 0px;
+  }
+  li {
     padding-left: 20px;
   }
-
-  .sidebar_sub_cat {
-    transition: opacity 0.3s ease;
-      &.hidden {
-      height: 0;
-      overflow: hidden;
-      opacity: 0;
-    }
+  li.active h2 a {
+    color: $blue;
   }
+
   .follow-us {
     position: absolute;
     bottom: 80px;

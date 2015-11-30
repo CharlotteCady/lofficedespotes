@@ -25,7 +25,7 @@
     width: 100%;
   }
   #banner-image {
-    min-height: 350px;
+    min-height: 380px;
     margin-top: -5px;
     position: relative;
   }
@@ -39,6 +39,25 @@
     right: 0;
     bottom: 0;
     margin-top: -5px;
+    p#step-selection {
+      font-family: 'Indie Flower', cursive;
+      font-size: 18px;
+      margin-top: 30px;
+    }
+    img#step-arrow1, img#step-arrow2 {
+      padding-bottom: 20px;
+    }
+    img#step-arrow1 {
+      -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+    img#happy {
+
+    }
   }
 
   #category-description {
@@ -71,8 +90,9 @@
     }
     .btn {
       // font-family: "bebas_neuebook";
-      font-size: 18px;
+      font-size: 16px;
       margin-left: 10px;
+      margin-bottom: 0px;
       color: white;
       background-color: none;
       border: 1px solid white;
@@ -85,19 +105,16 @@
         border: 1px solid $blue;
       }
     }
-    button#looking_for {
-      cursor: default;
-      &:hover {
-        background-color: transparent;
-        border-color: white;
-      }
+    button#looking_for, button.btn {
+      font-size: 18px;
+    }
+    ul.dropdown-menu {
+      margin-left: 10px;
+      width: 190px;
     }
   }
 
   // ======== MOBILE / enlever le margin-top de 50px sur l'image sur mobile
-  #img-mobile {
-    margin-top: -50px;
-  }
 
   #mobile-display {
     .title {

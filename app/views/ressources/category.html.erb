@@ -48,7 +48,6 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10 ">
-        <div id="img-mobile" class="visible-xs"></div>
         <div id="category-description" class="padded text-center">
 
           <% if @category_page == @categories[0] %>
@@ -70,23 +69,28 @@
             <p><%= @categories[5] %></p>
             <h1>Nos coups de coeurs, bons plans, astuces pour être heureux au travail et dans sa vie en général !</h1>
           <% else %>
-            <h1>quote</h1>
           <% end %>
           <div class="row">
-            <div class="col-xs-12 hidden-xs">
+            <div class="col-xs-12 hidden-sm hidden-xs">
               <ul class= "list-inline">
-                <% @subcategories.each do |subcat| %>
+                <% @subcategories.each_with_index do |subcat, index| %>
                   <li>
-                    <%= link_to "#{subcat}", {controller: "ressources", action: "category", category: "#{@category_page}", subcategory: "#{subcat}"} , class: "btn btn-transparent"  %>
+                    <%= link_to "#{index + 1}. #{subcat}", {controller: "ressources", action: "category", category: "#{@category_page}", subcategory: "#{subcat}"} , class: "btn btn-transparent"  %>
                   </li>
                 <% end %>
+<!--                 <li> image_tag "happy.png", id:"happy" %></li>
+ -->              </ul>
+              <ul class= "list-inline">
+                <li><%= image_tag "step.png", id:"step-arrow1" %></li>
+                <li><p id= "step-selection">A quelle étape êtes-vous ?</p></li>
+                <li><%= image_tag "step.png", id:"step-arrow2" %></li>
               </ul>
             </div>
 
             <!-- BANNIERE PETIT ECRAN -->
-            <div class="col-xs12 visible-xs">
+            <div class="col-xs-12 visible-xs visible-sm">
               <div class="btn-group">
-                <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" id="looking_for">Que cherchez-vous ?</button>
+                <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" id="looking_for">A quelle étape êtes-vous ?</button>
                 <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="caret"></span>
                   <span class="sr-only">Toggle Dropdown</span>
@@ -94,7 +98,7 @@
                 <ul class="dropdown-menu">
                   <% @subcategories.each_with_index do |subcat, index| %>
                     <li>
-                      <%= link_to "index #{subcat}", {controller: "ressources", action: "category", category: "#{@category_page}", subcategory: "#{subcat}"}  %>
+                      <%= link_to "#{index + 1}.  #{subcat}", {controller: "ressources", action: "category", category: "#{@category_page}", subcategory: "#{subcat}"}  %>
                     </li>
                   <% end %>
                 </ul>
@@ -138,18 +142,24 @@
                 elle demande une grande réflexion sur qui vous êtes et sur ce qui vous anime aujourd'hui. Nous vous avons sélectionné des sites, médias, blogs, histoires inspirantes pour vous montrer ce qu'il est possible de faire et ce que d'autres ont fait. Alors pourquoi pas vous ? Bonne découverte !
               </p>
             <% elsif params[:subcategory] == @subcategories[1] %>
-              <p class="white"><b>Etape 2 : S'informer</b><br> C'est bon, vous êtes déterminé à vous lancer ? Vous avez compris qu'avoir un job qui vous rend heureux, c'est possible, quelque soit votre situation ? Super, maintenant nous n'allons pas vous mentir, il va falloir se bouger pour y arriver. Cela demande du temps et de l'énergie. Heureusement, nous vous avons (un peu) facilité la tâche sur tous les sujets juridique, administratif et financier. On sait bien, ce n'est pas très sexy mais indispensable. Bonne lecture !
+              <p class="white"><b>Etape 2 : S'informer</b><br> C'est bon, vous êtes déterminé à vous lancer ? Vous avez compris qu'avoir un job qui vous rend heureux, c'est possible, quelque soit votre situation ? Super, maintenant nous n'allons pas vous mentir, il va falloir se bouger pour y arriver. Cela demande du temps et de l'énergie. Heureusement, nous vous avons (un peu) facilité la tâche sur tous les sujets juridique, administratif et financier. Bonne lecture !
               </p>
             <% elsif params[:subcategory] == @subcategories[2] %>
-              <p class="white"><b>Etape 3 : Se Faire Aider</b></p>
+              <p class="white"><b>Etape 3 : Se Faire Aider</b><br>
+              </p>
             <% elsif params[:subcategory] == @subcategories[3] %>
-              <p class="white"><b>Etape 4 : Se Former</b></p>
+              <p class="white"><b>Etape 4 : Se Former</b><br>
+                <!-- Vous voulez acquérir de nouvelles compétences, devenir expert dans un domaine ou faire un virage à 360° ?  -->
+              </p>
             <% elsif params[:subcategory] == @subcategories[4] %>
-              <p class="white"><b>Etape 5 : Réseauter</b>/p>
+              <p class="white"><b>Etape 5 : Réseauter</b><br>
+              </p>
             <% elsif params[:subcategory] == @subcategories[5] %>
-              <p class="white"><b>Etape 6 : Postuler</b></p>
+              <p class="white"><b>Etape 6 : Postuler</b><br>
+              </p>
             <% elsif params[:subcategory] == @subcategories[6] %>
-              <p class="white"><b>Etape 7 : S'éclater</b></p>
+              <p class="white"><b>Etape 7 : S'éclater</b><br>
+              </p>
             <% else %>
             <% end %>
           </div>

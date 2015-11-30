@@ -12,16 +12,15 @@ $(document).ready(function(){
   });
   $('.owl-carousel-big').owlCarousel({
     items : 1,
+    nav : true, // Show next and prev buttons
+    navText: ["<img src='assets/prev.png'>","<img src='assets/next.png'>"],
+    // loop: true,
+    // autoplay:true,
+    // autoplayTimeout:1000,
+    // autoplayHoverPause:true
   });
   $('.owl-carousel-mobile').owlCarousel({
     items : 2,
   });
 
-// Custom Navigation Events
-  // $(".next").click(function(){
-  //   owl.trigger('owl.next');
-  // })
-  // $(".prev").click(function(){
-  //   owl.trigger('owl.prev');
-  // })
 });
