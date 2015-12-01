@@ -13,7 +13,7 @@ $(document).ready(function(){
   $('.owl-carousel-big').owlCarousel({
     items : 1,
     nav : true, // Show next and prev buttons
-    navText: ["<img src='assets/prev.png'>","<img src='assets/next.png'>"],
+    navText: ["<span class='glyphicon glyphicon-menu-left'></span>","<span class='glyphicon glyphicon-menu-right'></span>"],
     // loop: true,
     // autoplay:true,
     // autoplayTimeout:1000,
