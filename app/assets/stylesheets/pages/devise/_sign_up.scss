@@ -12,6 +12,7 @@
     text-align: center;
     padding: 25px;
     margin-bottom: 40px;
+    margin-top: 20px;
     border-radius: 3px;
     img {
       margin-top: 20px;
@@ -38,5 +39,8 @@
   i {
     margin-top: 10px;
     color: $blue;
+  }
+  div.alert {
+    top: -35px;
   }
 }

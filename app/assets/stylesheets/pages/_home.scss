@@ -10,6 +10,9 @@
     // décalage pour la barre de la newsletter
     margin-top: 35px;
   }
+  div.alert {
+    top: 37px;
+  }
 
   // Menu en mobile
   @media screen and (max-width: 768px) {
@@ -33,13 +36,9 @@
     background-color: white;
   }
 
-  div.alert {
-    position: absolute;
-    top: 100px;
-    z-index: 100000000;
-    width: 80%;
-    text-align: center;
-  }
+  // div.alert {
+  //   top: 100px;
+  // }
   // Bannière ===============================================================
 
   img.bg, #dream-job-video {

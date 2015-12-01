@@ -12,6 +12,7 @@
     background-color: white;
     text-align: center;
     margin-bottom: 40px;
+    margin-top: 20px;
     padding: 25px;
     border-radius: 3px;
     img {
@@ -31,5 +32,8 @@
   .btn-facebook {
     background-color: rgb(59, 89, 152);
     color: white;
+  }
+  div.alert {
+    top: -35px;
   }
 }

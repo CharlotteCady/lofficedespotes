@@ -82,7 +82,7 @@
  -->              </ul>
               <ul class= "list-inline">
                 <li><%= image_tag "step.png", id:"step-arrow1" %></li>
-                <li><p id= "step-selection">A quelle étape êtes-vous ?</p></li>
+                <li><p id= "step-selection">A quelle étape en êtes-vous ?</p></li>
                 <li><%= image_tag "step.png", id:"step-arrow2" %></li>
               </ul>
             </div>
@@ -90,7 +90,7 @@
             <!-- BANNIERE PETIT ECRAN -->
             <div class="col-xs-12 visible-xs visible-sm">
               <div class="btn-group">
-                <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" id="looking_for">A quelle étape êtes-vous ?</button>
+                <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" id="looking_for">A quelle étape en êtes-vous ?</button>
                 <button type="button" class="btn btn-transparent dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="caret"></span>
                   <span class="sr-only">Toggle Dropdown</span>
@@ -226,7 +226,7 @@
               <% else %>
                 <% @ressources.each do |ress| %>
                 <div class="row white">
-                  <div class="col-xs-2">
+                  <div class="col-xs-3">
                     <ul class= "list-inline">
                       <li>
                         <div class="votes">
@@ -253,7 +253,7 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="col-xs-10">
+                  <div class="col-xs-9">
                     <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug) %></h2>
                     <p class="content-title"><%= ress.description %>.</p>
                   </div>

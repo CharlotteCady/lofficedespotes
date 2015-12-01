@@ -4,6 +4,9 @@
       margin-top: 15px;
     }
   }
+  div.alert {
+    top: 60px;
+  }
   background-color: white;
 
   // =============== BLOC IMAGE ET QUOTE
@@ -28,6 +31,7 @@
   #edito {
     p {
       text-align: justify;
+      font-size: 16px;
     }
     .paragraphe {
       padding-bottom: 25px;
@@ -37,11 +41,13 @@
   // =========== L'emploi en france
   #emploi {
     background: image-url("acteurs-emploi.png") repeat;
-    min-height: 400px;
+    // min-height: 400px;
     h1 {
       padding-bottom: 50px;
-      font-size: 60px;
+      padding-top: 50px;
+      font-size: 50px;
       color: white;
+      line-height: 1.3;
     }
   }
 

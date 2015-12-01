@@ -18,11 +18,11 @@ fr:
       unconfirmed: "Vous devez confirmer votre adresse mail avant de continuer"
     mailer:
       confirmation_instructions:
-        subject: "Instructions de confirmation"
+        subject: "Bienvenue chez WorkUp, Confirmez votre Inscription (c'est super rapide)"
       reset_password_instructions:
-        subject: "Instructions pour réinitialiser votre mot de passe"
+        subject: "Instructions pour réinitialiser votre mot de passe WorkUp"
       unlock_instructions:
-        subject: "Instructions pour débloquer votre compte"
+        subject: "Instructions pour débloquer votre compte WorkUp"
     omniauth_callbacks:
       failure: "Nous n'arrivons pas à vous authentifier %{kind} car \"%{reason}\"."
       success: "Authentifié avec succès sur le compte de %{kind}."

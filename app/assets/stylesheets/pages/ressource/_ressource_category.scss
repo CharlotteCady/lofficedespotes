@@ -20,24 +20,18 @@
     margin-top: 50px;
     z-index: 3000;
   }
-  div.alert {
-    position: absolute;
-    top: 10px;
-    width: 95%;
-    z-index: 100000;
-   }
   .banner {
     // margin-left: 200px;
     width: 100%;
   }
   #banner-image {
-    min-height: 380px;
+    min-height: 400px;
     margin-top: -5px;
     position: relative;
   }
 
   .content-banner {
-    padding-left: 40px;
+    // padding-left: 40px;
     padding-top: 50px;
     position: absolute;
     top: 0;
@@ -111,12 +105,20 @@
         border: 1px solid $blue;
       }
     }
+
+    // FORMULAIRE SUR MOBILE
     button#looking_for, button.btn {
-      font-size: 18px;
+      font-size: 20px;
+      margin-left: 0px;
     }
     ul.dropdown-menu {
-      margin-left: 10px;
-      width: 190px;
+      width: 263px;
+      font-family: $my-font;
+      font-size: 18px;
+      a {
+        padding-bottom: 5px;
+        padding-top: 5px;
+      }
     }
   }
 

@@ -10,6 +10,7 @@
   #edit {
     background-color: white;
     margin-bottom: 40px;
+    margin-top: 20px;
     padding: 25px;
     border-radius: 3px;
     p {
@@ -40,5 +41,8 @@
   }
   #delete-account, #avatar {
     text-align: center;
+  }
+  div.alert {
+    top: -35px;
   }
 }

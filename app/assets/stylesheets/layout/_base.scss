@@ -91,3 +91,11 @@ p.title {
   font-weight: bold;
   line-height: 1.5;
 }
+
+div.alert {
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  text-align: center;
+  z-index: 100000;
+ }
