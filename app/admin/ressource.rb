@@ -4,7 +4,7 @@ ActiveAdmin.register Ressource do
   :bootsy_image_gallery_id, :user_id, :picture_file_name, :picture_content_type, :picture_file_size, :picture_updated_at, :picture_updated_at,
   :picture_updated_at, :picture_updated_at, :picture_updated_at, :logo_file_name, :logo_content_type,
   :logo_file_size, :logo_updated_at, :logo_updated_at, :logo_updated_at, :logo_updated_at, :logo_updated_at,
-  :slug
+  :slug, :sector, :city
 
   index do
     selectable_column
