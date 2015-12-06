@@ -12,12 +12,15 @@ ActiveAdmin.register Ressource do
     column :title
     column :description
     column :website
+    column :city
+    column :sector
     column :category
     column :subcategory
     column :created_at
     column :seotitle
     column :seodescription
     column :slug
+
     # column :comments
     actions
   end

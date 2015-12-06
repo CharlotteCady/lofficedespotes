@@ -38,7 +38,7 @@ class RessourcesController < ApplicationController
     @ressource = Ressource.new
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'éclater"]
-    @sector_list = ["Communication", "Artisanat", "Web", "Santé", "Education", "Service"]
+    @sector_list = ["Tout", "Communication", "Artisanat", "Web", "Santé", "Education", "Service"]
     @city = ["France", "Paris", "Nantes", "Bordeaux", "Strasbourg", "Marseille", "Lyon", "Toulouse", "Tours",
              "Lille", "Rennes", "Brest", "Nice", "Aix en Provence", "Caen"]
   end
