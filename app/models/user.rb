@@ -27,9 +27,10 @@ class User < ActiveRecord::Base
       user.avatar = auth.info.image
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
+      # A TESTER AVEC UN COMPTE FACEBOOK POUR LA 1ERE INSCRIPTION ======
+      user.skip_confirmation!
+      user.save!
     end
-    # @user.skip_confirmation!
-    # @user.save!
   end
 
   private

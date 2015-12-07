@@ -7,7 +7,7 @@
       <%= text_field_tag :category, params[:category], class: "form hidden" %>
     </div>
     <div class="form-group">
-      <%= select_tag(:subcategory, options_for_select([["S'inspirer"], ["S'informer"], ["Se Faire Aider"], ["Se Former"], ["Réseauter"], ["Postuler"], ["S'éclater"]]), prompt: " ----  Envie  ---- ", class: "form") %>
+      <%= select_tag(:subcategory, options_for_select([["S'inspirer"], ["S'informer"], ["Se Faire Aider"], ["Se Former"], ["Réseauter"], ["Postuler"], ["S'évader"]]), prompt: " ----  Envie  ---- ", class: "form") %>
     </div>
       <%= submit_tag("Chercher", class: "btn btn-primary") %>
   <% end %>
