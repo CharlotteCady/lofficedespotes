@@ -9,7 +9,21 @@ as: :check_boxes pour multiple choix -->
     <%= ressource.input :description, label: "Mini description", as: :text, placeholder: '155 caractères max' %>
   </div>
   <div class="white-block">
-    <%= ressource.input :content, label: "Description détaillée", as: :bootsy %>
+    <%= ressource.input :content, label: "Description détaillée 1", as: :bootsy %>
+  </div>
+  <div class="white-block">
+    <%= ressource.label :picturecontent1, label: "Photo de Contenu 1" %>
+    <%= ressource.file_field :picturecontent1 %>
+  </div>
+  <div class="white-block">
+    <%= ressource.input :content2, label: "Description détaillée 2", as: :bootsy %>
+  </div>
+  <div class="white-block">
+    <%= ressource.label :picturecontent2, label: "Photo de Contenu 2" %>
+    <%= ressource.file_field :picturecontent2 %>
+  </div>
+  <div class="white-block">
+    <%= ressource.input :content3, label: "Description détaillée 3", as: :bootsy %>
   </div>
   <div class="white-block">
     <%= ressource.input :category, collection: @categories, input_html: {multiple: true}, :as => :check_boxes, include_blank: false, label: "Catégorie" %>

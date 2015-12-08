@@ -2,6 +2,7 @@ class Ressource < ActiveRecord::Base
   extend FriendlyId
   include Bootsy::Container
   friendly_id :title, use: :slugged
+  # :use => [:slugged, :finders]
 
   acts_as_commentable
   acts_as_votable
@@ -17,13 +18,23 @@ class Ressource < ActiveRecord::Base
   # validates :slug, presence: true, uniqueness: true
 
   has_attached_file :picture,
-      styles: { medium: "300x300>", thumb: "100x100>" }
+      styles: { large: "900x900>", medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :picture,
       content_type: /\Aimage\/.*\z/
 
   has_attached_file :logo,
       styles: { thumb: "100x100>" }
   validates_attachment_content_type :logo,
+      content_type: /\Aimage\/.*\z/
+
+  has_attached_file :picturecontent1,
+      styles: { large: "900x900>", medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :picture,
+      content_type: /\Aimage\/.*\z/
+
+  has_attached_file :picturecontent2,
+      styles: { large: "900x900>", medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :picture,
       content_type: /\Aimage\/.*\z/
 
   def self.search(keyword, category, subcategory)

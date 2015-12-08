@@ -1,10 +1,11 @@
 ActiveAdmin.register Ressource do
 
-  permit_params :title, :description, :content, :witness, :website, :address, :category, :subcategory, :picture, :logo, :seotitle, :seodescription,
+  permit_params :title, :description, :content, :content2, :content3, :witness, :website, :address, :category, :subcategory, :picture, :logo, :seotitle, :seodescription,
   :bootsy_image_gallery_id, :user_id, :picture_file_name, :picture_content_type, :picture_file_size, :picture_updated_at, :picture_updated_at,
   :picture_updated_at, :picture_updated_at, :picture_updated_at, :logo_file_name, :logo_content_type,
   :logo_file_size, :logo_updated_at, :logo_updated_at, :logo_updated_at, :logo_updated_at, :logo_updated_at,
-  :slug, :sector, :city
+  :slug, :sector, :city, :picturecontent1_file_name, :picturecontent1_content_type, :picturecontent1_file_size, :picturecontent1_updated_at,
+  :picturecontent2_file_name, :picturecontent2_content_type, :picturecontent2_file_size, :picturecontent2_updated_at
 
   index do
     selectable_column

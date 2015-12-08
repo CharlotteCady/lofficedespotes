@@ -115,7 +115,9 @@ class RessourcesController < ApplicationController
   private
 
   def ressource_params
-    params.require(:ressource).permit(:title, :description, :content, :witness, :website, :address, :subcategory, :picture, :logo, :seotitle, :seodescription, :bootsy_image_gallery_id, :category => [], :sector => [], :city => [])
+    params.require(:ressource).permit(:title, :description, :content, :picturecontent1, :content2, :picturecontent2, :content3,
+     :witness, :website, :address, :subcategory, :picture, :logo, :seotitle, :seodescription, :bootsy_image_gallery_id,
+     :category => [], :sector => [], :city => [])
   end
 
   def set_ressource

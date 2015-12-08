@@ -96,7 +96,10 @@
         <div class="content-text">
           <strong><h2 class="title-description"><%= @ressource.description %></h2></strong>
           <p><%= sanitize @ressource.content %></p>
-
+          <%= (image_tag @ressource.picturecontent1.url, class: "img-responsive" ) if (@ressource.picturecontent1?) %>
+          <p><%= sanitize @ressource.content2 %></p>
+          <%= (image_tag @ressource.picturecontent2.url, class: "img-responsive" ) if (@ressource.picturecontent2?) %>
+          <p><%= sanitize @ressource.content3 %></p>
         </div>
 <!--         <p class= "witness">
           "   <%= @ressource.witness %>   "

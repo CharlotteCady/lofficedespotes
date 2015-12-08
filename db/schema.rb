@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202180035) do
+ActiveRecord::Schema.define(version: 20151208172843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,8 +83,8 @@ ActiveRecord::Schema.define(version: 20151202180035) do
     t.text     "category"
     t.text     "subcategory"
     t.integer  "user_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
@@ -98,6 +98,16 @@ ActiveRecord::Schema.define(version: 20151202180035) do
     t.string   "slug"
     t.string   "city"
     t.string   "sector"
+    t.string   "content2"
+    t.string   "content3"
+    t.string   "picturecontent1_file_name"
+    t.string   "picturecontent1_content_type"
+    t.integer  "picturecontent1_file_size"
+    t.datetime "picturecontent1_updated_at"
+    t.string   "picturecontent2_file_name"
+    t.string   "picturecontent2_content_type"
+    t.integer  "picturecontent2_file_size"
+    t.datetime "picturecontent2_updated_at"
   end
 
   add_index "ressources", ["user_id"], name: "index_ressources_on_user_id", using: :btree
