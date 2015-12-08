@@ -12,7 +12,7 @@ as: :check_boxes pour multiple choix -->
     <%= ressource.input :content, label: "Description détaillée", as: :bootsy %>
   </div>
   <div class="white-block">
-    <%= ressource.input :category, collection: @categories, include_blank: false, label: "Catégorie" %>
+    <%= ressource.input :category, collection: @categories, input_html: {multiple: true}, :as => :check_boxes, include_blank: false, label: "Catégorie" %>
     <%= ressource.input :subcategory, collection: @subcategories, include_blank: false, label: "Sous-Catégorie" %>
   </div>
 <!--   <div class="white-block">

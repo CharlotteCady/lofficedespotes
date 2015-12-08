@@ -39,7 +39,14 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10 ">
-        <div class= "btn btn-blue zindex hidden-xs"><%= @ressource.category %></div>
+        <% category_list = eval(@ressource.category) - [""] %>
+        <% category_list.map do |category| %>
+          <div class= "btn btn-blue zindex hidden-xs">
+            <% if (category != "") %>
+              <%= category %>
+            <% end %>
+          </div>
+        <% end %>
         <div class= "btn btn-primary hidden-xs"><%= @ressource.subcategory %></div>
         <% if user_signed_in?  %>
           <% if current_user.admin? %>

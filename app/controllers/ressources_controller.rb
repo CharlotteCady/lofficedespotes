@@ -38,7 +38,7 @@ class RessourcesController < ApplicationController
     @ressource = Ressource.new
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'évader"]
-    @sector_list = ["Tout", "Communication", "Artisanat", "Web", "Santé", "Education", "Service"]
+    @sector_list = ["Tout", "Communication", "Artisanat", "Web", "Design", "Santé", "Education", "Aide" , "Service", "Bâtiment", "Agro-alimentaire", "Restauration"]
     @city = ["France", "Paris", "Nantes", "Bordeaux", "Strasbourg", "Marseille", "Lyon", "Toulouse", "Tours",
              "Lille", "Rennes", "Brest", "Nice", "Aix en Provence", "Caen"]
   end
@@ -59,7 +59,7 @@ class RessourcesController < ApplicationController
   def edit
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'évader"]
-    @sector_list = ["Tout", "Communication", "Artisanat", "Web", "Santé", "Education", "Service"]
+    @sector_list = ["Tout", "Communication", "Artisanat", "Web", "Santé", "Education", "Aide" , "Service", "Bâtiment", "Agro-alimentaire", "Restauration"]
     @city = ["France", "Paris", "Nantes", "Bordeaux", "Strasbourg", "Marseille", "Lyon", "Toulouse", "Tours",
              "Lille", "Rennes", "Brest", "Nice", "Aix en Provence", "Caen"]
   end
@@ -115,7 +115,7 @@ class RessourcesController < ApplicationController
   private
 
   def ressource_params
-    params.require(:ressource).permit(:title, :description, :content, :witness, :website, :address, :category, :subcategory, :picture, :logo, :seotitle, :seodescription, :bootsy_image_gallery_id, :sector => [], :city => [])
+    params.require(:ressource).permit(:title, :description, :content, :witness, :website, :address, :subcategory, :picture, :logo, :seotitle, :seodescription, :bootsy_image_gallery_id, :category => [], :sector => [], :city => [])
   end
 
   def set_ressource
