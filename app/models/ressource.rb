@@ -3,6 +3,7 @@ class Ressource < ActiveRecord::Base
   include Bootsy::Container
   friendly_id :title, use: :slugged
   # :use => [:slugged, :finders]
+  # serialize :category, Array
 
   acts_as_commentable
   acts_as_votable

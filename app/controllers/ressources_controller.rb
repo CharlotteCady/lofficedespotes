@@ -16,6 +16,7 @@ class RessourcesController < ApplicationController
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'évader"]
     @subcat_sidebar = ["Voir tout"]
+    # @ressources_list_for_banner = SELECT * FROM ressources WHERE (ressources.category = "["Coup de Coeur"]")
   end
 
   # def search
