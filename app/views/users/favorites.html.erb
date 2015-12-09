@@ -54,42 +54,36 @@
 
           <div class="listing_ressources">
             <% if params[:category] %>
-              <% if @user_cat_vote.include? true %>
-                <% @ressources.each do |ress| %>
-                  <% if current_user.voted_up_on? ress %>
-                    <div class="row white">
-                      <div class="col-xs-2">
-                        <ul class= "list-inline">
-                          <li>
-                            <div class="votes">
-                                <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
-                                  <i class="fa fa-heart"></i>
-                                <% end %>
-                              <p class="vote_count"><%= ress.score %></p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="comments">
-                              <i class="fa fa-comment-o"></i>
-                              <p><%= ress.comments.count %></p>
-                            </div>
-                          </li>
-                          <li>
-                            <%= image_tag ress.logo.url(:thumb), class: "logo" %>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-xs-10">
-                        <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
-                        <p class="content-title"><%= ress.description %>.</p>
-                      </div>
+              <% @all_ressources.each do |ress| %>
+                <% if (eval(ress.category).include?(params[:category])) && (current_user.voted_up_on? ress) %>
+                  <div class="row white">
+                    <div class="col-xs-2">
+                      <ul class= "list-inline">
+                        <li>
+                          <div class="votes">
+                              <%= link_to dislike_ressource_path(ress), method: :put, class: "dislike_ressource btn-vote" do %>
+                                <i class="fa fa-heart"></i>
+                              <% end %>
+                            <p class="vote_count"><%= ress.score %></p>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="comments">
+                            <i class="fa fa-comment-o"></i>
+                            <p><%= ress.comments.count %></p>
+                          </div>
+                        </li>
+                        <li>
+                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                        </li>
+                      </ul>
                     </div>
-                  <% end %>
+                    <div class="col-xs-10">
+                      <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
+                      <p class="content-title"><%= ress.description %>.</p>
+                    </div>
+                  </div>
                 <% end %>
-              <% else %>
-                <p class ="nothing">
-                  Vous n'avez pas encore voté pour vos ressources préférées dans cette catégorie ! Pour retrouver facilement toutes vos ressources préférées, il vous suffit de cliquer sur le petit coeur à côté de chaque article et il apparaitra sur cette page :)
-                </p>
               <% end %>
             <% else %>
               <% if @user_vote.include? true %>
