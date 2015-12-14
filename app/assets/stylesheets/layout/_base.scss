@@ -92,7 +92,7 @@ p.title {
   line-height: 1.5;
 }
 
-div.alert {
+div.alert:not(.alert_connect_to_like) {
   position: absolute;
   top: 5px;
   width: 100%;
