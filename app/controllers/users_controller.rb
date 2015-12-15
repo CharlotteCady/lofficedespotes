@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def favorites
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'évader"]
+    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
     @category = params[:category]
     @ressources = Ressource.where(category: @category)
     @user_cat_vote = @ressources.map { |r| current_user.voted_up_on? r }

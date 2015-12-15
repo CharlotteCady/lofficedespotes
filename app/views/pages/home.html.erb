@@ -17,16 +17,16 @@
           </div>
           <div class="col-xs-12">
             <ul class="list-inline hidden-xs">
-              <li><%= link_to "Je suis perdu(e)", ressources_path, class: "btn btn-primary" %></li>
               <li><%= link_to "Chercher un job", "categorie?category=Chercher+un+job", class: "btn btn-transparent" %></li>
               <li><%= link_to "Changer de métier", "categorie?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
               <li><%= link_to "Changer de boite", "categorie?category=Changer+de+boite", class: "btn btn-transparent" %></li>
               <li><%= link_to "Créer sa boite", "categorie?category=Créer+sa+boite", class: "btn btn-transparent" %></li>
               <li class="hidden"><%= link_to "Intraprendre", "categorie?category=Intraprendre", class: "btn btn-transparent" %></li>
+              <li><%= link_to "Je suis perdu(e)", ressources_path, class: "btn btn-primary" %></li>
             </ul>
             <ul class="list-inline hidden-xs" id="test-here">
-              <li><%= image_tag "step.png", id:"step-arrow1" %></li>
               <li><p id="test">Pour tester, c'est par ici</p></li>
+              <li><%= image_tag "step.png", id:"step-arrow1" %></li>
             </ul>
             <div class="visible-xs">
               <%= link_to "Découvrir Maintenant", ressources_path, class: "btn btn-primary" %>

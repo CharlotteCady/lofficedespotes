@@ -3,4 +3,6 @@ class PagesController < ApplicationController
   end
   def how
   end
+  def mentions_legales
+  end
 end

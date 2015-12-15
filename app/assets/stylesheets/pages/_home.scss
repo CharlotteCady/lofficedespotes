@@ -81,17 +81,11 @@
         margin-bottom: 0px;
       }
       ul#test-here {
-        text-align: left;
-        margin-left: 250px;
+        text-align: right;
+        margin-right: 200px;
       }
       img#step-arrow1 {
-        -moz-transform: scaleX(-1);
-          -o-transform: scaleX(-1);
-          -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-          filter: FlipH;
-          -ms-filter: "FlipH";
-          margin-bottom: 20px;
+        margin-bottom: 20px;
       }
       p#test {
         font-family: 'Indie Flower', cursive;

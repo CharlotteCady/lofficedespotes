@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/comment-cela-marche', to: "pages#how", as: '/how'
   get "/categorie", to: "ressources#category", as: "/category"
   post "category", to: "ressources#category"
+  get '/mentions-legales', to: "pages#mentions_legales"
   # get "/guide-de-l-emploi", to: "ressources#index", as: "/ressources"
 
   resources :users, only: [:edit, :update] do

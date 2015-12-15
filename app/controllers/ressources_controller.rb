@@ -14,7 +14,7 @@ class RessourcesController < ApplicationController
     end
 
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'évader"]
+    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
     @subcat_sidebar = ["Voir tout"]
     # @ressources_list_for_banner = SELECT * FROM ressources WHERE (ressources.category = "["Coup de Coeur"]")
   end
@@ -26,7 +26,7 @@ class RessourcesController < ApplicationController
 
   def show
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'évader"]
+    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
     @subcat_sidebar = ["Voir tout"]
     @comment = @ressource.comments.new
     @comments = Comment.where(commentable_id: @ressource)
@@ -38,7 +38,7 @@ class RessourcesController < ApplicationController
   def new
     @ressource = Ressource.new
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'évader"]
+    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
     @sector_list = ["Tout", "Communication", "Artisanat", "Web", "Design", "Santé", "Education", "Aide" , "Service", "Bâtiment", "Agro-alimentaire", "Restauration"]
     @city = ["France", "Paris", "Nantes", "Bordeaux", "Strasbourg", "Marseille", "Lyon", "Toulouse", "Tours",
              "Lille", "Rennes", "Brest", "Nice", "Aix en Provence", "Caen"]
@@ -59,7 +59,7 @@ class RessourcesController < ApplicationController
 
   def edit
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'évader"]
+    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
     @sector_list = ["Tout", "Communication", "Artisanat", "Web", "Santé", "Education", "Aide" , "Service", "Bâtiment", "Agro-alimentaire", "Restauration"]
     @city = ["France", "Paris", "Nantes", "Bordeaux", "Strasbourg", "Marseille", "Lyon", "Toulouse", "Tours",
              "Lille", "Rennes", "Brest", "Nice", "Aix en Provence", "Caen"]
@@ -98,7 +98,7 @@ class RessourcesController < ApplicationController
 
   def category
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "S'évader"]
+    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
     @subcat_sidebar = ["Voir tout"]
     @category_page = params[:category]
     # @ressources = Ressource.where(category: @category_page)

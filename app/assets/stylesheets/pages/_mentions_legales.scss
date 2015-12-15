@@ -1,0 +1,33 @@
+#pages_mentions_legales {
+
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+  div.alert {
+    top: 60px;
+  }
+
+  #page_mentions {
+    margin-top: 60px;
+    p {
+      font-size: 16px;
+      text-align: justify;
+    }
+    #edition, #hebergeur, #confidentiel, h1 {
+      padding: 15px;
+    }
+    .sub-title {
+      color: $blue;
+      font-size: 18px;
+    }
+    ul {
+      padding-left: 0px;
+      li {
+        font-size: 16px;
+        list-style: outside none none;
+      }
+    }
+  }
+}
