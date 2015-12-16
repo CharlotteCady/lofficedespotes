@@ -7,7 +7,7 @@ fr:
       send_instructions: "Vous recevrez un email avec des instructions pour valider votre compte."
       send_paranoid_instructions: "Si votre adresse mail existe dans notre base de données, vous recevrez un email avec des instructions pour valider votre compte"
     failure:
-      already_authenticated: "Vous avez déjà un compte."
+      already_authenticated: "Vous êtes connectée."
       inactive: "Votre compte n'a pas encore été activé."
       invalid: "%{authentication_keys} ou mot de passe invalide."
       locked: "Votre compte est bloqué, envoyez-nous un petit message pour le débloquer."
