@@ -97,7 +97,11 @@
                       <li>
                         <div class="comments">
                           <i class="fa fa-comment-o"></i>
-                          <p><%= link_to ress.slug, ressource_path(ress.slug) +'#disqus_thread' %></p>
+<!--                           <p> link_to ress.slug, ressource_path(ress.slug) +'#disqus_thread' %></p>
+ -->
+                          <p>
+                            <%= link_to "This will be replaced by the comment count", ressource_path(ress, :anchor => "disqus_thread"), :"data-disqus-identifer" => ress.id %>
+                          </p>
                         </div>
                       </li>
                       <li>
@@ -167,7 +171,9 @@
                       <li>
                         <div class="comments">
                           <i class="fa fa-comment-o"></i>
-                          <p><%= link_to ress.slug, ressource_path(ress.slug) +'#disqus_thread' %></p>
+                          <p>
+                            <%= link_to "This will be replaced by the comment count", ressource_path(ress, :anchor => "disqus_thread"), :"data-disqus-identifer" => ress.id %>
+                          </p>
                         </div>
                       </li>
                       <li>
