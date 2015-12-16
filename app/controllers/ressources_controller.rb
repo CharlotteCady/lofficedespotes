@@ -118,7 +118,7 @@ class RessourcesController < ApplicationController
     if request.host == "localhost"
       @url_host = "http://localhost:3000"
     elsif request.host == "lofficedespotes-staging.herokuapp.com"
-      @url_host = "https://lofficedespotes-staging.herokuapp.com"
+      @url_host = "http://lofficedespotes-staging.herokuapp.com"
     else
       @url_host = "http://lofficedespotes.herokuapp.com"
     end
