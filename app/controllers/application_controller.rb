@@ -17,6 +17,8 @@ class ApplicationController < ActionController::Base
   def default_url_options
     if Rails.env.production?
       { host: 'lofficedespotes.herokuapp.com' }
+    elsif Rails.env.staging?
+      { host: 'lofficedespotes-staging.herokuapp.com' }
     else
       { host: ENV['HOST'] || 'localhost:3000' }
     end

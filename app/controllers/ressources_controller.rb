@@ -16,7 +16,7 @@ class RessourcesController < ApplicationController
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
     @subcat_sidebar = ["Voir tout"]
-    # @ressources_list_for_banner = SELECT * FROM ressources WHERE (ressources.category = "["Coup de Coeur"]")
+    current_host
   end
 
   # def search
@@ -110,6 +110,17 @@ class RessourcesController < ApplicationController
       @ressources = Ressource.search(keyword, category, subcategory).order('created_at DESC')
     else
       @ressources = Ressource.where(category: @category_page).order('created_at DESC')
+    end
+    current_host
+  end
+
+  def current_host
+    if request.host == "localhost"
+      @url_host = "http://localhost:3000"
+    elsif request.host == "lofficedespotes-staging.herokuapp.com"
+      @url_host = "https://lofficedespotes-staging.herokuapp.com/"
+    else
+      @url_host = "http://lofficedespotes.herokuapp.com/"
     end
   end
 
