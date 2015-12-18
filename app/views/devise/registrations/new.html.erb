@@ -32,7 +32,7 @@
         <% end %>
 
         <% if devise_mapping.registerable? %>
-          <%= link_to "Vous avez déjà un compte ?", new_session_path(resource_name) %><br />
+          <b><%= link_to "Vous avez déjà un compte ?", new_session_path(resource_name) %></b><br />
         <% end %>
 
         <i class="fa fa-heart text-center"></i>

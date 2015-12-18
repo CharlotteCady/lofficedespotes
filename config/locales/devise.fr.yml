@@ -7,13 +7,13 @@ fr:
       send_instructions: "Vous recevrez un email avec des instructions pour valider votre compte."
       send_paranoid_instructions: "Si votre adresse mail existe dans notre base de données, vous recevrez un email avec des instructions pour valider votre compte"
     failure:
-      already_authenticated: "Vous êtes connectée."
+      already_authenticated: "Vous êtes connecté(e)."
       inactive: "Votre compte n'a pas encore été activé."
       invalid: "%{authentication_keys} ou mot de passe invalide."
       locked: "Votre compte est bloqué, envoyez-nous un petit message pour le débloquer."
       last_attempt: "Vous avez droit à une dernière tentative avant que votre compte soit bloqué."
       not_found_in_database: "%{authentication_keys} ou mot de passe invalide."
-      timeout: "Votre session a expirée, veuillez vous reconnecter pour continuer."
+      timeout: "Votre session a expiré, veuillez vous reconnecter pour continuer."
       unauthenticated: "Vous devez vous connecter pour continuer :)"
       unconfirmed: "Vous devez confirmer votre adresse mail avant de continuer"
     mailer:
@@ -25,18 +25,18 @@ fr:
         subject: "Instructions pour débloquer votre compte WorkUp"
     omniauth_callbacks:
       failure: "Nous n'arrivons pas à vous authentifier avec %{kind} car \"%{reason}\"."
-      success: "Authentifié avec succès avec votre compte %{kind}."
+      success: "Authentifié(e) avec succès avec votre compte %{kind}."
     passwords:
       no_token: "Si vous venez à partir d'un e-mail de réinitialisation, s'il vous plaît assurez-vous que vous avez utilisé l'URL complète."
       send_instructions: "Vous recevrez dans quelques minutes un e-mail avec les instructions pour réinitialiser votre mot de passe."
       send_paranoid_instructions: "Si votre adresse mail existe dans notre base de données, vous recevrez un e-mail avec un lien pour réinitialiser votre mot de passe."
-      updated: "Votre mot de passe a bien été changé. Vous êtes maintenant connecté."
+      updated: "Votre mot de passe a bien été changé. Vous êtes maintenant connecté(e)."
       updated_not_active: "Votre mot de passe a bien été changé."
     registrations:
       destroyed: "Bye Bye ! Votre compte a bien été supprimé. Nous espérons vous revoir bientôt."
       signed_up: "Vous êtes bien enregistré(e) :)"
-      signed_up_but_inactive: "Vous êtes bien enregistré(e). Votre compte n'est pas encore activé, veuillez regarder vos e-mails :)"
-      signed_up_but_locked: "Vous êtes bien enregistré mais votre compte est bloqué :("
+      signed_up_but_inactive: "Vous êtes bien enregistré(e). Votre compte n'est pas encore activé, veuillez regarder vos mails (et vos SPAM) :)"
+      signed_up_but_locked: "Vous êtes bien enregistré(e) mais votre compte est bloqué :( contactez-nous !"
       signed_up_but_unconfirmed: "Un e-mail vous a été envoyé avec un lien de confirmation. Veuillez cliquer dessus afin d'activer votre compte :)"
       update_needs_confirmation: "Vous avez mis à jour votre compte, mais nous devons vérifier votre adresse mail. Veuillez s'il vous plaît regarder vos e-mails et cliquer sur le lien de confirmation :)"
       updated: "Votre compte a bien été mis à jour."

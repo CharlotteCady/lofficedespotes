@@ -120,7 +120,7 @@
           <% end %>
           <p>
             <% if @ressource.votes_for.size > 0 %>
-              <b>Ils recommendent :</b>
+              <b>Ils / elles recommandent :</b>
               <div class="voter-avatar" style="">
                 <% @list_of_voters.each do |voter| %>
                   <button type="button" id="info-avatar" data-toggle="tooltip" data-placement="top" title="<% if voter.name? %><%= voter.name.capitalize %><% end %><% if voter.description? %> : <%= voter.description %><% end %>">
