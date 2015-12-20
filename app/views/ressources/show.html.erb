@@ -137,7 +137,6 @@
         </div>
 
 
-<!-- COMMENTAIRE AVEC ACT_AS_COMMENTABLE -->
         <% if user_signed_in? %>
           <div class="add-comment">
             <div class="footer-header">Tous les témoignages et commentaires</div>
@@ -145,6 +144,7 @@
             <div id="disqus_thread"></div>
             <script>
                 /**
+                DISQUS
                  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
                  */
@@ -162,19 +162,6 @@
                     (d.head || d.body).appendChild(s);
                 })();
             </script>
-            <!-- <div class= "user">
-               if current_user.avatar? %>
-                = image_tag current_user.avatar.url(:medium), class: "img img-circle" %>
-               else %>
-                = image_tag "eight_horns.png", class: "img-circle" %>
-               end %>
-               if current_user.name? %>
-                = current_user.name.capitalize %>
-               else %>
-                = current_user.first_name + " " + current_user.last_name %>
-               end %>
-            </div> -->
-            <!-- = render "comments/form", ressource: @ressource, comment: @comment %> -->
           </div>
         <% else %>
           <p class="connect-to-comment">
@@ -183,19 +170,9 @@
             pour commenter et voir les commentaires de cet article :)
           </p>
         <% end %>
-        <!-- <div id="comments">
-           if @comments == [] %>
-            <p>Partagez le 1er témoignage / commentaire auprès de la communauté de workupers</p>
-           else %>
-             @comments.each do |comment| %>
-              = render 'comments/show', comment: comment %>
-             end %>
-           end %>
-        </div> -->
       </div>
     </div>
   </div>
 </div>
-
 
 
