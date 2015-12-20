@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
       <div id="signin">
-        <!-- <h2>Se Connecter</h2> -->
+<!--         <p id="connecting">Vous pouvez vous connecter à votre compte WorkUp avec votre compte Facebook ou avec votre adresse mail et mot de passe correspondant.</br> Si vous n'avez pas encore de compte, cliquez sur le bouton en bas de la page</p> -->
 
         <% if devise_mapping.omniauthable? %>
           <% resource_class.omniauth_providers.each do |provider| %>
@@ -26,7 +26,7 @@
         <% end %>
 
         <% if devise_mapping.registerable? && controller_name != 'registrations' %>
-          <b><%= link_to "Vous n'avez pas encore de compte ?", new_registration_path(resource_name) %></b><br />
+          <%= link_to "Je n'ai pas encore de compte", new_registration_path(resource_name), class: "btn", id: "new-count" %></br>
         <% end %>
 
 

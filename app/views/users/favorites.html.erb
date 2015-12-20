@@ -57,7 +57,7 @@
               <% @all_ressources.each do |ress| %>
                 <% if (eval(ress.category).include?(params[:category])) && (current_user.voted_up_on? ress) %>
                   <div class="row white">
-                    <div class="col-xs-2">
+                    <div class="col-xs-3">
                       <ul class= "list-inline">
                         <li>
                           <div class="votes">
@@ -78,7 +78,7 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-xs-10">
+                    <div class="col-xs-9">
                       <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
                       <p class="content-title"><%= ress.description %>.</p>
                     </div>
@@ -90,7 +90,7 @@
                 <% @all_ressources.each do |ress| %>
                   <% if current_user.voted_up_on? ress %>
                   <div class="row white">
-                    <div class="col-xs-2">
+                    <div class="col-xs-3">
                       <ul class= "list-inline">
                         <li>
                           <div class="votes">
@@ -111,7 +111,7 @@
                         </li>
                       </ul>
                     </div>
-                    <div class="col-xs-10">
+                    <div class="col-xs-9">
                       <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
                       <p class="content-title"><%= ress.description %>.</p>
                     </div>
