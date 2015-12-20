@@ -55,6 +55,26 @@
               method: :delete, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %></div>
           <% end %>
         <% end %>
+        <div class="votes">
+          <% if user_signed_in? %>
+            <% if current_user.liked? @ressource %>
+              <%= link_to dislike_ressource_path(@ressource), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
+                <i class="fa fa-heart"></i>
+              <% end %>
+            <% else %>
+              <%= link_to like_ressource_path(@ressource), method: :get, remote: true, class: "like_ressource btn-vote" do %>
+                <i class="fa fa-heart-o"></i>
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= link_to like_ressource_path(@ressource), method: :get, remote: true, class: "like_ressource btn-vote connect_to_like" do %>
+              <i class="fa fa-heart-o"></i>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="alert alert-danger alert_connect_to_like" role="alert" style="display: none;">
+          Vous devez être connecté pour liker cette initiative, la commenter et l'enregistrer dans vos favoris :)
+        </div>
         <h1><%= @ressource.title %></h1>
         <div class="writer-info hidden-xs">
           <p>
@@ -106,6 +126,7 @@
         </p> -->
 
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
+
         <div class="addthis_sharing_toolbox" id="share"></div>
         <div class="more-info">
           <% if @ressource.website? %>
@@ -119,17 +140,19 @@
             </p>
           <% end %>
           <p>
-            <% if @ressource.votes_for.size > 0 %>
+            <% if @ressource.score > 0 %>
               <b>Ils / elles recommandent :</b>
               <div class="voter-avatar" style="">
                 <% @list_of_voters.each do |voter| %>
-                  <button type="button" id="info-avatar" data-toggle="tooltip" data-placement="top" title="<% if voter.name? %><%= voter.name.capitalize %><% end %><% if voter.description? %> : <%= voter.description %><% end %>">
-                    <% if voter.avatar? %>
-                      <%= image_tag voter.avatar.url(:thumb), class: "img-circle" %>
-                    <% else %>
-                      <%= image_tag "eight_horns.png", class: "img-circle" %>
-                    <% end %>
-                  </button>
+                  <% if voter.liked?(@ressource) %>
+                    <button type="button" id="info-avatar" data-toggle="tooltip" data-placement="top" title="<% if voter.name? %><%= voter.name.capitalize %><% end %><% if voter.description? %> : <%= voter.description %><% end %>">
+                      <% if voter.avatar? %>
+                        <%= image_tag voter.avatar.url(:thumb), class: "img-circle" %>
+                      <% else %>
+                        <%= image_tag "eight_horns.png", class: "img-circle" %>
+                      <% end %>
+                    </button>
+                  <% end %>
                 <% end %>
               </div>
             <% end %>
