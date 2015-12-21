@@ -165,12 +165,6 @@
                         <p class="vote_count"><%= ress.score %></p>
                       </li>
                       <li>
-                        <div class="comments">
-                          <i class="fa fa-comment-o"></i>
-                          <p><%= link_to ress.slug, ressource_path(ress.slug) +'#disqus_thread', :"data-disqus-identifer" => ress.id %></p>
-                        </div>
-                      </li>
-                      <li>
                         <%= image_tag ress.logo.url(:thumb), class: "logo" %>
                       </li>
                     </ul>
