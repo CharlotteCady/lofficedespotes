@@ -225,7 +225,7 @@
               <% else %>
                 <% @ressources.each do |ress| %>
                 <div class="row white">
-                  <div class="col-xs-3">
+                  <div class="col-xs-2">
                     <ul class= "list-inline">
                       <li>
                         <div class="votes">
@@ -246,7 +246,7 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="col-xs-9">
+                  <div class="col-xs-10">
                     <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug) %></h2>
                     <p class="content-title"><%= ress.description %></p>
                   </div>
