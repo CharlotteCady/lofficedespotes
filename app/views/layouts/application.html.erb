@@ -41,7 +41,9 @@
    <meta name="google-site-verification" content="VdInUaQoPyaZb2Act46Tsu476LU1PdFcwdTS8Y2qz0I" />
 </head>
 <body id="<%= "#{params[:controller].gsub(/\//, '_')}_#{params[:action]}" %>">
-  <!-- RAJOUTER LES FLASH ALERTE APRES PERSONNALISATION  -->
+  <!-- Google Tag Manager pour l'environnement de production -->
+  <%= render "shared/gtm" %>
+
   <div class="col-xs-12">
     <%= render "shared/flashes" %>
   </div>
