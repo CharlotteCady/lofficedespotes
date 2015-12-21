@@ -142,7 +142,7 @@
               <% else %>
                 <% @ressources.order('created_at DESC').limit(15).each do |ress| %>
                 <div class="row item white">
-                  <div class="col-xs-2">
+                  <div class="col-xs-3">
                     <ul class= "list-inline">
                       <li>
                         <div class="votes">
@@ -169,7 +169,7 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="col-xs-10">
+                  <div class="col-xs-9">
                     <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
                     <p class="content-title"><%= ress.description %></p>
                   </div>
