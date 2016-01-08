@@ -1,0 +1,49 @@
+#pages_contact {
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+  div.alert {
+    top: 60px;
+  }
+  background-color: white;
+
+  // Contact
+  // ===============================================================
+  // =============== BLOC IMAGE ET QUOTE
+  #contactez-nous {
+    background: image-url("pole-emploi.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 400px;
+    p {
+      margin-top: 60px;
+      padding-top: 100px;
+      font-size: 60px;
+      color: white;
+      font-family: $my-font;                                                                                                                                                                                                                                   bottom: 30px;
+    }
+  }
+  #contact {
+    min-height: 500px;
+    #form {
+      input {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+    textarea {
+      min-height: 200px;
+      text-align: center;
+    }
+  }
+  // Footer ===============
+  #footer {
+    a {
+      color: white;
+    }
+  }
+}

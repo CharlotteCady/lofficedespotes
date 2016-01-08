@@ -15,6 +15,10 @@
     margin-top: 20px;
     padding: 25px;
     border-radius: 3px;
+    h2 {
+      font-size: 40px;
+      color: black;
+    }
     img {
       margin-top: 20px;
       margin-bottom: 20px;
@@ -28,12 +32,18 @@
       margin-top: 5px;
       // width: 250px;
     }
-    input.btn {
-      margin-bottom: 0;
+    div.checkbox {
+      text-align: left;
     }
     a#new-count {
-      border: 3px solid #1BB5B4;
+      border: 2px solid #1BB5B4;
       color: #1BB5B4;
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+    input.btn {
+      margin-top: 0px;
+      margin-bottom: 10px;
     }
   }
   .btn-facebook {

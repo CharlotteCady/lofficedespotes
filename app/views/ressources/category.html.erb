@@ -157,12 +157,18 @@
                   <ul class= "list-inline">
                     <li>
                       <div class="votes">
-                        <% if current_user.liked? ress %>
-                          <%= link_to dislike_ressource_path(ress), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
-                            <i class="fa fa-heart"></i>
+                        <% if user_signed_in? %>
+                          <% if current_user.liked? ress %>
+                            <%= link_to dislike_ressource_path(ress), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
+                              <i class="fa fa-heart"></i>
+                            <% end %>
+                          <% else %>
+                            <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote" do %>
+                              <i class="fa fa-heart-o"></i>
+                            <% end %>
                           <% end %>
                         <% else %>
-                          <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote" do %>
+                          <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote connect_to_like" do %>
                             <i class="fa fa-heart-o"></i>
                           <% end %>
                         <% end %>
@@ -184,6 +190,9 @@
                   <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug) %></h2>
                   <p class="content-title"><%= ress.description %></p>
                 </div>
+              </div>
+              <div class="alert alert-danger alert_connect_to_like" role="alert" style="display: none;">
+                Vous devez être connecté pour liker cette initiative, la commenter et l'enregistrer dans vos favoris :)
               </div>
               <% end %>
             <% end %>
@@ -215,12 +224,18 @@
                     <ul class= "list-inline">
                       <li>
                         <div class="votes">
-                          <% if current_user.liked? ress %>
-                            <%= link_to dislike_ressource_path(ress), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
-                              <i class="fa fa-heart"></i>
+                          <% if user_signed_in? %>
+                            <% if current_user.liked? ress %>
+                              <%= link_to dislike_ressource_path(ress), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
+                                <i class="fa fa-heart"></i>
+                              <% end %>
+                            <% else %>
+                              <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote" do %>
+                                <i class="fa fa-heart-o"></i>
+                              <% end %>
                             <% end %>
                           <% else %>
-                            <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote" do %>
+                            <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote connect_to_like" do %>
                               <i class="fa fa-heart-o"></i>
                             <% end %>
                           <% end %>
@@ -236,6 +251,9 @@
                     <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug) %></h2>
                     <p class="content-title"><%= ress.description %></p>
                   </div>
+                </div>
+                <div class="alert alert-danger alert_connect_to_like" role="alert" style="display: none;">
+                  Vous devez être connecté pour liker cette initiative, la commenter et l'enregistrer dans vos favoris :)
                 </div>
                 <% end %>
               <% end %>

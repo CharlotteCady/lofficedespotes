@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+    <div class="col-xs-offset-1 col-xs-10">
+      <div class="white text-center mini-padded">
+        <p class="home-header">Pourquoi se Connecter ?</p>
+        <p>Cela vous permet de commenter les articles, les liker et les enregistrer dans vos favoris pour les retrouver facilement. Vos données vous appartiennent et restent entre nous ! </p>
+      </div>
       <div id="signup">
-        <!-- <h2>Créer un Compte</h2> -->
-
         <% if devise_mapping.omniauthable? %>
           <% resource_class.omniauth_providers.each do |provider| %>
             <% if provider.to_s == "facebook" %>
@@ -37,7 +39,7 @@
 
         <i class="fa fa-heart text-center"></i>
 
-        <p class="cgu">Vos données sont sécurisées et WorkUp s'engage à ne pas les utiliser à des fins commerciales.
+        <p class="cgu">WorkUp s'engage à ne pas utiliser vos données à des fins commerciales.
           En vous inscrivant, vous acceptez de recevoir la newsletter avec tous nos bons plans pour vous aider dans votre transition professionnelle.
           Vous pourrez bien sûr vous désinscrire à tout moment :) </p>
 

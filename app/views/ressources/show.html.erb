@@ -131,7 +131,7 @@
         <div class="more-info">
           <% if @ressource.website? %>
             <p>
-              <b>Site internet :</b> <%= link_to @ressource.website, @ressource.website %>
+              <b>Site internet :</b> <%= link_to @ressource.website, @ressource.website, target: "blank" %>
             </p>
           <% end %>
           <% if @ressource.address? %>

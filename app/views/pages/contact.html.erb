@@ -1,0 +1,53 @@
+<% content_for(:title) do %>
+  Le job qui vous convient existe | WorkUp
+<% end %>
+
+<%content_for(:meta_description) do %>
+  WorkUp vous donne tous les outils pour trouver votre travail idéal
+<% end %>
+
+<%content_for(:meta_image) do %>
+  workup-bonheur-au-travail.png
+<% end %>
+
+<div id="contactez-nous" class="text-center">
+  <div class="container">
+    <div class="rox">
+      <div class="col-xs-12">
+        <p>CONTACTEZ-NOUS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="contact" class="text-center">
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-6">
+        <p class= "home-header">Le Formulaire de Contact</p>
+      </div>
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-offset-1 col-xs-10 padded">
+        <p>N'hésitez pas à nous envoyer vos retours, nous faire découvrir des initiatives que vous aimez, nous dire celles que vous aimeriez trouver, ou nous proposer de vous rencontrer, nous serions ravies de vous connaître :)</p>
+      </div>
+      <div class="col-xs-offset-2 col-xs-8" id="form">
+        <form action="https://formspree.io/team@workup.rocks" method="POST">
+          <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="votrecontact@gmail.com">
+          <textarea class="form-control" name="message" rows="3" placeholder="Ce message ne s'auto-détruira pas dans 5 secondes !" ></textarea>
+          <input type="submit" name="submit" id="send" class="btn btn-primary" value="Envoyer">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer", class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p><%= link_to "Mentions légales", mentions_legales_path %></p>
+      </div>
+    </div>
+  </div>
+</div>

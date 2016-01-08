@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+    <div class="col-xs-offset-1 col-xs-10">
+      <div class="white text-center mini-padded">
+        <p class="home-header">Pourquoi se Connecter ?</p>
+        <p>Cela vous permet de commenter les articles, les liker et les enregistrer dans vos favoris pour les retrouver facilement. Vos données vous appartiennent et restent entre nous ! </p>
+      </div>
       <div id="signin">
-<!--         <p id="connecting">Vous pouvez vous connecter à votre compte WorkUp avec votre compte Facebook ou avec votre adresse mail et mot de passe correspondant.</br> Si vous n'avez pas encore de compte, cliquez sur le bouton en bas de la page</p> -->
-
         <% if devise_mapping.omniauthable? %>
           <% resource_class.omniauth_providers.each do |provider| %>
             <% if provider.to_s == "facebook" %>
@@ -22,13 +24,19 @@
             <%= f.input :email, label: false,   required: false, autofocus: true, placeholder: "Email" %>
             <%= f.input :password, label: false, required: false, placeholder: "Mot de Passe" %>
             <%= f.input :remember_me, label:"Se souvenir", as: :boolean if devise_mapping.rememberable? %>
-            <%= f.button :submit, t("Se Connecter", default: "Se Connecter"), class: "btn btn-primary" %>
-        <% end %>
 
-        <% if devise_mapping.registerable? && controller_name != 'registrations' %>
-          <%= link_to "Je n'ai pas encore de compte", new_registration_path(resource_name), class: "btn", id: "new-count" %></br>
-        <% end %>
+        <ul class="list-inline">
+          <li>
 
+                <%= f.button :submit, t("Se Connecter", default: "Se Connecter"), class: "btn btn-primary" %>
+            <% end %>
+          </li>
+          <li>
+            <% if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "Je n'ai pas encore de compte", new_registration_path(resource_name), class: "btn", id: "new-count" %></br>
+            <% end %>
+          </li>
+        </ul>
 
         <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
           <%= link_to "Vous avez oublié votre mot de passe ?", new_password_path(resource_name) %><br />

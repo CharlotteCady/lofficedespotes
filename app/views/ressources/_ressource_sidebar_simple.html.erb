@@ -1,6 +1,10 @@
 <div id="sidebar_simple">
   <ul class="nav">
     <li>
+      <i class="fa fa-home"></i>
+      <h2><%= link_to t(".top_call_to_action", default: "Accueil"), ressources_path %></h2>
+    </li>
+    <li>
       <i class="fa fa-search"></i>
       <h2><%= link_to @categories[0],  {controller: "ressources", action: "category", category: @categories[0] } %></h2>
     </li>

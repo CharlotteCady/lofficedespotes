@@ -94,32 +94,6 @@
       padding-bottom: 100px;
     }
   }
-  // Contact
-  // ===============================================================
-
-  #contact {
-    background: image-url("pole-emploi.jpg") no-repeat fixed center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    min-height: 500px;
-    .trait {
-      border-color: white;
-    }
-    .home-header {
-      color: white;
-    }
-    #form {
-      padding-top: 50px;
-      input {
-        margin-bottom: 20px;
-      }
-    }
-    textarea {
-      min-height: 200px;
-    }
-  }
 
   // Footer ===============
   #footer {

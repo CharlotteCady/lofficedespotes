@@ -1,7 +1,7 @@
 class RessourcesController < ApplicationController
   before_action :set_ressource, only: [:show, :edit, :update, :destroy]
   before_filter :check_privileges!, only: [:new, :create, :edit, :update, :destroy]
-  skip_before_filter :authenticate_user!, only: [:index, :show]
+  skip_before_filter :authenticate_user!, only: [:index, :show, :category]
 
   def index
     category = params[:category]

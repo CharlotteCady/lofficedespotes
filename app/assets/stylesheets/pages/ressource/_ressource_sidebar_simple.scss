@@ -2,7 +2,6 @@
   box-shadow: 0px 0px 2px $blue;
   margin-right: 200px;
   z-index: 1000;
-  padding-top: 15px;
   // padding-left: 20px;
   background-color: white;
   // border-right: 1px solid #F1F1F1;
@@ -13,6 +12,7 @@
   min-width: 200px;
   overflow-y: auto;
   h2 {
+    margin: 0;
     font-size: 22px;
     color: black;
     font-family: $my-font;
@@ -38,9 +38,12 @@
   }
   li {
     padding-left: 20px;
-  }
-  li.active h2 a {
-    color: $blue;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $blue;
+    // &:hover {
+    //   background-color: #F1F1F1;
+    // }
   }
 
   .follow-us {
