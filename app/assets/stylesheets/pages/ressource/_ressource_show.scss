@@ -213,6 +213,12 @@
       margin-top: 0px;
       // margin-left: 10px;
     }
+    #disqus-account {
+      background-color: $gray-lighter;
+      border-radius: 3px;
+      padding: 15px;
+      padding-bottom: 4px;
+    }
   }
   .connect-to-comment {
     background-color: $gray-lighter;

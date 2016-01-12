@@ -40,9 +40,9 @@
                 <% if eval(ressource.category).include?("Coup de Coeur") %>
                   <div>
                     <div class="item">
+                      <%= link_to ressource_path(ressource.id), {controller: "ressources", action: "show" } do %>
                       <div class="img-ress" style="background: url(<%= ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(100%); -moz-filter: brightness(100%);">
                       </div>
-                      <%= link_to ressource_path(ressource.id), {controller: "ressources", action: "show" } do %>
                         <h2><%= ressource.title %></h2>
                         <p><%= ressource.description %></p>
                       <% end %>
