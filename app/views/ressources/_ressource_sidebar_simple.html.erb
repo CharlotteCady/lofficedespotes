@@ -1,6 +1,10 @@
 <div id="sidebar_simple">
   <ul class="nav">
     <li>
+      <i class="fa fa-home"></i>
+      <h2><%= link_to t(".top_call_to_action", default: "Découvrir tout"), ressources_path %></h2>
+    </li>
+    <li>
       <i class="fa fa-search"></i>
       <h2><%= link_to @categories[0],  {controller: "ressources", action: "category", category: @categories[0] } %></h2>
     </li>
@@ -23,10 +27,6 @@
     <li class="hidden">
       <i class="fa fa-heart"></i>
       <h2><% link_to @categories[5],  {controller: "ressources", action: "category", category: @categories[5] } %></h2>
-    </li>
-    <li>
-      <i class="fa fa-home"></i>
-      <h2><%= link_to t(".top_call_to_action", default: "Découvrir tout"), ressources_path %></h2>
     </li>
   </ul>
   <div class="follow-us">
