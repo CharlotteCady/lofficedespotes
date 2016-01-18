@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/mentions-legales', to: "pages#mentions_legales"
   # get "/guide-de-l-emploi", to: "ressources#index", as: "/ressources"
 
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   resources :users, only: [:edit, :update] do
     collection do
       get 'show'
@@ -42,5 +44,4 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 end
