@@ -191,6 +191,16 @@
     }
   }
 
+  // ADDTHIS ARTICLES RECOMMANDES
+  a.at-branding-logo {
+    display: none;
+  }
+  div.at-h3.at-recommended-label {
+    margin-top: 20px;
+    font-family: $my-font;
+    font-size: 25px;
+  }
+
 
   // ========   COMMENTAIRES ========
   .add-comment {
