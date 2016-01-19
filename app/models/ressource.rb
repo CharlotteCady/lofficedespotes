@@ -61,4 +61,8 @@ class Ressource < ActiveRecord::Base
   def score
     self.get_likes.size
   end
+
+  def self.highest_voted
+    self.order("cached_votes_score DESC")
+  end
 end

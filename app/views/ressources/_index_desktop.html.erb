@@ -1,0 +1,133 @@
+<!-- ========= RECHERCHE SUR DESKTOP ========== -->
+<div class="searchbar hidden-xs white">
+  <%= render "search" %>
+</div>
+
+<!-- ========== LISTING DES INITIATIVES SUR DESKTOP ======= -->
+<div class="hidden-xs">
+  <div class="last_ressources" id="desktop-display">
+    <% if params[:search] %>
+      <p class="title first-title">Résultats de la recherche</p>
+    <% else %>
+      <p class="title first-title">Les nouvelles découvertes</p>
+    <% end %>
+    <div class="listing_ressources">
+      <% if @ressources.blank? %>
+        <p id="sorry">Il n'y a pas encore de résultats pour votre recherche, envoyez nous un petit message pour nous dire ce que vous recherchez :)</p>
+      <% else %>
+        <% @ressources.each do |ress| %>
+        <div class="row item white">
+          <div class="col-xs-2">
+            <ul class= "list-inline">
+              <li>
+                <div class="votes">
+                  <% if user_signed_in? %>
+                    <% if current_user.liked? ress %>
+                      <%= link_to dislike_ressource_path(ress), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
+                        <i class="fa fa-heart"></i>
+                      <% end %>
+                    <% else %>
+                      <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote" do %>
+                        <i class="fa fa-heart-o"></i>
+                      <% end %>
+                    <% end %>
+                  <% else %>
+                    <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote connect_to_like" do %>
+                      <i class="fa fa-heart-o"></i>
+                    <% end %>
+                  <% end %>
+                </div>
+                <p class="vote_count"><%= ress.score %></p>
+              </li>
+              <li>
+                <div class="comments">
+                  <i class="fa fa-comment-o"></i>
+                  <p><%= link_to ress.slug, ressource_path(ress.slug) +'#disqus_thread', :"data-disqus-identifer" => ress.id %></p>
+                </div>
+              </li>
+              <li>
+                <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-10">
+            <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
+            <p class="content-title"><%= ress.description %></p>
+          </div>
+        </div>
+        <div class="alert alert-danger alert_connect_to_like" role="alert" style="display: none;">
+          Vous devez être connecté pour liker cette initiative, la commenter et l'enregistrer dans vos favoris :)
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <!-- ====== COUPS DE COEURS ===== -->
+  <p class="title first-title">Nos Coups de Coeur</p>
+  <div id="love-ressources">
+    <div class="owl-carousel">
+      <% Ressource.all.order('created_at DESC').limit(6).each do |ressource| %>
+        <% if eval(ressource.category).include?("Coup de Coeur") %>
+          <div>
+            <div class="item">
+              <%= link_to ressource_path(ressource.id), {controller: "ressources", action: "show" } do %>
+              <div class="img-ress" style="background: url(<%= ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(100%); -moz-filter: brightness(100%);">
+              </div>
+                <h2><%= ressource.title %></h2>
+                <p><%= ressource.description %></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <!-- ====== ARTICLES LES PLUS LIKES ===== -->
+  <p class="title first-title">Les + Likés</p>
+  <div class="more_liked_ressources">
+    <% Ressource.highest_voted.limit(5).each do |ress| %>
+      <div class="row item white">
+        <div class="col-xs-2">
+          <ul class= "list-inline">
+            <li>
+              <div class="votes">
+                <% if user_signed_in? %>
+                  <% if current_user.liked? ress %>
+                    <%= link_to dislike_ressource_path(ress), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
+                      <i class="fa fa-heart"></i>
+                    <% end %>
+                  <% else %>
+                    <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote" do %>
+                      <i class="fa fa-heart-o"></i>
+                    <% end %>
+                  <% end %>
+                <% else %>
+                  <%= link_to like_ressource_path(ress), method: :get, remote: true, class: "like_ressource btn-vote connect_to_like" do %>
+                    <i class="fa fa-heart-o"></i>
+                  <% end %>
+                <% end %>
+              </div>
+              <p class="vote_count"><%= ress.score %></p>
+            </li>
+            <li>
+              <div class="comments">
+                <i class="fa fa-comment-o"></i>
+                <p><%= link_to ress.slug, ressource_path(ress.slug) +'#disqus_thread', :"data-disqus-identifer" => ress.id %></p>
+              </div>
+            </li>
+            <li>
+              <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-10">
+          <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
+          <p class="content-title"><%= ress.description %></p>
+        </div>
+      </div>
+      <div class="alert alert-danger alert_connect_to_like" role="alert" style="display: none;">
+        Vous devez être connecté pour liker cette initiative, la commenter et l'enregistrer dans vos favoris :)
+      </div>
+    <% end %>
+  </div>
+</div>

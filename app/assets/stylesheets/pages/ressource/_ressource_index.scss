@@ -29,7 +29,7 @@
 
   // MOBILE / Search
   #mobile-search {
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
     background: image-url('search.png') repeat;
     ul.dropdown-menu {
@@ -50,17 +50,35 @@
     p#content-title {
       font-size: 14px;
     }
+    // .owl-stage-outer {
+    //   background-color: white;
+    // }
   }
 
+    #search-bar {
+      margin-top: 0px;
+    }
 
   // ======= Article coup de coeur
   #discover-favorites {
     margin-top: 50px;
-    .owl-stage-outer {
+  }
+
+  #love-ressources {
+    magin-top: 30px;
+  }
+  p.title {
+    margin-bottom: 30px;
+  }
+  #discover-favorites, #love-ressources {
+    div.item {
       background-color: white;
+      p {
+        padding-bottom: 20px;
+      }
     }
     div.img-ress {
-      min-height: 350px;
+      min-height: 300px;
       position: relative;
     }
     h2 {
@@ -119,7 +137,7 @@
 
 
   // =========  Affichage des Ressources  =========
-  .listing_ressources {
+  .listing_ressources, .more_liked_ressources {
     margin-bottom: 30px;
 
     p {

@@ -10,9 +10,8 @@ class RessourcesController < ApplicationController
     if keyword || category || subcategory
       @ressources = Ressource.search(keyword, category, subcategory).order('created_at DESC')
     else
-      @ressources = Ressource.all.order('created_at DESC')
+      @ressources = Ressource.all.order('created_at DESC').limit(5)
     end
-
     @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
     @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
     @subcat_sidebar = ["Voir tout"]

@@ -1,4 +1,4 @@
-<div id="search">
+<div id="search-bar">
 <%= form_tag(ressources_path, method: "get", action: "index", id: "search-form", class: "form-inline") do %>
     <div class="form-group">
       <%= text_field_tag :search, params[:search], placeholder: "Mots Clefs", class: "form text-long" %>
