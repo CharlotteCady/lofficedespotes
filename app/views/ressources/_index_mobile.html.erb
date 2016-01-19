@@ -61,7 +61,7 @@
       <p class="title first-title">Nos Coups de Coeur</p>
       <div id="love-ressources">
         <div class="owl-carousel-big">
-          <% Ressource.all.order('created_at DESC').limit(6).each do |ressource| %>
+          <% Ressource.all.order('created_at DESC').each do |ressource| %>
             <% if eval(ressource.category).include?("Coup de Coeur") %>
               <div>
                 <div class="item">
