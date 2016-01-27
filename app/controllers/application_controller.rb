@@ -44,7 +44,18 @@ class ApplicationController < ActionController::Base
   # after_action :verify_policy_scoped, only: :index, unless: :devise_or_pages_or_admin_controller?
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  if Rails.env.production?
+    before_filter :ensure_domain
+  end
+
   private
+
+  def ensure_domain
+    # si l'url n'est pas en www il redirige vers l'url en www avec une redirection 301
+    if request.env['HTTP_HOST'] != 'www.workuper.com'
+      redirect_to "http://www.workuper.com#{request.env['REQUEST_PATH']}", :status => 301
+    end
+  end
 
   def devise_or_pages_or_admin_controller?
     devise_controller? || pages_controller? || params[:controller] =~ /^admin/
