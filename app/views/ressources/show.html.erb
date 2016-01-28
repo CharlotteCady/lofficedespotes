@@ -162,7 +162,7 @@
 
         <% if user_signed_in? %>
           <div class="add-comment">
-            <div class="footer-header">Tous les témoignages et commentaires</div>
+            <div class="footer-header">Et vous, les Workupers, vous en pensez quoi ?</div>
             <div id="disqus-account">
               <p>
                 Vous pouvez commenter cet article même si vous ne possédez pas de compte "Disqus" :
@@ -195,7 +195,7 @@
           <p class="connect-to-comment">
             Vous devez être
             <%= link_to t(".sign_in", default: "connecté"), new_user_session_path %>
-            pour commenter et voir les commentaires de cet article :)
+            pour commenter et voir les retours d'expérience et les commentaires de cet article :)
           </p>
         <% end %>
       </div>
