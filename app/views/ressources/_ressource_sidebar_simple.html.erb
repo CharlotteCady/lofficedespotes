@@ -31,9 +31,29 @@
   </ul>
   <div class="follow-us">
     <div class="social-media">
-      <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
-        <i class="fa fa-facebook"></i><p>Suivez WorkUp</p>
-      <% end %>
+      <ul class="list-inline">
+        <li>
+          <div id="facebook">
+            <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
+              <i class="fa fa-facebook"></i>
+            <% end %>
+          </div>
+        </li>
+        <li id="twt">
+          <div id="twitter">
+            <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
+              <i class="fa fa-twitter"></i>
+            <% end %>
+          </div>
+        </li>
+        <li id="lkd">
+          <div id="linkedin">
+            <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
+              <i class="fa fa-linkedin"></i>
+            <% end %>
+          </div>
+        </li>
+      </ul>
     </div>
     <div class="newsletter">
       <div id="mc_embed_signup form-group">

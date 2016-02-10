@@ -30,6 +30,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'sitemap_generator'
 gem 'bootsy'
 gem 'gibbon'
+gem 'fog-aws'
 
 
 group :development, :test do

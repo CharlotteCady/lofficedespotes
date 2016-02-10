@@ -3,7 +3,7 @@
 <% end %>
 
 <%content_for(:meta_description) do %>
-  WorkUp vous donne tous les outils pour trouver votre travail idéal
+  WorkUp vous donne tous les outils pour trouver votre travail idéal. Découvrez les et testez les !
 <% end %>
 
 <div id="contactez-nous" class="text-center">
@@ -33,6 +33,41 @@
           <textarea class="form-control" name="message" rows="3" placeholder="Ce message ne s'auto-détruira pas dans 5 secondes !" ></textarea>
           <input type="submit" name="submit" id="send" class="btn btn-primary" value="Envoyer">
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="social-media" class="text-center">
+  <div class="container">
+    <div class="rox">
+      <div class="col-xs-12">
+        <p>SUIVEZ NOTRE ACTUALITE</p>
+        <ul class="list-inline">
+          <li><%= image_tag "step.png", id:"step-arrow1" %></li>
+          <li>
+            <div id="facebook">
+              <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
+                <i class="fa fa-facebook"></i>
+              <% end %>
+            </div>
+          </li>
+          <li id="twt">
+            <div id="twitter">
+              <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
+                <i class="fa fa-twitter"></i>
+              <% end %>
+            </div>
+          </li>
+          <li id="lkd">
+            <div id="linkedin">
+              <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
+                <i class="fa fa-linkedin"></i>
+              <% end %>
+            </div>
+          </li>
+          <li><%= image_tag "step.png", id:"step-arrow2" %></li>
+        </ul>
       </div>
     </div>
   </div>

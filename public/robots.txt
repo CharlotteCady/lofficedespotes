@@ -4,4 +4,4 @@
 # User-agent: *
 # Disallow:
 
-Sitemap: https://ENV["S3_BUCKET_NAME"].s3.amazonaws.com/sitemaps/sitemap_index.xml.gz
+Sitemap: https://workuper.s3.amazonaws.com/sitemaps/sitemap.xml.gz

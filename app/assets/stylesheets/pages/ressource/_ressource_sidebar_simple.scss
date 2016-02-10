@@ -60,6 +60,15 @@
       font-size: 12px;
       width: 180px;
     }
+    .social-media {
+      li {
+        border: none;
+        padding-bottom: 0px;
+      }
+      li#twt, li#lkd {
+        padding-left: 0px;
+      }
+    }
     .newsletter {
       input#mc-embedded-subscribe {
         background-color: transparent;
