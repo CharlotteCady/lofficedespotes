@@ -34,7 +34,10 @@ Rails.application.routes.draw do
     end
   end
 
-# essayer cette route en elenvenant le show de resources : ressources
+  # Sitemap pour les robots
+  get '/sitemap.xml.gz', to: redirect("http://#{ ENV.fetch('S3_BUCKET_NAME') }.s3.amazonaws.com/sitemaps/sitemap.xml.gz")
+
+  # essayer cette route en elenvenant le show de resources : ressources
   # get ':title' => "ressources#show"
 
   # resources :ressources do
@@ -43,5 +46,4 @@ Rails.application.routes.draw do
   #     put "dislike", to: "ressources#dislike"
   #   end
   # end
-
 end

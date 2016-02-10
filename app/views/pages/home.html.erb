@@ -1,3 +1,11 @@
+<% content_for(:title) do %>
+  Trouvez votre job idéal | WorkUp
+<% end %>
+
+<%content_for(:meta_description) do %>
+  Des histoires inspirantes, des rencontres, des outils et les meilleures initiatives pour trouver le job qui vous passionne !
+<% end %>
+
 <!-- =========== DESKTOP =========== -->
 
 <div id="desktop" class= "hidden-xs">
@@ -43,6 +51,20 @@
         </div>
       </li>
       <li>
+        <div id="twitter">
+          <%= link_to "https://twitter.com/Workuper", class: "navbar-menu", target: "blank" do %>
+            <i class="fa fa-twitter"></i>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div id="linkedin">
+          <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", class: "navbar-menu", target: "blank" do %>
+            <i class="fa fa-linkedin"></i>
+          <% end %>
+        </div>
+      </li>
+      <li>
         <div id="mc_embed_signup form-group">
           <form action="//rocks.us10.list-manage.com/subscribe/post?u=93a8a8570acd0e6bdaf4f34e7&amp;id=385b3b77fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
@@ -75,7 +97,7 @@
             </p>
             <div id="btn-footer">
               <ul class="list-inline">
-                <li><%= link_to "Découvrir Maintenant", ressources_path, id: "btn-discover", class: "btn btn-primary" %></li>
+                <li><%= link_to "Découvrir", ressources_path, id: "btn-discover", class: "btn btn-primary" %></li>
                 <li id="float"><%= link_to "Se Connecter", new_user_session_path, id: "btn-login", class: "btn btn-transparent" %></li>
               </ul>
             </div>
@@ -90,6 +112,20 @@
         <div id="facebook">
           <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
             <i class="fa fa-facebook"></i>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div id="twitter">
+          <%= link_to "https://twitter.com/Workuper", class: "navbar-menu", target: "blank" do %>
+            <i class="fa fa-twitter"></i>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div id="linkedin">
+          <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", class: "navbar-menu", target: "blank" do %>
+            <i class="fa fa-linkedin"></i>
           <% end %>
         </div>
       </li>
