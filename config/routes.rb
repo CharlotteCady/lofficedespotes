@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount ForestLiana::Engine => '/forest'
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   ActiveAdmin.routes(self)
   get '/a-propos', to: "pages#about", as: '/about'

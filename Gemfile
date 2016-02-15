@@ -31,6 +31,7 @@ gem 'sitemap_generator'
 gem 'bootsy'
 gem 'gibbon'
 gem 'fog-aws'
+gem 'forest_liana'
 
 
 group :development, :test do
