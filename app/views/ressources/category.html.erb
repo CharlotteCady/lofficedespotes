@@ -134,7 +134,7 @@
 
         <!-- ======= AFFICHAGE DES INITIATIVES POUR LES GRANDS ECRANS -->
 
-        <div class="last_ressources hidden-xs">
+        <div class="last_ressources hidden-xs" id="desktop-display">
           <% if params[:search] %>
             <p class="title first-title">Résultats de la recherche</p>
           <% elsif params[:subcategory] %>
@@ -151,7 +151,7 @@
               <div class="row white">
                 <div class="col-xs-2">
                   <ul class= "list-inline">
-                    <li>
+                    <!-- <li>
                       <div class="votes">
                         <% if user_signed_in? %>
                           <% if current_user.liked? ress %>
@@ -176,7 +176,7 @@
                         <i class="fa fa-comment-o"></i>
                         <p><%= link_to ress.slug, ressource_path(ress.slug) +'#disqus_thread', :"data-disqus-identifer" => ress.id %></p>
                       </div>
-                    </li>
+                    </li> -->
                     <li>
                       <%= image_tag ress.logo.url(:thumb), class: "logo" %>
                     </li>
@@ -218,7 +218,7 @@
                 <div class="row white">
                   <div class="col-xs-3">
                     <ul class= "list-inline">
-                      <li>
+                      <!-- <li>
                         <div class="votes">
                           <% if user_signed_in? %>
                             <% if current_user.liked? ress %>
@@ -237,7 +237,7 @@
                           <% end %>
                         </div>
                       <p class="vote_count"><%= ress.score %></p>
-                      </li>
+                      </li> -->
                       <li>
                         <%= image_tag ress.logo.url(:thumb), class: "logo" %>
                       </li>

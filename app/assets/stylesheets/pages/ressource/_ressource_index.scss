@@ -12,7 +12,7 @@
   }
   .content {
     // margin-left: 200px;
-    margin-top: -10px;
+    // margin-top: -10px;
   }
   .sidebar {
     z-index: 3000;
@@ -23,13 +23,61 @@
   }
 
   // ======== MOBILE / enlever le margin-top de 50px sur l'image sur mobile
-  #img-mobile {
-    margin-top: -50px;
+  // #img-mobile {
+  //   margin-top: -20px;
+  // }
+
+  // NL
+  #newsletter {
+    padding-top: 20px;
+  }
+  #nl {
+    #mc_embed_signup {
+      background: image-url('acteurs-emploi.png') repeat;
+    }
+    #mc_embed_signup form {
+      // text-align: center;
+      padding: 10px 10px 10px 10px;
+    }
+    label {
+      font-family: $header-font;
+      font-size: 26px;
+      font-weight: normal;
+      padding-bottom: 0px;
+      color: white;
+    }
+    input#mc-embedded-subscribe.button {
+      background-color : $blue;
+      color: white;
+      border-radius: 0;
+      border: 1px solid white;
+      font-family: $header-font;
+      font-size: 22px;
+      // font-weight: normal;
+      width: 100%;
+      height: 40px;
+      &:hover {
+        background-color: darken($blue, 10%);
+      }
+    }
+    input#mce-EMAIL.email {
+      border-radius: 0;
+      font-family: $base-font;
+      font-size: 16px;
+      color: #555555;
+      height: 40px;
+      border: none;
+    }
+    input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: white;
+    background-image: none;
+    color: #555555;
+}
   }
 
   // MOBILE / Search
   #mobile-search {
-    margin-top: 20px;
+    // margin-top: 30px;
     text-align: center;
     background: image-url('search.png') repeat;
     ul.dropdown-menu {
@@ -55,13 +103,13 @@
     // }
   }
 
-    #search-bar {
-      margin-top: 0px;
-    }
+  #search-bar {
+    margin-top: 0px;
+  }
 
   // ======= Article coup de coeur
   #discover-favorites {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
   #love-ressources {
@@ -74,7 +122,7 @@
     div.item {
       background-color: white;
       p {
-        padding-bottom: 20px;
+        padding-bottom: 10px;
       }
     }
     div.img-ress {
@@ -87,6 +135,7 @@
       font-size: 24px;
       padding-right: 10px;
       padding-left: 10px;
+      margin-bottom: 5px;
     }
     a:hover h2 {
       color: $blue;
@@ -100,6 +149,7 @@
     a:hover p {
       color: $gray;
     }
+
     // Selection du carousel
     .owl-nav {
       text-align: center;
@@ -152,11 +202,8 @@
     }
     ul {
       margin-top: 20px;
-      img.logo {
-        width: 45px;
-        vertical-align: middle;
-        margin-top: -10px;
-      }
+      margin-left: 10px;
+
       .votes, .comments {
         i {
           color: $gray;
@@ -182,6 +229,25 @@
     }
   }
 
+  // ===== AFFICHAGE DES LOGOS
+  #desk {
+    img.logo {
+      width: 60px;
+    }
+  }
+
+  #mobile {
+    .listing_ressources, .more_liked_ressources {
+      ul {
+        margin-left: 0px;
+      }
+    }
+    img.logo {
+      width: 40px;
+    }
+  }
+
+  // ===== VOTES
 
   .votes:active {
    color: $blue;
