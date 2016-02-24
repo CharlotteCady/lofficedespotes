@@ -169,11 +169,7 @@
     }
     ul {
       margin-top: 20px;
-      img.logo {
-        width: 45px;
-        vertical-align: middle;
-        margin-top: -10px;
-      }
+      margin-left: 10px;
       .votes, .comments {
         i {
           color: $gray;
@@ -200,6 +196,26 @@
   //     margin-top: -10px;
   //   }
   // }
+
+  // ===== AFFICHAGE DES LOGOS
+  #desktop-display {
+    img.logo {
+      width: 60px;
+    }
+  }
+
+  #mobile-display {
+    .listing_ressources, .more_liked_ressources {
+      ul {
+        margin-left: 0px;
+      }
+    }
+    img.logo {
+      width: 40px;
+    }
+  }
+
+    // ===== VOTES
 
   .votes:active {
    color: $blue;

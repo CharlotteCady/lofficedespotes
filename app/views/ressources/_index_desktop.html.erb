@@ -4,7 +4,7 @@
 </div>
 
 <!-- ========== LISTING DES INITIATIVES SUR DESKTOP ======= -->
-<div class="hidden-xs">
+<div class="hidden-xs" id="desk">
   <div class="last_ressources" id="desktop-display">
     <% if params[:search] %>
       <p class="title first-title">Résultats de la recherche</p>
@@ -19,7 +19,7 @@
         <div class="row item white">
           <div class="col-xs-2">
             <ul class= "list-inline">
-              <li>
+<!--               <li>
                 <div class="votes">
                   <% if user_signed_in? %>
                     <% if current_user.liked? ress %>
@@ -44,7 +44,7 @@
                   <i class="fa fa-comment-o"></i>
                   <p><%= link_to ress.slug, ressource_path(ress.slug) +'#disqus_thread', :"data-disqus-identifer" => ress.id %></p>
                 </div>
-              </li>
+              </li> -->
               <li>
                 <%= image_tag ress.logo.url(:thumb), class: "logo" %>
               </li>
@@ -83,13 +83,13 @@
     </div>
   </div>
   <!-- ====== ARTICLES LES PLUS LIKES ===== -->
-  <p class="title first-title">Les + Likés</p>
+  <p class="title first-title">Les + Vus</p>
   <div class="more_liked_ressources">
     <% Ressource.highest_voted.limit(5).each do |ress| %>
       <div class="row item white">
         <div class="col-xs-2">
           <ul class= "list-inline">
-            <li>
+            <!-- <li>
               <div class="votes">
                 <% if user_signed_in? %>
                   <% if current_user.liked? ress %>
@@ -114,7 +114,7 @@
                 <i class="fa fa-comment-o"></i>
                 <p><%= link_to ress.slug, ressource_path(ress.slug) +'#disqus_thread', :"data-disqus-identifer" => ress.id %></p>
               </div>
-            </li>
+            </li> -->
             <li>
               <%= image_tag ress.logo.url(:thumb), class: "logo" %>
             </li>
