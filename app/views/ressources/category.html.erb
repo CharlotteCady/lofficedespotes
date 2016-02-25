@@ -123,7 +123,6 @@
   <%= render "ressource_sidebar_simple" %>
 </div>
 
-
 <!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES  -->
 <div class="container">
   <div class="row">
@@ -142,7 +141,14 @@
           <% else %>
             <p class="title first-title">Les nouvelles découvertes pour <%= @category_page %></p>
           <% end %>
+          <!-- ==== ETAPES -->
           <%= render "step" %>
+
+          <!-- ====== NL -->
+          <div class="hidden-xs">
+            <%= render "index_nl_desktop" %>
+          </div>
+
           <div class="listing_ressources">
             <% if @ressources.blank? %>
               <p id="sorry">Il n'y a pas encore de résultats pour votre recherche, envoyez nous un petit message pour nous dire ce que vous recherchez :)</p>
@@ -209,7 +215,14 @@
             <% else %>
               <p class="title first-title">Les nouvelles découvertes pour <%= @category_page %></p>
             <% end %>
+
+            <!-- ==== ETAPES -->
             <%= render "step" %>
+
+            <!-- ====== NL -->
+            <div class="visible-xs">
+              <%= render "index_nl_mobile" %>
+            </div>
             <div class="listing_ressources">
               <% if @ressources.blank? %>
                 <p id="sorry">Il n'y a pas encore de résultats pour votre recherche, envoyez nous un petit message pour nous dire ce que vous recherchez :)</p>

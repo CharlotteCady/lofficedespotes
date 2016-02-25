@@ -139,16 +139,32 @@
     padding-top: 15px;
     padding-bottom: 30px;
 
-    #share {
-      margin-bottom: 30px;
-      margin-top: 50px;
+    #like-this-article {
+      text-align: center;
+      background-color: $blue;
+      color: white;
+      padding: 20px;
+      .like-that {
+        display: inline-block;
+      }
+      div.votes {
+        display: inline-block;
+        i {
+          color: white;
+        }
+      }
     }
+    // #share {
+    //   margin-bottom: 30px;
+    //   margin-top: 50px;
+    // }
 
     .more-info {
       background-color: $gray-lighter;
       border-radius: 3px;
       padding: 15px;
       padding-bottom: 4px;
+      margin-top: 20px;
       .voter-avatar img {
         width: 40px;
         margin-right: 10px;
@@ -208,7 +224,6 @@
     border-radius: 3px;
     padding: 15px;
     margin-bottom: 30px;
-    margin-top: 30px;
     form#new_comment {
       padding-left: 66px;
     }
@@ -224,7 +239,8 @@
       // margin-left: 10px;
     }
     #disqus-account {
-      background-color: $gray-lighter;
+      background-color: $blue;
+      color: white;
       border-radius: 3px;
       padding: 15px;
       padding-bottom: 4px;

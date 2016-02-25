@@ -23,10 +23,18 @@
 </div> -->
 
 <!-- MISE EN AVANT DE LA NEWSLETTER -->
-<%= render "index_nl_desktop" %>
-<%= render "index_nl_mobile" %>
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
+      <div class="hidden-xs">
+        <%= render "index_nl_desktop" %>
+      </div>
+      <div class="visible-xs">
+        <%= render "index_nl_mobile" %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES -->
 <div class="container">

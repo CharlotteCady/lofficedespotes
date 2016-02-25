@@ -24,11 +24,11 @@ $navbar-border-top: 3px solid $blue;
  * Navbar button
  * ------------------------------------- */
 $navbar-btn-height: 40px;
-$navbar-btn-bg: transparent;
+$navbar-btn-bg: $blue;
 $navbar-btn-color: white;
 $navbar-btn-horizontal-padding: 10px;
 $navbar-btn-radius: 1px;
-$navbar-btn-border: 1px solid white;
+$navbar-btn-border: 1px solid $blue;
 
 /* -------------------------------------
  * Navbar profile picture
@@ -118,8 +118,8 @@ $navbar-profile-border-width: 1px;
       font-size: $navbar-font-size;
       margin-bottom: 8px;
       &:hover{
-        background-color: $blue;
-        border: 1px solid $blue;
+        background-color: darken($blue, 10%);
+        border: 1px solid darken($blue, 10%);
       }
     }
 

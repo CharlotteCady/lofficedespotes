@@ -27,15 +27,20 @@
   }
 
   // =========== BLOC MISSION
-
+  #mission {
+    background-color: #F0EFEF;
+    .white {
+      padding: 10px 20px;
+    }
+  }
   #edito {
     p {
       text-align: justify;
       font-size: 16px;
     }
-    .paragraphe {
-      padding-bottom: 25px;
-    }
+    // .paragraphe {
+    //   padding-bottom: 25px;
+    // }
     h2 {
       font-size: 28px;
       color: black;
@@ -60,6 +65,10 @@
 
   // =========== BLOC TEAM
   #team {
+    background-color: #F0EFEF;
+    #description-anissa, #description-charlotte {
+      padding: 15px;
+    }
     img {
       width: 250px;
       padding-top: 50px;
@@ -72,6 +81,10 @@
     .fa-twitter {
       font-size: 30px;
       padding-top: 15px;
+      color: $blue;
+    }
+    p.mail {
+      color: $blue;
     }
   }
   #title-h1 {
@@ -103,43 +116,12 @@
 
   // ======= SOCIAL MEDIA
 
-  #social-media {
+  #social-media-pages {
     background: image-url("initiatives-pour-lemploi.jpg") no-repeat fixed center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 400px;
-    p {
-      margin-top: 40px;
-      padding-top: 100px;
-      font-size: 60px;
-      color: white;
-      font-family: $my-font;                                                                                                                                                                                                                                   bottom: 30px;
-    }
-    ul {
-      margin-top: 40px;
-    }
-    #facebook a, #twitter a, #linkedin a {
-      color: white;
-      font-size: 40px;
-      padding-right: 20px;
-      padding-left: 20px;
-      &:hover {
-        color: $blue;
-      }
-    }
-    img#step-arrow1, img#step-arrow2 {
-      padding-bottom: 20px;
-    }
-    img#step-arrow1 {
-      -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-    }
   }
 
   // Footer ===============

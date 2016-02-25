@@ -8,7 +8,7 @@
 
 <div id="process" class="text-center">
   <div class="container">
-    <div class="rox">
+    <div class="row">
       <div class="col-xs-12">
         <p class="home-header">COMMENT CA MARCHE ?</p>
       </div>
@@ -173,40 +173,7 @@
     </div>
   </div>
 
-  <div id="social-media" class="text-center">
-    <div class="container">
-      <div class="rox">
-        <div class="col-xs-12">
-          <p>SUIVEZ NOTRE ACTUALITE</p>
-          <ul class="list-inline">
-            <li><%= image_tag "step.png", id:"step-arrow1" %></li>
-            <li>
-              <div id="facebook">
-                <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
-                  <i class="fa fa-facebook"></i>
-                <% end %>
-              </div>
-            </li>
-            <li id="twt">
-              <div id="twitter">
-                <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
-                  <i class="fa fa-twitter"></i>
-                <% end %>
-              </div>
-            </li>
-            <li id="lkd">
-              <div id="linkedin">
-                <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
-                  <i class="fa fa-linkedin"></i>
-                <% end %>
-              </div>
-            </li>
-            <li><%= image_tag "step.png", id:"step-arrow2" %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render "social_media_pages" %>
 
   <div id="footer", class="text-center">
     <div class="container">
@@ -224,11 +191,6 @@
   <div id="guide" class="text-center">
     <div class="container padded">
       <div class="row">
-        <div class="col-xs-3 trait"></div>
-        <div class="col-xs-6">
-          <p class="home-header">COMMENT CA MARCHE ?</p>
-        </div>
-        <div class="col-xs-3 trait"></div>
         <div class="col-xs-offset-1 col-xs-10 padded">
           <b><p>
             Que vous soyez à la recherche d'un emploi, en poste ou en création d'entreprise, nous voulons vous donner toutes les informations et les bons outils pour vous accompagner dans votre réflexion et vous aider à trouver ou créer le job qui vous convient.
@@ -299,8 +261,8 @@
     </div>
   </div>
 
-  <div class="text-center">
-    <div class="container padded">
+  <div class="text-center" id="discover-title">
+    <div class="container">
       <div class="row">
         <div class="col-xs-3 trait"></div>
         <div class="col-xs-6">
@@ -315,7 +277,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <div class="owl-carousel-mobile">
+          <div class="owl-carousel-big">
             <% @ressources = Ressource.order("created_at desc").limit(6) %>
             <% @ressources.each do |ressource| %>
               <div>
@@ -382,38 +344,7 @@
     </div>
   </div>
 
-  <div id="social-media" class="text-center">
-    <div class="container">
-      <div class="rox">
-        <div class="col-xs-12">
-          <p>SUIVEZ NOTRE ACTUALITE</p>
-          <ul class="list-inline">
-            <li>
-              <div id="facebook">
-                <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
-                  <i class="fa fa-facebook"></i>
-                <% end %>
-              </div>
-            </li>
-            <li id="twt">
-              <div id="twitter">
-                <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
-                  <i class="fa fa-twitter"></i>
-                <% end %>
-              </div>
-            </li>
-            <li id="lkd">
-              <div id="linkedin">
-                <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
-                  <i class="fa fa-linkedin"></i>
-                <% end %>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render "social_media_pages" %>
 
   <div id="footer", class="text-center">
     <div class="container">

@@ -9,7 +9,7 @@
 
 <div id="souhait" class="text-center">
   <div class="container">
-    <div class="rox">
+    <div class="row">
       <div class="col-xs-12">
         <p>NOTRE MISSION</p>
       </div>
@@ -22,7 +22,7 @@
     <div class="row">
       <div class="col-xs-offset-1 col-xs-10">
         <div id="edito">
-          <div class="paragraphe">
+          <div class="paragraphe white">
             <h2>
             Le monde change et vous savez quoi ? Nous pensons que tout est possible !
             </h2>
@@ -33,7 +33,7 @@
               Il paraît aussi que nous ferons face à plus de 6 transitions professionnelles dans notre vie. Alors pourquoi se priver d'exercer un job (ou 6) qui nous plaît réellement, pour lequel nous sommes engagés et dans lequel nous nous reconnaissons ? Pourquoi se priver de créer son propre job ou de réinventer son poste pour être plus épanoui(e) ?
             </p>
           </div>
-          <div class="paragraphe">
+          <div class="paragraphe white">
             <h2>
               Redonner un sens au travail, c'est possible
             </h2>
@@ -44,7 +44,7 @@
               Devenir infirmier ou développeur web à 40 ans, entreprendre à 25 ans, convaincre la boite où vous êtes salarié de vous laisser monter un projet intrapreneurial qui vous tient à coeur (et qui pourrait aussi être utile à votre entreprise), monter une association (qui fonctionne et devient votre job à temps plein), devenir traducteur freelance et travailler de Bali (parce que c'est quand même plus sympa), réinventer son poste au sein d'une grande boite, tenir un café librairie dans un petit village de France ou monter un blog de mode en ne sachant pas écrire une ligne de code sont autant d'exemples qui sont de <b><span style="color: #1ECBCA;">VRAIES</span></b> histoires !
             </p>
           </div>
-          <div class="paragraphe">
+          <div class="paragraphe white">
             <h2>
               De nombreuses possibilités s’offrent à vous
             </h2>
@@ -60,12 +60,12 @@
               - Vous <b><span style="color: #1ECBCA;">soutenir</span></b> lorsque vous avez besoin d'une oreille (particulièrement) attentive<br>
             </p>
           </div>
-          <div class="paragraphe">
+          <div class="paragraphe white">
             <p>
               C'est pour tout cela que nous sélectionnons pour vous, les sites, les cours, les ateliers, les événements, les MOOCs (cours en ligne), les structures d'accompagnement, les médias, les blogs, les livres, les vidéos, et bien plus encore, pour <strong>vous accompagner dans votre transition professionnelle</strong>, et nous l'espérons, vous aider à <strong>être épanoui(e) dans votre (futur ou actuel) travail.</strong>
             </p>
           </div>
-          <div class="paragraphe">
+          <div class="paragraphe white">
             <p>
               Au fait, toutes les ressources que nous mettons à votre disposition sont des ressources que nous avons choisies. Nous n'avons aucune pression financière et politique derrière cette sélection :) D'ailleurs n'hésitez pas à nous partager des initiatives que vous aimez !
             </p>
@@ -100,15 +100,17 @@
         <%= link_to "https://fr.linkedin.com/pub/anissa-bennai/20/466/751", target: "blank" do %>
           <p class="btn btn-primary">ANISSA BENNAI</p>
         <% end %>
-        <b><p>Ex Administratrice de Projets Artistiques</p></b>
-        <p>"Si je fais gagner 6 mois de recherche d'information à une personne pour avancer sereinement dans sa transition pro, j'ai gagné mon pari"</p>
-        <b><p>#communication #réseau #événementiel #coordination #créativité #impro</p></b>
-        <p>Anissa@workup.rocks</p>
-        <div class="row">
-          <div class="col-xs-12">
-            <%= link_to "https://twitter.com/AnissaVannai", target: "blank" do %>
-              <i class="fa fa-twitter"></i>
-            <% end %>
+        <div id="description-anissa" class="white">
+          <b><p>Ex Administratrice de Projets Artistiques</p></b>
+          <p>"Si je fais gagner 6 mois de recherche d'information à une personne pour avancer sereinement dans sa transition pro, j'ai gagné mon pari"</p>
+          <b><p>#communication #réseau #événementiel #coordination #créativité #impro</p></b>
+          <p class="mail">Anissa@workup.rocks</p>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= link_to "https://twitter.com/AnissaVannai", target: "blank" do %>
+                <i class="fa fa-twitter"></i>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -118,15 +120,17 @@
         <%= link_to "https://fr.linkedin.com/in/charlottecady", target: "blank" do %>
           <p class="btn btn-primary">CHARLOTTE CADY</p>
         <% end %>
-        <b><p>Ex Consultante en Financement</p></b>
-        <p>"Mettre à disposition toutes les découvertes, que nous avons faites lorsque nous étions dans cette situation, au plus grand nombre, en 3 clics est mon objectif"</p>
-        <b><p>#web #veille #tech #entrepreneuriat #débrouille #geek #positive</p></b>
-        <p>Charlotte@workup.rocks</p>
-        <div class="row">
-          <div class="col-xs-12">
-            <%= link_to "https://twitter.com/CharlotteCady", target: "blank" do %>
-              <i class="fa fa-twitter"></i>
-            <% end %>
+        <div id="description-charlotte" class="white">
+          <b><p>Ex Consultante en Financement</p></b>
+          <p>"Mettre à disposition toutes les découvertes, que nous avons faites lorsque nous étions dans cette situation, au plus grand nombre, en 3 clics est mon objectif"</p>
+          <b><p>#web #veille #tech #entrepreneuriat #débrouille #geek #positive</p></b>
+          <p class="mail">Charlotte@workup.rocks</p>
+          <div class="row">
+            <div class="col-xs-12">
+              <%= link_to "https://twitter.com/CharlotteCady", target: "blank" do %>
+                <i class="fa fa-twitter"></i>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
@@ -153,40 +157,7 @@
   </ul>
 </div> -->
 
-<div id="social-media" class="text-center">
-  <div class="container">
-    <div class="rox">
-      <div class="col-xs-12">
-        <p>SUIVEZ NOTRE ACTUALITE</p>
-        <ul class="list-inline">
-          <li><%= image_tag "step.png", id:"step-arrow1" %></li>
-          <li>
-            <div id="facebook">
-              <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
-                <i class="fa fa-facebook"></i>
-              <% end %>
-            </div>
-          </li>
-          <li id="twt">
-            <div id="twitter">
-              <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
-                <i class="fa fa-twitter"></i>
-              <% end %>
-            </div>
-          </li>
-          <li id="lkd">
-            <div id="linkedin">
-              <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
-                <i class="fa fa-linkedin"></i>
-              <% end %>
-            </div>
-          </li>
-          <li><%= image_tag "step.png", id:"step-arrow2" %></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "social_media_pages" %>
 
 <div id="footer", class="text-center">
   <div class="container">

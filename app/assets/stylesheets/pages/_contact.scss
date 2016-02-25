@@ -28,6 +28,7 @@
     }
   }
   #contact {
+    background-color: #F0EFEF;
     min-height: 500px;
     #form {
       input {
@@ -40,43 +41,12 @@
       text-align: center;
     }
   }
-  #social-media {
+  #social-media-pages {
     background: image-url("pole-emploi.jpg") no-repeat fixed center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 400px;
-    p {
-      margin-top: 40px;
-      padding-top: 100px;
-      font-size: 60px;
-      color: white;
-      font-family: $my-font;                                                                                                                                                                                                                                   bottom: 30px;
-    }
-    ul {
-      margin-top: 40px;
-    }
-    #facebook a, #twitter a, #linkedin a {
-      color: white;
-      font-size: 40px;
-      padding-right: 20px;
-      padding-left: 20px;
-      &:hover {
-        color: $blue;
-      }
-    }
-    img#step-arrow1, img#step-arrow2 {
-      padding-bottom: 20px;
-    }
-    img#step-arrow1 {
-      -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-    }
   }
 
   // Footer ===============

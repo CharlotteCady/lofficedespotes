@@ -19,68 +19,73 @@
     letter-spacing: 0.5px;
     // font-weight: bold;
   }
-  i {
-    float: left;
-    padding-right: 15px;
-    padding-top: 3px;
-    color: black;
-    width: 30px;
-  }
-  a {
-    color: black;
-    &:hover {
-      color: $blue;
+  .nav {
+    i {
+      float: left;
+      padding-right: 15px;
+      padding-top: 3px;
+      color: black;
+      width: 30px;
+    }
+    a {
+      color: black;
+      &:hover {
+        color: $blue;
+      }
+    }
+    li {
+      padding-left: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $blue;
+      // &:hover {
+      //   background-color: #F1F1F1;
+      // }
     }
   }
+
   ul {
     list-style: outside none none;
     padding-left: 0px;
   }
-  li {
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid $blue;
-    // &:hover {
-    //   background-color: #F1F1F1;
-    // }
-  }
 
-  .follow-us {
+  #follow-us {
     position: absolute;
     bottom: 80px;
     padding-left: 20px;
-    a, i {
-      color: $gray;
-    &:hover {
-      color: $blue;
+    #social-media {
+      text-align: center;
+      .marketing-title {
+        color: $blue;
+        font-size: 20px;
+      }
+      #facebook, #twitter, #linkedin {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid $blue;
+        text-align: center;
+        padding-top: 5px;
+        i {
+          color: $blue;
+          font-size: 20px;
+          &:hover {
+            color: darken($blue, 10%);
+            }
+        }
       }
     }
-    p {
-      font-size: 12px;
-      width: 180px;
-    }
-    .social-media {
-      li {
-        border: none;
-        padding-bottom: 0px;
-      }
-      li#twt, li#lkd {
-        padding-left: 0px;
-      }
-    }
-    .newsletter {
+    #newsletter {
+      padding-top: 0px;
       input#mc-embedded-subscribe {
-        background-color: transparent;
-        border: 1px solid $gray-light;
-        color: $gray;
+        background-color: $blue;
+        color: white;
         font-size: 12px;
         border-radius: 3px;
         height: 36px;
+        border: none;
         &:hover {
-          background-color: $blue;
-          color: white;
-          border: none;
+          background-color: darken($blue, 10%);
         }
       }
       #mce-EMAIL.email {

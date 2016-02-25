@@ -39,6 +39,12 @@
   // div.alert {
   //   top: 100px;
   // }
+
+  // BOUTON SE CONNECTER =======
+  #login {
+    background-color: transparent;
+    border: 1px solid white;
+  }
   // Bannière ===============================================================
 
   img.bg, #dream-job-video {
@@ -93,7 +99,7 @@
         // margin-top: 30px;
       }
     }
-    #newsletter {
+    #home-bar-newsletter {
       position: absolute;
       top: 0;
       background-color: rgba(0,0,0,0.4);
@@ -128,6 +134,10 @@
         &:hover {
           color: $blue;
         }
+      }
+      .nl-home-title {
+        font-size: 18px;
+        font-family: $header-font;
       }
     }
   }
@@ -197,7 +207,7 @@
         }
       }
     }
-    #newsletter {
+    #home-bar-newsletter {
       position: absolute;
       top: 0;
       background-color: rgba(0,0,0,0.4);

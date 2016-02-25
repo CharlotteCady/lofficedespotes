@@ -26,7 +26,7 @@ h2 {
 .home-header {
   font-family: $my-font;
   font-size: 40px;
-  color: black;
+  color: $blue;
   // margin-top: 20px;
 }
 
@@ -99,3 +99,13 @@ div.alert:not(.alert_connect_to_like) {
   text-align: center;
   z-index: 100000;
  }
+
+.marketing-title {
+  font-family: $header-font;
+  font-size: 26px;
+  font-weight: normal;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+  color: white;
+}

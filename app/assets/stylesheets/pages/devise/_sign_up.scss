@@ -9,11 +9,15 @@
   margin-top: 100px;
 
   #pourquoi-se-connecter {
+    background-color: $blue;
+    color: white;
     p.home-header {
       font-size: 28px;
+      color: white;
     }
     p {
       font-size: 16px;
+      padding: 0px 20px;
     }
   }
 
@@ -37,20 +41,20 @@
       margin-top: 5px;
       // width: 250px;
     }
-  }
-  .btn-facebook {
-    background-color: rgb(59, 89, 152);
-    color: white;
-  }
-  p.cgu {
-    font-size: 10px;
-    margin-top: 10px;
-  }
-  i {
-    margin-top: 10px;
-    color: $blue;
-  }
-  div.alert {
-    top: -35px;
+    .btn-facebook {
+      background-color: rgb(59, 89, 152);
+      color: white;
+    }
+    p.cgu {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    i {
+      margin-top: 10px;
+      color: $blue;
+    }
+    div.alert {
+      top: -35px;
+    }
   }
 }
