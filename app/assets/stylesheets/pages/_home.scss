@@ -77,26 +77,30 @@
     #banner {
       h1 {
         margin-top: 200px;
+        margin-bottom: 20px;
       }
       p {
         color: white;
         font-size: 20px;
-        margin-bottom: 50px;
+      }
+      .trouver-un-emploi {
+        font-family: $header-font;
+        font-size: 30px;
       }
       ul  {
         margin-bottom: 0px;
       }
-      ul#test-here {
-        text-align: right;
-        margin-right: 200px;
-      }
+      // ul#test-here {
+      //   text-align: right;
+      //   margin-right: 200px;
+      // }
       img#step-arrow1 {
         margin-bottom: 20px;
       }
       p#test {
         font-family: 'Indie Flower', cursive;
-        font-size: 18px;
-        // margin-top: 30px;
+        font-size: 16px;
+        margin-top: 80px;
       }
     }
     #home-bar-newsletter {
@@ -174,6 +178,10 @@
         padding-left: 20px;
         padding-right: 20px;
         margin-bottom: 40px;
+      }
+      .trouver-un-emploi {
+        font-family: $header-font;
+        font-size: 24px;
       }
     }
     #btn-footer {
