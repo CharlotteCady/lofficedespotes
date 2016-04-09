@@ -98,7 +98,7 @@
         margin-bottom: 20px;
       }
       p#test {
-        font-family: 'Indie Flower', cursive;
+        font-family: $base-font;
         font-size: 16px;
         margin-top: 80px;
       }
@@ -174,14 +174,10 @@
       }
       p {
         color: white;
-        font-size: 16px;
+        font-size: 24px;
         padding-left: 20px;
         padding-right: 20px;
         margin-bottom: 40px;
-      }
-      .trouver-un-emploi {
-        font-family: $header-font;
-        font-size: 24px;
       }
     }
     #btn-footer {
