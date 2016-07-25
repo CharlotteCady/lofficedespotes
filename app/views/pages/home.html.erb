@@ -17,7 +17,7 @@
                 <span style="color: #1ECBCA;">IDEAL</span> ?
             </h1>
             <p class= "trouver-un-emploi">
-              Découvrez les meilleurs outils, sites internet, structures d'accompagnement et bien plus encore pour vous aider à trouver un emploi qui vous plaît vraiment !
+              Découvrez les meilleurs outils, sites internet, structures d'accompagnement et bien plus encore pour vous aider à <br>trouver un emploi qui vous plaît vraiment !
             </p>
           </div>
           <div class="col-xs-12">
@@ -114,7 +114,7 @@
         <div class="new">
           <p class="home-subheader">LES COUPS DE COEUR</p>
           <div class="listing_ressources">
-            <% Ressource.all.order('created_at DESC').limit(5).each do |ress| %>
+            <% Ressource.all.order('created_at DESC').each do |ress| %>
               <% if eval(ress.category).include?("Coup de Coeur") %>
                 <div class="row item white">
                   <div class="col-xs-2">
@@ -247,12 +247,12 @@
         <ul class="list-inline">
           <li>
             <%= link_to "http://www.franceinfo.fr/emission/tout-comprendre/2015-2016/trouvez-votre-emploi-grace-internet-29-03-2016-11-00", target: "blank" do %>
-              <%= image_tag("logo-france-info.jpeg", alt: "WorkUp sur France Info") %>
+              <%= image_tag("logo-france-info.jpg", alt: "WorkUp sur France Info") %>
             <% end %>
           </li>
           <li>
             <%= link_to "http://www.mouv.fr/tags/workup", target: "blank" do %>
-              <%= image_tag("logo-le-mouv.jpg", alt: "WorkUp sur Le Mouv'") %>
+              <%= image_tag("logo-le-mouv.jpg", alt: "WorkUp sur Le Mouv") %>
             <% end %>
           </li>
           <li>
@@ -261,7 +261,7 @@
 
           <li>
             <%= link_to "http://magazine.pickandpow.com/le-top-10-des-startups-francaises-du-mois-de-juin-2016-par-les-pepites-tech/", target: "blank" do %>
-              <%= image_tag("logo-les-pepites-tech.jpeg", alt: "WorkUp sur les pépites tech") %>
+              <%= image_tag("logo-les-pepites-tech.jpg", alt: "WorkUp sur les pépites tech") %>
             <% end %>
           </li>
           <li>

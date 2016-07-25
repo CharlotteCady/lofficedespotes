@@ -70,7 +70,8 @@
       }
       .trouver-un-emploi {
         font-family: $base-font;
-        font-size: 24px;
+        font-size: 22px;
+        padding-bottom: 30px;
       }
       ul  {
         margin-bottom: 0px;
@@ -147,6 +148,7 @@
       font-size: 16px;
       font-weight: normal;
       padding-left: 15px;
+      padding-top: 3%;
     }
     img.logo {
       width: 60px;
@@ -222,10 +224,9 @@
     }
     .citation {
       padding: 20px 10px;
-      p {
-        font-size: 16px;
-
-      }
+    }
+    p.citation {
+      font-size: 16px;
     }
   }
 
@@ -339,6 +340,13 @@
           color: $blue;
         }
       }
+    }
+  }
+  #facebook a, #twitter a, #linkedin a {
+    color: white;
+    font-size: 18px;
+    &:hover {
+      color: $blue;
     }
   }
 }
