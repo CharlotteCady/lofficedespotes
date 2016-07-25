@@ -70,7 +70,7 @@
       }
       .trouver-un-emploi {
         font-family: $base-font;
-        font-size: 22px;
+        font-size: 20px;
         padding-bottom: 30px;
       }
       ul  {
@@ -144,17 +144,18 @@
       padding-left: 15px;
       padding-right: 15px;
     }
-    .sub-title {
-      font-size: 16px;
-      font-weight: normal;
-      padding-left: 15px;
-      padding-top: 3%;
+    h2 {
+      margin-bottom: 5px;
     }
     img.logo {
       width: 60px;
     }
     .listing_ressources {
       margin-bottom: 30px;
+      p {
+        font-size: 14px;
+        color: $gray_light
+      }
     }
     ul {
       margin-top: 20px;

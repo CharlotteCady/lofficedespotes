@@ -15,15 +15,12 @@
     list-style: none;
     font-family: $base-font;
     font-size: 14px;
-    a:hover {
-      color: $blue;
+    a {
+      font-size: 16px;
     }
   }
   .footer-item {
     padding-bottom: 25px;
-  }
-  a {
-    color: white;
   }
   ul {
     margin-bottom: 0px;
@@ -49,7 +46,7 @@
     margin-right: auto;
     margin-left: auto;
   }
-  #facebook a, #twitter a, #linkedin a {
+  a {
     color: white;
     font-size: 18px;
     &:hover {
