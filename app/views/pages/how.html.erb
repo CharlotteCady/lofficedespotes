@@ -16,25 +16,35 @@
   </div>
 </div>
 
+<div class="text-center">
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-6">
+        <h1 class="home-header" >Trouvez le job qui vous convient</h1>
+      </div>
+      <div class="col-xs-3 trait"></div>
+    </div>
+  </div>
+</div>
+
 <div id="desktop" class="hidden-xs">
   <div id="guide-caroussel"></div>
 
   <div id="guide" class="text-center">
     <div class="container">
       <div class="row">
-        <div id="explication" class="col-xs-offset-1 col-xs-10 padded">
+        <div id="explication" class="col-xs-offset-1 col-xs-10">
           <b><p>
             Que vous soyez à la recherche d'un emploi, en poste ou en création d'entreprise, nous voulons vous donner toutes les informations et les bons outils pour vous accompagner dans votre réflexion et vous aider à trouver le job qui vous convient.
           </p></b><br>
           <p>
             Nous testons des outils, des formations, des ateliers, des cours, des MOOCs, nous lisons des articles, des magazines, des blogs, des livres, nous visionnons de nombreuses vidéos et nous rencontrons les nouveaux et anciens acteurs de l'emploi pour <b>vous offrir une sélection adaptée à vos besoins</b> et <b>vous faire découvrir des initiatives de qualité.</b></p>
-          <b><p><span style="color: #1ECBCA;">Et concrètement ?</span></p></b>
           <p>Vous pouvez aimer une initiative, l'enregistrer dans vos favoris, la commenter et contacter les structures qui vous plaisent pour aller encore plus loin. A vous d'affiner votre propre sélection !
           </p>
         </div>
 
         <!-- GRAND ECRAN -->
-        <% @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre"] %>
 
         <div class="row hidden-xs">
           <div class="col-sm-3 bot">
@@ -346,13 +356,6 @@
 
   <%= render "social_media_pages" %>
 
-  <div id="footer", class="text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <p><%= link_to "Mentions légales", mentions_legales_path %></p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render "pages/footer" %>
+
 </div>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/categorie", to: "ressources#category", as: "/category"
   post "category", to: "ressources#category"
   get '/mentions-legales', to: "pages#mentions_legales"
+  get '/pro', to: "pages#pro"
   # get "/guide-de-l-emploi", to: "ressources#index", as: "/ressources"
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

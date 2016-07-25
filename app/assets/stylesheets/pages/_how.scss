@@ -26,10 +26,18 @@
       font-family: $my-font;                                                                                                                                                                                                                                   bottom: 30px;
     }
   }
+  h1 {
+    margin-top : 11px;
+  }
 
   #guide {
+    #explication {
+      p {
+        text-align: justify;
+      }
+      padding-bottom: 20px;
+    }
     .container {
-      padding-top: 50px;
       padding-bottom: 50px;
     }
     .btn {

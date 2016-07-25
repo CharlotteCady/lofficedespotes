@@ -6,11 +6,8 @@
   Découvrez les meilleurs outils, sites d'emploi, structures d'accompagnement, événements et bien plus encore pour trouver un emploi qui vous passionne vraiment !
 <% end %>
 
-<!-- =========== DESKTOP =========== -->
-
-<div id="desktop" class= "hidden-xs">
-  <%= video_tag("dream-job-home.mp4", "dream-job-home.webm", "dream-job-home.ogv", id: "dream-job-video", autoplay: true, loop: true, muted: true) %>
- <div id="banner" class="text-center full middle">
+<div id="home">
+  <div id="banner" class="text-center">
     <div class="container">
       <div class="row">
         <div class="content">
@@ -20,7 +17,7 @@
                 <span style="color: #1ECBCA;">IDEAL</span> ?
             </h1>
             <p class= "trouver-un-emploi">
-              WorkUp a sélectionné pour vous les meilleurs outils, sites internet, structures d'accompagnement et bien plus encore pour vous aider à trouver un emploi qui vous plaît vraiment !
+              Découvrez les meilleurs outils, sites internet, structures d'accompagnement et bien plus encore pour vous aider à trouver un emploi qui vous plaît vraiment !
             </p>
           </div>
           <div class="col-xs-12">
@@ -32,121 +29,276 @@
               <li class="hidden"><%= link_to "Intraprendre", "categorie?category=Intraprendre", class: "btn btn-transparent" %></li>
               <li><%= link_to "Découvrir les nouveautés", ressources_path, class: "btn btn-primary" %></li>
             </ul>
-          </div>
-          <div class="col-xs-12">
-            <p id="test">
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="color: #1ECBCA;"></span>
-              Que vous soyez à la recherche d'un job, que vous ayez envie de vous reconvertir, de changer de boite ou de créer votre propre emploi,<br> découvrez tous les jours une nouvelle initiative qui vous aidera à trouver un travail qui vous correspond enfin
-              <span class="glyphicon glyphicon-star-empty" aria-hidden="true" style="color: #1ECBCA;"></span>
-            </p>
+            <div class="hidden visible-xs">
+              <%= link_to "Découvrir", ressources_path, class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="home-bar-newsletter">
-    <ul class="list-inline">
-<!--       <li>
-        <p class="nl-home-title">Découvrez nos bons plans emploi</p>
-      </li> -->
-      <li>
-        <div id="facebook">
-          <%= link_to "https://www.facebook.com/workuper/", class: "navbar-menu", target: "blank" do %>
-            <i class="fa fa-facebook"></i>
-          <% end %>
-        </div>
-      </li>
-      <li>
-        <div id="twitter">
-          <%= link_to "https://twitter.com/Workuper", class: "navbar-menu", target: "blank" do %>
-            <i class="fa fa-twitter"></i>
-          <% end %>
-        </div>
-      </li>
-      <li>
-        <div id="linkedin">
-          <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", class: "navbar-menu", target: "blank" do %>
-            <i class="fa fa-linkedin"></i>
-          <% end %>
-        </div>
-      </li>
-      <li>
-        <div id="mc_embed_signup form-group">
-          <form action="//rocks.us10.list-manage.com/subscribe/post?u=93a8a8570acd0e6bdaf4f34e7&amp;id=385b3b77fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-              <input type="email" name="EMAIL" class="email form-control text-center" id="mce-EMAIL" placeholder="Inscrivez-vous à la Newsletter" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <input type="submit" value="OK" name="subscribe" id="mc-embedded-subscribe" class="">
+</div>
+
+<!-- =========== NL =========== -->
+
+<div id="home-bar-newsletter">
+<!--   <div class="container">
+    <div class="row">
+      <div class="col-xs-12"> -->
+        <ul class="list-inline">
+          <li>
+            <div id="facebook">
+              <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
+                <i class="fa fa-facebook"></i>
+              <% end %>
             </div>
-          </form>
+          </li>
+          <li>
+            <div id="twitter">
+              <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
+                <i class="fa fa-twitter"></i>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div id="linkedin">
+              <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
+                <i class="fa fa-linkedin"></i>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div id="mc_embed_signup form-group">
+              <form action="//rocks.us10.list-manage.com/subscribe/post?u=93a8a8570acd0e6bdaf4f34e7&amp;id=385b3b77fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <input type="email" name="EMAIL" class="email text-center" id="mce-EMAIL" placeholder="Inscrivez-vous à la Newsletter" required>
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <input type="submit" value="OK" name="subscribe" id="mc-embedded-subscribe" class="">
+                </div>
+              </form>
+            </div>
+          </li>
+        </ul>
+<!--       </div>
+    </div>
+  </div> -->
+</div>
+
+
+<div class="news_offres">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="new">
+            <p class="home-subheader">LES NOUVELLES DÉCOUVERTES</p>
+            <div class="listing_ressources">
+              <% @ressources = Ressource.order("created_at desc").limit(5) %>
+              <% @ressources.each do |ress| %>
+              <div class="row item white">
+                <div class="col-xs-2">
+                  <ul class= "list-inline">
+                    <li>
+                      <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-xs-10">
+                  <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
+                </div>
+              </div>
+              <% end %>
+            </div>
         </div>
-      </li>
-    </ul>
+      </div>
+      <div class="col-sm-6">
+        <div class="new">
+          <p class="home-subheader">LES COUPS DE COEUR</p>
+          <div class="listing_ressources">
+            <% Ressource.all.order('created_at DESC').limit(5).each do |ress| %>
+              <% if eval(ress.category).include?("Coup de Coeur") %>
+                <div class="row item white">
+                  <div class="col-xs-2">
+                    <ul class= "list-inline">
+                      <li>
+                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-10">
+                    <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- =========== MOBILE =========== -->
+<div id="guide" class="text-center padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-6">
+        <p class="home-header" >COMMENT ÇA MARCHE ?</p>
+      </div>
+      <div class="col-xs-3 trait"></div>
+    </div>
+    <div class="row">
+      <div id="explication" class="col-sm-12 padded">
+        <p>
+          Parce qu'il n'est pas toujours facile de s'y retrouver, nous testons pour vous des outils, des formations, des ateliers, des MOOCs, lisons des articles, des magazines, des blogs, des livres et rencontrons des acteurs de l'emploi pour vous offrir une sélection adaptée à vos besoins et vous faire découvrir des initiatives de qualité.
+        </p>
+        <p><strong>
+          Que vous soyez à la recherche d'un job, que vous ayez envie de vous reconvertir, de changer de boite ou de créer votre propre emploi, découvrez tous les jours une nouvelle initiative ou un nouvel outil qui vous aidera à trouver le job qui vous convient.
+        </p></strong><br>
+      </div>
 
-<div id="mobile" class="visible-xs">
-  <%= image_tag "dream.jpg", class: "bg" %>
-  <div id="banner" class="text-center full middle">
-    <div class="container">
       <div class="row">
-        <div class="col-xs-12">
-          <div class="content">
-            <h1 id= "baseline" class= "text-center">
-              A LA RECHERCHE DU JOB
-                <span style="color: #1ECBCA;">IDEAL</span> ?
-            </h1>
-            <p class= "trouver-un-emploi">
-              WorkUp a sélectionné pour vous les meilleurs outils, sites internet, structures d'accompagnement et bien plus encore pour vous aider à trouver un emploi qui vous plaît vraiment !
-            </p>
-            <div id="btn-footer">
-              <ul class="list-inline">
-                <li><%= link_to "Découvrir", ressources_path, id: "btn-discover", class: "btn btn-primary" %></li>
-                <li id="float"><%= link_to "Se Connecter", new_user_session_path, id: "btn-login", class: "btn btn-transparent" %></li>
-              </ul>
-            </div>
-          </div>
+        <div class="col-xs-6 col-sm-3 bot">
+            <p class="rond">1</p>
+            <p class="action">Découvrez les nouvelles initiatives et enregistrez les dans vos favoris</p>
+        </div>
+        <div class="col-xs-6 col-sm-3 bot">
+            <p class="rond">2</p>
+            <p class= "action">Bénéficiez des offres spéciales que nous négocions pour vous aider à passer à l'action</p>
+        </div>
+        <div class="col-xs-6 col-sm-3 bot">
+            <p class="rond">3</p>
+            <p class= "action">Passez à l'action en contactant les initiatives, utilisant les outils, allant aux événements, etc.</p>
+        </div>
+        <div class="col-xs-6 col-sm-3 bot">
+            <p class="rond">4</p>
+            <p class= "action">Restez informé des nouveautés en vous abonnant à notre newletter ou en nous suivant sur les réseaux sociaux</p>
         </div>
       </div>
     </div>
   </div>
-  <div id="home-bar-newsletter">
-    <ul class="list-inline">
-      <li>
-        <div id="facebook">
-          <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
-            <i class="fa fa-facebook"></i>
-          <% end %>
+</div>
+
+<div id="notre-mission" class="text-center">
+  <div class="container block">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Pourquoi WorkUp ?</h2>
+          <p>
+            Parce que le monde du travail évolue<br>
+            Parce que nous ferons face à plusieurs transitions professionnelles dans notre vie<br>
+            Parce que la moitié des métiers qui existent aujourd'hui auront disparu dans 20 ans<br>
+            Parce que nous sommes désormais à la recherche d'un travail qui a du sens et dans lequel nous pouvons nous épanouir<br>
+            Parce que ce n'est pas toujours facile de s'y retrouver parmi toutes les solutions existantes et de trouver celle qui nous convient
+          </p>
+        <%= link_to "Découvrez les solutions qui peuvent vous aider", ressources_path, class: "btn btn-primary hidden-xs" %>
+        <div class="hidden visible-xs">
+          <%= link_to "Découvrez les solutions", ressources_path, class: "btn btn-primary" %>
         </div>
-      </li>
-      <li>
-        <div id="twitter">
-          <%= link_to "https://twitter.com/Workuper", class: "navbar-menu", target: "blank" do %>
-            <i class="fa fa-twitter"></i>
-          <% end %>
-        </div>
-      </li>
-      <li>
-        <div id="linkedin">
-          <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", class: "navbar-menu", target: "blank" do %>
-            <i class="fa fa-linkedin"></i>
-          <% end %>
-        </div>
-      </li>
-      <li>
-        <div id="mc_embed_signup form-group">
-          <form action="//rocks.us10.list-manage.com/subscribe/post?u=93a8a8570acd0e6bdaf4f34e7&amp;id=385b3b77fa" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-              <input type="email" name="EMAIL" class="email  text-center" id="mce-EMAIL" placeholder="Newsletter" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <input type="submit" value="OK" name="subscribe" id="mc-embedded-subscribe" class="">
-            </div>
-          </form>
-        </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </div>
+
+<div id="temoignage" class="text-center">
+  <div class="container">
+    <div class="row padded">
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-6">
+        <p class="home-header" >CE QU'EN PENSENT NOS LECTEURS</p>
+      </div>
+      <div class="col-xs-3 trait"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <p class="citation"><i>"Vos articles donnent beaucoup de pistes et informent surtout au sujet d'initiatives originales. Vous faites connaître les idées neuves, c'est vraiment extra"</i><br><b>Marie</b></p>
+      </div>
+      <div class="col-sm-4">
+        <p class="citation"><i>"Vos articles permettent de découvrir de nouvelles initiatives d'accompagnement pour changer de métier, trouver son métier ou lancer sa boite, c'est super intéressant. En résumé vous faites notre travail en aidant à trouver les bons réseaux et les bonnes doses d'inspiration"</i><br><b>Romain</b></p>
+      </div>
+      <div class="col-sm-4">
+        <p class="citation"><i>"WorkUp permet de ne pas avoir à chercher l'info et de la retrouver sur une seule plateforme. Je connaissais déjà quelques bons plans mais là j'ai accès à plein d'autres pistes, franchement merci !"</i><br><b>Jeanne</b></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <p class="citation"><i>"Une super boite à outils où aller piocher. Les articles sont un vrai plus dans la présentation de chaque solution, dispositif, livre..."</i><br><b>Matthieu</b></p>
+      </div>
+      <div class="col-sm-4">
+        <p class="citation"><i>"Une petite bouffée d'oxygène avec des découvertes pour avancer et des sources de bonnes idées auxquelles on a pas forcément pensé !"</i><br><b>Pierre</b></p>
+      </div>
+      <div class="col-sm-4">
+        <p class="citation"><i>"WorkUp me permet de confronter ma vision et ma situation à des outils et pratiques pour aller plus vite ou y voir plus clair"</i><br><b>Mathilde</b></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="presse" class="text-center">
+  <div class="container">
+    <div class="row padded">
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-6">
+        <p class="home-header" >ILS PARLENT DE NOUS</p>
+      </div>
+      <div class="col-xs-3 trait"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-inline">
+          <li>
+            <%= link_to "http://www.franceinfo.fr/emission/tout-comprendre/2015-2016/trouvez-votre-emploi-grace-internet-29-03-2016-11-00", target: "blank" do %>
+              <%= image_tag("logo-france-info.jpeg", alt: "WorkUp sur France Info") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://www.mouv.fr/tags/workup", target: "blank" do %>
+              <%= image_tag("logo-le-mouv.jpg", alt: "WorkUp sur Le Mouv'") %>
+            <% end %>
+          </li>
+          <li>
+            <%= image_tag("Logo_Version_Femina.png", alt: "WorkUp dans Version Femina") %>
+          </li>
+
+          <li>
+            <%= link_to "http://magazine.pickandpow.com/le-top-10-des-startups-francaises-du-mois-de-juin-2016-par-les-pepites-tech/", target: "blank" do %>
+              <%= image_tag("logo-les-pepites-tech.jpeg", alt: "WorkUp sur les pépites tech") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://www.widoobiz.com/a-la-une/summer-school-workup-reflechir-a-avenir-professionnel/72425", target: "blank" do %>
+              <%= image_tag("logo-widoobiz.png", alt: "WorkUp sur Widoobiz") %>
+            <% end %>
+          </li>
+          <li>
+            <%= image_tag("logo-backpack.jpg", alt: "WorkUp dans Backpack") %>
+          </li>
+          <li>
+            <%= image_tag("Logo_radio_tendance_ouest.svg.png", alt: "WorkUp sur Tendance Ouest") %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div id="parceque" class="text-center">
+  <div class="container block">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Saviez-vous que vous pouvez...<h2>
+        <p>
+          Tester un métier pendant une journée avec un artisan ?<br>
+          Bénéficier de témoignages variés de la part de professionnels sur leur métier au quotidien ?<br>
+          Rencontrer d'autres chercheurs d'emploi et vous entraider dans vos recherches ?<br>
+          Découvrir des histoires de personnes comme vous, qui ont "monté leur boite" ?<br>
+          Postuler sans CV sur les nouveaux sites de recrutement qui cartonnent ?<br>
+          Et bien plus encore !
+        </p>
+         link_to "Découvrez les initiatives", ressources_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<%= render "pages/footer" %>
 

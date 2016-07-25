@@ -3,6 +3,13 @@ class RessourcesController < ApplicationController
   before_filter :check_privileges!, only: [:new, :create, :edit, :update, :destroy]
   skip_before_filter :authenticate_user!, only: [:index, :show, :category]
 
+  CATEGORIES = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
+  SUBCATEGORIES = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
+  SECTOR_LIST = ["Tout", "Communication", "Artisanat", "Web", "Design", "Santé", "Education", "Aide" , "Service", "Bâtiment", "Agro-alimentaire", "Restauration"]
+  CITY = ["France", "Paris", "Nantes", "Bordeaux", "Strasbourg", "Marseille", "Lyon", "Toulouse", "Tours",
+           "Lille", "Rennes", "Brest", "Nice", "Aix en Provence", "Caen"]
+  SUBCAT_SIDEBAR = ["Voir tout"]
+
   def index
     category = params[:category]
     subcategory = params[:subcategory]
@@ -12,9 +19,9 @@ class RessourcesController < ApplicationController
     else
       @ressources = Ressource.all.order('created_at DESC').limit(5)
     end
-    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
-    @subcat_sidebar = ["Voir tout"]
+    @categories = CATEGORIES
+    @subcategories = SUBCATEGORIES
+    @subcat_sidebar = SUBCAT_SIDEBAR
     current_host
   end
 
@@ -24,9 +31,9 @@ class RessourcesController < ApplicationController
   # end
 
   def show
-    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
-    @subcat_sidebar = ["Voir tout"]
+    @categories = CATEGORIES
+    @subcategories = SUBCATEGORIES
+    @subcat_sidebar = SUBCAT_SIDEBAR
     @comment = @ressource.comments.new
     @comments = Comment.where(commentable_id: @ressource)
     @mois = %w( Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Décembre )
@@ -36,11 +43,10 @@ class RessourcesController < ApplicationController
 
   def new
     @ressource = Ressource.new
-    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
-    @sector_list = ["Tout", "Communication", "Artisanat", "Web", "Design", "Santé", "Education", "Aide" , "Service", "Bâtiment", "Agro-alimentaire", "Restauration"]
-    @city = ["France", "Paris", "Nantes", "Bordeaux", "Strasbourg", "Marseille", "Lyon", "Toulouse", "Tours",
-             "Lille", "Rennes", "Brest", "Nice", "Aix en Provence", "Caen"]
+    @categories = CATEGORIES
+    @subcategories = SUBCATEGORIES
+    @sector_list = SECTOR_LIST
+    @city = CITY
   end
 
   def create
@@ -57,11 +63,10 @@ class RessourcesController < ApplicationController
   end
 
   def edit
-    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
-    @sector_list = ["Tout", "Communication", "Artisanat", "Web", "Santé", "Education", "Aide" , "Service", "Bâtiment", "Agro-alimentaire", "Restauration"]
-    @city = ["France", "Paris", "Nantes", "Bordeaux", "Strasbourg", "Marseille", "Lyon", "Toulouse", "Tours",
-             "Lille", "Rennes", "Brest", "Nice", "Aix en Provence", "Caen"]
+    @categories = CATEGORIES
+    @subcategories = SUBCATEGORIES
+    @sector_list = SECTOR_LIST
+    @city = CITY
   end
 
   def update
@@ -96,9 +101,9 @@ class RessourcesController < ApplicationController
   end
 
   def category
-    @categories = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
-    @subcategories = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
-    @subcat_sidebar = ["Voir tout"]
+    @categories = CATEGORIES
+    @subcategories = SUBCATEGORIES
+    @subcat_sidebar = SUBCAT_SIDEBAR
     @category_page = params[:category]
     # @ressources = Ressource.where(category: @category_page)
     # ====== Barre de recherche

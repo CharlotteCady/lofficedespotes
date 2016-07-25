@@ -1,10 +1,59 @@
 #footer {
   background-color: black;
-  height: 50px;
   padding-top: 10px;
   color: white;
-  font-family: $my-font;
-  font-size: 26px;
   z-index: 1000;
   clear: both;
+  p {
+    font-family: $header-font;
+    font-size: 24px;
+  }
+  ul {
+    padding-left: 0px;
+  }
+  li {
+    list-style: none;
+    font-family: $base-font;
+    font-size: 14px;
+    a:hover {
+      color: $blue;
+    }
+  }
+  .footer-item {
+    padding-bottom: 25px;
+  }
+  a {
+    color: white;
+  }
+  ul {
+    margin-bottom: 0px;
+  }
+  input#mc-embedded-subscribe {
+    margin-top: 5px;
+    background-color: $blue;
+    border: 1px solid $blue;
+    color: white;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 35px;
+    margin-right: 20px;
+  }
+  #mce-EMAIL.email {
+    font-size: 12px;
+    font-family: $base-font;
+    width: 300px;
+    border-radius: 3px;
+    height: 35px;
+    border: 1px solid $blue;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #facebook a, #twitter a, #linkedin a {
+    color: white;
+    font-size: 18px;
+    &:hover {
+      color: $blue;
+    }
+  }
 }

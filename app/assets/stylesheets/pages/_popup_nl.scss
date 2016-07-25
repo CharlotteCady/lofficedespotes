@@ -1,0 +1,75 @@
+#popup_nl {
+  .modal-header {
+    p#myModalLabel.modal-title.home-subheader {
+      color: $blue;
+      font-size: 30px;
+    }
+    p#content-nl {
+      font-family: $header-font;
+      color: $gray-light;
+      font-size: 28px;
+      margin-bottom: 0;
+    }
+    p#myModalLabel.modal-title.home-subheader::before {
+      content: '';
+      position: absolute;
+      top: 35px;
+      width: 150px;
+      height: 1px;
+      background-color: $blue;
+      left: 30px;
+    }
+    p#myModalLabel.modal-title.home-subheader::after {
+     content: '';
+     position: absolute;
+     top: 35px;
+     width: 150px;
+     height: 1px;
+     background-color: $blue;
+     right: 30px;
+    }
+  }
+  .modal-body {
+    background: image-url("workup-newsletter.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 400px;
+    div#mc_embed_signup_scroll {
+      padding-top: 100px;
+    }
+  input#mc-embedded-subscribe {
+    margin-top: 5px;
+    background-color: $blue;
+    border: 1px solid $blue;
+    color: white;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 45px;
+    width: 45px;
+    margin-right: 20px;
+    }
+  #mce-EMAIL.email {
+    font-size: 14px;
+    font-family: $base-font;
+    width: 350px;
+    border-radius: 3px;
+    height: 45px;
+    border: 1px solid $blue;
+    background-color: white;
+    color: $gray-light;
+    }
+  }
+  .modal-footer {
+    ul {
+      padding-top: 15px;
+    }
+    i {
+      font-size: 24px;
+    }
+    #facebook a, #twitter a, #linkedin a {
+      color: $blue;
+    }
+  }
+}

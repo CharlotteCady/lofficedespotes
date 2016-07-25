@@ -47,34 +47,19 @@
   }
   // Bannière ===============================================================
 
-  img.bg, #dream-job-video {
-    /* Set rules to fill background */
-    min-height: 100%;
-    min-width: 1024px;
-
-    /* Set up proportionate scaling */
-    // width: 100%;
-    height: auto;
-
-    /* Set up positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
+  #banner   {
+    background: image-url("workup-trouver-un-emploi-qui-vous-plait.jpeg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 700px;
   }
 
-  @media screen and (max-width: 1024px) { /* Specific to this particular image */
-    img.bg, #dream-job-video {
-      left: 50%;
-      margin-left: -512px;   /* 50% */
-    }
-  }
-
-  video#dream-job-video {
-    filter: brightness(50%);
-  }
-
-  #desktop {
+  #home {
     #banner {
+      padding-left: 15px;
+      padding-right: 15px;
       h1 {
         margin-top: 200px;
         margin-bottom: 20px;
@@ -84,8 +69,8 @@
         font-size: 20px;
       }
       .trouver-un-emploi {
-        font-family: $header-font;
-        font-size: 30px;
+        font-family: $base-font;
+        font-size: 24px;
       }
       ul  {
         margin-bottom: 0px;
@@ -94,73 +79,182 @@
       //   text-align: right;
       //   margin-right: 200px;
       // }
-      img#step-arrow1 {
-        margin-bottom: 20px;
-      }
+
       p#test {
         font-family: $base-font;
         font-size: 16px;
         margin-top: 80px;
       }
     }
-    #home-bar-newsletter {
-      position: absolute;
-      top: 0;
-      background-color: rgba(0,0,0,0.4);
-      text-align: right;
+  }
+
+      // NL ===============================================================
+
+  #home-bar-newsletter {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+    text-align: right;
+    color: white;
+    width: 100%;
+    height: 35px;
+    input#mc-embedded-subscribe {
+      margin-top: 5px;
+      background-color: $blue;
+      border: 1px solid $blue;
       color: white;
-      width: 100%;
-      height: 35px;
-      input#mc-embedded-subscribe {
-        margin-top: 5px;
-        background-color: $blue;
-        border: 1px solid $blue;
-        color: white;
-        font-size: 12px;
-        border-radius: 3px;
-        height: 25px;
-        margin-right: 20px;
-        &:hover {
-          // background-color: $blue;
-        }
+      font-size: 12px;
+      border-radius: 3px;
+      height: 25px;
+      margin-right: 20px;
+    }
+    #mce-EMAIL.email {
+      font-size: 12px;
+      font-family: $base-font;
+      width: 200px;
+      border-radius: 3px;
+      height: 25px;
+      border: 1px solid $blue;
+      background-color: white;
+      color: $gray-light;
+    }
+    #facebook a, #twitter a, #linkedin a {
+      color: white;
+      &:hover {
+        color: $blue;
       }
-      #mce-EMAIL.email {
-        font-size: 12px;
-        font-family: $base-font;
-        width: 300px;
-        border-radius: 3px;
-        height: 25px;
-        border: 1px solid $blue;
-        background-color: white;
-      }
-      #facebook a, #twitter a, #linkedin a {
-        color: white;
-        &:hover {
-          color: $blue;
-        }
-      }
-      .nl-home-title {
-        font-size: 18px;
-        font-family: $header-font;
+    }
+    .nl-home-title {
+      font-size: 18px;
+      font-family: $header-font;
+    }
+  }
+
+  // DERNIERES NEWS ET OFFRES ===============================================================
+
+  .news_offres {
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .new {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .sub-title {
+      font-size: 16px;
+      font-weight: normal;
+      padding-left: 15px;
+    }
+    img.logo {
+      width: 60px;
+    }
+    .listing_ressources {
+      margin-bottom: 30px;
+    }
+    ul {
+      margin-top: 20px;
+      // margin-left: 10px;
+    }
+  }
+  // Comment ça marche ? ===============================================================
+
+  #guide {
+    background-color: white;
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .bot {
+      padding-bottom: 30px;
+      text-align : center;
+    }
+    #explication p {
+      font-size: 16px;
+      text-align: justify;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  p.rond {
+    font-family: $my-font;
+    font-size: 26px;
+    color: white;
+    background-color: $blue;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 8px;
+  }
+
+  p.action {
+    font-size: 16px;
+  }
+  // Pourquoi WorkUp ===============================================================
+
+  #notre-mission {
+    background: image-url("initiative-pour-l-emploi.png") no-repeat fixed center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    min-height: 620px;
+    p {
+      color: white;
+      font-size: 18px;
+      font-family: $base-font;
+      line-height: 1.5;
+      padding: 40px;
+    }
+  }
+
+  // Témoignages ===============================================================
+
+  #temoignage {
+    .container {
+      padding-bottom: 50px;
+    }
+    .citation {
+      padding: 20px 10px;
+      p {
+        font-size: 16px;
+
       }
     }
   }
 
-
-  .full{
-      height: 100%;
+  #parceque {
+    background: image-url("dream.jpg") no-repeat fixed center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    min-height: 620px;
+    p {
+      color: white;
+      font-size: 18px;
+      font-family: $base-font;
+      line-height: 1.5;
+      padding: 40px;
+    }
   }
 
-  .middle > *{
-      display: inline-block;
-      vertical-align: middle;
-  }
-
-  .full.middle:after{
-      content: "";
-      display: inline-block;
-      height: 100%; width: 0;
-      vertical-align: middle;
+  // PRESSE
+  #presse {
+    padding-bottom: 40px;
+    background-color: white;
+    img {
+      max-height: 100px;
+      max-width: 200px;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
   }
 
   // ======= MOBILE ========
@@ -247,9 +341,4 @@
       }
     }
   }
-}
-
-html, body{
-    height: 100%; width: 100%;
-    margin: 0; padding: 0;
 }

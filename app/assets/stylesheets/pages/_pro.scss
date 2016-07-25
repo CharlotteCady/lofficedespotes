@@ -1,0 +1,164 @@
+#pages_pro {
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+  div.alert {
+    top: 60px;
+  }
+  background-color: white;
+
+  // VOus êtes un professionel ?
+  // ===============================================================
+
+  #expert   {
+    background: image-url("professionnels.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 400px;
+    p {
+      margin-top: 60px;
+      padding-top: 100px;
+      font-size: 60px;
+      color: white;
+      font-family: $my-font;                                                                                                                                                                                                                                   bottom: 30px;
+    }
+  }
+
+  // Nos offres
+  // ======================================================================
+
+  h1 {
+    margin-top: 11px;
+  }
+
+  #offres {
+    p {
+      font-size : 16px;
+      text-align: justify;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    padding-bottom: 40px;
+  }
+  #services {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 40px;
+    .little-header {
+      font-size: 24px;
+      padding-top : 30px;
+    }
+    .offres-pro  {
+      min-height: 200px;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+    .desc-offre {
+      a {
+        color: $blue;
+      }
+    }
+    .btn {
+      width: 300px;
+    }
+    #event {
+      background: image-url("evenement.jpg") no-repeat center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      margin-top: 0px;
+    }
+    #conference {
+      background: image-url("conference.JPG") no-repeat center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    #visibilite {
+      background: image-url("visibilite.jpg") no-repeat center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    #relation {
+      background: image-url("mise-en-relation.jpg") no-repeat center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    .desc-offre {
+      margin-right: 10px;
+      margin-left: 10px;
+      font-size : 16px;
+      text-align: justify;
+    }
+  }
+  // Nos réalisations
+  // ======================================================================
+    #realisation {
+    background-color: #F0EFEF;
+    }
+    #realisations {
+    background-color: #F0EFEF;
+    padding-bottom: 40px;
+    .home-header {
+      margin-bottom: 20px;
+    }
+    img {
+      max-height: 150px;
+      max-width: 250px;
+      padding-top: 50px;
+      padding-bottom: 15px;
+    }
+    #description-summer, #description-festival-digital-jobs, #description-wip, #description-fete {
+      padding: 15px;
+    }
+    .item {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  // Nos partenaires
+  // ======================================================================
+  #partenaires {
+    padding-bottom: 40px;
+
+    img {
+      max-height: 100px;
+      max-width: 200px;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+  }
+  // Contact
+  // ======================================================================
+  #contact {
+    background-color: #F0EFEF;
+    min-height: 500px;
+    #form {
+      input {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+    textarea {
+      min-height: 200px;
+      text-align: center;
+    }
+  }
+
+  // Footer ===============
+  #footer {
+    a {
+      color: white;
+    }
+  }
+}

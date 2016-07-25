@@ -1,0 +1,232 @@
+<% content_for(:title) do %>
+  Nos offres pour les professionnels de l'emploi | WorkUp
+<% end %>
+
+<%content_for(:meta_description) do %>
+  Des conférences, ateliers, événements sur l'emploi, la transition professionnelle et l'entrepreneuriat, et de la visibilité online et offline
+<% end %>
+
+<div id="expert" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="home-header">VOUS ÊTES UN PROFESSIONNEL ?</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-6">
+        <h1 class="home-header" >Nos offres dédiées aux pros</h1>
+      </div>
+      <div class="col-xs-3 trait"></div>
+    </div>
+  </div>
+</div>
+
+<div id="offres">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Notre mission est d'accompagner <b>les acteurs institutionnels, publics et privés, de l'emploi, de la transition professionnelle et de l'entrepreneuriat</b>  dans la mise en place de leurs projets pédagogiques. Nous avons développé des offres personnalisées en fonction de vos besoins.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="services" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <div class="offres-pro" id="event"></div>
+        <p class= "little-header">CRÉATION D'ÉVÉNEMENTS</p>
+        <p class="desc-offre">
+          Nous co-créons des événements avec les acteurs de l'emploi, participons à la conception, l'organisation et la communication en ligne
+          (<%= link_to "Summer School", "http://www.1semainepourtrouversavoie.com", target: :blank %>, <%= link_to "WIP Festival", "http://www.w-i-p.fr", target: :blank%>, <%= link_to "Festival Digital Jobs", "http://www.festivaldigitaljobs.paris/", target: :blank%>)
+        </p>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="offres-pro" id="conference"></div>
+        <p class= "little-header">ANIMATION DE CONFÉRENCES</p>
+        <p class="desc-offre">
+          Nous intervenons au sein d'écoles, d'entreprises, d'institutions, de cabinets de recrutement sur les thématiques de la recherche d'emploi et des nouveaux outils du numérique dédiés à la transition professionnelle (<%= link_to "Job Academy de FACE", "http://clubfaceseinesaintdenis.fr/job-academy-metiers-de-communication/", target: :blank %>, Université Paris-Sorbonne, UPEC, <%= link_to "Ma DIRCOM", "https://www.youtube.com/watch?v=s_hlM19RM8A", target: :blank %> )
+        </p>
+        <br>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="offres-pro" id="visibilite"></div>
+        <p class= "little-header">MISE EN AVANT ONLINE</p>
+        <p class="desc-offre">
+          Nous augmentons la visibilité de votre initiative à travers notre site web, notre newsletter et nos réseaux sociaux (bannière, jeux concours, création de contenu, etc.)
+        </p>
+        <br><br>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="offres-pro" id="relation"></div>
+        <p class= "little-header">APPORT D'AFFAIRES</p>
+        <p class="desc-offre">
+          Nous parlons de votre initiative auprès des acteurs que nous rencontrons et auprès de notre communauté pour augmenter vos ventes.
+        </p>
+        <br><br><br>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Rencontrons-nous", "#contact", class: "btn btn-primary text-center" %>
+</div>
+
+<div class="text-center" id="realisation">
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-6">
+        <h1 class="home-header" >Nos réalisations</h1>
+      </div>
+      <div class="col-xs-3 trait"></div>
+    </div>
+  </div>
+</div>
+
+<div id="realisations" class="text-center">
+  <div class="container ">
+    <div class="row">
+      <div class="col-xs-12 col-md-4 item">
+        <div id="description-summer" class="white">
+          <%= link_to "http://www.1semainepourtrouversavoie.com", target: "blank" do %>
+            <p class="btn btn-primary">La Summer School</p>
+          <% end %>
+          <p>
+            1 semaine au vert pour prendre le temps de réfléchir à son avenir professionnel. Un événement co-créé avec SoManyWays et Cojob
+          </p>
+          <br><br>
+          <%= image_tag("logo-summer-school.png", alt: "Summer School") %>
+          <br><br>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4 item">
+        <div id="description-wip" class="white">
+          <%= link_to "http://www.w-i-p.fr", target: "blank" do %>
+            <p class="btn btn-primary">Le WIP Festival</p>
+          <% end %>
+          <p>5 jours pour vivre sa recherche d'emploi autrement : des ateliers, du co-searching, des rencontres, etc. Un événement co-créé avec VAE les 2 Rives, SoManyWays et Cojob</p>
+          <%= image_tag("logo-wip.png", alt: "Le WIP Festival") %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4 item">
+        <div id="description-festival-digital-jobs" class="white">
+          <%= link_to "http://www.festivaldigitaljobs.paris/", target: "blank" do %>
+            <p class="btn btn-primary">Le Festival Digital Jobs</p>
+          <% end %>
+          <p>1 journée dédiée aux métiers du numérique. Événement co-créé avec la Mairie du 14e, création du site internet et relai de la communication auprès de notre communauté.</p>
+          <%= image_tag("logo-festival-digital-jobs.jpg", alt: "Le Festival Digital Jobs") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <div class="container padded">
+    <div class="row padded">
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-6">
+        <h1 class="home-header" >Ils nous font confiance</h1>
+      </div>
+      <div class="col-xs-3 trait"></div>
+    </div>
+  </div>
+</div>
+
+<div id="partenaires" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-inline">
+          <li>
+            <%= link_to "http://www.parisandco.paris/", target: "blank" do %>
+              <%= image_tag("paris-and-co.png", alt: "Paris and Co") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://www.mairie14.paris.fr/mairie14/", target: "blank" do %>
+              <%= image_tag("logo-festival-digital-jobs.jpg", alt: "Mairie du 14e Paris") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://www.paris-sorbonne.fr/", target: "blank" do %>
+              <%= image_tag("logo-la-sorbonne-paris.png", alt: "La Sorbonne Paris") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://www.madircom.com/", target: "blank" do %>
+              <%= image_tag("logo-madircom.jpg", alt: "Ma DIRCOM") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://cojob.fr/", target: "blank" do %>
+              <%= image_tag("logo-cojob.jpeg", alt: "Cojob") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://somanyways.org/", target: "blank" do %>
+              <%= image_tag("logo-somanyways.jpg", alt: "SoManyWays") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://les2rives.fr/", target: "blank" do %>
+              <%= image_tag("logo-VAE-les-2-rives.png", alt: "VAE les 2 Rives") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "https://jobmaker.fr/", target: "blank" do %>
+              <%= image_tag("logo-jobmaker.png", alt: "Jobmaker") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://viemonjob.com/", target: "blank" do %>
+              <%= image_tag("logo-viemonjob.png", alt: "Viemonjob") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://skytea.fr/", target: "blank" do %>
+              <%= image_tag("logo-sky-tea.png", alt: "Skytea") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://eklore.fr/", target: "blank" do %>
+              <%= image_tag("logo-eklore.png", alt: "Eklore") %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="contact" class="text-center">
+  <div class="container padded">
+    <div class="row">
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-6">
+        <p class= "home-header">Contactez-nous</p>
+      </div>
+      <div class="col-xs-3 trait"></div>
+      <div class="col-xs-offset-1 col-xs-10 padded">
+        <p>Envie d'en savoir plus sur nos prestations ? Un besoin spécifique ? Envie de nous rencontrer ? N'hésitez pas à nous envoyer un petit message, nous serions ravies de vous répondre ! </p>
+      </div>
+      <div class="col-xs-offset-2 col-xs-8" id="form">
+        <form action="https://formspree.io/team@workup.rocks" method="POST">
+          <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Votre e-mail">
+          <textarea class="form-control" name="message" rows="3" placeholder="Laissez-nous vos mots doux, ici :)" ></textarea>
+          <input type="submit" name="submit" id="send" class="btn btn-primary" value="Envoyer">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "pages/footer" %>
