@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_domain
     # si l'url n'est pas en www il redirige vers l'url en www avec une redirection 301
-    if request.env['HTTP_HOST'] != ('www.workuper.com' || 'lofficedespotes-staging.herokuapp.com')
+    if request.env['HTTP_HOST'] != 'www.workuper.com'
       redirect_to "http://www.workuper.com#{request.env['REQUEST_PATH']}", :status => 301
     end
   end
