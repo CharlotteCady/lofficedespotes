@@ -96,11 +96,20 @@
               <% @ressources.each do |ress| %>
               <div class="row item white">
                 <div class="col-xs-2">
-                  <ul class= "list-inline">
-                    <li>
-                      <%= image_tag ress.logo.url(:thumb), class: "logo" %>
-                    </li>
-                  </ul>
+                  <div class="desktop-display-logo hidden-xs">
+                    <ul class= "list-inline">
+                      <li>
+                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mobile-display-logo visible-xs">
+                    <ul class= "list-inline">
+                      <li>
+                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <div class="col-xs-10">
                   <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
@@ -119,11 +128,20 @@
               <% if eval(ress.category).include?("Coup de Coeur") %>
                 <div class="row item white">
                   <div class="col-xs-2">
-                    <ul class= "list-inline">
-                      <li>
-                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
-                      </li>
-                    </ul>
+                    <div class="desktop-display-logo hidden-xs">
+                      <ul class= "list-inline">
+                        <li>
+                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mobile-display-logo visible-xs">
+                      <ul class= "list-inline">
+                        <li>
+                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                   <div class="col-xs-10">
                     <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>

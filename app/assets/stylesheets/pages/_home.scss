@@ -148,9 +148,17 @@
       margin-bottom: 5px;
       font-size: 16px;
     }
-    img.logo {
-      width: 60px;
+    .desktop-display-logo {
+      img.logo {
+        width: 60px;
+      }
     }
+    .mobile-display-logo {
+      img.logo {
+        width: 30px;
+      }
+    }
+
     .listing_ressources {
       margin-bottom: 30px;
       p {
