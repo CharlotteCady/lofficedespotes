@@ -27,6 +27,17 @@
   }
  }
 
+ .btn-empty {
+  background-color: white;
+  border: solid 1px $blue;
+  color: $blue;
+  &:hover {
+    background-color: $blue;
+    color: white;
+    border: solid 1px $blue;
+  }
+ }
+
  .btn-circle {
   background-color: $blue;
   border-radius: 50%;
