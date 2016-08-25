@@ -76,15 +76,16 @@
       ul  {
         margin-bottom: 0px;
       }
-      // ul#test-here {
-      //   text-align: right;
-      //   margin-right: 200px;
-      // }
-
       p#test {
         font-family: $base-font;
         font-size: 16px;
         margin-top: 80px;
+      }
+      li {
+        a:active, a:focus {
+          background-color: $blue;
+          color: white;
+        }
       }
     }
   }

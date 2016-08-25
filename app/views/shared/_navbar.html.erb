@@ -19,13 +19,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right" id= "little-screen">
         <li class="little-screen">
-          <%= link_to t(".top_call_to_action", default: "Pro"), pro_path, class: "navbar-menu" %>
+          <%= link_to t(".top_call_to_action", default: "Les Solutions"), ressources_path, class: "navbar-menu active-solutions" %>
         </li>
         <li class="little-screen">
-          <%= link_to t(".top_call_to_action", default: "A Propos"), about_path, class: "navbar-menu" %>
+          <%= link_to t(".top_call_to_action", default: "Pro"), pro_path, class: "navbar-menu active-pro" %>
         </li>
         <li class="little-screen">
-          <%= link_to t(".top_call_to_action", default: "Contact"), contact_path, class: "navbar-menu" %>
+          <%= link_to t(".top_call_to_action", default: "A Propos"), about_path, class: "navbar-menu active-about" %>
+        </li>
+        <li class="little-screen">
+          <%= link_to t(".top_call_to_action", default: "Contact"), contact_path, class: "navbar-menu active-contact" %>
         </li>
         <li class="little-screen hidden">
           <%= link_to "https://www.facebook.com/pages/Workup/1569854826618353", class: "navbar-menu", target: "blank" do %>

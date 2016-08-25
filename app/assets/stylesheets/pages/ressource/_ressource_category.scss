@@ -13,155 +13,168 @@
       z-index: 4000;
     }
   }
-  .sidebar {
-    position: fixed;
-    top: 13px;
-    left: 0;
-    margin-top: 50px;
-    z-index: 3000;
-  }
+
+// ======== banniere
   .banner {
-    // margin-left: 200px;
-    width: 100%;
-  }
-  #banner-image {
+    background: image-url('acteurs-emploi.png') repeat;
     min-height: 400px;
-    margin-top: -5px;
-    position: relative;
-  }
-
-  .content-banner {
-    // padding-left: 40px;
-    padding-top: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin-top: -5px;
-    p#step-selection {
-      font-family: 'Indie Flower', cursive;
-      font-size: 18px;
-      margin-top: 30px;
-    }
-    img#step-arrow1, img#step-arrow2 {
-      padding-bottom: 20px;
-    }
-    img#step-arrow1 {
-      -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-    }
-    img#happy {
-
-    }
-  }
-
-  #category-description {
-    min-height: 300px;
-    margin-top: 30px;
-    // padding: 50px 50px;
-    position: relative;
-    p {
-      color: white;
-      z-index: 10;
-      font-size: 40px;
-      line-height: 1.5;
-      font-family: $my-font;
-    }
     h1 {
+      text-align: center;
+      padding: 50px 10px;
+      font-size: 54px;
       color: white;
-      font-size: 20px;
-      z-index: 10;
-      font-family: $base-font;
-      margin-top: 0px;
     }
-    ul {
-      margin: 0px;
+    #search-bar {
+      text-align: center;
+      margin-bottom: 50px;
     }
-    li {
-      margin: 0;
-      input {
+  }
+
+  #trouversavoie {
+    background: image-url('trouversavoie.png') repeat;
+    #search-bar {
+      li#trouver_sa_voie {
+        background-color: white;
+        a {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  #trouverunjob {
+    background: image-url('trouverunjob.png') repeat;
+    #search-bar {
+      li#trouver_un_job {
+        background-color: white;
+        a {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  #changerdemetier {
+    background: image-url('changerdemetier.png') repeat;
+    #search-bar {
+      li#changer_de_metier {
+        background-color: white;
+        a {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  #changerdeboite {
+    background: image-url('changerdeboite.png') repeat;
+    #search-bar {
+      li#changer_de_boite {
+        background-color: white;
+        a {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  #creersaboite {
+    background: image-url('creersaboite.png') repeat;
+    #search-bar {
+      li#creer_sa_boite {
+        background-color: white;
+        a {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+// ========== left-side
+  #left-side {
+    #tag-filter {
+      margin-top: 30px;
+      p#filter-title {
+        color: $blue;
+        padding-bottom: 10px;
+      }
+      ul {
+        list-style-type: none;
+        padding-left: 0px;
+      }
+    }
+    p.left-title {
+      color: #777777;
+      text-align: center;
+      font-weight: bold;
+    }
+    .btn-grey {
+      background-color: #F0EFEF;
+      color: #777777;
+      font-size: 14px;
+      padding: 5px 10px;
+      &:hover {
+        background-color: $blue;
+        color: white;
+        a#btn-grey {
+          color: white;
+        }
+      }
+      a#btn-grey {
+        color: #777777;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    // .active {
+    //     background-color: $blue;
+    //   }
+    #newsletter {
+      .btn {
         margin: 0px;
       }
     }
-    .btn {
-      // font-family: "bebas_neuebook";
-      font-size: 16px;
-      margin-left: 10px;
-      margin-bottom: 0px;
-      color: white;
-      background-color: none;
-      border: 1px solid white;
-      padding-left: 15px;
-      padding-right: 15px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      &:hover {
-        background-color: $blue;
-        border: 1px solid $blue;
+    #reseaux-sociaux {
+      ul {
+        margin: 0px;
+      }
+      i {
+        font-size: 20px;
+      }
+      #facebook a, #twitter a, #linkedin a {
+        color: $blue;
       }
     }
-
-    // FORMULAIRE SUR MOBILE
-    button#looking_for, button.btn {
-      font-size: 20px;
-      margin-left: 0px;
-    }
-    ul.dropdown-menu {
-      width: 263px;
-      font-family: $my-font;
-      font-size: 18px;
-      a {
-        padding-bottom: 5px;
-        padding-top: 5px;
-      }
-    }
-  }
-
-  // ======== MOBILE / enlever le margin-top de 50px sur l'image sur mobile
-
-  #mobile-display {
-    .title {
-      margin-top: 40px;
-      margin-bottom: 30px;
-    }
-    h2 {
-      font-size: 16px;
-    }
-    p#content-title {
-      font-size: 14px;
-    }
-  }
-
-  // ========== ETAPES
-
-  .last_ressources {
-    #step p{
-      font-size: 14px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-  }
-  p.title {
-    margin-bottom: 20px;
-  }
-
-  // ==== NL
-  #newsletter {
-    padding-top: 0px;
-    padding-bottom: 20px;
   }
 
   // =========  Affichage des Ressources  =========
+
+  #right-side {
+    padding-left: 20px;
+    p.title {
+      margin-bottom: 20px;
+    }
+  }
   .listing_ressources {
     margin-bottom: 30px;
     p {
       font-size: 14px;
       color: $gray_light
+    }
+    div.col-xs-1 {
+      margin-top: 25px;
+    }
+    span.price, span.price {
+      color:white;
+      font-size: 10px;
+      padding: 5px;
+    }
+    span#Promo {
+      background-color: #6679ff;
+    }
+    span#Gratuit {
+      background-color: $blue;
     }
     #sorry {
       padding-top: 10px;
@@ -176,14 +189,6 @@
     ul {
       margin-top: 20px;
       margin-left: 10px;
-      .votes, .comments {
-        i {
-          color: $gray;
-        }
-        .fa-heart {
-          color: $blue;
-        }
-      }
       p {
         font-size: 14px;
         color: $gray-light;
@@ -193,16 +198,6 @@
   }
 
 
-  // =========== Affichage par Sous categorie ======
-  // .subcategories_ressources {
-  //   .title {
-  //     margin-top: 35px;
-  //   }
-  //   .anchor {
-  //     margin-top: -10px;
-  //   }
-  // }
-
   // ===== AFFICHAGE DES LOGOS
   #desktop-display {
     img.logo {
@@ -210,59 +205,90 @@
     }
   }
 
-  #mobile-display {
-    .listing_ressources, .more_liked_ressources {
+  // VERSION MOBILE
+  #mobile {
+    h1 {
+      font-size: 46px;
+    }
+    .item {
       ul {
         margin-left: 0px;
       }
     }
-    img.logo {
-      width: 40px;
+    #mobile-display {
+      padding-right: 10px;
+      padding-left: 10px;
+      .title {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        font-size: 22px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      p#content-title {
+        font-size: 14px;
+      }
+      img.logo {
+        width: 40px;
+      }
     }
-  }
-
-    // ===== VOTES
-
-  .votes:active {
-   color: $blue;
-   -webkit-animation: scaleUp 0.5s ease forwards;
-   -moz-animation: scaleUp 0.5s ease forwards;
-   animation: scaleUp 0.5s ease forwards;
-  }
-
-   @-webkit-keyframes scaleUp {
-   0% {
-     -webkit-transform: scale(1);
-    }
-   50% {
-     -webkit-transform: scale(1.1);
-    }
-   100% {
-     -webkit-transform: scale(1);
-    }
-  }
-
-  @-moz-keyframes scaleUp {
-   0% {
-     -moz-transform: scale(1);
-    }
-   50% {
-     -moz-transform: scale(1.1);
-    }
-   100% {
-     -moz-transform: scale(1);
-    }
-  }
-
-   @keyframes scaleUp {
-   0% {
-     transform: scale(1);
-    }
-   50% {
-     transform: scale(1.1);
-    }
-   100% {
-     transform: scale(1);
+    #bloc {
+      #tag-filter {
+        margin-top: 30px;
+        text-align: center;
+        p#filter-title {
+          color: $blue;
+          padding-bottom: 10px;
+        }
+        ul {
+          list-style-type: none;
+          padding-left: 0px;
+          li.btn-grey {
+            margin-bottom: 5px;
+          }
+        }
+      }
+      p.left-title {
+        color: #777777;
+        text-align: center;
+        font-weight: bold;
+      }
+      .btn-grey {
+        background-color: #F0EFEF;
+        color: #777777;
+        font-size: 14px;
+        padding: 5px 10px;
+        &:hover {
+          background-color: $blue;
+          color: white;
+          a#btn-grey {
+            color: white;
+          }
+        }
+        a#btn-grey {
+          color: #777777;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+      #newsletter {
+        .btn {
+          margin: 0px;
+        }
+      }
+      #reseaux-sociaux {
+        ul {
+          margin: 0px;
+        }
+        i {
+          font-size: 20px;
+        }
+        #facebook a, #twitter a, #linkedin a {
+          color: $blue;
+        }
+      }
     }
   }
 }

@@ -1,13 +1,36 @@
 <div id="search-bar">
+  <ul class="nav nav-tabs">
+    <li role="presentation" id="tout">
+      <%= link_to t(".top_call_to_action", default: "Tout"), ressources_path %>
+    </li>
+    <li role="presentation" id="trouver_sa_voie">
+      <%= link_to @categories[0], {controller: "ressources", action: "category", category: @categories[0] } %>
+    </li>
+    <li role="presentation" id="trouver_un_job">
+      <%= link_to @categories[1],  {controller: "ressources", action: "category", category: @categories[1] } %>
+    </li>
+    <li role="presentation" id="changer_de_metier">
+      <%= link_to @categories[2],  {controller: "ressources", action: "category", category: @categories[2] } %>
+    </li>
+    <li role="presentation" id="changer_de_boite">
+      <%= link_to @categories[3],  {controller: "ressources", action: "category", category: @categories[3] } %>
+    </li>
+    <li role="presentation" id="creer_sa_boite">
+      <%= link_to @categories[4],  {controller: "ressources", action: "category", category: @categories[4] } %>
+    </li>
+  </ul>
 <%= form_tag(ressources_path, method: "get", action: "index", id: "search-form", class: "form-inline") do %>
     <div class="form-group">
+      <!-- select_tag(:category, options_for_select(@categories), prompt: "Catégorie", class: "form") %> -->
+    </div>
+    <div class="form-group">
+      <%= select_tag(:subcategory, options_for_select(@subcategories), prompt: "Étapes", class: "form") %>
+    </div>
+    <div class="form-group">
+      <%= select_tag(:profil, options_for_select(@profil), prompt: "Profil", class: "form") %>
+    </div>
+    <div class="form-group">
       <%= text_field_tag :search, params[:search], placeholder: "Mots Clefs", class: "form text-long" %>
-    </div>
-    <div class="form-group">
-      <%= select_tag(:category, options_for_select([["Chercher un job"], ["Changer de métier"], ["Changer de boite"], ["Créer sa boite"], ["Coup de coeur"]]), prompt: " ----  Catégorie  ---- ", class: "form") %>
-    </div>
-    <div class="form-group">
-      <%= select_tag(:subcategory, options_for_select([["S'inspirer"], ["S'informer"], ["Se Faire Aider"], ["Se Former"], ["Réseauter"], ["Postuler"], ["Recruter"], ["Profiter"]]), prompt: " ----  Etapes  ---- ", class: "form") %>
     </div>
       <%= submit_tag("Chercher", class: "btn btn-primary") %>
   <% end %>

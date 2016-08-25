@@ -5,7 +5,7 @@ ActiveAdmin.register Ressource do
   :picture_updated_at, :picture_updated_at, :picture_updated_at, :logo_file_name, :logo_content_type,
   :logo_file_size, :logo_updated_at, :logo_updated_at, :logo_updated_at, :logo_updated_at, :logo_updated_at,
   :slug, :sector, :city, :picturecontent1_file_name, :picturecontent1_content_type, :picturecontent1_file_size, :picturecontent1_updated_at,
-  :picturecontent2_file_name, :picturecontent2_content_type, :picturecontent2_file_size, :picturecontent2_updated_at
+  :picturecontent2_file_name, :picturecontent2_content_type, :picturecontent2_file_size, :picturecontent2_updated_at, :tag, :profil, :price, :offer
 
   index do
     selectable_column

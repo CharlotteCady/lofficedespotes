@@ -1,10 +1,21 @@
 <div class="visible-xs" id="mobile">
-  <div id="banner">
+  <div class= "banner" id=<%= "#{@category_page.split.join.downcase.gsub('é', 'e')}" %>>
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h1>DÉCOUVREZ LES SOLUTIONS POUR TROUVER VOTRE JOB IDÉAL</h1>
-
+          <% if @category_page == @categories[0] %>
+              <h1>DÉCOUVREZ LES SOLUTIONS POUR TROUVER SA VOIE</h1>
+          <% elsif @category_page == @categories[1] %>
+              <h1>DÉCOUVREZ LES SOLUTIONS POUR TROUVER UN JOB</h1>
+          <% elsif @category_page == @categories[2] %>
+              <h1>DÉCOUVREZ LES SOLUTIONS POUR CHANGER DE MÉTIER</h1>
+          <% elsif @category_page == @categories[3] %>
+              <h1>DÉCOUVREZ LES SOLUTIONS POUR CHANGER DE BOITE</h1>
+          <% elsif @category_page == @categories[4] %>
+              <h1>DÉCOUVREZ LES SOLUTIONS POUR CRÉER SA BOITE</h1>
+          <% else %>
+            <h1>DÉCOUVREZ LES SOLUTIONS POUR TROUVER VOTRE JOB IDÉAL</h1>
+          <% end %>
         </div>
       </div>
       <div class="row">

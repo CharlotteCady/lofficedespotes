@@ -3,25 +3,41 @@ class RessourcesController < ApplicationController
   before_filter :check_privileges!, only: [:new, :create, :edit, :update, :destroy]
   skip_before_filter :authenticate_user!, only: [:index, :show, :category]
 
-  CATEGORIES = ["Chercher un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Intraprendre", "Coup de Coeur"]
+  CATEGORIES = ["Trouver sa voie", "Trouver un job", "Changer de métier", "Changer de boite", "Créer sa boite", "Coup de Coeur"]
   SUBCATEGORIES = ["S'inspirer", "S'informer", "Se Faire Aider", "Se Former", "Réseauter", "Postuler", "Profiter"]
   SECTOR_LIST = ["Tout", "Communication", "Artisanat", "Web", "Design", "Santé", "Education", "Aide" , "Service", "Bâtiment", "Agro-alimentaire", "Restauration"]
   CITY = ["France", "Paris", "Nantes", "Bordeaux", "Strasbourg", "Marseille", "Lyon", "Toulouse", "Tours",
            "Lille", "Rennes", "Brest", "Nice", "Aix en Provence", "Caen"]
   SUBCAT_SIDEBAR = ["Voir tout"]
+  TAGS = ["Faire un joli CV", "Postuler sur un job board", "Apprendre à mieux se connaître", "Découvrir des métiers", "Se faire recommander", "Faire des rencontres pro", "Se former autrement", "Se changer les idées", "Optimiser sa recherche"]
+  PROFIL = ["Étudiant", "Jeune diplômé", "Senior", "En recherche d'emploi", "En poste", "En reconversion / Ré-orientation", "Entrepreneur / Freelance / Indépendant"]
+  PRICE = ["Gratuit", "Payant", "Promo"]
 
   def index
     category = params[:category]
     subcategory = params[:subcategory]
     keyword = params[:search]
-    if keyword || category || subcategory
-      @ressources = Ressource.search(keyword, category, subcategory).order('created_at DESC')
+    profil = params[:profil]
+    tag = params[:tag]
+    # if (keyword != "") || (subcategory != "") || (profil != "")
+    if keyword || subcategory || profil
+      if Ressource.search_index(keyword, subcategory, profil) == nil
+        @ressources = Ressource.all.order('created_at DESC')
+      else
+        @ressources = Ressource.search_index(keyword, subcategory, profil).order('created_at DESC')
+      end
+    elsif category
+      @ressources = Ressource.search_by_category(category).order('created_at DESC')
+    elsif tag
+      @ressources = Ressource.search_by_tag(tag).order('created_at DESC')
     else
-      @ressources = Ressource.all.order('created_at DESC').limit(5)
+      @ressources = Ressource.all.order('created_at DESC')
     end
     @categories = CATEGORIES
     @subcategories = SUBCATEGORIES
     @subcat_sidebar = SUBCAT_SIDEBAR
+    @profil = PROFIL
+    @tags = TAGS
     current_host
   end
 
@@ -39,6 +55,8 @@ class RessourcesController < ApplicationController
     @mois = %w( Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Décembre )
     @paragraphes = @ressource.content.scan(/^(.*)(\.|\!|\?)?$/).map(&:first)
     @list_of_voters = @ressource.votes_for.voters
+    @category_list = eval(@ressource.category) - [""]
+    # @tag_list = eval(@ressource.tag) - [""]
   end
 
   def new
@@ -47,6 +65,9 @@ class RessourcesController < ApplicationController
     @subcategories = SUBCATEGORIES
     @sector_list = SECTOR_LIST
     @city = CITY
+    @tags = TAGS
+    @profil = PROFIL
+    @price = PRICE
   end
 
   def create
@@ -67,6 +88,9 @@ class RessourcesController < ApplicationController
     @subcategories = SUBCATEGORIES
     @sector_list = SECTOR_LIST
     @city = CITY
+    @tags = TAGS
+    @profil = PROFIL
+    @price = PRICE
   end
 
   def update
@@ -104,14 +128,17 @@ class RessourcesController < ApplicationController
     @categories = CATEGORIES
     @subcategories = SUBCATEGORIES
     @subcat_sidebar = SUBCAT_SIDEBAR
+    @profil = PROFIL
+    @tags = TAGS
     @category_page = params[:category]
     # @ressources = Ressource.where(category: @category_page)
     # ====== Barre de recherche
     category = @category_page
     subcategory = params[:subcategory]
+    profil = params[:profil]
     keyword = params[:search]
-    if keyword || category || subcategory
-      @ressources = Ressource.search(keyword, category, subcategory).order('created_at DESC')
+    if category || subcategory || profil || keyword
+      @ressources = Ressource.search(category, subcategory, profil, keyword).order('created_at DESC')
     else
       @ressources = Ressource.where(category: @category_page).order('created_at DESC')
     end
@@ -132,8 +159,8 @@ class RessourcesController < ApplicationController
 
   def ressource_params
     params.require(:ressource).permit(:title, :description, :content, :picturecontent1, :content2, :picturecontent2, :content3,
-     :witness, :website, :address, :subcategory, :picture, :logo, :seotitle, :seodescription, :bootsy_image_gallery_id,
-     :category => [], :sector => [], :city => [])
+     :witness, :website, :address, :subcategory, :picture, :logo, :seotitle, :seodescription, :bootsy_image_gallery_id, :price, :offer,
+     :category => [], :sector => [], :city => [], :tag => [], :profil => [])
   end
 
   def set_ressource

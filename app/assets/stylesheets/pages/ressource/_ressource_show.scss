@@ -15,14 +15,14 @@
   margin-top: 60px;
   padding-bottom: 20px;
   .banner {
-    // margin-left: 200px;
     width: 100%;
+    #banner-image {
+      min-height: 650px;
+      margin-top: -5px;
+      position: relative;
+    }
   }
-  #banner-image {
-    min-height: 600px;
-    margin-top: -5px;
-    position: relative;
-  }
+
 
   .content-banner {
     padding-left: 40px;
@@ -59,6 +59,12 @@
         color: white;
       }
     }
+    .btn-danger {
+      &:hover {
+        background-color: $red;
+        color: white;
+      }
+    }
     div.votes {
       display: inline-block;
       font-size: 25px;
@@ -68,19 +74,14 @@
     }
   }
   .publishing-date {
-    display: block;
     background: #111;
-    padding: 24px;
-    position: absolute;
-    top: 100px;
-    right: 0;
-    margin-bottom: 40px;
+    padding: 15px;
     font-size: 13px;
     line-height: 13px;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: $gray-lighter;
-    width: 200px;
+    width: 170px;
     transition: all 0.5s ease;
     font-family: $my-font;
     opacity: 0.8;
@@ -98,8 +99,14 @@
     margin-top: 50px;
   }
 
-  h1 {
+  h1#title-desktop {
     font-size: 56px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+  }
+    h1#title-mobile {
+    font-size: 46px;
     margin-top: 0px;
     margin-bottom: 0px;
     color: white;
@@ -122,23 +129,15 @@
     }
 
 
-    // BANNIERE PETIT ECRAN
-
-    .banner-little-screen {
-      width: 100%;
-    }
-
-
-    // CONTENU DE L'ARTICLE
+    // LEFT SIDE CONTENU DE L'ARTICLE
   }
-  .content {
+  #left-side {
     margin-top: -100px;
     background-color: white;
     padding-right: 25px;
     padding-left: 25px;
     padding-top: 15px;
     padding-bottom: 30px;
-
     #like-this-article {
       text-align: center;
       background-color: $blue;
@@ -159,22 +158,6 @@
     //   margin-top: 50px;
     // }
 
-    .more-info {
-      background-color: $gray-lighter;
-      border-radius: 3px;
-      padding: 15px;
-      padding-bottom: 4px;
-      margin-top: 20px;
-      .voter-avatar img {
-        width: 40px;
-        margin-right: 10px;
-      }
-      #info-avatar {
-        border: none;
-        background-color: transparent;
-      }
-    }
-
     .picture {
       min-height: 400px;
       margin-top: 10px;
@@ -194,17 +177,6 @@
         margin: 50px auto;
       }
     }
-    p.witness {
-      color: white;
-      background-color: $blue;
-      border-radius: 3px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding : 10px;
-      text-align: center;
-      font-family: $my-font;
-      font-size: 20px;
-    }
   }
 
   // ADDTHIS ARTICLES RECOMMANDES
@@ -218,6 +190,87 @@
   }
 
 
+  // RIGHT SIDE DESKTOP
+  #righ-side {
+    margin-top: -100px;
+    margin-left: 30px;
+    #offer {
+      border: 2px solid $blue;
+      .offer-title {
+        font-family: $my-font;
+        font-size: 22px;
+        color: $blue;
+      }
+    }
+
+    #reco {
+      .voter-avatar img {
+        width: 40px;
+        margin-right: 10px;
+      }
+      #info-avatar {
+        border: none;
+        background-color: transparent;
+      }
+    }
+    #newsletter {
+      .btn {
+        margin: 0px;
+      }
+    }
+    #reseaux-sociaux {
+      text-align: center;
+      ul {
+        margin: 0px;
+      }
+      i {
+        font-size: 20px;
+      }
+      #facebook a, #twitter a, #linkedin a {
+        color: $blue;
+      }
+    }
+  }
+  // RIGHT SIDE MOBILE
+  #righ-side-mobile {
+    #offer {
+      border: 2px solid $blue;
+      margin-top: 20px;
+      .offer-title {
+        font-family: $my-font;
+        font-size: 22px;
+        color: $blue;
+      }
+    }
+
+    #reco {
+      .voter-avatar img {
+        width: 40px;
+        margin-right: 10px;
+      }
+      #info-avatar {
+        border: none;
+        background-color: transparent;
+      }
+    }
+    #newsletter {
+      .btn {
+        margin: 0px;
+      }
+    }
+    #reseaux-sociaux {
+      text-align: center;
+      ul {
+        margin: 0px;
+      }
+      i {
+        font-size: 20px;
+      }
+      #facebook a, #twitter a, #linkedin a {
+        color: $blue;
+      }
+    }
+  }
   // ========   COMMENTAIRES ========
   .add-comment {
     // background-color: $gray-lighter;
@@ -255,6 +308,7 @@
   }
   .footer-header {
     margin-bottom: 20px;
+    margin-top: 20px;
   }
   .user {
     font-weight: bold;

@@ -22,12 +22,11 @@
           </div>
           <div class="col-xs-12">
             <ul class="list-inline hidden-xs">
-              <li><%= link_to "Chercher un job", "categorie?category=Chercher+un+job", class: "btn btn-transparent" %></li>
+              <li><%= link_to "Trouver sa voie", "categorie?category=Trouver+sa+voie", class: "btn btn-transparent" %></li>
+              <li><%= link_to "Trouver un job", "categorie?category=Trouver+un+job", class: "btn btn-transparent" %></li>
               <li><%= link_to "Changer de métier", "categorie?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
               <li><%= link_to "Changer de boite", "categorie?category=Changer+de+boite", class: "btn btn-transparent" %></li>
               <li><%= link_to "Créer sa boite", "categorie?category=Créer+sa+boite", class: "btn btn-transparent" %></li>
-              <li class="hidden"><%= link_to "Intraprendre", "categorie?category=Intraprendre", class: "btn btn-transparent" %></li>
-              <li><%= link_to "Découvrir les nouveautés", ressources_path, class: "btn btn-primary" %></li>
             </ul>
             <div class="hidden visible-xs">
               <%= link_to "Découvrir", ressources_path, class: "btn btn-primary" %>
@@ -122,10 +121,9 @@
       </div>
       <div class="col-sm-6">
         <div class="new">
-          <p class="home-subheader">LES COUPS DE COEUR</p>
+          <p class="home-subheader">LES OFFRES SPÉCIALES</p>
           <div class="listing_ressources">
-            <% Ressource.all.order('created_at DESC').each do |ress| %>
-              <% if eval(ress.category).include?("Coup de Coeur") %>
+            <% Ressource.where(price: 'Promo').order('created_at DESC').limit(4).each do |ress| %>
                 <div class="row item white">
                   <div class="col-xs-2">
                     <div class="desktop-display-logo hidden-xs">
@@ -145,10 +143,9 @@
                   </div>
                   <div class="col-xs-10">
                     <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
-                    <p class="content-title"><%= ress.description %></p>
+                    <p class="content-title"><%= ress.offer %></p>
                   </div>
                 </div>
-              <% end %>
             <% end %>
           </div>
         </div>

@@ -208,4 +208,26 @@ $navbar-profile-border-width: 1px;
       background-color: $gray-lighter;
     }
   }
+
+  // LIEN ACTIF JQUERY POUR LE MENU
+}
+body#ressources_index, body#ressources_category {
+ #little-screen .active-solutions {
+   border-bottom: 2px solid white;
+  }
+}
+body#pages_pro {
+ #little-screen .active-pro {
+   border-bottom: 2px solid white;
+  }
+}
+body#pages_about {
+ #little-screen .active-about {
+   border-bottom: 2px solid white;
+  }
+}
+body#pages_contact {
+ #little-screen .active-contact {
+   border-bottom: 2px solid white;
+  }
 }
