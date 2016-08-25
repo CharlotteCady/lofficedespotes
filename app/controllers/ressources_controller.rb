@@ -9,7 +9,7 @@ class RessourcesController < ApplicationController
   CITY = ["France", "Paris", "Nantes", "Bordeaux", "Strasbourg", "Marseille", "Lyon", "Toulouse", "Tours",
            "Lille", "Rennes", "Brest", "Nice", "Aix en Provence", "Caen"]
   SUBCAT_SIDEBAR = ["Voir tout"]
-  TAGS = ["Apprendre à mieux se connaître", "Faire un joli CV", "Postuler sur un job board", "Se faire Accompagner", "Découvrir des métiers", "Faire des rencontres pro", "Découvrir des histoires inspirantes", "Se former autrement", "Se faire recommander", "Se changer les idées", "Optimiser sa recherche"]
+  TAGS = ["Apprendre à mieux se connaître", "Faire un joli CV", "Postuler sur un job board", "Se faire Accompagner", "Trouver l'inspiration", "Découvrir des métiers", "Faire des rencontres pro", "Se former autrement", "Se faire recommander", "Se changer les idées", "Optimiser sa recherche", "Lancer son activité", "Valoriser ses compétences", "Sortir du cadre", "Se former au numérique", "Trouver un co-working"]
   PROFIL = ["Étudiant", "Jeune diplômé", "Senior", "En recherche d'emploi", "En poste", "En reconversion / Ré-orientation", "Entrepreneur / Freelance / Indépendant"]
   PRICE = ["Gratuit", "Payant", "Promo"]
 

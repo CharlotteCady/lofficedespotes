@@ -120,6 +120,34 @@ as: :check_boxes pour multiple choix -->
            <%= label_tag 'tag_optimiser_sa_recherche', 'Optimiser sa recherche' %>
          </li>
          <li>
+           <%= check_box_tag 'ressource[tag][]', 'Se faire accompagner', checked_tag('Se faire accompagner'), id: 'tag_se_faire_accompagner' %>
+           <%= label_tag 'tag_se_faire_accompagner', 'Se faire accompagner' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', "Trouver l'inspiration", checked_tag("Trouver l'inspiration"), id: 'tag_trouver_linspiration' %>
+           <%= label_tag 'tag_trouver_linspiration', "Trouver l'inspiration" %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Lancer son activité', checked_tag('Lancer son activité'), id: 'tag_lancer_son_activite' %>
+           <%= label_tag 'tag_lancer_son_activite', 'Lancer son activité' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Sortir du cadre', checked_tag('Sortir du cadre'), id: 'tag_sortir_du_cadre' %>
+           <%= label_tag 'tag_sortir_du_cadre', 'Sortir du cadre' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Se former au numérique', checked_tag('Se former au numérique'), id: 'tag_se_former_au_numerique' %>
+           <%= label_tag 'tag_se_former_au_numerique', 'Se former au numérique' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Trouver un co-working', checked_tag('Trouver un co-working'), id: 'tag_trouver_un_co_working' %>
+           <%= label_tag 'tag_trouver_un_co_working', 'Trouver un co-working' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Valoriser ses compétences', checked_tag('Valoriser ses compétences'), id: 'tag_valoriser_ses_competences' %>
+           <%= label_tag 'tag_se_former_au_numerique', 'Valoriser ses compétences' %>
+         </li>
+         <li>
            <%= check_box_tag 'ressource[tag][]', 'Faire des rencontres pro', checked_tag('Faire des rencontres pro'), id: 'tag_faire_des_rencontres_pro' %>
            <%= label_tag 'tag_faire_des_rencontres_pro', 'Faire des rencontres pro' %>
            <% end %>
