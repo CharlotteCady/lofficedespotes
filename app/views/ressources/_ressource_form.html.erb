@@ -145,11 +145,15 @@ as: :check_boxes pour multiple choix -->
          </li>
          <li>
            <%= check_box_tag 'ressource[tag][]', 'Valoriser ses compétences', checked_tag('Valoriser ses compétences'), id: 'tag_valoriser_ses_competences' %>
-           <%= label_tag 'tag_se_former_au_numerique', 'Valoriser ses compétences' %>
+           <%= label_tag 'tag_valoriser_ses_competences', 'Valoriser ses compétences' %>
          </li>
          <li>
-           <%= check_box_tag 'ressource[tag][]', 'Faire des rencontres pro', checked_tag('Faire des rencontres pro'), id: 'tag_faire_des_rencontres_pro' %>
-           <%= label_tag 'tag_faire_des_rencontres_pro', 'Faire des rencontres pro' %>
+           <%= check_box_tag 'ressource[tag][]', "S'entraider", checked_tag("S'entraider"), id: 'tag_sentraider' %>
+           <%= label_tag 'tag_sentraider', "S'entraider" %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Faire des rencontres', checked_tag('Faire des rencontres'), id: 'tag_faire_des_rencontres' %>
+           <%= label_tag 'tag_faire_des_rencontres', 'Faire des rencontres' %>
            <% end %>
          </li>
       </ul>
