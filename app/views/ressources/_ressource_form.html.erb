@@ -1,55 +1,244 @@
-<%= simple_form_for(@ressource, html: { multipart: true }) do |ressource| %>
-
 <!-- as: :select pour choix défilant
 as: :check_boxes pour multiple choix -->
-  <div class="white-block">
-    <%= ressource.input :title, label: "Titre", placeholder: '55 caractères max' %>
+
+<%= simple_form_for(@ressource, html: { multipart: true }) do |ressource| %>
+  <div class="col-xs-8">
+    <div class="white-block">
+      <%= ressource.input :title, label: "Titre", placeholder: '55 caractères max' %>
+    </div>
+    <div class="white-block">
+      <%= ressource.input :description, label: "Mini description", as: :text, placeholder: '155 caractères max' %>
+    </div>
+    <div class="white-block">
+      <%= ressource.input :content, label: "Description détaillée 1", as: :bootsy %>
+    </div>
+    <div class="white-block">
+      <%= ressource.label :picturecontent1, label: "Photo de Contenu 1" %>
+      <%= ressource.file_field :picturecontent1 %>
+    </div>
+    <div class="white-block">
+      <%= ressource.input :content2, label: "Description détaillée 2", as: :bootsy %>
+    </div>
+    <div class="white-block">
+      <%= ressource.label :picturecontent2, label: "Photo de Contenu 2" %>
+      <%= ressource.file_field :picturecontent2 %>
+    </div>
+    <div class="white-block">
+      <%= ressource.input :content3, label: "Description détaillée 3", as: :bootsy %>
+    </div>
+    <div class="white-block">
+      <%= ressource.input :seotitle, label: "Titre pour Google : 55 caractères max" %>
+      <%= ressource.input :seodescription, label: "Description pour Google : 155 caractères max" %>
+    </div>
+    <div class="white-block">
+      <%= ressource.input :website, label: "Site Web", placeholder: 'http://monsite.com/', as: :url %>
+      <%= ressource.input :address, label: "Coordonnées", placeholder: 'Fondateur: John Doe - contact@monsite.com' %>
+    </div>
+    <div class="white-block">
+      <%= ressource.label :logo, label: "Logo" %>
+      <%= ressource.file_field :logo %>
+    </div>
+    <div class="white-block">
+      <%= ressource.label :picture, label: "Photo" %>
+      <%= ressource.file_field :picture %>
+    </div>
+    <div id="btn-enter">
+      <%= ressource.submit(class: "btn btn-primary", value: "Valider") %>
+    </div>
   </div>
-  <div class="white-block">
-    <%= ressource.input :description, label: "Mini description", as: :text, placeholder: '155 caractères max' %>
-  </div>
-  <div class="white-block">
-    <%= ressource.input :content, label: "Description détaillée 1", as: :bootsy %>
-  </div>
-  <div class="white-block">
-    <%= ressource.label :picturecontent1, label: "Photo de Contenu 1" %>
-    <%= ressource.file_field :picturecontent1 %>
-  </div>
-  <div class="white-block">
-    <%= ressource.input :content2, label: "Description détaillée 2", as: :bootsy %>
-  </div>
-  <div class="white-block">
-    <%= ressource.label :picturecontent2, label: "Photo de Contenu 2" %>
-    <%= ressource.file_field :picturecontent2 %>
-  </div>
-  <div class="white-block">
-    <%= ressource.input :content3, label: "Description détaillée 3", as: :bootsy %>
-  </div>
-  <div class="white-block">
-    <%= ressource.input :category, collection: @categories, input_html: {multiple: true}, :as => :check_boxes, include_blank: false, label: "Catégorie", include_hidden: false %>
-    <%= ressource.input :subcategory, collection: @subcategories, include_blank: false, label: "Sous-Catégorie" %>
-  </div>
-<!--   <div class="white-block">
-    ressource.input :witness, label: "Témoignage", placeholder: "J'ai rencontré mon futur patron lors d'un événement startup, merci !" %>
-  </div> -->
-  <div class="white-block">
-    <%= ressource.input :website, label: "Site Web", placeholder: 'http://monsite.com/', as: :url %>
-    <%= ressource.input :address, label: "Coordonnées", placeholder: 'Fondateur: John Doe - contact@monsite.com' %>
-  </div>
-  <div class="white-block">
-    <%= ressource.input :sector, collection: @sector_list, input_html: {multiple: true}, :as => :check_boxes, include_blank: false, label: "Secteurs d'Activité", include_hidden: false %>
-    <%= ressource.input :city, collection: @city, input_html: {multiple: true}, :as => :check_boxes, include_blank: false, label: "Villes", include_hidden: false %>
-  </div>
-  <div class="white-block">
-    <%= ressource.input :seotitle, label: "Titre pour Google : 55 caractères max" %>
-    <%= ressource.input :seodescription, label: "Description pour Google : 155 caractères max" %>
-  </div>
-  <div class="white-block">
-    <%= ressource.label :logo, label: "Logo" %>
-    <%= ressource.file_field :logo %>
-    <%= ressource.label :picture, label: "Photo" %>
-    <%= ressource.file_field :picture %>
-    <%= ressource.submit(class: "btn btn-primary", value: "Valider") %>
+
+  <div class="col-xs-4">
+    <div class="white-block">
+       <!-- ressource.input :category, collection: @categories, input_html: {multiple: true}, :as => :check_boxes, include_blank: false, label: "Catégorie", include_hidden: false %> -->
+       <ul>
+            <%= ressource.input :category, label: "Catégorie" do %>
+          <li>
+            <%= check_box_tag 'ressource[category][]', 'Trouver sa voie', checked_category('Trouver sa voie'), id: 'category_trouver_sa_voie' %>
+            <%= label_tag 'category_trouver_sa_voie', 'Trouver sa voie' %>
+          </li>
+          <li>
+            <%= check_box_tag 'ressource[category][]', 'Trouver un job', checked_category('Trouver un job'), id: 'category_trouver_un_job' %>
+            <%= label_tag 'category_trouver_un_job', 'Trouver un job' %>
+          </li>
+          <li>
+            <%= check_box_tag 'ressource[category][]', 'Changer de métier', checked_category('Changer de métier'), id: 'category_changer_de_metier' %>
+            <%= label_tag 'category_changer_de_metier', 'Changer de métier' %>
+          </li>
+          <li>
+            <%= check_box_tag 'ressource[category][]', 'Changer de boite', checked_category('Changer de boite'), id: 'category_changer_de_boite' %>
+            <%= label_tag 'category_changer_de_boite', 'Changer de boite' %>
+          </li>
+          <li>
+            <%= check_box_tag 'ressource[category][]', 'Créer sa boite', checked_category('Créer sa boite'), id: 'category_creer_sa_boite' %>
+            <%= label_tag 'category_creer_sa_boite', 'Créer sa boite' %>
+          </li>
+          <li>
+            <%= check_box_tag 'ressource[category][]', 'Coup de coeur', checked_category('Coup de coeur'), id: 'category_coup_de_coeur' %>
+            <%= label_tag 'category_coup_de_coeur', 'Coup de coeur' %>
+            <% end %>
+          </li>
+       </ul>
+    </div>
+    <div class="white-block">
+      <%= ressource.input :subcategory, collection: @subcategories, include_blank: false, label: "Sous-Catégorie" %>
+    </div>
+    <div class="white-block">
+      <!-- ressource.input :tag, collection: @tags, input_html: {multiple: true}, :as => :check_boxes, include_blank: false, label: "Mots Clefs", include_hidden: false %> -->
+
+      <ul>
+           <%= ressource.input :tag, label: "Mots Clés" do %>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Faire un joli CV', checked_tag('Faire un joli CV'), id: 'tag_faire_un_joli_cv' %>
+           <%= label_tag 'tag_faire_un_joli_cv', 'Faire un joli CV' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Postuler sur un job board', checked_tag('Postuler sur un job board'), id: 'tag_postuler_sur_un_job_board' %>
+           <%= label_tag 'tag_postuler_sur_un_job_board', 'Postuler sur un job board' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Apprendre à mieux se connaître', checked_tag('Apprendre à mieux se connaître'), id: 'tag_apprendre_a_mieux_se_connaitre' %>
+           <%= label_tag 'tag_apprendre_a_mieux_se_connaitre', 'Apprendre à mieux se connaître' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Découvrir des métiers', checked_tag('Découvrir des métiers'), id: 'tag_decouvrir_des_metiers' %>
+           <%= label_tag 'tag_decouvrir_des_metiers', 'Découvrir des métiers' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Se faire recommander', checked_tag('Se faire recommander'), id: 'tag_se_faire_recommander' %>
+           <%= label_tag 'tag_se_faire_recommander', 'Se faire recommander' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Se former autrement', checked_tag('Se former autrement'), id: 'tag_se_former_autrement' %>
+           <%= label_tag 'tag_se_former_autrement', 'Se former autrement' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Se changer les idées', checked_tag('Se changer les idées'), id: 'tag_se_changer_les_idees' %>
+           <%= label_tag 'tag_se_changer_les_idees', 'Se changer les idées' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Optimiser sa recherche', checked_tag('Optimiser sa recherche'), id: 'tag_optimiser_sa_recherche' %>
+           <%= label_tag 'tag_optimiser_sa_recherche', 'Optimiser sa recherche' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[tag][]', 'Faire des rencontres pro', checked_tag('Faire des rencontres pro'), id: 'tag_faire_des_rencontres_pro' %>
+           <%= label_tag 'tag_faire_des_rencontres_pro', 'Faire des rencontres pro' %>
+           <% end %>
+         </li>
+      </ul>
+    </div>
+    <div class="white-block">
+      <!-- ressource.input :profil, collection: @profil, input_html: {multiple: true}, :as => :check_boxes, include_blank: false, label: "Profil", include_hidden: false %> -->
+
+      <ul>
+           <%= ressource.input :profil, label: "Profil" do %>
+         <li>
+           <%= check_box_tag 'ressource[profil][]', 'Étudiant', checked_profil('Étudiant'), id: 'profil_etudiant' %>
+           <%= label_tag 'profil_etudiant', 'Étudiant' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[profil][]', 'Jeune diplômé', checked_profil('Jeune diplômé'), id: 'profil_jeune_diplome' %>
+           <%= label_tag 'profil_jeune_diplome', 'Jeune diplômé' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[profil][]', 'Senior', checked_profil('Senior'), id: 'profil_senior' %>
+           <%= label_tag 'profil_senior', 'Senior' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[profil][]', "En recherche d'emploi", checked_profil("En recherche d'emploi"), id: 'profil_en_recherche_demploi' %>
+           <%= label_tag 'profil_en_recherche_demploi', "En recherche d'emploi" %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[profil][]', 'En poste', checked_profil('En poste'), id: 'profil_en_poste' %>
+           <%= label_tag 'profil_en_poste', 'En poste' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[profil][]', 'En Reconversion / Ré-orientation', checked_profil('En Reconversion / Ré-orientation'), id: 'profil_en_reconversion' %>
+           <%= label_tag 'profil_en_reconversion', 'En Reconversion / Ré-orientation' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[profil][]', 'Entrepreneur / Freelance / Indépendant', checked_profil('Entrepreneur / Freelance / Indépendant'), id: 'profil_entrepreneur' %>
+           <%= label_tag 'profil_entrepreneur', 'Entrepreneur / Freelance / Indépendant' %>
+           <% end %>
+         </li>
+      </ul>
+    </div>
+    <div class="white-block">
+      <%= ressource.input :price, collection: @price, include_blank: false, label: "Prix" %>
+      <%= ressource.input :offer, label: "Offre Promotionnelle" %>
+    </div>
+
+    <div class="white-block">
+      <!-- ressource.input :city, collection: @city, input_html: {multiple: true}, :as => :check_boxes, include_blank: false, label: "Villes", include_hidden: false %> -->
+
+      <ul>
+           <%= ressource.input :city, label: "Ville" do %>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'France', checked_city('France'), id: 'city_france' %>
+           <%= label_tag 'city_france', 'France' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Paris', checked_city('Paris'), id: 'city_paris' %>
+           <%= label_tag 'city_paris', 'Paris' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Angers', checked_city('Angers'), id: 'city_angers' %>
+           <%= label_tag 'city_angers', 'Angers' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', "Bordeaux", checked_city("Bordeaux"), id: 'city_bordeaux' %>
+           <%= label_tag 'city_bordeaux', "Bordeaux" %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Brest', checked_city('Brest'), id: 'city_brest' %>
+           <%= label_tag 'city_brest', 'Brest' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Caen', checked_city('Caen'), id: 'city_caen' %>
+           <%= label_tag 'city_caen', 'Caen' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Laval', checked_city('Laval'), id: 'city_laval' %>
+           <%= label_tag 'city_laval', 'Laval' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Lille', checked_city('Lille'), id: 'city_lille' %>
+           <%= label_tag 'city_lille', 'Lille' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Lyon', checked_city('Lyon'), id: 'city_lyon' %>
+           <%= label_tag 'city_lyon', 'Lyon' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Marseille', checked_city('Marseille'), id: 'city_marseille' %>
+           <%= label_tag 'city_marseille', 'Marseille' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Nantes', checked_city('Nantes'), id: 'city_nantes' %>
+           <%= label_tag 'city_nantes', 'Nantes' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Nice', checked_city('Nice'), id: 'city_nice' %>
+           <%= label_tag 'city_nice', 'Nice' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Rennes', checked_city('Rennes'), id: 'city_rennes' %>
+           <%= label_tag 'city_rennes', 'Rennes' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Strasbourg', checked_city('Strasbourg'), id: 'city_strasbourg' %>
+           <%= label_tag 'city_strasbourg', 'Strasbourg' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Toulouse', checked_city('Toulouse'), id: 'city_toulouse' %>
+           <%= label_tag 'city_toulouse', 'Toulouse' %>
+         </li>
+         <li>
+           <%= check_box_tag 'ressource[city][]', 'Tours', checked_city('Tours'), id: 'city_tours' %>
+           <%= label_tag 'city_tours', 'Tours' %>
+           <% end %>
+         </li>
+      </ul>
+    </div>
   </div>
 <% end %>
 

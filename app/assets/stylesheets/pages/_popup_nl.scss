@@ -1,4 +1,7 @@
 #popup_nl {
+  .modal-content {
+    margin-top: 70px;
+  }
   .modal-header {
     p#myModalLabel.modal-title.home-subheader {
       color: $blue;
@@ -70,6 +73,9 @@
       #mce-EMAIL.email {
         width: 200px;
       }
+    }
+    .btn-empty {
+      margin-top: 30px;
     }
   }
   .modal-footer {

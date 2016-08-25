@@ -6,68 +6,8 @@
   Tous nos conseils et outils pour chercher un job, changer de métier, changer de boite ou entreprendre simplement
 <% end %>
 
-<!-- MENU COTE POUR LES GRANDS ET MOYENS ECRANS -->
-<div class="sidebar hidden-xs">
-  <%= render "ressource_sidebar_simple" %>
-</div>
-
-<!-- SOUS MENU TOP POUR LES PETITS ECRANS -->
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="sidebar visible-xs">
-        render "second_nav" %>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<!-- MISE EN AVANT DE LA NEWSLETTER -->
-<div class="container">
-  <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
-
-
-      <div class="hidden-xs">
-
-        <%= render "index_nl_desktop" %>
-      </div>
-      <div class="visible-xs">
-
-        <%= render "index_nl_mobile" %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES -->
-<div class="container">
-  <div class="row">
-
-    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
-      <div class="content">
-        <div id="img-mobile" class="visible-xs"></div>
-          <div id="discover-favorites">
-            <div class="owl-carousel-big">
-              <% Ressource.all.order('created_at DESC').limit(5).each do |ressource| %>
-                <div id="banner" class="item">
-                  <%= link_to ressource_path(ressource.id), {controller: "ressources", action: "show" } do %>
-                  <div class="img-ress" style="background: url(<%= ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(100%); -moz-filter: brightness(100%);">
-                  </div>
-                    <h2><%= ressource.title %></h2>
-                    <p><%= ressource.description %></p>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <%= render "index_desktop" %>
-      </div>
-    </div>
-    <%= render "index_mobile" %>
-  </div>
-</div>
+<%= render "index_desktop" %>
+<%= render "index_mobile" %>
 
 <!-- DISQUS COUNT -->
 <script id="dsq-count-scr" src="//workuper.disqus.com/count.js" async></script>

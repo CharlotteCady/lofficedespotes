@@ -9,7 +9,7 @@
 <% content_for :meta_image, @ressource.picture.url %>
 
 <!-- BANNIERE POUR LES GRANDS ECRANS -->
-<div class="container banner hidden-xs">
+<div class="container banner">
   <div class="row">
     <div class="col-xs-12">
       <div id="banner-image" style="background: url(<%= @ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
@@ -19,33 +19,30 @@
   </div>
 </div>
 
-<!-- BANNIERE POUR LES PETITS ECRANS -->
-<div class="container banner-little-screen visible-xs">
-  <div class="row">
-    <div class="col-xs-12">
-      <div id="banner-image" style="background: url(<%= @ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
-            -moz-background-size: cover; -o-background-size: cover; -webkit-filter: brightness(50%); -moz-filter: brightness(50%);">
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="content-banner">
-  <div class="publishing-date">
-    <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
-  </div>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10 ">
-        <% category_list = eval(@ressource.category) - [""] %>
-        <% category_list.map do |category| %>
-          <div class= "btn btn-blue zindex hidden-xs">
+      <div class="col-xs-12">
+        <div class="publishing-date">
+          <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
+        </div>
+        <% @category_list.map do |category| %>
+          <div class= "btn btn-blue zindex">
             <% if (category != "") %>
               <%= category %>
             <% end %>
           </div>
         <% end %>
-        <div class= "btn btn-primary hidden-xs"><%= @ressource.subcategory %></div>
+        <div class= "btn btn-primary"><%= @ressource.subcategory %></div>
+        <% if @ressource.tag != nil %>
+          <% (eval(@ressource.tag) - [""]).map do |tag| %>
+            <div class= "btn btn-danger zindex">
+              <% if (tag != "") %>
+                <%= tag %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
         <% if user_signed_in?  %>
           <% if current_user.admin? %>
           <div class="btn btn-action"><%= link_to "Editer", edit_ressource_path(@ressource.id) %></div>
@@ -73,7 +70,8 @@
         <div class="alert alert-danger alert_connect_to_like" role="alert" style="display: none;">
           Vous devez être connecté pour liker cette initiative, la commenter et l'enregistrer dans vos favoris :)
         </div>
-        <h1><%= @ressource.title %></h1>
+        <h1 class="hidden-xs" id="title-desktop"><%= @ressource.title %></h1>
+        <h1 class="visible-xs" id="title-mobile"><%= @ressource.title %></h1>
         <div class="writer-info hidden-xs">
           <p>
             <% if @ressource.user.avatar? %>
@@ -96,20 +94,13 @@
 </div>
 
 
-<!-- MENU COTE POUR LES GRANDS ET MOYENS ECRANS -->
-<div class="sidebar hidden-xs">
-  <%= render "ressource_sidebar_simple" %>
-</div>
-
-
-
-<!-- CONTENU BANNIERE, BARRE DE RECHERCHE ET LISTE DES ARTICLES -->
+<!-- CONTENU DE L'ARTICLE -->
 <div class="container">
   <div class="row">
 
-    <div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-2 col-md-10">
+    <div class="col-xs-12 col-sm-9">
 
-      <div class="content">
+      <div id="left-side">
 
         <div class="content-text">
           <strong><h2 class="title-description"><%= @ressource.description %></h2></strong>
@@ -119,9 +110,6 @@
           <%= (image_tag @ressource.picturecontent2.url, class: "img-responsive" ) if (@ressource.picturecontent2?) %>
           <p><%= sanitize @ressource.content3 %></p>
         </div>
-<!--         <p class= "witness">
-          "   <%= @ressource.witness %>   "
-        </p> -->
 
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div id="like-this-article">
@@ -147,42 +135,12 @@
           <p class="like-that"> et en partageant sur les réseaux sociaux :)</p>
           <div class="addthis_sharing_toolbox" id="share"></div>
         </div>
-        <div class="more-info">
-          <% if @ressource.website? %>
-            <p>
-              <b>Site internet :</b> <%= link_to @ressource.website, @ressource.website, target: "blank" %>
-            </p>
-          <% end %>
-          <% if @ressource.address? %>
-            <p>
-              <b>Contact :</b> <%= @ressource.address %>
-            </p>
-          <% end %>
-          <p>
-            <% if @ressource.score > 0 %>
-              <b>Ils / elles recommandent :</b>
-              <div class="voter-avatar" style="">
-                <% @list_of_voters.each do |voter| %>
-                  <% if voter.liked?(@ressource) %>
-                    <button type="button" id="info-avatar" data-toggle="tooltip" data-placement="top" title="<% if voter.name? %><%= voter.name.capitalize %><% end %><% if voter.description? %> : <%= voter.description %><% end %>">
-                      <% if voter.avatar? %>
-                        <%= image_tag voter.avatar.url(:thumb), class: "img-circle" %>
-                      <% else %>
-                        <%= image_tag "eight_horns.png", class: "img-circle" %>
-                      <% end %>
-                    </button>
-                  <% end %>
-                <% end %>
-              </div>
-            <% end %>
-          </p>
-        </div>
 
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div class="addthis_recommended_horizontal"></div>
 
-        <div class="add-comment">
-          <div class="footer-header">Et vous, les Workupers, vous en pensez quoi ?</div>
+        <div class="add-comment hidden-xs">
+          <div class="footer-header">Commentaires</div>
 <!--           <div id="disqus-account">
             <p class="text-center">
               N'ayez pas peur, lâchez-vous, vous pouvez poser vos questions, partager vos retours d'expérience et surtout encourager les initiatives que vous aimez en laissant de jolis commentaires.
@@ -209,6 +167,118 @@
                   (d.head || d.body).appendChild(s);
               })();
           </script>
+        </div>
+      </div>
+    </div>
+    <!-- DESKTOP -->
+    <div class="col-xs-3 hidden-xs">
+      <div id="righ-side">
+        <% if @ressource.offer? %>
+          <div id="offer" class="white-block text-center">
+            <div id="offer-box">
+              <p class="offer-title">OFFRE SPÉCIALE</p>
+              <p>Nous avons réussi à négocier pour vous <b><%= sanitize @ressource.offer %> avec le code </b> </p>
+            </div>
+          </div>
+        <% end %>
+        <% if @ressource.website? %>
+          <div id="more-info" class="white-block">
+            <p>
+              <b>Site internet :</b> <%= link_to @ressource.website, @ressource.website, target: "blank" %>
+            </p>
+
+          <% if @ressource.address? %>
+            <p>
+              <b>Contact :</b> <%= @ressource.address %>
+            </p>
+          <% end %>
+          </div>
+        <% end %>
+        <div id="newsletter" class="white-block text-center">
+          <p class="left-title">Recevez nos bons plans 1 fois / semaine</p>
+          <%= link_to "S'inscrire", "#", {:class => "btn btn-primary", "data-toggle" => "modal", "data-target" => "#myModal"} %>
+        </div>
+        <div id="reseaux-sociaux" class="white-block">
+          <p class="left-title">Suivez-nous</p>
+          <ul class="list-inline text-center">
+            <li>
+              <div id="facebook">
+                <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
+                  <i class="fa fa-facebook"></i>
+                <% end %>
+              </div>
+            </li>
+            <li>
+              <div id="twitter">
+                <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
+                  <i class="fa fa-twitter"></i>
+                <% end %>
+              </div>
+            </li>
+            <li>
+              <div id="linkedin">
+                <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
+                  <i class="fa fa-linkedin"></i>
+                <% end %>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- MOBILE -->
+    <div class="col-xs-offset-1 col-xs-10 visible-xs">
+      <div id="righ-side-mobile">
+        <% if @ressource.offer? %>
+          <div id="offer" class="white-block text-center">
+            <div id="offer-box">
+              <p class="offer-title">OFFRE SPÉCIALE</p>
+              <p>Nous avons réussi à négocier pour vous <b><%= sanitize @ressource.offer %> avec le code </b> </p>
+            </div>
+          </div>
+        <% end %>
+        <% if @ressource.website? %>
+          <div id="more-info" class="white-block">
+            <p>
+              <b>Site internet :</b> <%= link_to @ressource.website, @ressource.website, target: "blank" %>
+            </p>
+
+          <% if @ressource.address? %>
+            <p>
+              <b>Contact :</b> <%= @ressource.address %>
+            </p>
+          <% end %>
+          </div>
+        <% end %>
+        <div id="newsletter" class="white-block text-center">
+          <p class="left-title">Recevez nos bons plans 1 fois / semaine</p>
+          <%= link_to "S'inscrire", "#", {:class => "btn btn-primary", "data-toggle" => "modal", "data-target" => "#myModal"} %>
+        </div>
+        <div id="reseaux-sociaux" class="white-block">
+          <p class="left-title">Suivez-nous</p>
+          <ul class="list-inline text-center">
+            <li>
+              <div id="facebook">
+                <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
+                  <i class="fa fa-facebook"></i>
+                <% end %>
+              </div>
+            </li>
+            <li>
+              <div id="twitter">
+                <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
+                  <i class="fa fa-twitter"></i>
+                <% end %>
+              </div>
+            </li>
+            <li>
+              <div id="linkedin">
+                <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
+                  <i class="fa fa-linkedin"></i>
+                <% end %>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

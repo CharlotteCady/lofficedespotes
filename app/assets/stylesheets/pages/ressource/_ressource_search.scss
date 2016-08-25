@@ -1,7 +1,56 @@
 #search-bar {
-  // border: none;
+  margin-top: 0px;
   icon.select {
     background-color: none;
   }
-  margin-top: 20px;
+  select#profil {
+    // width: 100px;
+  }
+  form {
+    background-color: white;
+  }
+  ul {
+    border-bottom: 1px solid white;
+  }
+  li {
+    margin-right: 5px;
+    a {
+      color: white;
+      border: 1px solid white;
+      // border-bottom-color: transparent;
+      font-family: $my-font;
+      font-size: 22px;
+    }
+    a:hover, a:active, a:focus {
+      background-color: white;
+      color: $blue;
+    }
+  }
+}
+
+#searchbar-mobile {
+  button#looking_for, button.btn {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background-color: white;
+    color: $blue;
+    float: none;
+  }
+  ul.dropdown-menu {
+    width: 168px;
+    top: 40px;
+    left: 28px;
+    a {
+      font-family: $my-font;
+      font-size: 20px;
+    }
+  }
+  input#search.form.text-long {
+    margin-right:0px;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  div.form-group {
+    margin-bottom: 0px;
+  }
 }
