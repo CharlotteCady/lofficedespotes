@@ -152,6 +152,10 @@ as: :check_boxes pour multiple choix -->
            <%= label_tag 'tag_sentraider', "S'entraider" %>
          </li>
          <li>
+           <%= check_box_tag 'ressource[tag][]', "Découvrir des entreprises", checked_tag("Découvrir des entreprises"), id: 'tag_decouvrir_des_entreprises' %>
+           <%= label_tag 'tag_decouvrir_des_entreprises', "Découvrir des entreprises" %>
+         </li>
+         <li>
            <%= check_box_tag 'ressource[tag][]', 'Faire des rencontres', checked_tag('Faire des rencontres'), id: 'tag_faire_des_rencontres' %>
            <%= label_tag 'tag_faire_des_rencontres', 'Faire des rencontres' %>
            <% end %>
