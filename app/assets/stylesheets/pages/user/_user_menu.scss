@@ -1,0 +1,46 @@
+#user-menu-desktop {
+  .container {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: white;
+  }
+  #menu-items-desktop {
+    li {
+      font-size: 16px;
+      padding-right: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      a {
+        color: black;
+        &:hover {
+          padding-bottom: 10px;
+          border-bottom: 2px solid $blue;
+        }
+      }
+    }
+  }
+}
+
+#user-menu-mobile {
+  .container {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: white;
+  }
+  #menu-items-mobile {
+    ul#mobile-list {
+      li {
+        font-family: $base-font;
+        font-size: 14px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 0px;
+        text-align: center;
+      }
+    }
+  }
+}

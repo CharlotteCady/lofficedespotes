@@ -5,8 +5,34 @@
     }
   }
 
-  background: image-url('eight_horns.png') repeat;
-  margin-top: 100px;
+  #data-profil   {
+    background: image-url("data-profil.png") repeat fixed;
+    min-height: 400px;
+    p {
+      margin-top: 60px;
+      padding-top: 100px;
+      font-size: 60px;
+      color: white;
+      font-family: $my-font;                                                                                                                                                                                                                                   bottom: 30px;
+    }
+  }
+  #user-menu-desktop {
+    a#personal-info {
+      border-bottom: 2px solid $blue;
+      padding-bottom: 10px;
+      font-weight: bold;
+    }
+  }
+
+  p.home-subheader {
+    color: white;
+    background-color: $gray;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 10px 0px;
+  }
+
   #edit {
     background-color: white;
     margin-bottom: 40px;

@@ -1,0 +1,176 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#userRecoModal">
+  <% if current_user.birthday == nil %>
+    Répondre au questionnaire
+  <% else %>
+    Modifier mes réponses
+  <% end %>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="userRecoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p class="modal-title home-header" id="myModalLabel">Questionnaire Perso</p>
+        <p>
+          Ces informations nous permettront de vous faire découvrir des solutions qui vous correspondent le mieux
+        </p>
+      </div>
+      <div class="modal-body">
+        <div id="reco">
+
+          <%= simple_form_for(current_user, url: edit_user_registration_path, html: { method: :put, multipart: true }) do |f| %>
+          <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :birthday, required: true, start_year: Date.today.year,
+                              end_year: Date.today.year - 70, autofocus: true, label: "Quelle est votre date de naissance ?" %>
+              <%= f.input :city, required: true, autofocus: true, label: "Dans quelle ville vivez-vous ?", placeholder: "Nous vous aiderons à trouver des solutions près de chez vous" %>
+              <%= f.input :profil, required: true, label: "Cochez les cases qui vous correspondent" do %>
+              <ul>
+                 <li>
+                   <%= check_box_tag 'user[profil][]', 'Étudiant', checked_user_profil('Étudiant'), id: 'profil_etudiant' %>
+                   <%= label_tag 'profil_etudiant', 'Étudiant' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[profil][]', 'Jeune diplômé', checked_user_profil('Jeune diplômé'), id: 'profil_jeune_diplome' %>
+                   <%= label_tag 'profil_jeune_diplome', 'Jeune diplômé' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[profil][]', 'Senior', checked_user_profil('Senior'), id: 'profil_senior' %>
+                   <%= label_tag 'profil_senior', 'Senior' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[profil][]', "En recherche d'emploi", checked_user_profil("En recherche d'emploi"), id: 'profil_en_recherche_demploi' %>
+                   <%= label_tag 'profil_en_recherche_demploi', "En recherche d'emploi" %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[profil][]', 'En poste', checked_user_profil('En poste'), id: 'profil_en_poste' %>
+                   <%= label_tag 'profil_en_poste', 'En poste' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[profil][]', 'En Reconversion / Ré-orientation', checked_user_profil('En Reconversion / Ré-orientation'), id: 'profil_en_reconversion' %>
+                   <%= label_tag 'profil_en_reconversion', 'En Reconversion / Ré-orientation' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[profil][]', 'Entrepreneur / Freelance / Indépendant', checked_user_profil('Entrepreneur / Freelance / Indépendant'), id: 'profil_entrepreneur' %>
+                   <%= label_tag 'profil_entrepreneur', 'Entrepreneur / Freelance / Indépendant' %>
+                   <% end %>
+                 </li>
+              </ul>
+              <%= f.input :category, required: true, label: "Vous êtes à la recherche de solutions pour :"  do %>
+              <ul class="list-inline">
+                 <li>
+                   <%= check_box_tag 'user[category][]', 'Trouver sa voie', checked_user_category('Trouver sa voie'), id: 'category_trouver_sa_voie' %>
+                   <%= label_tag 'category_trouver_sa_voie', 'Trouver sa voie' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[category][]', 'Trouver un job', checked_user_category('Trouver un job'), id: 'category_trouver_un_job' %>
+                   <%= label_tag 'category_trouver_un_job', 'Trouver un job' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[category][]', 'Changer de métier', checked_user_category('Changer de métier'), id: 'category_changer_de_metier' %>
+                   <%= label_tag 'category_changer_de_metier', 'Changer de métier' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[category][]', 'Changer de boite', checked_user_category('Changer de boite'), id: 'category_changer_de_boite' %>
+                   <%= label_tag 'category_changer_de_boite', 'Changer de boite' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[category][]', 'Créer sa boite', checked_user_category('Créer sa boite'), id: 'category_creer_sa_boite' %>
+                   <%= label_tag 'category_creer_sa_boite', 'Créer sa boite' %>
+                   <% end %>
+                 </li>
+              </ul>
+              <%= f.input :tag, required: true, label: "Cochez les sujets qui vous intéressent" do %>
+              <ul >
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Faire un joli CV', checked_user_tag('Faire un joli CV'), id: 'tag_faire_un_joli_cv' %>
+                   <%= label_tag 'tag_faire_un_joli_cv', 'Faire un joli CV' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Postuler sur un job board', checked_user_tag('Postuler sur un job board'), id: 'tag_postuler_sur_un_job_board' %>
+                   <%= label_tag 'tag_postuler_sur_un_job_board', 'Postuler sur un job board' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Apprendre à mieux se connaître', checked_user_tag('Apprendre à mieux se connaître'), id: 'tag_apprendre_a_mieux_se_connaitre' %>
+                   <%= label_tag 'tag_apprendre_a_mieux_se_connaitre', 'Apprendre à mieux se connaître' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Découvrir des métiers', checked_user_tag('Découvrir des métiers'), id: 'tag_decouvrir_des_metiers' %>
+                   <%= label_tag 'tag_decouvrir_des_metiers', 'Découvrir des métiers' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Se faire recommander', checked_user_tag('Se faire recommander'), id: 'tag_se_faire_recommander' %>
+                   <%= label_tag 'tag_se_faire_recommander', 'Se faire recommander' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Se former autrement', checked_user_tag('Se former autrement'), id: 'tag_se_former_autrement' %>
+                   <%= label_tag 'tag_se_former_autrement', 'Se former autrement' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Se changer les idées', checked_user_tag('Se changer les idées'), id: 'tag_se_changer_les_idees' %>
+                   <%= label_tag 'tag_se_changer_les_idees', 'Se changer les idées' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Optimiser sa recherche', checked_user_tag('Optimiser sa recherche'), id: 'tag_optimiser_sa_recherche' %>
+                   <%= label_tag 'tag_optimiser_sa_recherche', 'Optimiser sa recherche' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Se faire accompagner', checked_user_tag('Se faire accompagner'), id: 'tag_se_faire_accompagner' %>
+                   <%= label_tag 'tag_se_faire_accompagner', 'Se faire accompagner' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', "Trouver l'inspiration", checked_user_tag("Trouver l'inspiration"), id: 'tag_trouver_linspiration' %>
+                   <%= label_tag 'tag_trouver_linspiration', "Trouver l'inspiration" %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Lancer son activité', checked_user_tag('Lancer son activité'), id: 'tag_lancer_son_activite' %>
+                   <%= label_tag 'tag_lancer_son_activite', 'Lancer son activité' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Sortir du cadre', checked_user_tag('Sortir du cadre'), id: 'tag_sortir_du_cadre' %>
+                   <%= label_tag 'tag_sortir_du_cadre', 'Sortir du cadre' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Se former au numérique', checked_user_tag('Se former au numérique'), id: 'tag_se_former_au_numerique' %>
+                   <%= label_tag 'tag_se_former_au_numerique', 'Se former au numérique' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Trouver un co-working', checked_user_tag('Trouver un co-working'), id: 'tag_trouver_un_co_working' %>
+                   <%= label_tag 'tag_trouver_un_co_working', 'Trouver un co-working' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Valoriser ses compétences', checked_user_tag('Valoriser ses compétences'), id: 'tag_valoriser_ses_competences' %>
+                   <%= label_tag 'tag_valoriser_ses_competences', 'Valoriser ses compétences' %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', "S'entraider", checked_user_tag("S'entraider"), id: 'tag_sentraider' %>
+                   <%= label_tag 'tag_sentraider', "S'entraider" %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', "Découvrir des entreprises", checked_user_tag("Découvrir des entreprises"), id: 'tag_decouvrir_des_entreprises' %>
+                   <%= label_tag 'tag_decouvrir_des_entreprises', "Découvrir des entreprises" %>
+                 </li>
+                 <li>
+                   <%= check_box_tag 'user[tag][]', 'Faire des rencontres', checked_user_tag('Faire des rencontres'), id: 'tag_faire_des_rencontres' %>
+                   <%= label_tag 'tag_faire_des_rencontres', 'Faire des rencontres' %>
+                   <% end %>
+                 </li>
+              </ul>
+            </div>
+            <%= f.button :submit, "Valider", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p type="button" data-dismiss="modal" id="close">Fermer</p>
+<!--         <p class="cgu">
+          Yeah ! Vous pourrez désormais voir les solutions que nous vous recommandons en fonction de votre profil :)
+        </p> -->
+      </div>
+    </div>
+  </div>
+</div>

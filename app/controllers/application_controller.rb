@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
-  before_filter :store_current_location, :unless => :devise_controller? #rediriger vers la dernière page visitée après authentification
+  # before_filter :store_current_location, :unless => :devise_controller? #rediriger vers la dernière page visitée après authentification
   before_action :authenticate_user!, unless: :pages_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -25,16 +25,17 @@ class ApplicationController < ActionController::Base
   end
 
   #rediriger vers la dernière page visitée après authentification
-  def store_current_location
-    store_location_for(:user, request.url)
-  end
+  # def store_current_location
+  #   store_location_for(:user, request.url)
+  # end
 
   def after_sign_in_path_for(resource)
+    users_path
     sign_in_url = new_user_session_url
     if request.referer == sign_in_url
-      super
+      users_path
     else
-      request.env['omniauth.origin'] || stored_location_for(resource) || request.referer || root_path
+      users_path || request.env['omniauth.origin'] || stored_location_for(resource) || request.referer
     end
   end
 

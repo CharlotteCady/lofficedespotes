@@ -1,0 +1,75 @@
+// #users_matching, #users_show, #high_voltage_pages_show {
+#userRecoModal {
+
+  p, .form-inputs {
+    font-family: $base-font;
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-size: 14px;
+  }
+  .modal-header{
+    text-align: center;
+    background-color: $blue;
+    color: white;
+    p#myModalLabel.modal-title.home-header {
+      font-family: $my-font;
+      font-size: 28px;
+      color: white;
+      padding-top: 0px;
+      margin-top: 0px;
+    }
+    p {
+      font-size: 14px;
+      padding: 0px 20px;
+    }
+  }
+
+  #reco {
+    background-color: white;
+    border-radius: 3px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    form {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+    }
+    .form-group {
+      padding-bottom: 20px;
+    }
+
+    div.form-inputs {
+      text-align: left;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0px;
+      padding-top: 10px;
+      li {
+        label {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+
+  .modal-footer {
+    background-color: white;
+    text-align: center;
+    p.cgu {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    p#close {
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    div.alert {
+      top: -35px;
+    }
+  }
+}

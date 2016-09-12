@@ -1,0 +1,78 @@
+#users_offer {
+  #offer-menu   {
+    background: image-url("offer.png") repeat fixed;
+    min-height: 400px;
+    p.home-header {
+      margin-top: 60px;
+      padding-top: 100px;
+      font-size: 60px;
+      color: white;
+      font-family: $my-font;                                                                                                                                                                                                                                   bottom: 30px;
+    }
+    p.details {
+      color: white;
+    }
+  }
+  #user-menu-desktop {
+    a#offer-solution {
+      border-bottom: 2px solid $blue;
+      padding-bottom: 10px;
+      font-weight: bold;
+    }
+  }
+
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+
+  // LISTING DES OFFRES
+  #offer-container {
+    h2 {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    .desktop-display-logo {
+      img.logo {
+        width: 60px;
+      }
+    }
+    .mobile-display-logo {
+      img.logo {
+        width: 30px;
+      }
+    }
+    .listing_ressources {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-bottom: 30px;
+      p {
+        font-size: 14px;
+        color: $gray_light
+      }
+    }
+    ul {
+      margin-top: 20px;
+      // margin-left: 10px;
+    }
+    .content-title, .sub-title {
+      padding-right: 5px;
+    }
+    // PROMO BOUTON
+    div.col-xs-1 {
+      margin-top: 25px;
+    }
+    span.price, span.price {
+      color:white;
+      font-size: 10px;
+      padding: 5px;
+    }
+    span#Promo {
+      background-color: #6679ff;
+    }
+    span#Gratuit {
+      background-color: $blue;
+    }
+  }
+}

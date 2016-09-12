@@ -1,6 +1,19 @@
+<div id="data-profil" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="home-header">MES INFORMATIONS PERSONNELLES</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "user_menu" %>
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+    <div class="col-xs-12 col-md-4 space">
+      <!-- <p class="home-subheader">Votre Profil</p> -->
       <div id="profil">
         <% if current_user.avatar? %>
           <%= image_tag current_user.avatar.url(:medium), class: "img-circle" %>
@@ -8,18 +21,89 @@
           <%= image_tag "eight_horns.png", class: "img-circle" %>
         <% end %>
         <% if current_user.name? %>
-          <h1 id= "name"><%= current_user.name %></h1>
+          <p id= "name"><b>Nom d'utilisateur<br></b><%= current_user.name %></p>
         <% else %>
-          <h1 id= "name"><%= current_user.first_name + " " + current_user.last_name %></h1>
+          <p id= "name"><b>Nom d'utilisateur<br></b><%= current_user.first_name + " " + current_user.last_name %></p>
         <% end %>
+        <p>
+          <b>E-mail</b><br>
+          <%= current_user.email %>
+        </p>
         <% if current_user.description? %>
           <p id= "bio">
+            <b>Présentation</b><br>
             <%= current_user.description %>
           </p>
         <% end %>
-        <%= link_to("Modifier", edit_user_registration_path, class: "btn btn-primary btn-xs ") %>
-        </div>
+        <%= render "user_profil_modal" %>
+
+ <!-- link_to("Modifier", edit_user_registration_path, class: "btn btn-primary") -->
       </div>
+    </div>
+    <div class="col-xs-12 col-md-8 space">
+      <!-- <p class="home-subheader">Vos réponses au questionnaire</p> -->
+      <div id="matching-info">
+        <% if current_user.birthday == nil %>
+          <div class="text-center">
+            <p>Vous n'avez pas encore répondu au questionnaire ! Vos réponses nous permettront de vous faire découvrir des solutions adaptées à votre profil.</p>
+            <%= render "user_reco_modal" %>
+          </div>
+        <% else %>
+          <div class="row">
+            <div class="col-sm-6 left-column">
+              <p><b>
+                <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
+                Vous êtes né(e) le </b>
+                <%= current_user.birthday %>
+              </p>
+              <p><b>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                Vous êtes :
+              </b><br></p>
+                  <ul>
+                    <% (eval(current_user.profil) - [""]).map do |profil_item| %>
+                    <li>
+                      <%= profil_item %>
+                    </li>
+                    <% end %>
+                  </ul>
+              <p><b>
+                <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
+                Vous êtes à la recherche de solutions pour :
+              </b><br></p>
+                <ul>
+                  <% (eval(current_user.category) - [""]).map do |category_item| %>
+                  <li>
+                    <%= category_item %>
+                  </li>
+                  <% end %>
+                </ul>
+            </div>
+            <div class="col-sm-6 right-column">
+              <p><b>
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                Vous habitez à</b>
+                <%= current_user.city %>
+              </p>
+              <p><b>
+                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                Vous êtes intéressé(e) par ces sujets :
+              </b><br></p>
+                <ul>
+                  <% (eval(current_user.tag) - [""]).map do |tag_item| %>
+                  <li>
+                    <%= tag_item %>
+                  </li>
+                  <% end %>
+                </ul>
+            </div>
+          </div>
+          <div class="text-center">
+            <%= render "user_reco_modal" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 

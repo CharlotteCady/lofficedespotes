@@ -1,13 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-offset-1 col-xs-10">
-      <div class="text-center mini-padded" id="pourquoi-se-connecter">
-        <p class="home-header">Devenez membre de la communauté</p>
-        <p>
-          Montrez aux initiatives que vous les soutenez en cliquant sur les <i class="fa fa-heart-o"></i> et retrouvez les dans vos favoris. Vous recevrez aussi les nouveautés, bons plans et astuces pour vous aider dans votre transition professionnelle.
-        </p>
-      </div>
+    <div class="col-sm-offset-3 col-sm-6">
+
       <div id="signin">
+        <p class="home-header">CONNEXION</p>
+        <p class="details">Retrouvez vos solutions préférées dans vos favoris, les initiatives qui vous correspondent, nos bons plans et offres spéciales pour vous aider dans votre transition pro.</p>
         <% if devise_mapping.omniauthable? %>
           <% resource_class.omniauth_providers.each do |provider| %>
             <% if provider.to_s == "facebook" %>
@@ -29,8 +26,7 @@
 
         <ul class="list-inline">
           <li>
-
-                <%= f.button :submit, t("Se Connecter", default: "Se Connecter"), class: "btn btn-primary" %>
+              <%= f.button :submit, t("Se Connecter", default: "Se Connecter"), class: "btn btn-primary" %>
             <% end %>
           </li>
           <li>
@@ -41,7 +37,7 @@
         </ul>
 
         <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-          <%= link_to "Vous avez oublié votre mot de passe ?", new_password_path(resource_name) %><br />
+          <%= link_to "Vous avez oublié votre mot de passe ?", new_password_path(resource_name), id: "forgot-pass" %><br />
         <% end %>
       </div>
     </div>

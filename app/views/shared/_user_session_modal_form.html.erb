@@ -1,0 +1,60 @@
+<%= link_to "J'ai déjà un compte", "#", class: "btn btn-empty", id: "login", "data-dismiss" => "modal", "data-toggle" => "modal", "data-target" => "#signinModal"  %>
+<!-- Modal -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p class="modal-title home-header" id="myModalLabel">Connexion</p>
+        <p>
+          Retrouvez vos solutions préférées dans vos favoris, les initiatives qui vous correspondent, nos bons plans et offres spéciales pour vous aider dans votre transition pro.
+        </p>
+      </div>
+      <div class="modal-body">
+        <div id="signin">
+          <% if devise_mapping.omniauthable? %>
+            <% resource_class.omniauth_providers.each do |provider| %>
+              <% if provider.to_s == "facebook" %>
+                <%= link_to "Se Connecter avec Facebook", omniauth_authorize_path(resource_name, provider), class: "btn btn-facebook" %>
+              <% else %>
+                <%= link_to "Se connecter avec #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+              <% end %>
+            <% end %>
+          <% end %>
+
+          <p id="profil-creation" >-- Ou connectez-vous avec vos identifiants --</p>
+
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :email, label: false,   required: false, autofocus: true, placeholder: "Email" %>
+              <%= f.input :password, label: false, required: false, placeholder: "Mot de Passe" %>
+              <%= f.input :remember_me, label:"Se souvenir", as: :boolean if devise_mapping.rememberable? %>
+            </div>
+            <ul class="list-inline">
+              <li>
+                <div class="form-actions">
+                  <%= f.button :submit, t("Se Connecter", default: "Se Connecter"), class: "btn btn-primary" %>
+                </div>
+                <% end %>
+              </li>
+              <li>
+                <% if devise_mapping.registerable? && controller_name != 'registrations' %>
+                  <%= link_to "Je n'ai pas encore de compte", new_registration_path(resource_name), class: "btn btn-empty", id: "new-count" %></br>
+                <% end %>
+              </li>
+            </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p type="button" data-dismiss="modal" id="close">Fermer</p>
+        <p class="cgu">
+          <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Vous avez oublié votre mot de passe ?", new_password_path(resource_name) %><br />
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

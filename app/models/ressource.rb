@@ -121,4 +121,5 @@ class Ressource < ActiveRecord::Base
   def self.highest_voted
     self.order("cached_votes_score DESC")
   end
+
 end

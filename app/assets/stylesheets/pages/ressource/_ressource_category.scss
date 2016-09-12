@@ -16,7 +16,7 @@
 
 // ======== banniere
   .banner {
-    background: image-url('acteurs-emploi.png') repeat;
+    background: image-url('acteurs-emploi.png') repeat fixed;
     min-height: 400px;
     h1 {
       text-align: center;
@@ -31,7 +31,7 @@
   }
 
   #trouversavoie {
-    background: image-url('trouversavoie.png') repeat;
+    background: image-url('trouversavoie.png') repeat fixed;
     #search-bar {
       li#trouver_sa_voie {
         background-color: white;
@@ -43,7 +43,7 @@
   }
 
   #trouverunjob {
-    background: image-url('trouverunjob.png') repeat;
+    background: image-url('trouverunjob.png') repeat fixed;
     #search-bar {
       li#trouver_un_job {
         background-color: white;
@@ -55,7 +55,7 @@
   }
 
   #changerdemetier {
-    background: image-url('changerdemetier.png') repeat;
+    background: image-url('changerdemetier.png') repeat fixed;
     #search-bar {
       li#changer_de_metier {
         background-color: white;
@@ -67,7 +67,7 @@
   }
 
   #changerdeboite {
-    background: image-url('changerdeboite.png') repeat;
+    background: image-url('changerdeboite.png') repeat fixed;
     #search-bar {
       li#changer_de_boite {
         background-color: white;
@@ -79,7 +79,7 @@
   }
 
   #creersaboite {
-    background: image-url('creersaboite.png') repeat;
+    background: image-url('creersaboite.png') repeat fixed;
     #search-bar {
       li#creer_sa_boite {
         background-color: white;
