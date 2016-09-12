@@ -110,6 +110,19 @@
           <%= (image_tag @ressource.picturecontent2.url, class: "img-responsive" ) if (@ressource.picturecontent2?) %>
           <p><%= sanitize @ressource.content3 %></p>
         </div>
+        <% if @ressource.website? %>
+          <div id="more-info">
+            <p>
+              <b>Site internet :</b> <%= link_to (@ressource.website).gsub("http://", "").gsub("/", ""), @ressource.website, target: "blank", id:"website" %>
+            </p>
+
+          <% if @ressource.address? %>
+            <p>
+              <b>Contact :</b> <%= @ressource.address %>
+            </p>
+          <% end %>
+          </div>
+        <% end %>
 
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div id="like-this-article">
@@ -181,19 +194,6 @@
             </div>
           </div>
         <% end %>
-        <% if @ressource.website? %>
-          <div id="more-info" class="white-block">
-            <p>
-              <b>Site internet :</b> <%= link_to (@ressource.website).gsub("http://", "").gsub("/", ""), @ressource.website, target: "blank", id:"website" %>
-            </p>
-
-          <% if @ressource.address? %>
-            <p>
-              <b>Contact :</b> <%= @ressource.address %>
-            </p>
-          <% end %>
-          </div>
-        <% end %>
         <div id="promo"  class="white-block text-center">
           <p class="left-title">Envie de créer votre activité porteuse de sens ?</p>
           <p>WorkUp et Creators for Good lancent un programme spécial</p>
@@ -246,22 +246,14 @@
             </div>
           </div>
         <% end %>
-        <% if @ressource.website? %>
-          <div id="more-info" class="white-block">
-            <p>
-              <b>Site internet :</b> <%= link_to (@ressource.website).gsub("http://", "").gsub("/", ""), @ressource.website, target: "blank", id:"website" %>
-            </p>
-
-          <% if @ressource.address? %>
-            <p>
-              <b>Contact :</b> <%= @ressource.address %>
-            </p>
-          <% end %>
-          </div>
-        <% end %>
+        <div id="promo"  class="white-block text-center">
+          <p class="left-title">Envie de créer votre activité porteuse de sens ?</p>
+          <p>WorkUp et Creators for Good lancent un programme spécial</p>
+          <%= link_to "Découvrir", "https://docs.google.com/forms/d/e/1FAIpQLScDCa9ThcT0sFccmd51T9V4J29CPBHlTUvkavrd2O1lMmcdXg/viewform?c=0&w=1&mc_cid=9d7c2f1844&mc_eid=2f68762dff", :class => "btn btn-primary",  target: "blank" %>
+        </div>
         <div id="newsletter" class="white-block text-center">
           <p class="left-title">Recevez nos bons plans 1 fois / semaine</p>
-          <%= link_to "S'inscrire", "#", {:class => "btn btn-primary", "data-toggle" => "modal", "data-target" => "#myModal"} %>
+          <%= link_to "S'inscrire", "#", {:class => "btn btn-danger", "data-toggle" => "modal", "data-target" => "#myModal"} %>
         </div>
         <div id="reseaux-sociaux" class="white-block">
           <p class="left-title">Suivez-nous</p>
