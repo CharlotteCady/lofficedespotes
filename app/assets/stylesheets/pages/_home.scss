@@ -44,7 +44,19 @@
   #login {
     background-color: transparent;
     border: 1px solid white;
+    &:hover {
+      background-color: $blue;
+      border: 1px solid $blue;
+    }
+    a {
+      color: white;
+    }
   }
+  // ENLEVER LE ZINDEX DE LA MODAL =======
+  .modal-backdrop {
+    z-index: 0;
+  }
+
   // Bannière ===============================================================
 
   #banner   {
@@ -72,8 +84,8 @@
         font-family: $base-font;
         font-size: 20px;
         padding-bottom: 30px;
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
       }
       ul  {
         margin-bottom: 0px;

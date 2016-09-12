@@ -113,8 +113,8 @@
 
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div id="like-this-article">
-          <p>Vous avez aimé ?</p>
-          <p class="like-that">Soutenez ces initiatives en cliquant sur le </p>
+          <p id="like-title">Vous avez aimé ?</p>
+          <p class="like-that">Cliquez sur le </p>
           <div class="votes">
             <% if user_signed_in? %>
               <% if current_user.liked? @ressource %>
@@ -132,7 +132,7 @@
               <% end %>
             <% end %>
           </div>
-          <p class="like-that"> et en partageant sur les réseaux sociaux :)</p>
+          <p class="like-that"> pour l'enregistrer dans vos favoris et partagez sur les réseaux sociaux !</p>
           <div class="addthis_sharing_toolbox" id="share"></div>
         </div>
 
@@ -172,7 +172,7 @@
     </div>
     <!-- DESKTOP -->
     <div class="col-xs-3 hidden-xs">
-      <div id="righ-side">
+      <div id="right-side">
         <% if @ressource.offer? %>
           <div id="offer" class="white-block text-center">
             <div id="offer-box">
@@ -184,7 +184,7 @@
         <% if @ressource.website? %>
           <div id="more-info" class="white-block">
             <p>
-              <b>Site internet :</b> <%= link_to @ressource.website, @ressource.website, target: "blank" %>
+              <b>Site internet :</b> <%= link_to (@ressource.website).gsub("http://", "").gsub("/", ""), @ressource.website, target: "blank", id:"website" %>
             </p>
 
           <% if @ressource.address? %>
@@ -196,7 +196,7 @@
         <% end %>
         <div id="newsletter" class="white-block text-center">
           <p class="left-title">Recevez nos bons plans 1 fois / semaine</p>
-          <%= link_to "S'inscrire", "#", {:class => "btn btn-primary", "data-toggle" => "modal", "data-target" => "#myModal"} %>
+          <%= link_to "S'inscrire", "#", {:class => "btn btn-danger", "data-toggle" => "modal", "data-target" => "#myModal"} %>
         </div>
         <div id="reseaux-sociaux" class="white-block">
           <p class="left-title">Suivez-nous</p>
@@ -223,6 +223,10 @@
               </div>
             </li>
           </ul>
+        </div>
+        <div id="solutions" class="white-block text-center">
+          <p class="left-title">Découvrez toutes les solutions qui peuvent vous aider à trouver un job qui vous correspond</p>
+          <%= link_to "Découvrir", ressources_path, :class => "btn btn-primary" %>
         </div>
       </div>
     </div>
@@ -240,7 +244,7 @@
         <% if @ressource.website? %>
           <div id="more-info" class="white-block">
             <p>
-              <b>Site internet :</b> <%= link_to @ressource.website, @ressource.website, target: "blank" %>
+              <b>Site internet :</b> <%= link_to (@ressource.website).gsub("http://", "").gsub("/", ""), @ressource.website, target: "blank", id:"website" %>
             </p>
 
           <% if @ressource.address? %>
@@ -280,9 +284,11 @@
             </li>
           </ul>
         </div>
+        <div id="solutions" class="white-block text-center">
+          <p class="left-title">Découvrez toutes les solutions qui peuvent vous aider à trouver un job qui vous correspond</p>
+          <%= link_to "Découvrir", ressources_path, :class => "btn btn-primary" %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-

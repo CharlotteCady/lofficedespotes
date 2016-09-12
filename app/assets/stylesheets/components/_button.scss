@@ -9,6 +9,7 @@
   font-size: 22px;
   margin-top: 25px;
   margin-bottom: 25px;
+
  }
 
  .btn-info:hover {
@@ -62,5 +63,13 @@
     background-color: $blue;
     color: white;
     border: solid 1px $blue;
+  }
+}
+
+.btn-facebook {
+  background-color: rgb(59, 89, 152);
+  color: white;
+  &:hover {
+    color: white;
   }
 }

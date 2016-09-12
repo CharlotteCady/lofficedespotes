@@ -1,0 +1,94 @@
+// ENLEVER LE ZINDEX DE LA MODAL =======
+.modal-backdrop {
+  z-index: 0;
+}
+
+#signupModal {
+
+  p, .form-inputs {
+    font-family: $base-font;
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-size: 14px;
+  }
+  .modal-header{
+    background-color: $blue;
+    text-align: center;
+    color: white;
+    p#myModalLabel.modal-title.home-header {
+      font-family: $my-font;
+      font-size: 28px;
+      color: white;
+      padding-top: 0px;
+      margin-top: 0px;
+    }
+    p {
+      font-size: 14px;
+      padding: 0px 20px;
+      color: white;
+      padding-top:10px;
+    }
+    li {
+      width: 49%;
+    }
+    #signup_button {
+      margin-top: 7px;
+      border: 1px solid $blue;
+      a, a:active, a:focus {
+        color:white;
+        &:hover {
+          color: $blue;
+          background-color: white;
+        }
+      }
+    }
+    #signin_button {
+      border: 1px solid $blue;
+      a, a:active, a:focus {
+        color:white;
+        &:hover {
+          color: $blue;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  #signup, #signin {
+    text-align: center;
+    border-radius: 3px;
+    padding-left: 50px;
+    padding-right: 50px;
+    form {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+    }
+
+    p#profil-creation {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    a#forget-pass {
+      font-family: $base-font;
+      text-transform: none;
+      font-weight: 400;
+      letter-spacing: 0;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    p.cgu {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    p#close {
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+    div.alert {
+      top: -35px;
+    }
+}

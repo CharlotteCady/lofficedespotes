@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   post "category", to: "ressources#category"
   get '/mentions-legales', to: "pages#mentions_legales"
   get '/pro', to: "pages#pro"
-  # get "/guide-de-l-emploi", to: "ressources#index", as: "/ressources"
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -18,14 +17,20 @@ Rails.application.routes.draw do
     collection do
       get 'show'
       get 'favorites', to: "users#favorites"
+      get 'matching', to: "users#matching"
+      get 'offer', to: "users#offer"
       patch 'update_password'
     end
   end
 
 # REDIRIGER VERS LA PAGE USER SHOW APRES MODIFICATIONS (USER EDIT et PASSWORD EDIT)
-  as :user do
-    get 'users/show', :to => 'devise/registrations#edit', :as => :user_root
-    # get 'users/sign_in', :to => 'devise/sessions#create'
+  # as :user do
+  #   get 'users/show', :to => 'devise/registrations#edit', :as => :user_root
+  #   # get 'users/sign_in', :to => 'devise/sessions#create'
+  # end
+
+  namespace :user do
+    root 'users#show' # creates user_root_path
   end
 
   resources :ressources do

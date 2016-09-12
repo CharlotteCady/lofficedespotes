@@ -13,6 +13,7 @@
           <%= image_tag "logo-workup.png" %>
         <!-- work<span style="color: #1ECBCA;">up</span> -->
       </a>
+      <p id="tagline">Les meilleures solutions pour trouver votre job idéal</p>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,8 +54,18 @@
                 <% end %>
               </li>
               <li>
+                <%= link_to offer_users_path do %>
+                  <i class="fa fa-hand-peace-o"></i>  <%= t ".profile", default: "Mes réductions" %>
+                <% end %>
+              </li>
+              <li>
                 <%= link_to favorites_users_path do %>
-                  <i class="fa fa-bookmark"></i>  <%= t ".profile", default: "Mes favoris" %>
+                  <i class="fa fa-heart"></i>  <%= t ".profile", default: "Mes favoris" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to matching_users_path do %>
+                  <i class="fa fa-magic"></i>  <%= t ".profile", default: "Mes solutions perso" %>
                 <% end %>
               </li>
               <li>
@@ -66,15 +77,17 @@
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "DECONNEXION" %>
+                  <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Déconnexion" %>
                 <% end %>
               </li>
             </ul>
           </li>
         <% else %>
           <li class="little-screen">
-            <%= link_to t(".sign_in", default: "SE CONNECTER"), new_user_session_path, class: "btn", id: "login" %>
+             <!-- link_to t(".sign_in", default: "SE CONNECTER"), new_user_session_path, class: "btn", id: "login" %> -->
+             <%= render "shared/user_signin_signup_modal_form" %>
           </li>
+
         <% end %>
 
       </ul>

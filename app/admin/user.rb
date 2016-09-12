@@ -9,7 +9,8 @@ ActiveAdmin.register User do
   :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :uid, :picture, :token, :token_expiry,
   :token_expiry, :token_expiry, :token_expiry, :token_expiry, :avatar_file_name,
   :avatar_content_type, :avatar_file_size, :avatar_updated_at, :avatar_updated_at, :avatar_updated_at,
-  :avatar_updated_at, :avatar_updated_at, :confirmation_token, :confirmed_at, :confirmation_sent_at
+  :avatar_updated_at, :avatar_updated_at, :confirmation_token, :confirmed_at, :confirmation_sent_at,
+  :birthday, :city, :profil, :category, :subcategory, :tag
 
   index do
     selectable_column

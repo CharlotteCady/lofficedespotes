@@ -8,6 +8,10 @@
     top: 60px;
   }
   background-color: white;
+  // ENLEVER LE ZINDEX DE LA MODAL =======
+  .modal-backdrop {
+    z-index: 0;
+  }
 
   // Contact
   // ===============================================================

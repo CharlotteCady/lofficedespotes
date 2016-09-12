@@ -1,0 +1,54 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#userProfilModal">
+    Modifier mes informations
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="userProfilModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p class="modal-title home-header" id="myModalLabel">Modifier mes informations</p>
+      </div>
+      <div class="modal-body">
+        <div id="profil-info">
+
+          <!-- simple_form_for(current_user, url: edit_user_registration_path, html: { method: :put, multipart: true }) do |f| -->
+
+          <%= simple_form_for(current_user, url: edit_user_registration_path, html: { method: :put, multipart: true }) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <% if current_user.avatar? %>
+                <%= image_tag current_user.avatar.url(:medium), class: "img-circle" %>
+              <% else %>
+                <%= image_tag "eight_horns.png", class: "img-circle" %>
+              <% end %>
+              <%= f.file_field :avatar, required: false, class: "filestyle", "data-buttonText" => "Votre photo", "data-placeholder" =>"Aucun fichier" %></br>
+
+              <%= f.input :name, required: false, autofocus: true, placeholder: "Nouveau Nom d'Utilisateur", label: "Nom", id: "label-name" %>
+              <%= f.input :description, required: false, autofocus: true, as: :text, placeholder: "Description, 140 caractères max", label: "Description", id: "label-description" %>
+
+
+              </br>
+
+            </div>
+
+            <div class="form-actions">
+              <%= f.submit(class: "btn btn-primary", value: "Mettre à jour") %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p type="button" data-dismiss="modal" id="close">Fermer</p>
+        <div id="delete-account">
+          <%= link_to "Modifier mon mot de passe", edit_user_path(current_user.id) %><br>
+           <!-- link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Vous êtes sûr de vouloir nous quitter?" }, method: :delete %><br /> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

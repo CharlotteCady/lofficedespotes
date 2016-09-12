@@ -1,0 +1,44 @@
+<!-- MENU POUR DESKTOP -->
+
+<div id="user-menu-desktop" class="hidden-xs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="menu-items-desktop">
+          <ul class= "list-inline text-center">
+            <li><%= link_to "Mes solutions personnalisées",  {controller: "users", action: "matching" }, id: "matching-solution" %></li>
+            <li><%= link_to "Mes solutions favories",  {controller: "users", action: "favorites" }, id: "favorites-solution" %></li>
+            <li><%= link_to "Mes offres spéciales",  {controller: "users", action: "offer" }, id: "offer-solution" %></li>
+            <li><%= link_to "Mes informations personnelles",  {controller: "users", action: "show" }, id: "personal-info" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MENU POUR MOBILE -->
+
+<div id="user-menu-mobile" class="visible-xs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div id="menu-items-mobile">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="looking_for">Votre espace personnel</button>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class= "dropdown-menu" id="mobile-list">
+              <li><%= link_to "Mes solutions personnalisées",  {controller: "users", action: "matching" } %></li>
+              <li><%= link_to "Mes solutions favories",  {controller: "users", action: "favorites" } %></li>
+              <li><%= link_to "Mes offres spéciales",  {controller: "users", action: "offer" } %></li>
+              <li><%= link_to "Mes informations personnelles",  {controller: "users", action: "show" } %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

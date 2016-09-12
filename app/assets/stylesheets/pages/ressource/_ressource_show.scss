@@ -81,7 +81,7 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     color: $gray-lighter;
-    width: 170px;
+    width: 200px;
     transition: all 0.5s ease;
     font-family: $my-font;
     opacity: 0.8;
@@ -138,11 +138,19 @@
     padding-left: 25px;
     padding-top: 15px;
     padding-bottom: 30px;
+    margin-bottom: 20px;
+    border-radius: 3px;
     #like-this-article {
       text-align: center;
       background-color: $blue;
       color: white;
       padding: 20px;
+      border-radius: 3px;
+      #like-title {
+        font-family: $my-font;
+        font-size: 24px;
+        margin-bottom: 0;
+      }
       .like-that {
         display: inline-block;
       }
@@ -191,9 +199,16 @@
 
 
   // RIGHT SIDE DESKTOP
-  #righ-side {
+  #right-side {
     margin-top: -100px;
     margin-left: 30px;
+    a#website {
+      font-size: 14px;
+    }
+    .left-title {
+      color: #777777;
+      font-weight: bold;
+    }
     #offer {
       border: 2px solid $blue;
       .offer-title {
@@ -230,9 +245,21 @@
         color: $blue;
       }
     }
+    #solutions {
+      .btn {
+        margin: 0px;
+      }
+    }
   }
   // RIGHT SIDE MOBILE
   #righ-side-mobile {
+    a#website {
+      font-size: 14px;
+    }
+    .left-title {
+      color: #777777;
+      font-weight: bold;
+    }
     #offer {
       border: 2px solid $blue;
       margin-top: 20px;
@@ -268,6 +295,11 @@
       }
       #facebook a, #twitter a, #linkedin a {
         color: $blue;
+      }
+    }
+    #solutions {
+      .btn {
+        margin: 0px;
       }
     }
   }

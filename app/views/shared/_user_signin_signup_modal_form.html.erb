@@ -1,0 +1,99 @@
+
+<%= link_to "Se Connecter", "#", class: "btn", id: "login", "data-toggle" => "modal", "data-target" => "#signupModal"  %>
+
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <ul class="nav nav-pills" role="tablist" id="tab_form">
+            <li role="presentation" class="active" id="signup_button"><a href="#signup_form" aria-controls="signup_form" role="tab" data-toggle="tab">Je crée mon compte</a></li>
+            <li role="presentation" id="signin_button"><a href="#signin_form" aria-controls="signin_form" role="tab" data-toggle="tab">J'ai déjà un compte</a></li>
+          </ul>
+        <p>
+          Retrouvez vos solutions préférées dans vos favoris, les initiatives qui vous correspondent, nos bons plans et offres spéciales pour vous aider dans votre transition pro.
+        </p>
+      </div>
+      <div class="modal-body">
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="signup_form">
+              <div id="signup">
+                <% if devise_mapping.omniauthable? %>
+                  <% resource_class.omniauth_providers.each do |provider| %>
+                    <% if provider.to_s == "facebook" %>
+                      <%= link_to "S'inscrire avec Facebook", omniauth_authorize_path(resource_name, provider), class: "btn btn-facebook" %>
+                    <% else %>
+                      <%= link_to "S'inscrire' avec #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+                    <% end %>
+                  <% end %>
+                <% end %>
+
+                <p id="profil-creation">-- Ou créez votre compte --</p>
+
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= f.error_notification %>
+
+                  <div class="form-inputs">
+                    <%= f.input :name, required: true, autofocus: true, placeholder: "Nom d'utilisateur", label: false %>
+                    <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
+                    <%= f.input :password, required: true, placeholder: "Mot de passe, #{@minimum_password_length} caractères minimum", label: false %>
+                    <%= f.input :password_confirmation, required: true, placeholder: "Confirmation Mot de passe", label: false %>
+                  </div>
+                  <ul class="list-inline">
+                    <li>
+                      <div class="form-actions">
+                        <%= f.button :submit, "Créer mon Compte", class: "btn btn-primary" %>
+                      </div>
+                      <% end %>
+                    </li>
+                  </ul>
+                  <p class="cgu">
+                    En vous inscrivant, vous acceptez de recevoir la newsletter avec tous nos bons plans pour vous aider dans votre transition professionnelle. Vous pourrez bien sûr vous désinscrire à tout moment :)
+                  </p>
+                  <p type="button" data-dismiss="modal" id="close">Fermer</p>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="signin_form">
+              <div id="signin">
+                <% if devise_mapping.omniauthable? %>
+                  <% resource_class.omniauth_providers.each do |provider| %>
+                    <% if provider.to_s == "facebook" %>
+                      <%= link_to "Se Connecter avec Facebook", omniauth_authorize_path(resource_name, provider), class: "btn btn-facebook" %>
+                    <% else %>
+                      <%= link_to "Se connecter avec #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+                    <% end %>
+                  <% end %>
+                <% end %>
+
+                <p id="profil-creation" >-- Ou connectez-vous avec vos identifiants --</p>
+
+                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
+
+                  <div class="form-inputs">
+                    <%= f.input :email, label: false,   required: false, autofocus: true, placeholder: "Email" %>
+                    <%= f.input :password, label: false, required: false, placeholder: "Mot de Passe" %>
+                    <%= f.input :remember_me, label:"Se souvenir", as: :boolean if devise_mapping.rememberable? %>
+                  </div>
+                  <ul class="list-inline">
+                    <li>
+                      <div class="form-actions">
+                        <%= f.button :submit, t("Se Connecter", default: "Se Connecter"), class: "btn btn-primary" %>
+                      </div>
+                      <% end %>
+                    </li>
+                  </ul>
+                  <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                    <%= link_to "Vous avez oublié votre mot de passe ?", new_password_path(resource_name), id:"forget-pass" %>
+                  <% end %>
+                  <p type="button" data-dismiss="modal" id="close">Fermer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

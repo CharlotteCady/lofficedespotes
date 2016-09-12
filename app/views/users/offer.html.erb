@@ -1,0 +1,55 @@
+<div id="offer-menu" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="home-header">Mes réductions</p>
+        <p class="details">Nous essayons de négocier pour vous des réductions et offres spéciales pour vous aider à passer à l'action</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "user_menu" %>
+
+<div id="offer-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="listing_ressources">
+          <% Ressource.where(price: 'Promo').order('created_at DESC').each do |ress| %>
+              <div class="row item white">
+                <div class="col-xs-2">
+                  <div class="desktop-display-logo hidden-xs">
+                    <ul class= "list-inline">
+                      <li>
+                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mobile-display-logo visible-xs">
+                    <ul class= "list-inline">
+                      <li>
+                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xs-9">
+                  <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
+                  <p class="content-title"><%= ress.offer %></p>
+                </div>
+                <div class="col-xs-1">
+                  <% if ress.price == "Gratuit" %>
+                    <span class="price" id=<%= "#{ress.price}" %>>Gratuit</span>
+                  <% elsif ress.price == "Promo" %>
+                    <span class="price" id=<%= "#{ress.price}" %>>Promo</span>
+                  <% else %>
+                  <% end %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,126 +1,61 @@
-<!-- MENU POUR DESKTOP -->
-<div id="container-menu" class="hidden-xs">
+<div id="favorites-menu" class="text-center">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div id="menu-favorites">
-          <ul class= "list-inline text-center">
-            <li><%= link_to "Tous les favoris",  {controller: "users", action: "favorites" } %></li>
-            <li><%= link_to @categories[0],  {controller: "users", action: "favorites", category: @categories[0] } %></li>
-            <li><%= link_to @categories[1],  {controller: "users", action: "favorites", category: @categories[1] } %></li>
-            <li><%= link_to @categories[2],  {controller: "users", action: "favorites", category: @categories[2] } %></li>
-            <li><%= link_to @categories[3],  {controller: "users", action: "favorites", category: @categories[3] } %></li>
-            <!-- <li> link_to @categories[4],  {controller: "users", action: "favorites", category: @categories[4] } %></li> -->
-            <!-- <li>link_to @categories[5],  {controller: "users", action: "favorites", category: @categories[5] } %></li> -->
-          </ul>
-        </div>
+        <p class="home-header">MES SOLUTIONS FAVORIES</p>
+        <p class="details">Retrouvez vos solutions préférées ici en cliquant sur le petit <i class="fa fa-heart-o"></i> situé en haut de chaque article</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- MENU POUR MOBILE -->
-
-<div id="container-menu" class="visible-xs">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <div id="menu-favorites">
-          <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="looking_for">VOS FAVORIS PAR CATEGORIE</button>
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="caret"></span>
-              <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <ul class= "dropdown-menu" id="mobile-list">
-              <li><%= link_to "Tous les favoris",  {controller: "users", action: "favorites" } %></li>
-              <li><%= link_to @categories[0],  {controller: "users", action: "favorites", category: @categories[0] } %></li>
-              <li><%= link_to @categories[1],  {controller: "users", action: "favorites", category: @categories[1] } %></li>
-              <li><%= link_to @categories[2],  {controller: "users", action: "favorites", category: @categories[2] } %></li>
-              <li><%= link_to @categories[3],  {controller: "users", action: "favorites", category: @categories[3] } %></li>
-              <!-- <li> link_to @categories[4],  {controller: "users", action: "favorites", category: @categories[4] } %></li> -->
-              <!-- <li> link_to @categories[5],  {controller: "users", action: "favorites", category: @categories[5] } %></li> -->
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "user_menu" %>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-offset-2 col-xs-8">
+    <div class="col-md-offset-2 col-md-8">
       <div id="ressources-favorites">
         <div id="category_menu">
-
           <div class="listing_ressources">
-            <% if params[:category] %>
+            <% if @user_vote.include? true %>
               <% @all_ressources.each do |ress| %>
-                <% if (eval(ress.category).include?(params[:category])) && (current_user.voted_up_on? ress) %>
-                  <div class="row white">
-                    <div class="col-xs-3">
+                <% if current_user.voted_up_on? ress %>
+                <div class="row white">
+                  <div class="col-xs-2">
+                    <div class="desktop-display-logo hidden-xs">
                       <ul class= "list-inline">
-                        <li>
-                          <div class="votes">
-                            <i class="fa fa-heart"></i>
-                            <p class="vote_count"><%= ress.score %></p>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="comments">
-                            <i class="fa fa-comment-o"></i>
-                            <p><%= ress.comments.count %></p>
-                          </div>
-                        </li>
                         <li>
                           <%= image_tag ress.logo.url(:thumb), class: "logo" %>
                         </li>
                       </ul>
                     </div>
-                    <div class="col-xs-9">
-                      <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
-                      <p class="content-title"><%= ress.description %>.</p>
+                    <div class="mobile-display-logo visible-xs">
+                      <ul class= "list-inline">
+                        <li>
+                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                        </li>
+                      </ul>
                     </div>
                   </div>
+                  <div class="col-xs-9">
+                    <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug), target: "blank" %></h2>
+                    <p class="content-title"><%= ress.description %></p>
+                  </div>
+                  <div class="col-xs-1">
+                    <% if ress.price == "Gratuit" %>
+                      <span class="price" id=<%= "#{ress.price}" %>>Gratuit</span>
+                    <% elsif ress.price == "Promo" %>
+                      <span class="price" id=<%= "#{ress.price}" %>>Promo</span>
+                    <% else %>
+                    <% end %>
+                  </div>
+                </div>
                 <% end %>
               <% end %>
             <% else %>
-              <% if @user_vote.include? true %>
-                <% @all_ressources.each do |ress| %>
-                  <% if current_user.voted_up_on? ress %>
-                  <div class="row white">
-                    <div class="col-xs-3">
-                      <ul class= "list-inline">
-                        <li>
-                          <div class="votes">
-                            <i class="fa fa-heart"></i>
-                            <p class="vote_count"><%= ress.score %></p>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="comments">
-                            <i class="fa fa-comment-o"></i>
-                            <p><%= ress.comments.count %></p>
-                          </div>
-                        </li>
-                        <li>
-                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="col-xs-9">
-                      <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.id) %></h2>
-                      <p class="content-title"><%= ress.description %>.</p>
-                    </div>
-                  </div>
-                  <% end %>
-                <% end %>
-              <% else %>
-                <p class ="nothing">
-                  Vous n'avez pas encore voté pour vos ressources préférées ! Pour retrouver facilement toutes vos ressources préférées, il vous suffit de cliquer sur le petit coeur à côté de chaque article et il apparaitra sur cette page :)
-                </p>
-              <% end %>
+              <p class ="nothing">
+                Vous n'avez pas encore voté pour vos ressources préférées ! Pour retrouver facilement toutes vos ressources préférées, il vous suffit de cliquer sur le petit coeur situé en haut de chaque article et il apparaitra sur cette page :)
+              </p>
             <% end %>
           </div>
         </div>
