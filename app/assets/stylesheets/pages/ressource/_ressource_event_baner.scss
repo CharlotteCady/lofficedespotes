@@ -1,0 +1,16 @@
+#event-banner {
+  margin-top: 30px;
+  background: image-url('favorites.jpg') repeat fixed;
+  p.event-title {
+    font-family: $my-font;
+    color: white;
+    font-size: 28px;
+  }
+  p.event-subtitle {
+    color: white;
+  }
+  .btn {
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+}
