@@ -113,7 +113,7 @@
         <% if @ressource.website? %>
           <div id="more-info">
             <p>
-              <b>Site internet :</b> <%= link_to (@ressource.website).gsub("http://", "").gsub("/", ""), @ressource.website, target: "blank", id:"website" %>
+              <b>Site internet :</b> <%= link_to (@ressource.website), @ressource.website, target: "blank", id:"website" %>
             </p>
 
           <% if @ressource.address? %>
