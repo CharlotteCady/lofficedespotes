@@ -154,11 +154,11 @@ GEM
       railties (>= 3.2, < 5.0)
     font-awesome-sass (4.4.0)
       sass (>= 3.2)
-    forest_liana (1.2.6)
+    forest_liana (1.3.40)
       arel-helpers
       bcrypt
       groupdate
-      jsonapi-serializers
+      jsonapi-serializers (>= 0.14.0)
       jwt
       rack-cors
       rails (>= 3.0)
@@ -174,7 +174,7 @@ GEM
       multi_json (>= 1.11.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    groupdate (2.5.2)
+    groupdate (3.0.2)
       activesupport (>= 3)
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
@@ -196,7 +196,7 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
-    jsonapi-serializers (0.7.0)
+    jsonapi-serializers (0.15.0)
       activesupport
     jwt (1.5.1)
     kaminari (0.16.3)
@@ -335,7 +335,7 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode_utils (1.4.0)
-    useragent (0.16.7)
+    useragent (0.16.8)
     warden (1.2.3)
       rack (>= 1.0)
 
