@@ -33,10 +33,10 @@
             <% end %>
           </div>
         <% end %>
-        <div class= "btn btn-primary"><%= @ressource.subcategory %></div>
+        <div class= "btn btn-danger"><%= @ressource.subcategory %></div>
         <% if @ressource.tag != nil %>
           <% (eval(@ressource.tag) - [""]).map do |tag| %>
-            <div class= "btn btn-danger zindex">
+            <div class= "btn btn-primary zindex">
               <% if (tag != "") %>
                 <%= tag %>
               <% end %>
