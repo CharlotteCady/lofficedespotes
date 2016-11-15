@@ -1,0 +1,48 @@
+#article-form {
+  padding: 30px;
+  border-radius: 3px;
+  margin-bottom: 50px;
+  h1 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 12px;
+    margin-left: -30px;
+  }
+  p#nom {
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 0;
+    padding-top: 10px;
+  }
+  label {
+    font-family: $base-font;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  label.string, label.check_boxes, label.bootsy, label.select, label.text, label.file, label.url {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .btn {
+    font-family: $base-font;
+    font-size: 12px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+  #btn-enter {
+    text-align: right;
+    .btn {
+      margin-right: 10px;
+      font-family: $my-font;
+      font-size: 20px;
+    }
+  }
+  .bootsy_text_area {
+    min-height: 400px;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0px;
+  }
+}

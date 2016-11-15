@@ -1,32 +1,13 @@
-<% content_for(:title) do %>
-  <% @ressource.seotitle %>
-<% end %>
-
-<% content_for(:meta_description) do %>
-<% @ressource.seodescription %>
-<% end %>
-
-<% content_for :meta_image, @ressource.picture.url %>
-
-<!-- BANNIERE POUR LES GRANDS ECRANS -->
-
-<div id="ressources-body">
+<div id="article-body">
   <div class="container banner">
     <div class="row">
       <div class="col-xs-12">
-        <div id="banner-image" style="background: url(<%= @ressource.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
+        <div id="banner-image" style="background: url(<%= @article.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
               -moz-background-size: cover; -o-background-size: cover;">
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="content-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
+        <div class="content-banner">
           <div class="publishing-date">
-            <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
+            <%= @article.created_at.strftime("%d #{@mois[@article.created_at.strftime("%m").to_i - 1]} %Y") %>
           </div>
           <% @category_list.map do |category| %>
             <div class= "btn btn-blue zindex">
@@ -35,68 +16,36 @@
               <% end %>
             </div>
           <% end %>
-          <div class= "btn btn-danger"><%= @ressource.subcategory %></div>
-          <% if @ressource.tag != nil %>
-            <% (eval(@ressource.tag) - [""]).map do |tag| %>
-              <div class= "btn btn-primary zindex">
-                <% if (tag != "") %>
-                  <%= tag %>
-                <% end %>
-              </div>
-            <% end %>
-          <% end %>
           <% if user_signed_in?  %>
             <% if current_user.admin? %>
-            <div class="btn btn-action"><%= link_to "Editer", edit_ressource_path(@ressource.id) %></div>
-              <div class="btn btn-action"><%= link_to "Supprimer", ressource_path(@ressource),
+            <div class="btn btn-action"><%= link_to "Editer", edit_article_path(@article.id) %></div>
+              <div class="btn btn-action"><%= link_to "Supprimer", article_path(@article),
                 method: :delete, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %></div>
             <% end %>
           <% end %>
-          <div class="votes">
-            <% if user_signed_in? %>
-              <% if current_user.liked? @ressource %>
-                <%= link_to dislike_ressource_path(@ressource), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
-                  <i class="fa fa-heart"></i>
-                <% end %>
-              <% else %>
-                <%= link_to like_ressource_path(@ressource), method: :get, remote: true, class: "like_ressource btn-vote" do %>
-                  <i class="fa fa-heart-o"></i>
-                <% end %>
-              <% end %>
-            <% else %>
-              <%= link_to new_user_session_path, class: "like_ressource btn-vote" do %>
-                <i class="fa fa-heart-o"></i>
-              <% end %>
-            <% end %>
-          </div>
-          <div class="alert alert-danger alert_connect_to_like" role="alert" style="display: none;">
-            Vous devez être connecté pour liker cette initiative, la commenter et l'enregistrer dans vos favoris :)
-          </div>
-          <h1 class="hidden-xs" id="title-desktop"><%= @ressource.title %></h1>
-          <h1 class="visible-xs" id="title-mobile"><%= @ressource.title %></h1>
+          <h1 class="hidden-xs" id="title-desktop"><%= @article.title %></h1>
+          <h1 class="visible-xs" id="title-mobile"><%= @article.title %></h1>
           <div class="writer-info hidden-xs">
             <p>
-              <% if @ressource.user.avatar? %>
-                <%= image_tag(@ressource.user.avatar.url(:medium), class: "img-circle") %>
+              <% if @article.user.avatar? %>
+                <%= image_tag(@article.user.avatar.url(:medium), class: "img-circle") %>
               <% else %>
                 <%=  image_tag "eight_horns.png", class: "img-circle" %>
               <% end %>
               Partagé par
-              <% if @ressource.user.name? %>
-                <%= @ressource.user.name %>
+              <% if @article.user.name? %>
+                <%= @article.user.name %>
               <% else %>
-                <%= @ressource.user.first_name + " " + @ressource.user.last_name %>
+                <%= @article.user.first_name + " " + @article.user.last_name %>
               <% end %>
             </p>
           </div>
-
         </div>
       </div>
     </div>
   </div>
 
-
-  <!-- CONTENU DE LA RESSOURCE -->
+  <!-- CONTENU DE L'ARTICLE -->
   <div class="container">
     <div class="row">
 
@@ -105,61 +54,20 @@
         <div id="left-side">
 
           <div class="content-text">
-            <strong><h2 class="title-description"><%= @ressource.description %></h2></strong>
-            <p><%= sanitize @ressource.content %></p>
-            <%= (image_tag @ressource.picturecontent1.url, class: "img-responsive" ) if (@ressource.picturecontent1?) %>
-            <p><%= sanitize @ressource.content2 %></p>
-            <%= (image_tag @ressource.picturecontent2.url, class: "img-responsive" ) if (@ressource.picturecontent2?) %>
-            <p><%= sanitize @ressource.content3 %></p>
+            <p><%= sanitize @article.content %></p>
           </div>
-          <% if @ressource.website == "http://www.latreebu.com/" %>
-            <div id="la-treebu-form">
-              <%= render "ressources/partenariats/la_treebu_form" %>
-            </div>
-          <% end %>
-          <% if @ressource.website? %>
-            <div id="more-info">
-              <p>
-                <b>Site internet :</b> <%= link_to (@ressource.website), @ressource.website, target: "blank", id:"website" %>
-              </p>
-
-            <% if @ressource.address? %>
-              <p>
-                <b>Contact :</b> <%= @ressource.address %>
-              </p>
-            <% end %>
-            </div>
-          <% end %>
 
           <!-- Go to www.addthis.com/dashboard to customize your tools -->
           <div id="like-this-article">
             <p id="like-title">Vous avez aimé ?</p>
-            <p class="like-that">Cliquez sur le </p>
-            <div class="votes">
-              <% if user_signed_in? %>
-                <% if current_user.liked? @ressource %>
-                  <%= link_to dislike_ressource_path(@ressource), method: :get, remote: true, class: "dislike_ressource btn-vote" do %>
-                    <i class="fa fa-heart"></i>
-                  <% end %>
-                <% else %>
-                  <%= link_to like_ressource_path(@ressource), method: :get, remote: true, class: "like_ressource btn-vote" do %>
-                    <i class="fa fa-heart-o"></i>
-                  <% end %>
-                <% end %>
-              <% else %>
-                <%= link_to new_user_session_path, class: "like_ressource btn-vote" do %>
-                  <i class="fa fa-heart-o"></i>
-                <% end %>
-              <% end %>
-            </div>
-            <p class="like-that"> pour l'enregistrer dans vos favoris et partagez sur les réseaux sociaux !</p>
+            <p class="like-that"> Partagez l'article à vos ami(e)s !</p>
             <div class="addthis_sharing_toolbox" id="share"></div>
           </div>
 
           <!-- Go to www.addthis.com/dashboard to customize your tools -->
           <div class="addthis_recommended_horizontal"></div>
 
-          <div class="add-comment">
+          <div class="add-comment hidden-xs">
             <div class="footer-header">Qu'en pensez-vous ?</div>
   <!--           <div id="disqus-account">
               <p class="text-center">
@@ -175,7 +83,7 @@
                  */
 
                 var disqus_config = function () {
-                    this.page.identifier = '<%= @ressource.id %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    this.page.identifier = '<%= @article.id %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
 
                 (function() {  // DON'T EDIT BELOW THIS LINE
@@ -190,17 +98,10 @@
           </div>
         </div>
       </div>
+
       <!-- DESKTOP -->
       <div class="col-xs-3 hidden-xs">
         <div id="right-side">
-          <% if @ressource.offer? %>
-            <div id="offer" class="white-block text-center">
-              <div id="offer-box">
-                <p class="offer-title">OFFRE SPÉCIALE</p>
-                <p>Nous avons réussi à négocier pour vous <b><%= sanitize @ressource.offer %></b> </p>
-              </div>
-            </div>
-          <% end %>
           <div id="newsletter" class="white-block text-center">
             <p class="left-title">Recevez nos bons plans 1 fois / semaine</p>
             <%= link_to "S'inscrire", "#", {:class => "btn btn-danger", "data-toggle" => "modal", "data-target" => "#myModal"} %>
@@ -234,21 +135,13 @@
            <!-- render "event_banner"  -->
           <div id="solutions" class="white-block text-center">
             <p class="left-title">Découvrez toutes les solutions qui peuvent vous aider à trouver un job qui vous correspond</p>
-            <%= link_to "Découvrir", ressources_path, :class => "btn btn-primary" %>
+            <%= link_to "Découvrir", articles_path, :class => "btn btn-primary" %>
           </div>
         </div>
       </div>
       <!-- MOBILE -->
       <div class="col-xs-offset-1 col-xs-10 visible-xs">
         <div id="righ-side-mobile">
-          <% if @ressource.offer? %>
-            <div id="offer" class="white-block text-center">
-              <div id="offer-box">
-                <p class="offer-title">OFFRE SPÉCIALE</p>
-                <p>Nous avons réussi à négocier pour vous <b><%= sanitize @ressource.offer %></b> </p>
-              </div>
-            </div>
-          <% end %>
 
           <div id="newsletter" class="white-block text-center">
             <p class="left-title">Recevez nos bons plans 1 fois / semaine</p>
@@ -282,7 +175,7 @@
           </div>
           <div id="solutions" class="white-block text-center">
             <p class="left-title">Découvrez toutes les solutions qui peuvent vous aider à trouver un job qui vous correspond</p>
-            <%= link_to "Découvrir", ressources_path, :class => "btn btn-primary" %>
+            <%= link_to "Découvrir", articles_path, :class => "btn btn-primary" %>
           </div>
         </div>
       </div>

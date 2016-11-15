@@ -22,6 +22,9 @@
         <li class="little-screen">
           <%= link_to t(".top_call_to_action", default: "Les Solutions"), ressources_path, class: "navbar-menu active-solutions" %>
         </li>
+<!--         <li class="little-screen">
+           link_to t(".top_call_to_action", default: "Le Blog"), articles_path, class: "navbar-menu active-articles" %>
+        </li> -->
         <li class="little-screen">
           <%= link_to t(".top_call_to_action", default: "Pro"), pro_path, class: "navbar-menu active-pro" %>
         </li>
@@ -71,6 +74,13 @@
               <li>
                 <% if current_user.admin? %>
                   <%= link_to new_ressource_path do %>
+                    <i class="fa fa-plus-square"></i>  <%= t ".profile", default: "Créer une ressource" %>
+                  <% end %>
+                <% end %>
+              </li>
+              <li>
+                <% if current_user.admin? %>
+                  <%= link_to new_article_path do %>
                     <i class="fa fa-plus-square"></i>  <%= t ".profile", default: "Créer un article" %>
                   <% end %>
                 <% end %>
