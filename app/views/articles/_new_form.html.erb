@@ -1,0 +1,42 @@
+<%= simple_form_for(@article, html: { multipart: true }) do |article| %>
+  <div class="col-xs-8">
+    <div class="white-block">
+      <%= article.input :title, label: "Titre", placeholder: '55 caractères max' %>
+    </div>
+    <div class="white-block">
+      <%= article.input :content, label: "Contenu", placeholder: '55 caractères max' %>
+    </div>
+    <div class="white-block">
+      <%= article.input :seo_title, label: "Titre SEO", placeholder: '55 caractères max' %>
+    </div>
+    <div class="white-block">
+      <%= article.input :seo_description, label: "Description SEO", placeholder: '55 caractères max' %>
+    </div>
+    <div id="btn-enter">
+      <%= article.submit(class: "btn btn-primary", value: "Valider") %>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <div class="white-block">
+       <ul>
+            <%= article.input :category, label: "Catégorie" do %>
+          <li>
+            <%= check_box_tag 'article[category][]', 'Top', checked_article_category('Top'), id: 'category_top' %>
+            <%= label_tag 'category_top', 'Top' %>
+          </li>
+          <li>
+            <%= check_box_tag 'article[category][]', 'Astuces', checked_article_category('Astuces'), id: 'category_astuces' %>
+            <%= label_tag 'category_astuces', 'Astuces' %>
+          </li>
+          <li>
+            <%= check_box_tag 'article[category][]', 'Témoignages', checked_article_category('Témoignages'), id: 'category_temoignages' %>
+            <%= label_tag 'category_temoignages', 'Témoignages' %>
+            <% end %>
+          </li>
+       </ul>
+    </div>
+    <div class="white-block">
+      <%= article.file_field :picture %>
+    </div>
+  </div>
+<% end %>

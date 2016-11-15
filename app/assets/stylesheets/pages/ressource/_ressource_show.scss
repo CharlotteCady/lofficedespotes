@@ -10,412 +10,354 @@
   }
 
     // ========   BANNIERE GRAND ECRAN   ========
-
-  // background-color: white;
-  margin-top: 60px;
-  padding-bottom: 20px;
-  .banner {
-    width: 100%;
-    #banner-image {
-      min-height: 650px;
-      margin-top: -5px;
-      position: relative;
+  #ressources-body {
+    // background-color: white;
+    margin-top: 60px;
+    padding-bottom: 20px;
+    .banner {
+      width: 100%;
+      #banner-image {
+        min-height: 650px;
+        margin-top: -5px;
+        position: relative;
+      }
     }
-  }
 
 
-  .content-banner {
-    padding-left: 40px;
-    padding-top: 200px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin-top: 25px;
-    .btn {
-      font-family: $base-font;
-      font-size: 12px;
-      font-style: italic;
-      margin-bottom: 10px;
-      cursor: default;
-      text-decoration: none;
-      color: white;
-      margin-top: 0px;
-    }
-    .btn-action {
-      background-color: $gray;
-      border: 1px solid $gray;
-      a {
+    .content-banner {
+      padding-left: 40px;
+      padding-top: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin-top: 25px;
+      .btn {
+        font-family: $base-font;
+        font-size: 12px;
+        font-style: italic;
+        margin-bottom: 10px;
+        cursor: default;
+        text-decoration: none;
         color: white;
+        margin-top: 0px;
       }
-      &:hover {
-        background-color: $gray-darker;
+      .btn-action {
+        background-color: $gray;
+        border: 1px solid $gray;
+        a {
+          color: white;
+        }
+        &:hover {
+          background-color: $gray-darker;
+        }
       }
-    }
-    .btn-primary {
-      &:hover {
-        background-color: $blue;
-        color: white;
-      }
-    }
-    .btn-danger {
-      &:hover {
-        background-color: $red;
-        color: white;
-      }
-    }
-    div.votes {
-      display: inline-block;
-      font-size: 25px;
-      i {
-        color:$blue;
-      }
-    }
-  }
-  .publishing-date {
-    background: #111;
-    padding: 15px;
-    font-size: 13px;
-    line-height: 13px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: $gray-lighter;
-    width: 200px;
-    transition: all 0.5s ease;
-    font-family: $my-font;
-    opacity: 0.8;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  .sidebar {
-    z-index: 3000;
-    position: fixed;
-    top: 13px;
-    left: 0;
-    margin-top: 50px;
-  }
-
-  h1#title-desktop {
-    font-size: 56px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: white;
-  }
-    h1#title-mobile {
-    font-size: 46px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: white;
-  }
-
-  p.cat{
-    font-family: $base-font;
-    font-size: 16px;
-  }
-  .writer-info {
-    p {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    color: $gray-lighter;
-    font-size: 12px;
-    }
-    img {
-      width: 30px;
-      margin-right: 10px;
-    }
-
-
-    // LEFT SIDE CONTENU DE L'ARTICLE
-  }
-  #left-side {
-    margin-top: -100px;
-    background-color: white;
-    padding-right: 25px;
-    padding-left: 25px;
-    padding-top: 15px;
-    padding-bottom: 30px;
-    margin-bottom: 20px;
-    border-radius: 3px;
-    #like-this-article {
-      text-align: center;
-      background-color: $blue;
-      color: white;
-      padding: 20px;
-      border-radius: 3px;
-      #like-title {
-        font-family: $my-font;
-        font-size: 24px;
-        margin-bottom: 0;
-      }
-      .like-that {
-        display: inline-block;
-      }
-      div.votes {
-        display: inline-block;
-        i {
+      .btn-primary {
+        &:hover {
+          background-color: $blue;
           color: white;
         }
       }
-    }
-    // #share {
-    //   margin-bottom: 30px;
-    //   margin-top: 50px;
-    // }
-
-    .picture {
-      min-height: 400px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
-    .content-text {
-      margin-top: 20px;
-      margin-bottom: 30px;
-      text-align: justify;
-      a {
-        color: $blue;
+      .btn-danger {
         &:hover {
-          color: $gray-light;
+          background-color: $red;
+          color: white;
         }
       }
-      img {
-        margin: 50px auto;
+      div.votes {
+        display: inline-block;
+        font-size: 25px;
+        i {
+          color:$blue;
+        }
       }
     }
-  }
-
-  // ADDTHIS ARTICLES RECOMMANDES
-  a.at-branding-logo {
-    display: none;
-  }
-  div.at-h3.at-recommended-label {
-    margin-top: 20px;
-    font-family: $my-font;
-    font-size: 25px;
-  }
-
-
-  // RIGHT SIDE DESKTOP
-  #right-side {
-    margin-top: -100px;
-    margin-left: 30px;
-    a#website {
-      font-size: 14px;
-    }
-    .left-title {
-      color: #777777;
-      font-weight: bold;
-    }
-    #offer, #promo {
-      border: 2px solid $blue;
-      .offer-title {
-        font-family: $my-font;
-        font-size: 22px;
-        color: $blue;
-      }
+    .publishing-date {
+      background: #111;
+      padding: 15px;
+      font-size: 13px;
+      line-height: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: $gray-lighter;
+      width: 200px;
+      transition: all 0.5s ease;
+      font-family: $my-font;
+      opacity: 0.8;
     }
 
-    #reco {
-      .voter-avatar img {
-        width: 40px;
-        margin-right: 10px;
-      }
-      #info-avatar {
-        border: none;
-        background-color: transparent;
-      }
-    }
-    #newsletter {
-      .btn {
-        margin: 0px;
-      }
-    }
-    #reseaux-sociaux {
-      text-align: center;
-      ul {
-        margin: 0px;
-      }
-      i {
-        font-size: 20px;
-      }
-      #facebook a, #twitter a, #linkedin a {
-        color: $blue;
-      }
-    }
-    #solutions {
-      .btn {
-        margin: 0px;
-      }
-    }
-  }
-  // RIGHT SIDE MOBILE
-  #righ-side-mobile {
-    a#website {
-      font-size: 14px;
-    }
-    .left-title {
-      color: #777777;
-      font-weight: bold;
-    }
-    #offer {
-      border: 2px solid $blue;
-      margin-top: 20px;
-      .offer-title {
-        font-family: $my-font;
-        font-size: 22px;
-        color: $blue;
-      }
+    p {
+      font-size: 16px;
     }
 
-    #reco {
-      .voter-avatar img {
-        width: 40px;
-        margin-right: 10px;
-      }
-      #info-avatar {
-        border: none;
-        background-color: transparent;
-      }
+    .sidebar {
+      z-index: 3000;
+      position: fixed;
+      top: 13px;
+      left: 0;
+      margin-top: 50px;
     }
-    #newsletter {
-      .btn {
-        margin: 0px;
-      }
-    }
-    #reseaux-sociaux {
-      text-align: center;
-      ul {
-        margin: 0px;
-      }
-      i {
-        font-size: 20px;
-      }
-      #facebook a, #twitter a, #linkedin a {
-        color: $blue;
-      }
-    }
-    #solutions {
-      .btn {
-        margin: 0px;
-      }
-    }
-  }
-  // ========   COMMENTAIRES ========
-  .add-comment {
-    // background-color: $gray-lighter;
-    border-radius: 3px;
-    padding: 15px;
-    margin-bottom: 30px;
-    form#new_comment {
-      padding-left: 66px;
-    }
-    textarea#comment_title {
-      border: none;
-    }
-    .form-group {
-      margin-bottom: 10px;
-    }
-    .btn {
-      margin-bottom: 0px;
+
+    h1#title-desktop {
+      font-size: 56px;
       margin-top: 0px;
-      // margin-left: 10px;
-    }
-    #disqus-account {
-      background-color: $blue;
+      margin-bottom: 0px;
       color: white;
-      border-radius: 3px;
-      padding: 15px;
-      padding-bottom: 4px;
     }
-  }
-  .connect-to-comment {
-    background-color: $gray-lighter;
-    border-radius: 3px;
-    padding: 15px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-  .footer-header {
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-  .user {
-    font-weight: bold;
-    img {
-      padding-right: 15px;
-      widht: 50px;
-      height: 50px;
+      h1#title-mobile {
+      font-size: 46px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: white;
     }
-    .name {
-      font-weight: bold;
+
+    p.cat{
+      font-family: $base-font;
+      font-size: 16px;
     }
-  }
-  // ====== Affichage des commentaires
-  #comments {
-    margin-top: 10px;
-    // padding: 15px;
-    .date {
-      padding-left: 68px;
-      margin-top: -15px;
-      color: $gray;
+    .writer-info {
+      p {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      color: $gray-lighter;
+      font-size: 12px;
+      }
+      img {
+        width: 30px;
+        margin-right: 10px;
+      }
+
+
+      // LEFT SIDE CONTENU DE L'ARTICLE
     }
-    .content-comment {
-      text-align: justify;
-      padding-left: 68px;
-      margin-top: -20px;
-    }
-    .comment {
+    #left-side {
+      margin-top: -100px;
+      background-color: white;
+      padding-right: 25px;
+      padding-left: 25px;
+      padding-top: 15px;
+      padding-bottom: 30px;
       margin-bottom: 20px;
-      background-color: $gray-lighter;
-      padding: 15px;
+      border-radius: 3px;
+      #like-this-article {
+        text-align: center;
+        background-color: $blue;
+        color: white;
+        padding: 20px;
+        border-radius: 3px;
+        #like-title {
+          font-family: $my-font;
+          font-size: 24px;
+          margin-bottom: 0;
+        }
+        .like-that {
+          display: inline-block;
+        }
+        div.votes {
+          display: inline-block;
+          i {
+            color: white;
+          }
+        }
+      }
+      // #share {
+      //   margin-bottom: 30px;
+      //   margin-top: 50px;
+      // }
 
+      .picture {
+        min-height: 400px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      .content-text {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        text-align: justify;
+        a {
+          color: $blue;
+          &:hover {
+            color: $gray-light;
+          }
+        }
+        img {
+          margin: 50px auto;
+        }
+      }
+      #la-treebu-form {
+        margin-bottom: 30px;
+        p {
+          font-family: $my-font;
+          color: $blue;
+          font-size: 26px;
+        }
+      }
     }
-  }
 
-  // Effets sur les likes
-  .votes:active {
-   color: $blue;
-   -webkit-animation: scaleUp 0.5s ease forwards;
-   -moz-animation: scaleUp 0.5s ease forwards;
-   animation: scaleUp 0.5s ease forwards;
-  }
+    // ADDTHIS ARTICLES RECOMMANDES
+    a.at-branding-logo {
+      display: none;
+    }
+    div.at-h3.at-recommended-label {
+      margin-top: 20px;
+      font-family: $my-font;
+      font-size: 25px;
+    }
 
-   @-webkit-keyframes scaleUp {
-   0% {
-     -webkit-transform: scale(1);
-    }
-   50% {
-     -webkit-transform: scale(1.1);
-    }
-   100% {
-     -webkit-transform: scale(1);
-    }
-  }
 
-  @-moz-keyframes scaleUp {
-   0% {
-     -moz-transform: scale(1);
-    }
-   50% {
-     -moz-transform: scale(1.1);
-    }
-   100% {
-     -moz-transform: scale(1);
-    }
-  }
+    // RIGHT SIDE DESKTOP
+    #right-side {
+      margin-top: -100px;
+      margin-left: 30px;
+      a#website {
+        font-size: 14px;
+      }
+      .left-title {
+        color: #777777;
+        font-weight: bold;
+      }
+      #offer, #promo {
+        border: 2px solid $blue;
+        .offer-title {
+          font-family: $my-font;
+          font-size: 22px;
+          color: $blue;
+        }
+      }
 
-   @keyframes scaleUp {
-   0% {
-     transform: scale(1);
+      #reco {
+        .voter-avatar img {
+          width: 40px;
+          margin-right: 10px;
+        }
+        #info-avatar {
+          border: none;
+          background-color: transparent;
+        }
+      }
+      #newsletter {
+        .btn {
+          margin: 0px;
+        }
+      }
+      #reseaux-sociaux {
+        text-align: center;
+        ul {
+          margin: 0px;
+        }
+        i {
+          font-size: 20px;
+        }
+        #facebook a, #twitter a, #linkedin a {
+          color: $blue;
+        }
+      }
+      #solutions {
+        .btn {
+          margin: 0px;
+        }
+      }
     }
-   50% {
-     transform: scale(1.1);
+    // RIGHT SIDE MOBILE
+    #righ-side-mobile {
+      a#website {
+        font-size: 14px;
+      }
+      .left-title {
+        color: #777777;
+        font-weight: bold;
+      }
+      #offer {
+        border: 2px solid $blue;
+        margin-top: 20px;
+        .offer-title {
+          font-family: $my-font;
+          font-size: 22px;
+          color: $blue;
+        }
+      }
+
+      #reco {
+        .voter-avatar img {
+          width: 40px;
+          margin-right: 10px;
+        }
+        #info-avatar {
+          border: none;
+          background-color: transparent;
+        }
+      }
+      #newsletter {
+        .btn {
+          margin: 0px;
+        }
+      }
+      #reseaux-sociaux {
+        text-align: center;
+        ul {
+          margin: 0px;
+        }
+        i {
+          font-size: 20px;
+        }
+        #facebook a, #twitter a, #linkedin a {
+          color: $blue;
+        }
+      }
+      #solutions {
+        .btn {
+          margin: 0px;
+        }
+      }
     }
-   100% {
-     transform: scale(1);
+    // ========   COMMENTAIRES ========
+    .add-comment {
+      padding-top: 30px;
+    }
+
+    // Effets sur les likes
+    .votes:active {
+     color: $blue;
+     -webkit-animation: scaleUp 0.5s ease forwards;
+     -moz-animation: scaleUp 0.5s ease forwards;
+     animation: scaleUp 0.5s ease forwards;
+    }
+
+     @-webkit-keyframes scaleUp {
+     0% {
+       -webkit-transform: scale(1);
+      }
+     50% {
+       -webkit-transform: scale(1.1);
+      }
+     100% {
+       -webkit-transform: scale(1);
+      }
+    }
+
+    @-moz-keyframes scaleUp {
+     0% {
+       -moz-transform: scale(1);
+      }
+     50% {
+       -moz-transform: scale(1.1);
+      }
+     100% {
+       -moz-transform: scale(1);
+      }
+    }
+
+     @keyframes scaleUp {
+     0% {
+       transform: scale(1);
+      }
+     50% {
+       transform: scale(1.1);
+      }
+     100% {
+       transform: scale(1);
+      }
     }
   }
 }

@@ -1,0 +1,42 @@
+<!-- MENU POUR DESKTOP -->
+
+<div id="article-menu-desktop" class="hidden-xs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="menu-items-desktop">
+          <ul class= "list-inline text-center">
+            <li><%= link_to @categories[0], {controller: "articles", action: "category", category: @categories[0] }, id: "top_match" %></li>
+            <li><%= link_to @categories[1], {controller: "articles", action: "category", category: @categories[1] }, id: "astuces_match" %></li>
+            <li><%= link_to @categories[2], {controller: "articles", action: "category", category: @categories[2] }, id: "temoignages_match" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MENU POUR MOBILE -->
+
+<div id="article-menu-mobile" class="visible-xs">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div id="menu-items-mobile">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="looking_for">Catégories</button>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class= "dropdown-menu" id="mobile-list">
+              <li><%= link_to @categories[0], {controller: "articles", action: "category", category: @categories[0] }, id: "top_match" %></li>
+              <li><%= link_to @categories[1], {controller: "articles", action: "category", category: @categories[1] }, id: "astuces_match" %></li>
+              <li><%= link_to @categories[2], {controller: "articles", action: "category", category: @categories[2] }, id: "temoignages_match" %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

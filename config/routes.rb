@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/comment-cela-marche', to: "pages#how", as: '/how'
   get "/categorie", to: "ressources#category", as: "/category"
   post "category", to: "ressources#category"
+  get "/blog", to: "articles#category"
+  post "category", to: "articles#category"
   get '/mentions-legales', to: "pages#mentions_legales"
   get '/pro', to: "pages#pro"
 
@@ -41,11 +43,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :articles
+
   # Sitemap pour les robots
   get '/sitemap.xml.gz', to: redirect("http://#{ ENV.fetch('S3_BUCKET_NAME') }.s3.amazonaws.com/sitemaps/sitemap.xml.gz")
 
-  # essayer cette route en elenvenant le show de resources : ressources
-  # get ':title' => "ressources#show"
+  post '/api/stats/age_repartition' => 'stats#age_repartition'
+
 
   # resources :ressources do
   #   member do

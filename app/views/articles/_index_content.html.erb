@@ -1,0 +1,34 @@
+<div id="blog" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="home-header">LE BLOG</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "blog_menu" %>
+
+
+
+<div class="container">
+  <div class="listing_articles">
+    <div class="row">
+      <% @articles.each do |article| %>
+        <div class="col-md-4 banner">
+          <%= link_to article_path(article.id), target: "blank" do %>
+          <div id="banner-image" style="background: url(<%= article.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
+                -moz-background-size: cover; -o-background-size: cover;">
+          </div>
+          <div class="content-banner">
+            <h2 class= "sub-title"><%= article.title %></h2>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "pages/footer" %>

@@ -1,0 +1,66 @@
+#articles_index, #articles_category {
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+  div.alert {
+    top: 60px;
+  }
+  // Le Blog
+  // ===============================================================
+
+  #blog   {
+    background: image-url("blog-emploi-workup.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 400px;
+    p {
+      margin-top: 60px;
+      padding-top: 100px;
+      font-size: 60px;
+      color: white;
+      font-family: $my-font;                                                                                                                                                                                                                                   bottom: 30px;
+    }
+  }
+  h1 {
+    margin-top : 11px;
+  }
+
+  .banner {
+
+    #banner-image {
+      width: 100%;
+      min-height: 300px;
+      position: relative;
+      padding: 0 10px;
+    }
+  }
+  .content-banner {
+    padding-top: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    h2.sub-title {
+      text-align: center;
+      color: white;
+    }
+    .top-bg {
+      background-color: rgba(30, 203, 202, 0.5);
+    }
+    .astuces-bg {
+      background-color: rgba(102, 121, 255, 0.5);
+    }
+    .temoignages-bg {
+      background-color: rgba(237, 21, 168, 0.5);
+    }
+  }
+  .listing_articles {
+    margin-bottom: 30px;
+  }
+}

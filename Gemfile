@@ -32,6 +32,7 @@ gem 'bootsy'
 gem 'gibbon'
 gem 'fog-aws'
 gem 'forest_liana'
+gem 'rack-cors'
 
 
 group :development, :test do

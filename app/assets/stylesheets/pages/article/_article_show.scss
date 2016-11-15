@@ -1,0 +1,241 @@
+#articles_show {
+  .navbar {
+    z-index: 4000;
+  }
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+      z-index: 4000;
+    }
+  }
+
+    // ========   BANNIERE   ========
+
+  #article-body {
+  // background-color: white;
+  margin-top: 60px;
+  padding-bottom: 20px;
+  .banner {
+    width: 100%;
+    #banner-image {
+      min-height: 650px;
+      margin-top: -5px;
+      position: relative;
+    }
+  }
+  .content-banner {
+    padding-left: 40px;
+    padding-top: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    .btn {
+      font-family: $base-font;
+      font-size: 12px;
+      font-style: italic;
+      margin-bottom: 10px;
+      cursor: default;
+      text-decoration: none;
+      color: white;
+      margin-top: 0px;
+    }
+  }
+  .btn-action {
+    background-color: $gray;
+    border: 1px solid $gray;
+    a {
+      color: white;
+    }
+    &:hover {
+      background-color: $gray-darker;
+    }
+  }
+  .btn-primary {
+    &:hover {
+      background-color: $blue;
+      color: white;
+    }
+  }
+
+  .publishing-date {
+    background: #111;
+    padding: 15px;
+    font-size: 13px;
+    line-height: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $gray-lighter;
+    width: 200px;
+    transition: all 0.5s ease;
+    font-family: $my-font;
+    opacity: 0.8;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  h1#title-desktop {
+    font-size: 56px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+  }
+    h1#title-mobile {
+    font-size: 46px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+  }
+
+  p.cat{
+    font-family: $base-font;
+    font-size: 16px;
+  }
+  .writer-info {
+    p {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: $gray-lighter;
+    font-size: 12px;
+    }
+    img {
+      width: 30px;
+      margin-right: 10px;
+    }
+  }
+
+    // LEFT SIDE CONTENU DE L'ARTICLE
+
+  #left-side {
+    margin-top: -100px;
+    background-color: white;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    #like-this-article {
+      text-align: center;
+      background-color: $blue;
+      color: white;
+      padding: 20px;
+      border-radius: 3px;
+      #like-title {
+        font-family: $my-font;
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+      .like-that {
+        display: inline-block;
+      }
+    }
+
+    .picture {
+      min-height: 400px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    .content-text {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      text-align: justify;
+      a {
+        color: $blue;
+        &:hover {
+          color: $gray-light;
+        }
+      }
+      img {
+        margin: 50px auto;
+      }
+    }
+  }
+
+  // ADDTHIS ARTICLES RECOMMANDES
+  a.at-branding-logo {
+    display: none;
+  }
+  div.at-h3.at-recommended-label {
+    margin-top: 20px;
+    font-family: $my-font;
+    font-size: 25px;
+  }
+
+
+  // RIGHT SIDE DESKTOP
+  #right-side {
+    margin-top: -100px;
+    margin-left: 30px;
+    a#website {
+      font-size: 14px;
+    }
+    .left-title {
+      color: #777777;
+      font-weight: bold;
+    }
+
+    #newsletter {
+      .btn {
+        margin: 0px;
+      }
+    }
+    #reseaux-sociaux {
+      text-align: center;
+      ul {
+        margin: 0px;
+      }
+      i {
+        font-size: 20px;
+      }
+      #facebook a, #twitter a, #linkedin a {
+        color: $blue;
+      }
+    }
+    #solutions {
+      .btn {
+        margin: 0px;
+      }
+    }
+  }
+  // RIGHT SIDE MOBILE
+  #righ-side-mobile {
+
+    .left-title {
+      color: #777777;
+      font-weight: bold;
+    }
+
+    #newsletter {
+      .btn {
+        margin: 0px;
+      }
+    }
+    #reseaux-sociaux {
+      text-align: center;
+      ul {
+        margin: 0px;
+      }
+      i {
+        font-size: 20px;
+      }
+      #facebook a, #twitter a, #linkedin a {
+        color: $blue;
+      }
+    }
+    #solutions {
+      .btn {
+        margin: 0px;
+      }
+    }
+  }
+  // ========   COMMENTAIRES ========
+  .add-comment {
+    padding-top: 30px;
+  }
+}
+}

@@ -49,9 +49,11 @@ p {
 .footer-header {
   font-family: $my-font;
   font-size: 25px;
-  color: black;
-  border-top: solid 1px $gray;
-  border-bottom: solid 1px $gray;
+  color: $blue;
+  border-top: solid 1px $blue;
+  border-bottom: solid 1px $blue;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 p.title {

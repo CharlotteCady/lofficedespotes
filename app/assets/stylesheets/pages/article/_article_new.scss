@@ -1,0 +1,28 @@
+#articles_new, #articles_edit {
+  #navbar-workup {
+    .navbar-nav, .navbar-toggle {
+      margin-top: 15px;
+    }
+  }
+  // background-color: white;
+  p {
+    font-size: 16px;
+    &.explaination {
+      margin-top: 20px;
+      text-align: justify;
+    }
+  }
+  margin-top: 50px;
+  #info {
+    padding: 30px;
+  }
+  h1 {
+    border-bottom: 2px solid black;
+  }
+
+  #form-new {
+    .container {
+      padding-top: 0px;
+    }
+  }
+}
