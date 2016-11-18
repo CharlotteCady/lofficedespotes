@@ -25,7 +25,7 @@
   }
   .content-banner {
     padding-left: 40px;
-    padding-top: 200px;
+    padding-top: 130px;
     position: absolute;
     top: 0;
     left: 0;
@@ -55,7 +55,7 @@
   }
   .btn-primary {
     &:hover {
-      background-color: $blue;
+      background-color: #6679ff;
       color: white;
     }
   }
@@ -111,7 +111,7 @@
     // LEFT SIDE CONTENU DE L'ARTICLE
 
   #left-side {
-    margin-top: -100px;
+    margin-top: -200px;
     background-color: white;
     padding-right: 25px;
     padding-left: 25px;
@@ -169,67 +169,71 @@
 
   // RIGHT SIDE DESKTOP
   #right-side {
-    margin-top: -100px;
+    margin-top: -200px;
     margin-left: 30px;
     a#website {
       font-size: 14px;
     }
-    .left-title {
-      color: #777777;
-      font-weight: bold;
+    div#solutions.white-block {
+      margin-right: 0;
+      margin-left: 0;
     }
-
-    #newsletter {
-      .btn {
-        margin: 0px;
-      }
+    img {
+      max-width: 100%;
+      height: auto;
     }
-    #reseaux-sociaux {
-      text-align: center;
-      ul {
-        margin: 0px;
-      }
-      i {
-        font-size: 20px;
-      }
-      #facebook a, #twitter a, #linkedin a {
-        color: $blue;
-      }
+    .right-title {
+      font-family: $my-font;
+      font-size: 24px;
+      color: #6679ff;
     }
     #solutions {
       .btn {
         margin: 0px;
+      }
+      #solutions-image {
+        height: 100px;
+        width: auto;
+        padding: 0 10px;
+      }
+      p.sub-title {
+        text-align: justify;
+          &:hover {
+          color: $blue;
+        }
       }
     }
   }
   // RIGHT SIDE MOBILE
-  #righ-side-mobile {
-
-    .left-title {
-      color: #777777;
-      font-weight: bold;
+  #right-side-mobile {
+    text-align: center;
+    div#solutions.white-block {
+      margin-right: 0;
+      margin-left: 0;
     }
-
-    #newsletter {
-      .btn {
-        margin: 0px;
-      }
+    img {
+      max-width: 100%;
+      height: auto;
     }
-    #reseaux-sociaux {
-      text-align: center;
-      ul {
-        margin: 0px;
-      }
-      i {
-        font-size: 20px;
-      }
-      #facebook a, #twitter a, #linkedin a {
-        color: $blue;
-      }
+    .right-title {
+      font-family: $my-font;
+      font-size: 24px;
+      color: #6679ff;
     }
     #solutions {
       .btn {
         margin: 0px;
+      }
+      #solutions-image {
+        height: 100px;
+        width: auto;
+        padding: 0 10px;
+      }
+      p.sub-title {
+        text-align: justify;
+          &:hover {
+          color: $blue;
+        }
       }
     }
   }
@@ -238,4 +242,50 @@
     padding-top: 30px;
   }
 }
+  // ========== A LIRE
+  #listing_articles {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    .home-header, .home-header-mobile {
+      color: #6679ff;
+      margin-bottom: 30px;
+    }
+    .home-header-mobile {
+      text-align: center;
+    }
+    #other-articles {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .banner {
+      #banner-image {
+        width: 100%;
+        min-height: 300px;
+        position: relative;
+        padding: 0 10px;
+      }
+    }
+    .content-banner {
+      padding-top: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      h2.sub-title {
+        text-align: center;
+        color: white;
+      }
+      .top-bg {
+        background-color: rgba(30, 203, 202, 0.5);
+      }
+      .astuces-bg {
+        background-color: rgba(102, 121, 255, 0.5);
+      }
+      .temoignages-bg {
+        background-color: rgba(237, 21, 168, 0.5);
+      }
+    }
+  }
 }

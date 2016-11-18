@@ -138,9 +138,9 @@ class RessourcesController < ApplicationController
     profil = params[:profil]
     keyword = params[:search]
     if category || subcategory || profil || keyword
-      @ressources = Ressource.search(category, subcategory, profil, keyword).order('created_at DESC')
+      @ressources = Ressource.search(category, subcategory, profil, keyword).order("RANDOM()")
     else
-      @ressources = Ressource.where(category: @category_page).order('created_at DESC')
+      @ressources = Ressource.where(category: @category_page).order("RANDOM()")
     end
     current_host
   end

@@ -63,124 +63,71 @@
             <p class="like-that"> Partagez l'article à vos ami(e)s !</p>
             <div class="addthis_sharing_toolbox" id="share"></div>
           </div>
-
-          <!-- Go to www.addthis.com/dashboard to customize your tools -->
-          <div class="addthis_recommended_horizontal"></div>
-
-          <div class="add-comment hidden-xs">
-            <div class="footer-header">Qu'en pensez-vous ?</div>
-  <!--           <div id="disqus-account">
-              <p class="text-center">
-                N'ayez pas peur, lâchez-vous, vous pouvez poser vos questions, partager vos retours d'expérience et surtout encourager les initiatives que vous aimez en laissant de jolis commentaires.
-              </p>
-            </div> -->
-            <div id="disqus_thread"></div>
-            <script>
-                /**
-                DISQUS
-                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-                 */
-
-                var disqus_config = function () {
-                    this.page.identifier = '<%= @article.id %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-
-                (function() {  // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-
-                    s.src = '//workuper.disqus.com/embed.js';
-                    s.async = true;
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-          </div>
         </div>
       </div>
 
       <!-- DESKTOP -->
       <div class="col-xs-3 hidden-xs">
         <div id="right-side">
-          <div id="newsletter" class="white-block text-center">
-            <p class="left-title">Recevez nos bons plans 1 fois / semaine</p>
-            <%= link_to "S'inscrire", "#", {:class => "btn btn-danger", "data-toggle" => "modal", "data-target" => "#myModal"} %>
-          </div>
-          <div id="reseaux-sociaux" class="white-block">
-            <p class="left-title">Suivez-nous</p>
-            <ul class="list-inline text-center">
-              <li>
-                <div id="facebook">
-                  <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
-                    <i class="fa fa-facebook"></i>
-                  <% end %>
-                </div>
-              </li>
-              <li>
-                <div id="twitter">
-                  <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
-                    <i class="fa fa-twitter"></i>
-                  <% end %>
-                </div>
-              </li>
-              <li>
-                <div id="linkedin">
-                  <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
-                    <i class="fa fa-linkedin"></i>
-                  <% end %>
-                </div>
-              </li>
-            </ul>
-          </div>
-           <!-- render "event_banner"  -->
-          <div id="solutions" class="white-block text-center">
-            <p class="left-title">Découvrez toutes les solutions qui peuvent vous aider à trouver un job qui vous correspond</p>
-            <%= link_to "Découvrir", articles_path, :class => "btn btn-primary" %>
+          <div id="solutions" class="white-block">
+            <p class="right-title">Nos découvertes</p>
+            <div class="listing_ressources">
+              <% @ressources = Ressource.order("created_at desc").limit(5) %>
+              <% @ressources.each do |ress| %>
+                <%= link_to ressource_path(ress.slug), target: "blank" do %>
+                  <%= image_tag(ress.picture) %>
+                  <p class= "sub-title"><%= ress.title %></p>
+                <% end %>
+              <% end %>
+              <%= link_to "Tout Voir", ressources_path, class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>
       <!-- MOBILE -->
       <div class="col-xs-offset-1 col-xs-10 visible-xs">
-        <div id="righ-side-mobile">
-
-          <div id="newsletter" class="white-block text-center">
-            <p class="left-title">Recevez nos bons plans 1 fois / semaine</p>
-            <%= link_to "S'inscrire", "#", {:class => "btn btn-danger", "data-toggle" => "modal", "data-target" => "#myModal"} %>
-          </div>
-          <div id="reseaux-sociaux" class="white-block">
-            <p class="left-title">Suivez-nous</p>
-            <ul class="list-inline text-center">
-              <li>
-                <div id="facebook">
-                  <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
-                    <i class="fa fa-facebook"></i>
-                  <% end %>
-                </div>
-              </li>
-              <li>
-                <div id="twitter">
-                  <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
-                    <i class="fa fa-twitter"></i>
-                  <% end %>
-                </div>
-              </li>
-              <li>
-                <div id="linkedin">
-                  <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
-                    <i class="fa fa-linkedin"></i>
-                  <% end %>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div id="solutions" class="white-block text-center">
-            <p class="left-title">Découvrez toutes les solutions qui peuvent vous aider à trouver un job qui vous correspond</p>
-            <%= link_to "Découvrir", articles_path, :class => "btn btn-primary" %>
+        <div id="right-side-mobile">
+          <div id="solutions" class="white-block">
+            <p class="right-title">Nos découvertes</p>
+            <div class="listing_ressources">
+              <% @ressources = Ressource.order("created_at desc").limit(3) %>
+              <% @ressources.each do |ress| %>
+                <%= link_to ressource_path(ress.slug), target: "blank" do %>
+                  <%= image_tag(ress.picture) %>
+                  <p class= "sub-title"><%= ress.title %></p>
+                <% end %>
+              <% end %>
+              <%= link_to "Tout Voir", ressources_path, class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div id="listing_articles">
+  <div class="container">
+    <div class="row">
+      <p class="home-header hidden-xs">VOUS POURREZ AUSSI AIMER</p>
+      <p class="home-header-mobile visible-xs">VOUS POURREZ AUSSI AIMER</p>
+      <% @articles = Article.limit(3).order("RANDOM()") %>
+      <% @articles.each do |article| %>
+        <div class="col-md-4 banner">
+          <%= link_to article_path(article.id), target: "blank" do %>
+          <div id="banner-image" style="background: url(<%= article.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
+                -moz-background-size: cover; -o-background-size: cover;">
+          </div>
+          <div class="content-banner">
+            <h2 class= "sub-title"><%= article.title %></h2>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "articles/nl_reseaux_sociaux_blog" %>
 
 <%= render "pages/footer" %>

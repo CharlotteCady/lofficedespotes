@@ -24,10 +24,10 @@
       <!-- select_tag(:category, options_for_select(@categories), prompt: "Catégorie", class: "form") %> -->
     </div>
     <div class="form-group">
-      <%= select_tag(:subcategory, options_for_select(@subcategories), prompt: "Étapes", class: "form") %>
+      <%= select_tag(:subcategory, options_for_select(@subcategories), prompt: "Je cherche à", class: "form") %>
     </div>
     <div class="form-group">
-      <%= select_tag(:profil, options_for_select(@profil), prompt: "Profil", class: "form") %>
+      <%= select_tag(:profil, options_for_select(@profil), prompt: "Je suis", class: "form") %>
     </div>
     <div class="form-group">
       <%= text_field_tag :search, params[:search], placeholder: "Mots Clefs", class: "form text-long" %>
