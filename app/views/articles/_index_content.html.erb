@@ -17,7 +17,7 @@
     <div class="row">
       <% @articles.each do |article| %>
         <div class="col-md-4 banner">
-          <%= link_to article_path(article.id), target: "blank" do %>
+          <%= link_to article_path(article.slug), target: "blank" do %>
           <div id="banner-image" style="background: url(<%= article.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
                 -moz-background-size: cover; -o-background-size: cover;">
           </div>

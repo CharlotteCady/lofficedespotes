@@ -1,6 +1,10 @@
-// $(document).ready(function() {
-//   $('#tab_form a').click(function (event) {
-//       event.preventDefault(); // Prevent link from following its href
-//       $(this).tab('show');
-//     });
-// });
+$(document).ready(function() {
+  // if ($('body').is('#articles_index')) {
+    $('div.content-banner').hover(function () {
+
+      $(this).addClass("hover_article");
+      }, function(){
+      $(this).removeClass("hover_article");
+    });
+  // }
+});

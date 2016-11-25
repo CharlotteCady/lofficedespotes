@@ -15,12 +15,27 @@
 
 $(function() {
   $('#tag-filter ul li a').each(function(){
-      var path = window.location.href;
-      var current = path.substring(path.lastIndexOf('/'));
-      var url = $(this).attr('href');
+    var path = window.location.href;
+    var current = path.substring(path.lastIndexOf('/'));
+    var url = $(this).attr('href');
 
-      if(url == current){
-          $(this).parent().addClass('active');
-      };
-    });
+    if(url == current){
+        $(this).parent().addClass('active');
+    };
+  });
 });
+
+// SOUS MENU DU BLOG
+
+// $(function() {
+//   $('#menu-items-desktop ul li a').each(function(){
+//     var path = window.location.href;
+//     var current = path.substring(path.lastIndexOf('/'));
+//     var category = $.url().param('category');
+//     var url = $(this).attr('href');
+
+//     if( current == '/blog?category=Top') {
+//       $(this).addClass('top-active');
+//     };
+//   });
+// });

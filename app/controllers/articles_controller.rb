@@ -49,9 +49,10 @@ class ArticlesController < ApplicationController
 
   def category
     @categories = CATEGORIES
-    category = params[:category]
-    if category
-      @articles = Article.search_article(category).order('created_at DESC')
+    @category = params[:category]
+
+    if @category
+      @articles = Article.search_article(@category).order('created_at DESC')
     else
       @articles = Article.all.order('created_at DESC')
     end
@@ -64,6 +65,6 @@ class ArticlesController < ApplicationController
   end
 
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 end

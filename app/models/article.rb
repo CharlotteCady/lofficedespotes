@@ -1,9 +1,11 @@
 class Article < ActiveRecord::Base
   belongs_to :user
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
   validates :title, presence: true
   validates :content, presence: true
-  # validates :category, presence: true
+  validates :category, presence: true
 
   validates :seo_title, presence: true, uniqueness: true
   validates :seo_description, presence: true, uniqueness: true

@@ -43,6 +43,7 @@
       margin-top: 0px;
     }
   }
+
   .btn-action {
     background-color: $gray;
     border: 1px solid $gray;
@@ -277,15 +278,18 @@
         text-align: center;
         color: white;
       }
-      .top-bg {
-        background-color: rgba(30, 203, 202, 0.5);
-      }
-      .astuces-bg {
-        background-color: rgba(102, 121, 255, 0.5);
-      }
-      .temoignages-bg {
-        background-color: rgba(237, 21, 168, 0.5);
-      }
+    }
+    .hover_article {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .top-bg {
+      background-color: rgba(30, 203, 202, 0.5);
+    }
+    .astuces-bg {
+      background-color: rgba(102, 121, 255, 0.5);
+    }
+    .temoignages-bg {
+      background-color: rgba(237, 21, 168, 0.5);
     }
   }
 }

@@ -1,1 +1,17 @@
+<% content_for(:title) do %>
+  <% "Les #{@category} de notre Blog Emploi | WorkUp" %>
+<% end %>
+
+<%content_for(:meta_description) do %>
+  <% if @category == @categories[0] %>
+    Découvrez toutes les TOP solutions qui peuvent vous aider dans votre recherche d'emploi, votre reconversion ou création d'activité
+  <% elsif @category == @categories[1] %>
+    Des experts de l'emploi, du recrutement, de l'orientation et de l'entrepreneuriat vous livrent leurs meilleures astuces
+  <% elsif @category == @categories[2] %>
+    Découvrez les histoires de celles et ceux qui ont vécu une transition professionnelle et leurs conseils pour y arriver
+  <% else %>
+    Des histoires, des conseils concrets, des outils et solutions pour vous aider à trouver ou créer un job qui vous rend heureux/se
+  <% end %>
+<% end %>
+
 <%= render "index_content" %>

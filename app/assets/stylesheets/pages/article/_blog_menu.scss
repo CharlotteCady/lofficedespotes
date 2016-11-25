@@ -49,6 +49,18 @@
       }
     }
   }
+  .top-active {
+    background-color: $blue;
+    color: white;
+  }
+  .astuces-active {
+    background-color: #6679ff;
+    color: white;
+  }
+  .temoignages-active {
+    background-color: $red;
+    color: white;
+  }
 }
 
 #article-menu-mobile {
