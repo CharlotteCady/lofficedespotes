@@ -124,7 +124,7 @@
         <div class="new">
           <p class="home-subheader">LES OFFRES SPÉCIALES</p>
           <div class="listing_ressources">
-            <% Ressource.where(price: 'Promo').order('created_at DESC').limit(4).each do |ress| %>
+            <% Ressource.where(price: 'Promo').order('updated_at DESC').limit(4).each do |ress| %>
                 <div class="row item white">
                   <div class="col-xs-2">
                     <div class="desktop-display-logo hidden-xs">
