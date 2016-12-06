@@ -13,3 +13,10 @@ $(document).ready(function() {
 // $(document).mouseleave(function() {
 //   $('#myModal').modal({show: true, keyboard: true});
 // });
+
+// AFFICHER LA NL AU BOUT DE 1 MINUTE 30
+$(document).ready(function() {
+  setTimeout(function() {
+    $('#myModal').modal({show: true, keyboard: true});
+    }, 90000); // milliseconds
+});
