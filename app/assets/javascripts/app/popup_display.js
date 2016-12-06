@@ -19,7 +19,7 @@ $(document).ready(function() {
   if(sessionStorage.getItem('popState') != 'shown'){
     setTimeout(function() {
       $('#myModal').modal({show: true, keyboard: true});
-      }, 6000); // milliseconds
+      }, 90000); // milliseconds
     sessionStorage.setItem('popState','shown')
   }
 });
