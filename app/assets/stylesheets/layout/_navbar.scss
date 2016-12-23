@@ -157,7 +157,7 @@ $navbar-profile-border-width: 1px;
 
     .navbar-nav > li > .dropdown-menu{
       border-radius: 0;
-      margin-top: 0px;
+      // margin-top: 0px;
       font-family: $base-font;
       font-size: 14px;
       text-transform: none;
@@ -242,18 +242,31 @@ body#articles_index {
    border-bottom: 2px solid white;
   }
 }
-body#pages_pro {
- #little-screen .active-pro {
-   border-bottom: 2px solid white;
-  }
-}
-body#pages_about {
+
+body#pages_about, body#pages_how, body#pages_contact, body#pages_pro {
  #little-screen .active-about {
    border-bottom: 2px solid white;
   }
 }
-body#pages_contact {
- #little-screen .active-contact {
+
+body#users_offer {
+ #little-screen .active-offers {
    border-bottom: 2px solid white;
+  }
+}
+
+// DROPDOWN MENU
+#a-propos-menu {
+  ul.dropdown-menu {
+    margin: 15px;
+    right: auto;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+#connexion-dropdown {
+  ul.dropdown-menu {
+    margin-top: 0;
   }
 }

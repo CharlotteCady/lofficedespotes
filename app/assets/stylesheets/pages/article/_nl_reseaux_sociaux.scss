@@ -1,4 +1,4 @@
- #articles_show, #articles_index, #articles_category {
+ #articles_show, #articles_index, #articles_category, #pages_manifeste {
   // =========== NEWSLETTER ET RS
   div#nl {
     text-align: center;
@@ -42,6 +42,7 @@
     }
   }
   div#reseaux-sociaux {
+    background-color: #F0EFEF;
     text-align: center;
     padding: 50px 20px;
     ul {

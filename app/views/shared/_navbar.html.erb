@@ -13,7 +13,7 @@
           <%= image_tag "logo-workup.png" %>
         <!-- work<span style="color: #1ECBCA;">up</span> -->
       </a>
-      <p id="tagline">Les meilleures solutions pour trouver votre job idéal</p>
+      <p id="tagline" class="hidden-sm hidden-xs">Les meilleures solutions pour trouver votre job idéal</p>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,17 +22,31 @@
         <li class="little-screen">
           <%= link_to t(".top_call_to_action", default: "Les Solutions"), ressources_path, class: "navbar-menu active-solutions" %>
         </li>
+        <li class="little-screen">
+          <%= link_to t(".top_call_to_action", default: "Les Offres Spéciales"), offer_users_path, class: "navbar-menu active-offers" %>
+        </li>
 <!--         <li class="little-screen">
            link_to t(".top_call_to_action", default: "Le Blog"), articles_path, class: "navbar-menu active-articles" %>
         </li> -->
-        <li class="little-screen">
-          <%= link_to t(".top_call_to_action", default: "Pro"), pro_path, class: "navbar-menu active-pro" %>
-        </li>
-        <li class="little-screen">
-          <%= link_to t(".top_call_to_action", default: "A Propos"), about_path, class: "navbar-menu active-about" %>
-        </li>
-        <li class="little-screen">
-          <%= link_to t(".top_call_to_action", default: "Contact"), contact_path, class: "navbar-menu active-contact" %>
+        <li id="a-propos-menu" class="little-screen dropdown">
+          <%= link_to "A Propos", "#", {class: "dropdown-toggle active-about", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} %>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <%= link_to t(".top_call_to_action", default: "Comment ça marche ?"), how_path, class: "navbar-menu" %>
+            </li>
+            <li>
+              <%= link_to t(".top_call_to_action", default: "Qui sommes-nous ?"), about_path, class: "navbar-menu" %>
+            </li>
+            <li>
+              <%= link_to t(".top_call_to_action", default: "Vous êtes un professionnels ?"), pro_path, class: "navbar-menu" %>
+            </li>
+            <li>
+              <%= link_to t(".top_call_to_action", default: "Notre Manifeste"), manifeste_path, class: "navbar-menu" %>
+            </li>
+            <li>
+              <%= link_to t(".top_call_to_action", default: "Contactez-nous"), contact_path, class: "navbar-menu" %>
+            </li>
+          </ul>
         </li>
         <li class="little-screen hidden">
           <%= link_to "https://www.facebook.com/pages/Workup/1569854826618353", class: "navbar-menu", target: "blank" do %>
@@ -41,7 +55,7 @@
         </li>
         <% if user_signed_in? %>
 
-          <li class="dropdown little-screen">
+          <li id= "connexion-dropdown" class="dropdown little-screen">
             <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
               <% if current_user.avatar? %>
                 <%= image_tag current_user.avatar.url(:medium), class: "img-avatar" %>

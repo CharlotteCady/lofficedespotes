@@ -6,14 +6,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
         <ul class="nav nav-pills" role="tablist" id="tab_form">
             <li role="presentation" class="active" id="signup_button"><a href="#signup_form" aria-controls="signup_form" role="tab" data-toggle="tab">Je crée mon compte</a></li>
             <li role="presentation" id="signin_button"><a href="#signin_form" aria-controls="signin_form" role="tab" data-toggle="tab">J'ai déjà un compte</a></li>
           </ul>
-        <p>
+<!--         <p>
           Retrouvez vos solutions préférées dans vos favoris, les initiatives qui vous correspondent, nos bons plans et offres spéciales pour vous aider dans votre transition pro.
-        </p>
+        </p> -->
       </div>
       <div class="modal-body">
         <div class="tab-content">
@@ -37,19 +37,19 @@
                   <div class="form-inputs">
                     <%= f.input :name, required: true, autofocus: true, placeholder: "Nom d'utilisateur", label: false %>
                     <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
-                    <%= f.input :password, required: true, placeholder: "Mot de passe, #{@minimum_password_length} caractères minimum", label: false %>
+                    <%= f.input :password, required: true, placeholder: "Mot de passe", label: false %>
                     <%= f.input :password_confirmation, required: true, placeholder: "Confirmation Mot de passe", label: false %>
                   </div>
                   <ul class="list-inline">
                     <li>
                       <div class="form-actions">
-                        <%= f.button :submit, "Créer mon Compte", class: "btn btn-primary" %>
+                        <%= f.button :submit, "Créer mon Compte", class: "btn btn-primary btn-submit" %>
                       </div>
                       <% end %>
                     </li>
                   </ul>
                   <p class="cgu">
-                    En vous inscrivant, vous acceptez de recevoir la newsletter avec tous nos bons plans pour vous aider dans votre transition professionnelle. Vous pourrez bien sûr vous désinscrire à tout moment :)
+                    En vous inscrivant, vous acceptez de recevoir la newsletter avec tous nos bons plans :)
                   </p>
                   <p type="button" data-dismiss="modal" id="close">Fermer</p>
               </div>
@@ -79,7 +79,7 @@
                   <ul class="list-inline">
                     <li>
                       <div class="form-actions">
-                        <%= f.button :submit, t("Se Connecter", default: "Se Connecter"), class: "btn btn-primary" %>
+                        <%= f.button :submit, t("Se Connecter", default: "Se Connecter"), class: "btn btn-primary btn-submit" %>
                       </div>
                       <% end %>
                     </li>

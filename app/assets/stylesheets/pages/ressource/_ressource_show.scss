@@ -68,8 +68,15 @@
       div.votes {
         display: inline-block;
         font-size: 25px;
+        background-color: white;
+        width: 35px;
+        text-align: center;
+        border-radius: 50%;
+        margin-top: 10px;
         i {
           color:$blue;
+          vertical-align: middle;
+          margin-bottom: 2px;
         }
       }
     }
@@ -85,6 +92,7 @@
       transition: all 0.5s ease;
       font-family: $my-font;
       opacity: 0.8;
+      margin-bottom: 3px;
     }
 
     p {
@@ -116,21 +124,8 @@
       font-family: $base-font;
       font-size: 16px;
     }
-    .writer-info {
-      p {
-      margin-top: 20px;
-      margin-bottom: 30px;
-      color: $gray-lighter;
-      font-size: 12px;
-      }
-      img {
-        width: 30px;
-        margin-right: 10px;
-      }
-
 
       // LEFT SIDE CONTENU DE L'ARTICLE
-    }
     #left-side {
       margin-top: -200px;
       background-color: white;
@@ -140,6 +135,17 @@
       padding-bottom: 30px;
       margin-bottom: 20px;
       border-radius: 3px;
+      .writer-info {
+        p {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 12px;
+        }
+        img {
+          width: 30px;
+          margin-right: 10px;
+        }
+      }
       #like-this-article {
         text-align: center;
         background-color: $blue;
@@ -151,13 +157,20 @@
           font-size: 24px;
           margin-bottom: 0;
         }
-        .like-that {
-          display: inline-block;
-        }
         div.votes {
-          display: inline-block;
+        display: inline-block;
+        background-color: white;
+        width: 35px;
+        height:35px;
+        text-align: center;
+        border-radius: 50%;
+        font-size: 25px;
+        margin-bottom: 15px;
+        margin-top: 10px;
           i {
-            color: white;
+            color:$blue;
+            vertical-align: middle;
+            margin-bottom: 2px;
           }
         }
       }

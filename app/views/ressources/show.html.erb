@@ -25,6 +25,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
+
           <div class="publishing-date">
             <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
           </div>
@@ -35,7 +36,7 @@
               <% end %>
             </div>
           <% end %>
-          <div class= "btn btn-danger"><%= @ressource.subcategory %></div>
+          <div class= "btn btn-danger hidden-xs"><%= @ressource.subcategory %></div>
           <% if @ressource.tag != nil %>
             <% (eval(@ressource.tag) - [""]).map do |tag| %>
               <div class= "btn btn-primary zindex hidden-xs">
@@ -52,6 +53,12 @@
                 method: :delete, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %></div>
             <% end %>
           <% end %>
+
+          <div class="alert alert-danger alert_connect_to_like" role="alert" style="display: none;">
+            Vous devez être connecté pour liker cette initiative, la commenter et l'enregistrer dans vos favoris :)
+          </div>
+          <h1 class="hidden-xs" id="title-desktop"><%= @ressource.title %></h1>
+          <h1 class="visible-xs" id="title-mobile"><%= @ressource.title %></h1>
           <div class="votes">
             <% if user_signed_in? %>
               <% if current_user.liked? @ressource %>
@@ -60,36 +67,15 @@
                 <% end %>
               <% else %>
                 <%= link_to like_ressource_path(@ressource), method: :get, remote: true, class: "like_ressource btn-vote" do %>
-                  <i class="fa fa-heart-o"></i>
+                  <i class="fa fa-heart-o" data-toggle="tooltip" data-placement="right" title="Cliquez ici pour enregistrer l’article dans vos favoris"></i>
                 <% end %>
               <% end %>
             <% else %>
               <%= link_to new_user_session_path, class: "like_ressource btn-vote" do %>
-                <i class="fa fa-heart-o"></i>
+                <i class="fa fa-heart-o" data-toggle="tooltip" data-placement="left" title="Cliquez ici pour enregistrer l’article dans vos favoris"></i>
               <% end %>
             <% end %>
           </div>
-          <div class="alert alert-danger alert_connect_to_like" role="alert" style="display: none;">
-            Vous devez être connecté pour liker cette initiative, la commenter et l'enregistrer dans vos favoris :)
-          </div>
-          <h1 class="hidden-xs" id="title-desktop"><%= @ressource.title %></h1>
-          <h1 class="visible-xs" id="title-mobile"><%= @ressource.title %></h1>
-          <div class="writer-info hidden-xs">
-            <p>
-              <% if @ressource.user.avatar? %>
-                <%= image_tag(@ressource.user.avatar.url(:medium), class: "img-circle") %>
-              <% else %>
-                <%=  image_tag "eight_horns.png", class: "img-circle" %>
-              <% end %>
-              Partagé par
-              <% if @ressource.user.name? %>
-                <%= @ressource.user.name %>
-              <% else %>
-                <%= @ressource.user.first_name + " " + @ressource.user.last_name %>
-              <% end %>
-            </p>
-          </div>
-
         </div>
       </div>
     </div>
@@ -130,11 +116,24 @@
             <% end %>
             </div>
           <% end %>
-
+          <div class="writer-info">
+            <p>
+              <% if @ressource.user.avatar? %>
+                <%= image_tag(@ressource.user.avatar.url(:medium), class: "img-circle") %>
+              <% else %>
+                <%=  image_tag "eight_horns.png", class: "img-circle" %>
+              <% end %>
+              Partagé par
+              <% if @ressource.user.name? %>
+                <%= @ressource.user.name %>
+              <% else %>
+                <%= @ressource.user.first_name + " " + @ressource.user.last_name %>
+              <% end %>
+            </p>
+          </div>
           <!-- Go to www.addthis.com/dashboard to customize your tools -->
           <div id="like-this-article">
             <p id="like-title">Vous avez aimé ?</p>
-            <p class="like-that">Cliquez sur le </p>
             <div class="votes">
               <% if user_signed_in? %>
                 <% if current_user.liked? @ressource %>
@@ -143,16 +142,15 @@
                   <% end %>
                 <% else %>
                   <%= link_to like_ressource_path(@ressource), method: :get, remote: true, class: "like_ressource btn-vote" do %>
-                    <i class="fa fa-heart-o"></i>
+                    <i class="fa fa-heart-o" data-toggle="tooltip" data-placement="left" title="Cliquez ici pour enregistrer l’article dans vos favoris"></i>
                   <% end %>
                 <% end %>
               <% else %>
                 <%= link_to new_user_session_path, class: "like_ressource btn-vote" do %>
-                  <i class="fa fa-heart-o"></i>
+                  <i class="fa fa-heart-o" data-toggle="tooltip" data-placement="left" title="Cliquez ici pour enregistrer l’article dans vos favoris"></i>
                 <% end %>
               <% end %>
             </div>
-            <p class="like-that"> pour l'enregistrer dans vos favoris et partagez sur les réseaux sociaux !</p>
             <div class="addthis_sharing_toolbox" id="share"></div>
           </div>
 

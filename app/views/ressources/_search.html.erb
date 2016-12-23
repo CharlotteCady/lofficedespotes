@@ -24,7 +24,7 @@
       <!-- select_tag(:category, options_for_select(@categories), prompt: "Catégorie", class: "form") %> -->
     </div>
     <div class="form-group">
-      <%= select_tag(:subcategory, options_for_select(@subcategories), prompt: "Je cherche à", class: "form") %>
+      <%= select_tag(:subcategory, options_for_select(([["M'inspirer", @subcategories[0]], ["M'informer", @subcategories[1]], ["Me Faire Aider", @subcategories[2]], ["Me Former", @subcategories[3]], ["Réseauter", @subcategories[4]], ["Postuler", @subcategories[5]], ["Profiter", @subcategories[6]]])), prompt: "Je cherche à", class: "form") %>
     </div>
     <div class="form-group">
       <%= select_tag(:profil, options_for_select(@profil), prompt: "Je suis", class: "form") %>

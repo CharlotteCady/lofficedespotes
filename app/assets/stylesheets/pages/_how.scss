@@ -12,11 +12,7 @@
   // ===============================================================
 
   #process   {
-    background: image-url("process.png") no-repeat fixed center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: image-url("favorites.jpg") repeat fixed;;
     min-height: 400px;
     p {
       margin-top: 60px;
@@ -28,99 +24,74 @@
   }
   h1 {
     margin-top : 11px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   #guide {
-    #explication {
-      p {
-        text-align: justify;
-      }
-      padding-bottom: 20px;
-    }
+    background-color: white;
     .container {
       padding-bottom: 50px;
     }
-    .btn {
-      margin-top: 30px;
-    }
+
     .bot {
       padding-bottom: 30px;
+      text-align : center;
     }
     #explication p {
       font-size: 16px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    div#explication {
+      padding-bottom: 50px;
     }
   }
 
-  #guide i, #question-caroussel i {
-    font-size: 30px;
+  p.rond {
+    font-family: $my-font;
+    font-size: 26px;
     color: white;
-    margin-bottom: 10px;
     background-color: $blue;
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    padding-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 8px;
   }
 
-  // Des initiatives géniales
-  // ===============================================================
-
-  #notre-mission {
-    background: image-url("initiative-pour-l-emploi.png") no-repeat fixed center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    min-height: 620px;
-    p {
-      color: white;
-      font-size: 18px;
-      font-family: $base-font;
-      line-height: 1.5;
-      padding: 40px;
-    }
+  p.action {
+    font-size: 16px;
   }
 
 
-  .alternate_color{
-  z-index: 0;
-  }
-  #socket {
-  margin-top: 0px;
-  z-index: 0;
-  }
-  .main_color {
-  position: inherit;
-  }
 
   // dernières découvertes
   // ===============================================================
-  #discover {
-    h2 {
-      color: black;
-      font-family: $base-font;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    a:hover h2 {
-      color: $blue;
-    }
-    p {
-      font-size: 14px;
-      text-align: justify;
-    }
-    a:hover p {
-      color: $gray;
-    }
-    .img-ress {
-      min-height: 300px;
-    }
-  }
+  // #discover {
+  //   h2 {
+  //     color: black;
+  //     font-family: $base-font;
+  //     font-size: 18px;
+  //     font-weight: bold;
+  //   }
+  //   a:hover h2 {
+  //     color: $blue;
+  //   }
+  //   p {
+  //     font-size: 14px;
+  //     text-align: justify;
+  //   }
+  //   a:hover p {
+  //     color: $gray;
+  //   }
+  //   .img-ress {
+  //     min-height: 300px;
+  //   }
+  // }
 
-
-
-
-  // osez
+  // PAS CONVAINCU
   // ===============================================================
 
   #parceque {
@@ -138,82 +109,4 @@
       padding: 40px;
     }
   }
-  // #parceque::before {
-  //   content: "";
-  //   background-color: rgba(0, 0, 0, 0.5);
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  // }
-
-
-  // ========== MOBILE
-  #mobile {
-    .home-header {
-      font-size: 30px;
-    }
-    p {
-      font-size: 14px;
-    }
-    h2 {
-      font-size: 34px;
-    }
-    h2#title-article {
-      font-size: 16px;
-    }
-    ul.dropdown-menu {
-      top: 70px;
-      width: 195px;
-      p.little-header {
-        font-size: 20px;
-      }
-    }
-    #follow-actu-title {
-      font-size: 34px;
-    }
-    #discover-title {
-      padding-top: 30px;
-      padding-bottom: 30px;
-    }
-
-    // Selection du carousel
-    .owl-nav {
-      text-align: center;
-      font-size: 12px;
-      color: $gray-light;
-    }
-    div.owl-prev, div.owl-next {
-      display: inline-block;
-      img {
-        width: 18px;
-        margin-left: 10px;
-        margin-right: 10px;
-      }
-      font-family: 'Indie Flower', cursive;
-    }
-    div.owl-prev {
-      position: absolute;
-      top: 150px;
-      left: 0;
-    }
-    div.owl-next {
-      position: absolute;
-      top: 150px;
-      right: 0;
-    }
-    div.owl-controls {
-      background-color: transparent;
-    }
-    span.glyphicon {
-      color: white;
-      font-size: 20px;
-      padding: 0px 20px;
-    }
-  }
-
-  // ======= SOCIAL MEDIA => stylesheet => component => social_media.scss
-
-
 }

@@ -6,34 +6,58 @@
   Découvrez les meilleurs outils, sites d'emploi, structures d'accompagnement, événements et bien plus encore pour trouver un emploi qui vous passionne vraiment !
 <% end %>
 
-<div id="home">
+<!-- BANNIERE DESKTOP -->
+<div id="home-desktop" class="hidden-xs">
   <div id="banner" class="text-center">
     <div class="container">
       <div class="row">
         <div class="content">
           <div class="col-xs-12">
             <h1 id= "baseline" class= "text-center">
-              A LA RECHERCHE DU JOB
-                <span style="color: #1ECBCA;">IDEAL</span> ?
+              À LA RECHERCHE DU JOB IDÉAL ?
             </h1>
             <p class= "trouver-un-emploi">
-              Découvrez les meilleurs outils, sites internet, structures d'accompagnement et bien plus encore pour vous aider à trouver un emploi qui vous plaît vraiment !
+              Découvrez les meilleurs sites, outils et solutions pour <span class="animate-element"></span>
             </p>
           </div>
           <div class="col-xs-12">
-            <ul class="list-inline hidden-xs">
-              <li><%= link_to "Trouver sa voie", "categorie?category=Trouver+sa+voie", class: "btn btn-transparent" %></li>
-              <li><%= link_to "Trouver un job", "categorie?category=Trouver+un+job", class: "btn btn-transparent" %></li>
-              <li><%= link_to "Changer de métier", "categorie?category=Changer+de+m%C3%A9tier", class: "btn btn-transparent" %></li>
-              <li><%= link_to "Changer de boite", "categorie?category=Changer+de+boite", class: "btn btn-transparent" %></li>
-              <li><%= link_to "Créer sa boite", "categorie?category=Créer+sa+boite", class: "btn btn-transparent" %></li>
+            <ul class="list-inline">
+              <%= link_to "Je veux trouver mon job idéal", ressources_path, class: "btn btn-primary" %>
             </ul>
-            <div class="hidden visible-xs">
-              <%= link_to "Découvrir les solutions", ressources_path, class: "btn btn-primary" %>
-            </div>
           </div>
         </div>
       </div>
+    </div>
+    <div id="arrow">
+      <a href="#new"><i class="fa fa-angle-down "></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- BANNIERE MOBILE -->
+<div id="home-mobile" class="visible-xs">
+  <div id="banner" class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="content">
+          <div class="col-xs-12">
+            <h1 id= "baseline" class= "text-center">
+              À LA RECHERCHE DU JOB IDÉAL ?
+            </h1>
+            <p class= "trouver-un-emploi">
+              Découvrez les meilleurs sites, outils et solutions pour <span class="animate-element"></span>
+            </p>
+          </div>
+          <div class="col-xs-12">
+            <ul class="list-inline">
+              <%= link_to "Je veux trouver mon job idéal", ressources_path, class: "btn btn-primary" %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="arrow">
+      <a href="#new"><i class="fa fa-angle-down "></i></a>
     </div>
   </div>
 </div>
@@ -45,21 +69,21 @@
     <div class="row">
       <div class="col-xs-12"> -->
         <ul class="list-inline">
-          <li>
+          <li class="hidden-xs">
             <div id="facebook">
               <%= link_to "https://www.facebook.com/workuper/", target: "blank" do %>
                 <i class="fa fa-facebook"></i>
               <% end %>
             </div>
           </li>
-          <li>
+          <li class="hidden-xs">
             <div id="twitter">
               <%= link_to "https://twitter.com/Workuper", target: "blank" do %>
                 <i class="fa fa-twitter"></i>
               <% end %>
             </div>
           </li>
-          <li>
+          <li class="hidden-xs">
             <div id="linkedin">
               <%= link_to "https://www.linkedin.com/company/workup-trouvez-votre-job-idéal", target: "blank" do %>
                 <i class="fa fa-linkedin"></i>
@@ -83,6 +107,7 @@
   </div> -->
 </div>
 
+<div id="new"></div>
 
 <div class="news_offres">
   <div class="container">
@@ -167,52 +192,30 @@
     </div>
     <div class="row">
       <div id="explication" class="col-sm-12 padded text-center">
-        <!--         <p>
-          Parce qu'il n'est pas toujours facile de s'y retrouver, nous testons pour vous des outils, des formations, des ateliers, des MOOCs, lisons des articles, des magazines, des blogs, des livres et rencontrons des acteurs de l'emploi pour vous offrir une sélection adaptée à vos besoins et vous faire découvrir des initiatives de qualité.
-        </p>
-      -->
-        <p><strong>
-          Que vous soyez à la recherche d'un job, que vous ayez envie de vous reconvertir, de changer de boite ou de créer votre propre emploi, découvrez tous les jours une nouvelle initiative ou un nouvel outil qui vous aidera à trouver le job qui vous convient
-        </p></strong><br>
+        <b><p>
+            Que vous soyez à la recherche d'un emploi, en poste ou en création d'entreprise, nous voulons vous donner toutes les informations et les bons outils pour vous accompagner dans votre réflexion et vous aider à trouver le job qui vous convient.
+          </p></b>
+          <p class="hidden-xs">
+            Parce qu'il n'est pas toujours facile de s'y retrouver, nous testons des outils, des formations, des ateliers, des cours, des MOOCs, nous lisons des articles, des magazines, des blogs, des livres, nous visionnons des vidéos et rencontrons les acteurs de l'emploi pour vous offrir une sélection adaptée à vos besoins et vous faire découvrir des initiatives de qualité.
+          </p>
       </div>
 
       <div class="row">
-        <div class="col-xs-6 col-sm-3 bot">
+        <div class="col-xs-12 col-sm-3 bot">
             <p class="rond">1</p>
-            <p class="action">Découvrez les nouvelles initiatives que nous avons testé et enregistrez les dans vos favoris</p>
+            <p class="action"><b>Découvrez les nouvelles initiatives</b><br> que nous avons testé et enregistrez les dans vos favoris</p>
         </div>
-        <div class="col-xs-6 col-sm-3 bot">
+        <div class="col-xs-12 col-sm-3 bot">
             <p class="rond">2</p>
-            <p class= "action">Bénéficiez des offres spéciales que nous négocions pour vous aider à passer à l'action</p>
+            <p class= "action"><b>Bénéficiez des offres spéciales</b><br> que nous négocions pour vous aider à passer à l'action</p>
         </div>
-        <div class="col-xs-6 col-sm-3 bot">
+        <div class="col-xs-12 col-sm-3 bot">
             <p class="rond">3</p>
-            <p class= "action">Passez à l'action en contactant les initiatives, utilisant les outils, allant aux événements, etc.</p>
+            <p class= "action"><b>Poussez votre réflexion</b><br> en contactant les initiatives, utilisant les outils, allant aux événements, etc.</p>
         </div>
-        <div class="col-xs-6 col-sm-3 bot">
+        <div class="col-xs-12 col-sm-3 bot">
             <p class="rond">4</p>
-            <p class= "action">Restez informé des nouveautés en vous abonnant à notre newletter ou en nous suivant sur les réseaux sociaux</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="notre-mission" class="text-center">
-  <div class="container block">
-    <div class="row">
-      <div class="col-xs-12">
-        <h2>Pourquoi WorkUp ?</h2>
-          <p>
-            Parce que le monde du travail évolue<br>
-            Parce que nous ferons face à plusieurs transitions professionnelles dans notre vie<br>
-            Parce que la moitié des métiers qui existent aujourd'hui auront disparu dans 20 ans<br>
-            Parce que nous sommes désormais à la recherche d'un travail qui a du sens et dans lequel nous pouvons nous épanouir<br>
-            Parce que ce n'est pas toujours facile de s'y retrouver parmi toutes les solutions existantes et de trouver celle qui nous convient
-          </p>
-        <%= link_to "Découvrez les solutions qui peuvent vous aider", ressources_path, class: "btn btn-primary hidden-xs" %>
-        <div class="hidden visible-xs">
-          <%= link_to "Découvrez les solutions", ressources_path, class: "btn btn-primary" %>
+            <p class= "action"><b>Restez informé des nouveautés</b><br> en vous abonnant à notre newletter ou en nous suivant sur les réseaux sociaux</p>
         </div>
       </div>
     </div>
@@ -271,6 +274,16 @@
             <% end %>
           </li>
           <li>
+            <%= link_to "http://madame.lefigaro.fr/business/les-5-questions-a-se-poser-pour-trouver-le-job-ideal-211016-117414", target: "blank" do %>
+              <%= image_tag("logo-madame-figaro.png", alt: "WorkUp sur Madame Figaro") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "http://start.lesechos.fr/continuer-etudes/vie-etudiante/les-16-newsletters-pour-enfin-recevoir-des-mails-interessants-5748.php", target: "blank" do %>
+              <%= image_tag("logo-les-echos-start.jpg", alt: "WorkUp dans les Echos Start") %>
+            <% end %>
+          </li>
+          <li>
             <%= link_to "http://www.mouv.fr/tags/workup", target: "blank" do %>
               <%= image_tag("logo-radio-mouv.png", alt: "WorkUp sur Le Mouv") %>
             <% end %>
@@ -289,15 +302,9 @@
               <%= image_tag("logo-widoobiz.png", alt: "WorkUp sur Widoobiz") %>
             <% end %>
           </li>
-          <li>
-            <%= image_tag("logo-backpack.jpg", alt: "WorkUp dans Backpack") %>
-          </li>
-          <li>
-            <%= link_to "http://madame.lefigaro.fr/business/les-5-questions-a-se-poser-pour-trouver-le-job-ideal-211016-117414", target: "blank" do %>
-              <%= image_tag("logo-madame-figaro.png", alt: "WorkUp sur Madame Figaro") %>
-            <% end %>
-            <!-- image_tag("Logo_radio_tendance_ouest.svg.png", alt: "WorkUp sur Tendance Ouest")v-->
-          </li>
+<!--           <li>
+             image_tag("logo-backpack.jpg", alt: "WorkUp dans Backpack")
+          </li> -->
           <li>
             <%= image_tag("Logo_radio_tendance_ouest.svg.png", alt: "WorkUp sur Tendance Ouest") %>
           </li>
@@ -327,4 +334,3 @@
 </div> -->
 
 <%= render "pages/footer" %>
-

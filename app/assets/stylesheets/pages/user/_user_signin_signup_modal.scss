@@ -29,11 +29,13 @@
       color: white;
       padding-top:10px;
     }
+    ul#tab_form.nav.nav-pills {
+      margin-top: 0px;
+    }
     li {
       width: 49%;
     }
     #signup_button {
-      margin-top: 7px;
       border: 1px solid $blue;
       a, a:active, a:focus {
         color:white;
@@ -60,6 +62,12 @@
     border-radius: 3px;
     padding-left: 50px;
     padding-right: 50px;
+    .btn-facebook {
+      margin: 10px 0px;
+    }
+    .btn-submit {
+      margin: 5px 0px;
+    }
     form {
       padding-left: 20px;
       padding-right: 20px;
@@ -69,14 +77,16 @@
     p#profil-creation {
       font-size: 16px;
       font-weight: bold;
+      margin-top: 11px;
     }
     a#forget-pass {
       font-family: $base-font;
       text-transform: none;
       font-weight: 400;
       letter-spacing: 0;
-      font-size: 14px;
+      font-size: 12px;
       margin-bottom: 10px;
+      margin-top: 10px;
     }
     p.cgu {
       font-size: 12px;

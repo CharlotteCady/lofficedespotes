@@ -1,4 +1,4 @@
-#pages_about {
+#pages_manifeste {
   #navbar-workup {
     .navbar-nav, .navbar-toggle {
       margin-top: 15px;
@@ -14,8 +14,12 @@
   }
 
   // =============== BLOC IMAGE ET QUOTE
-  #souhait {
-    background: image-url("offer.png") repeat fixed;
+  #manifeste {
+    background: image-url("initiatives-pour-lemploi.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     min-height: 400px;
     p {
       margin-top: 60px;
@@ -43,49 +47,16 @@
     // }
     h2 {
       font-size: 28px;
-      color: black;
+      color: #6679ff;
       text-align: left;
       padding-bottom: 15px;
     }
   }
 
-  // =========== BLOC TEAM
-  #team {
-    background-color: #F0EFEF;
-    #description-anissa, #description-charlotte {
-      padding: 15px;
-    }
-    img {
-      width: 250px;
-      padding-top: 50px;
-      padding-bottom: 15px;
-    }
+  // TOUJOURS PAS CONVAINCU =====================================
 
-    .btn {
-      width: 150px;
-    }
-    .fa-twitter {
-      font-size: 30px;
-      padding-top: 15px;
-      color: $blue;
-    }
-    p.city {
-      color: #6679ff;
-    }
-    p.mail {
-      color: $blue;
-    }
-  }
-  #title-h1 {
-    font-size: 60px;
-    color: white;
-  }
-
-  // pOURQUOI WORKUP
-  // ===============================================================
-
-  #notre-mission {
-    background: image-url("initiative-pour-l-emploi.png") no-repeat fixed center;
+  #parceque {
+    background: image-url("dream.jpg") no-repeat fixed center;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -100,16 +71,14 @@
     }
   }
 
+  // FOOTER
+  // ======= SOCIAL MEDIA
 
-  .alternate_color{
-  z-index: 0;
+  #social-media-pages {
+    background: image-url("initiatives-pour-lemploi.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
-  #socket {
-  margin-top: 0px;
-  z-index: 0;
-  }
-  .main_color {
-  position: inherit;
-  }
-
 }
