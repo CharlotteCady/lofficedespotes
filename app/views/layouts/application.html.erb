@@ -33,17 +33,20 @@
   <%= stylesheet_link_tag :application, media: "all" %>
   <%= csrf_meta_tags %>
   <!-- Begin MailChimp Signup Form -->
-   <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-   <style type="text/css">
-   </style>
-   <%= favicon_link_tag 'favicon.ico' %>
-   <!-- vérification pour Google Webmaster Tool -->
-   <meta name="google-site-verification" content="VdInUaQoPyaZb2Act46Tsu476LU1PdFcwdTS8Y2qz0I" />
-   <!-- JQUERY UI -->
-   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-   <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
-   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+  </style>
+  <%= favicon_link_tag 'favicon.ico' %>
+  <!-- vérification pour Google Webmaster Tool -->
+  <meta name="google-site-verification" content="VdInUaQoPyaZb2Act46Tsu476LU1PdFcwdTS8Y2qz0I" />
+  <!-- JQUERY UI -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+  <!-- AB TESTING -->
+  <script type="text/javascript" src="//try.abtasty.com/844785d1d4ff677f514b5cd442be1973.js"></script>
 
 </head>
 <body id="<%= "#{params[:controller].gsub(/\//, '_')}_#{params[:action]}" %>">

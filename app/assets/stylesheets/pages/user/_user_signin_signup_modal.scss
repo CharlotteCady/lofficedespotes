@@ -46,7 +46,7 @@
       }
     }
     #signin_button {
-      border: 1px solid $blue;
+      border: 1px solid white;
       a, a:active, a:focus {
         color:white;
         &:hover {
@@ -92,13 +92,46 @@
       font-size: 12px;
       margin-top: 10px;
     }
-    p#close {
+    p#close, p#back{
       font-size: 14px;
       cursor: pointer;
       font-weight: bold;
     }
   }
-    div.alert {
-      top: -35px;
-    }
+  div.alert {
+    top: -35px;
+  }
+  p.modal-title {
+    font-family: $my-font;
+    font-size: 28px;
+  }
+  li.reason {
+    font-family: $base-font;
+    font-size: 14px;
+    width: 32%;
+    text-transform: lowercase;
+    font-weight: normal;
+  }
+  p.rond {
+  font-family: $my-font;
+  font-size: 26px;
+  color: white;
+  background-color: #6679ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 8px;
+  }
+  p.modal-title {
+    color: #6679ff;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .m-progress-bar {
+    min-height: 1em;
+    background: $blue;
+    width: 5%;
+}
 }
