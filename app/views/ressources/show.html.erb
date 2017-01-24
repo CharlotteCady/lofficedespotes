@@ -229,10 +229,21 @@
               </li>
             </ul>
           </div>
-           <!-- render "event_banner"  -->
-          <div id="solutions" class="white-block text-center">
-            <p class="left-title">Découvrez toutes les solutions qui peuvent vous aider à trouver un job qui vous correspond</p>
-            <%= link_to "Découvrir", ressources_path, :class => "btn btn-primary" %>
+
+          <!-- DESKTOP -->
+
+          <div id="solutions" class="white-block">
+            <p class="right-title">Nos découvertes</p>
+            <div class="listing_ressources">
+              <% @ressources = Ressource.order("created_at desc").limit(4) %>
+              <% @ressources.each do |ress| %>
+                <%= link_to ressource_path(ress.slug), target: "blank" do %>
+                  <%= image_tag(ress.picture) %>
+                  <p class= "sub-title"><%= ress.title %></p>
+                <% end %>
+              <% end %>
+              <%= link_to "Tout Voir", ressources_path, class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>
@@ -278,10 +289,21 @@
               </li>
             </ul>
           </div>
-          <div id="solutions" class="white-block text-center">
-            <p class="left-title">Découvrez toutes les solutions qui peuvent vous aider à trouver un job qui vous correspond</p>
-            <%= link_to "Découvrir", ressources_path, :class => "btn btn-primary" %>
+
+          <div id="solutions-mobile" class="white-block">
+            <p class="right-title">Nos découvertes</p>
+            <div class="listing_ressources">
+              <% @ressources = Ressource.order("created_at desc").limit(3) %>
+              <% @ressources.each do |ress| %>
+                <%= link_to ressource_path(ress.slug), target: "blank" do %>
+                  <%= image_tag(ress.picture) %>
+                  <p class= "sub-title"><%= ress.title %></p>
+                <% end %>
+              <% end %>
+              <%= link_to "Tout Voir", ressources_path, class: "btn btn-primary" %>
+            </div>
           </div>
+
         </div>
       </div>
     </div>

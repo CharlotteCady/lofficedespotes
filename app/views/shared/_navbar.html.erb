@@ -48,11 +48,7 @@
             </li>
           </ul>
         </li>
-        <li class="little-screen hidden">
-          <%= link_to "https://www.facebook.com/pages/Workup/1569854826618353", class: "navbar-menu", target: "blank" do %>
-            <i class="fa fa-facebook"></i>
-          <% end %>
-        </li>
+
         <% if user_signed_in? %>
 
           <li id= "connexion-dropdown" class="dropdown little-screen">
@@ -107,7 +103,7 @@
             </ul>
           </li>
         <% else %>
-          <li class="little-screen">
+          <li id="connexion-button" class="little-screen">
              <!-- link_to t(".sign_in", default: "SE CONNECTER"), new_user_session_path, class: "btn", id: "login" %> -->
              <%= render "shared/user_signin_signup_modal_form" %>
           </li>

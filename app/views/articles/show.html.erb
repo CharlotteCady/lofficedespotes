@@ -82,7 +82,7 @@
           <div id="solutions" class="white-block">
             <p class="right-title">Nos découvertes</p>
             <div class="listing_ressources">
-              <% @ressources = Ressource.order("created_at desc").limit(8) %>
+              <% @ressources = Ressource.order("created_at desc").limit(6) %>
               <% @ressources.each do |ress| %>
                 <%= link_to ressource_path(ress.slug), target: "blank" do %>
                   <%= image_tag(ress.picture) %>

@@ -78,7 +78,7 @@ $navbar-profile-border-width: 1px;
     .navbar-nav > li > a:hover,
     .navbar-nav > .open > a:hover {
       color: $navbar-hover-color;
-      opacity: 0.8;
+      opacity: 1;
     }
 
     .navbar-nav > li > a#login,
@@ -230,43 +230,53 @@ $navbar-profile-border-width: 1px;
     letter-spacing: 0;
   }
 
-  // LIEN ACTIF JQUERY POUR LE MENU
-}
-body#ressources_index, body#ressources_category {
- #little-screen .active-solutions {
-   border-bottom: 2px solid white;
+
+  // DROPDOWN MENU
+  #a-propos-menu {
+    ul.dropdown-menu {
+      margin: 15px;
+      margin-top: 5px;
+      right: auto;
+      border: none;
+      background-color: rgba(255, 255, 255, 1);
+    }
   }
-}
-body#articles_index {
- #little-screen .active-articles {
-   border-bottom: 2px solid white;
+
+  #connexion-dropdown {
+    ul.dropdown-menu {
+      margin-top: 0;
+    }
   }
+
+
+  #bs-example-navbar-collapse-1 > ul > li:nth-child(-n+3) > a {
+    display: inline-block;
+    position: relative;
+  }
+  #bs-example-navbar-collapse-1 > ul > li:nth-child(-n+3) > a:after {
+    content: '';
+    display: block;
+    margin: auto;
+    margin-top: 8px;
+    height: 2px;
+    width: 0px;
+    background: transparent;
+    -webkit-transition: width .5s ease, background-color .5s ease;
+    -moz-transition: width .5s ease, background-color .5s ease;
+    -o-transition: width .5s ease, background-color .5s ease;
+    transition: width .5s ease, background-color .5s ease;
+  }
+  #bs-example-navbar-collapse-1 > ul > li:nth-child(-n+3) > a:hover:after {
+      width: 100%;
+      background: white;
+  }
+
+ // Créer jquery pour modifier background white et width 100% quand on clique sur menu de navigation
+ // #bs-example-navbar-collapse-1 > ul > li:nth-child(-n+3) > a:after
+ #bs-example-navbar-collapse-1 > ul > li:nth-child(-n+3) > a.changed:after {
+   background: white;
+   width: 100%;
+ }
+
 }
 
-body#pages_about, body#pages_how, body#pages_contact, body#pages_pro {
- #little-screen .active-about {
-   border-bottom: 2px solid white;
-  }
-}
-
-body#users_offer {
- #little-screen .active-offers {
-   border-bottom: 2px solid white;
-  }
-}
-
-// DROPDOWN MENU
-#a-propos-menu {
-  ul.dropdown-menu {
-    margin: 15px;
-    right: auto;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-}
-
-#connexion-dropdown {
-  ul.dropdown-menu {
-    margin-top: 0;
-  }
-}

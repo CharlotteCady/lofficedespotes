@@ -112,9 +112,6 @@
       .fa-angle-down {
         font-size: 35px;
         color: white;
-        &:hover {
-          color: $blue;
-        }
       }
       #arrow {
         border: solid white 2px;
@@ -124,6 +121,10 @@
         margin-right: auto;
         margin-left: auto;
         margin-top: 100px;
+        transition: 0.8s;
+      }
+      #arrow:hover {
+        transform: rotateX(360deg)
       }
     }
   }
