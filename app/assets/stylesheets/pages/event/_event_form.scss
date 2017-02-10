@@ -1,0 +1,48 @@
+#events_new, #events_edit {
+	#navbar-workup {
+	  .navbar-nav, .navbar-toggle {
+	    margin-top: 15px;
+	  }
+	}
+	div.alert {
+	  top: 60px;
+	}
+	header   {
+    background: image-url("event.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 400px;
+    margin-bottom: 20px;
+	    p {
+	      margin-top: 60px;
+	      padding-top: 125px;
+	      font-size: 60px;
+	      color: white;
+	      font-family: $my-font;
+	      text-align: center;                                                                                                                                                                                                                                   bottom: 30px;
+	    }
+	 }
+	 section {
+		ul {
+		  list-style-type: none;
+		  padding-left: 0px;
+		}
+		textarea#event_description {
+			height: 507px;
+		}
+		input[value="Créer l'événement"] {
+			width: 100%;
+			margin-top: 0;
+			margin-right: 10px;
+		}
+		#btn-enter {
+			margin-right: 10px;
+			margin-left: 10px;
+		}
+		[type="checkbox"] + label {
+			font-weight: normal;
+		}
+	}
+}

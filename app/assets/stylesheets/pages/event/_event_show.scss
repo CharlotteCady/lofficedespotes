@@ -1,0 +1,48 @@
+#events_show {
+	#navbar-workup {
+	  .navbar-nav, .navbar-toggle {
+	    margin-top: 15px;
+	  }
+	}
+	header   {
+    background: image-url("search.png") repeat fixed;
+    min-height: 300px;
+    margin-bottom: 20px;
+	    h1 {
+	      margin-top: 60px;
+	      padding-top: 90px;
+	      font-size: 60px;
+	      color: white;
+	      // font-family: $my-font;
+	      // text-align: center;                                                                                                                                                                                                                                   bottom: 30px;
+	    }
+	}
+	section {
+		#category-btn {
+			font-size: 12px;
+			font-style: italic;
+			color: white;
+			margin-top: 10px;
+			margin-bottom: 35px;
+			span {
+				background-color: $purple;
+				padding: 5px 10px;
+			}
+		}
+		#content-event, #price, #date, #lieu, #organiser {
+			p:first-child {
+				font-weight: bold;
+				font-size: 16px;
+				color: black;
+			}
+			p, a, span {
+				color: $gray-light;
+				font-weight: normal;
+				margin-bottom: 0;
+			}
+		}
+	}
+	aside {
+		background-color: white;
+	}
+}

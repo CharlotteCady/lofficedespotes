@@ -1,0 +1,69 @@
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<h1><%= @event.title %></h1>
+				<%= link_to "Participer à l'événement", @event.subscription_link, class: "btn btn-primary", target: "blank" %>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section>
+	<div class="container">
+		<div class="col-xs-12 col-md-8">
+			<div class="white-block">
+				<div id="category-btn">
+					<% @category_list.map do |category| %>
+					  <span><%= category %></span>
+					<% end %>
+				</div>
+				<div id="content-event">
+					<p>Description</p>
+					<p><%= @event.description %></p>
+				</div>
+				<div id="writer"><%= @event.user %></div>
+			</div>
+		</div> 	
+		<div class="col-xs-12 col-md-4">
+			<div class="white-block">
+				<div id="price">
+					<p>Prix : <span><%= @event.price %> €</span></p>
+				</div>
+			</div>
+			<div class="white-block">
+				<div id="date">
+					<p>Date</p>
+					<p><%= @event.date %></p>
+					<p><%= @event.time %></p>
+				</div>
+			</div>
+			<div class="white-block">
+				<div id="lieu">
+					<p>Lieu</p>
+					<p><%= @event.address %></p>
+				</div>
+			</div>
+			<div class="white-block">
+				<div id="organiser">
+					<% if  @event.organiser %>
+						<p>Organisateur</p>
+						<p><%= @event.organiser %></p>
+					<% end %>
+					<% if @event.website %>
+						<%= link_to @event.website, @event.website, target: "blank" %>
+					<% end %>
+				</div>
+			</div>
+		</div> 	
+	</div>
+</section>
+<aside>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<p>Autre événements à venir</p>
+			</div>
+		</div>
+	</div>
+</aside>
