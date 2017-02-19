@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       get 'favorites', to: "users#favorites"
       get 'matching', to: "users#matching"
       get 'offer', to: "users#offer"
+      get 'event', to: "users#event"
       patch 'update_password'
     end
   end
@@ -45,7 +46,11 @@ Rails.application.routes.draw do
   end
 
   resources :articles
-  resources :events
+  resources :events do 
+    member do
+      get "approved", to: "events#approved"
+    end
+  end
 
   # Sitemap pour les robots
   get '/sitemap.xml.gz', to: redirect("http://#{ ENV.fetch('S3_BUCKET_NAME') }.s3.amazonaws.com/sitemaps/sitemap.xml.gz")

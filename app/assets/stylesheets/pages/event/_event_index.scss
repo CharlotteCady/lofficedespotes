@@ -5,17 +5,26 @@
 	  }
 	}
 	header   {
-    background: image-url("search.png") repeat fixed;
+    background: image-url("agenda-emploi.png") repeat fixed;
     min-height: 300px;
     margin-bottom: 30px;
 	    h1 {
-	      margin-top: 60px;
+	      margin-top: 30px;
 	      padding-top: 90px;
 	      font-size: 60px;
 	      color: white;
 	    }
+	    a.btn {
+			margin-top: 20px;
+			margin-bottom: 30px;
+			border-width: 2px;
+	    }
 	}
 	main {
+		.filter, .events {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
 		#filter-event {
 			padding: 0px, 20px;
 			.form-group {
@@ -28,9 +37,7 @@
 				margin-bottom: 0;
 			}
 		}
-
 		.events {
-			padding-left: 40px;
 			span.date {
 					font-family: $my-font;
 					font-size: 20px;

@@ -1,0 +1,24 @@
+<div id="event-menu" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="home-header">Mes événements</p>
+        <p class="details">Vous pouvez gérer tous vos événements ici</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "user_menu" %>
+
+<div id="event-container">
+  <div class="container">
+    <div class="row">
+      <% if current_user.admin? %>
+        <%= render "event_admin" %>
+      <% else %>
+        <%= render "event_not_admin" %>
+      <% end %>
+    </div>
+  </div>
+</div>

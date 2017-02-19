@@ -19,7 +19,6 @@
 		</div>
 	</div>
 </header>
-
 <section>
 	<div class="container">
 		<div class="col-xs-12 col-md-8">
@@ -88,7 +87,9 @@
 	<%= javascript_tag do %>
 		$(document).on('ready', function() {
 			handler = Gmaps.build('Google');
-			handler.buildMap({ internal: { id: 'map' } }, function(){
+			handler.buildMap({ 
+			internal: { id: 'map' } }, 
+			function(){
 				marker = handler.addMarkers(<%= raw @marker.to_json %>);
 				handler.bounds.extendWith(marker);
 				handler.fitMapToBounds();

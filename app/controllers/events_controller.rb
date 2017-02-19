@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-	before_action :set_event, only: [:show, :edit, :update, :destroy]
+	before_action :set_event, only: [:show, :edit, :update, :destroy, :approved]
 	# before_filter :check_privileges!, only: [:edit, :update, :destroy]
 	skip_before_filter :authenticate_user!, only: [:index, :show]
 
@@ -11,8 +11,9 @@ class EventsController < ApplicationController
 	def create
 		@event = Event.new(event_params)
 		if @event.save
-			@event.update(user_id: current_user.id)
-			redirect_to event_path(@event)
+			@event.update(user_id: current_user.id, status: "draft")
+			flash[:notice] = "Félicitation, votre événement a bien été créé ! Il sera mis en ligne après vérification de notre part :)"
+ 			redirect_to events_path
 		else
 			render :new
 		end
@@ -23,19 +24,22 @@ class EventsController < ApplicationController
 		@marker = Gmaps4rails.build_markers(@event) do |event, marker|
 			marker.lat event.latitude
 			marker.lng event.longitude
+			marker.infowindow event.address
 		end
 	end
 
 	def index
-		@events = Event.all.order(date: :asc, time: :asc).limit(20)
-		@categories = ["Trouver sa voie", "Trouver un job", "Changer de métier", "Changer de boite", "Créer sa boite"]
 		@start_day = Date.today
-		@end_day = Date.today + 60.days
-		
-		(@start_day..@end_day).each do |date|
-			# @events_date_match = Event.where(date: date)
-		end	
-
+		@end_day = Date.today + 45.days
+		@categories = ["Trouver sa voie", "Trouver un job", "Changer de métier", "Changer de boite", "Créer sa boite"]
+		category = params[:category]
+		address = params[:address]
+		@search_events = Event.search_event(category, address)
+		if (@search_events == nil)
+			@events = Event.approved.order(date: :asc, time: :asc)
+		else
+			@events = @search_events.approved.order(date: :asc, time: :asc)
+		end
 	end
 
 	def edit 
@@ -51,10 +55,18 @@ class EventsController < ApplicationController
 	  redirect_to events_path
 	end
 
+	def approved
+		@event.update(status: "approved")
+		respond_to do |format|
+		  format.html { redirect_to users_event_path }
+		  format.js { render layout: false }
+		end
+	end
+
 	private
 	def event_params
 		params.require(:event).permit(:title, :description, :subscription_link, 
-			:date, :time, :price, :address, :organiser, :website, :category => [])
+			:date, :time, :price, :address, :organiser, :website, :status, :category => [])
 	end
 	def set_event
 		@event = Event.find(params[:id])
