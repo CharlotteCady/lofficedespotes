@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  include Bootsy::Container
+
   belongs_to :user
   scope :approved, -> { where status: 'approved'}
   scope :draft, -> { where status: 'draft'}

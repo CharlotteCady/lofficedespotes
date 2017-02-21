@@ -4,7 +4,7 @@
 		  <%= event.input :title, label: "Titre", placeholder: 'Startup Career Day, le salon de recrutement des startups et du digital' %>
 		</div>
 		<div class="white-block">
-		  <%= event.input :description, label: "Description", placeholder: "Qu'est-ce que c'est ? Pour qui ? Comment il se déroulera ? etc." %>
+		  <%= event.input :description, label: "Description", as: :bootsy, editor_options: { font_styles: false, color: false, image: false } ,  placeholder: "Qu'est-ce que c'est ? Pour qui ? Comment il se déroulera ? etc." %>
 		</div>
 		<div class="white-block">
 		  <%= event.input :address, label: "Adresse de l'événement" %>
@@ -54,7 +54,7 @@
 	</div>
 	<div class="col-xs-12 col-md-8">
 		<div id="btn-enter" class="text-center">
-		  <%= event.submit(class: "btn btn-primary", value: "Créer l'événement") %>
+		  <%= event.submit(value: (@event.new_record? ? "Créer l'événement" : "Modifier l'événement"), class: "btn btn-primary") %>
 		</div>
 	</div>
 <% end %>

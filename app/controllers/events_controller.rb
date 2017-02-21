@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 		if @event.save
 			@event.update(user_id: current_user.id, status: "draft")
 			flash[:notice] = "Félicitation, votre événement a bien été créé ! Il sera mis en ligne après vérification de notre part :)"
- 			redirect_to events_path
+ 			redirect_to event_users_path
 		else
 			render :new
 		end
@@ -47,12 +47,15 @@ class EventsController < ApplicationController
 
 	def update
 		@event.update(event_params)
-		redirect_to event_path(@event)
+		if @event.status == "approved"
+			redirect_to event_path(@event)
+		else
+			redirect_to event_users_path
+		end
 	end
 
 	def destroy
 	  @event.destroy
-	  redirect_to events_path
 	end
 
 	def approved
@@ -66,7 +69,7 @@ class EventsController < ApplicationController
 	private
 	def event_params
 		params.require(:event).permit(:title, :description, :subscription_link, 
-			:date, :time, :price, :address, :organiser, :website, :status, :category => [])
+			:date, :time, :price, :address, :organiser, :website, :status, :bootsy_image_gallery_id, :category => [])
 	end
 	def set_event
 		@event = Event.find(params[:id])

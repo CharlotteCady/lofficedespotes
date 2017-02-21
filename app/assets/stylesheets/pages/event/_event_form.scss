@@ -28,7 +28,13 @@
 		textarea#event_description {
 			height: 507px;
 		}
-		input[value="Créer l'événement"] {
+		ul.wysihtml5-toolbar {
+			a.btn-default {
+				font-size: 14px;
+				margin: 5px 0px;
+			}
+  		}
+		input[value="Créer l'événement"], input[value="Modifier l'événement"] {
 			width: 100%;
 			margin-top: 0;
 			margin-right: 10px;

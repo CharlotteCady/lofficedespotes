@@ -37,8 +37,8 @@
 					<% end %>
 				</div>
 				<div id="content-event">
-					<p>Description</p>
-					<p><%= @event.description %></p>
+					<p class="event-subtitle">Description</p>
+					<p><%= sanitize @event.description %></p>
 				</div>
 				<div id="writer">
 				    <% if @event.user.avatar? %>
@@ -53,25 +53,26 @@
 		<div class="col-xs-12 col-md-4">
 			<div class="white-block">
 				<div id="price">
-					<p>Prix : <span><%= @event.price %> €</span></p>
+					<p class="event-subtitle">Prix</p>
+					<p><%= @event.price %> €</p>
 				</div>
 			</div>
 			<div class="white-block">
 				<div id="date">
-					<p>Date</p>
+					<p class="event-subtitle">Date</p>
 					<p><%= l(@event.date, format: '%A %d %B %Y').capitalize%></p>
 					<p><%= @event.time.strftime("%kh%M") %></p>
 				</div>
 			</div>
 			<div class="white-block">
 				<div id="lieu">
-					<p>Lieu</p>
+					<p class="event-subtitle">Lieu</p>
 					<p><%= @event.address %></p>
 				</div>
 			</div>
 			<div class="white-block">
 				<div id="organiser">
-					<p>Organisateur</p>
+					<p class="event-subtitle">Organisateur</p>
 					<p><%= @event.organiser %></p>
 					<% if @event.website %>
 						<%= link_to "Site internet", (@event.website), target: "blank", id: "website" %>

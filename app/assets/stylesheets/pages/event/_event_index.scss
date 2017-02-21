@@ -19,6 +19,9 @@
 			margin-bottom: 30px;
 			border-width: 2px;
 	    }
+	    a:active, a:focus, a:visited {
+	    	color: white;
+	    }
 	}
 	main {
 		.filter, .events {

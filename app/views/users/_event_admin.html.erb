@@ -1,8 +1,8 @@
 <div class="col-md-6 admin-events">
   <div class="event-title">Événements à modérer</div>
   <% if (@moderate_event != nil) %>
-    <% @moderate_event.each do |event| %>
-      <div class="row white event-item">
+    <% @moderate_event.order(date: :asc, time: :asc).each do |event| %>
+      <div class="row white event-item" id="moderate-event-<%= event.id %>">
         <div class="col-xs-2">
           <p class="time"><%= l(event.date, format: '%d/%m').capitalize %></p>
         </div>
@@ -12,7 +12,7 @@
           <span class="admin-btn"><%= link_to "Editer", edit_event_path(event.id) %></span>
           <span class="admin-btn">
             <%= link_to "Supprimer", event_path(event),
-            method: :delete, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %>
+            method: :delete, remote: true, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %>
           </span>
         </div>
       </div>  
@@ -26,7 +26,7 @@
   <div class="event-title">Mes événements</div>
   <% if (@my_events != nil) %>
     <% @my_events.each do |event| %>
-      <div class="row white event-item">
+      <div class="row white event-item" id="my-event-<%= event.id %>">
         <div class="col-xs-2">
           <p class="time"><%= l(event.date, format: '%d/%m').capitalize %></p>
         </div>

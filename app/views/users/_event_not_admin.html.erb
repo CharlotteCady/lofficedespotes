@@ -1,12 +1,12 @@
 <div class="col-md-offset-2 col-md-8">
   <% if (@my_events != nil) %>
-    <% @my_events.each do |event| %>
+    <% @my_events.order(date: :asc, time: :asc).each do |event| %>
       <div class="row white event-item">
         <div class="col-xs-2">
           <p class="time"><%= l(event.date, format: '%d %B').capitalize %></p>
         </div>
         <div class="col-xs-10">
-          <h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: "blank" %></h2>
+          <h2 class="sub-title"><%= link_to_if (event.status == "approved"), event.title, event_path(event.id), target: "blank" %></h2>
           <span class="status-btn"><%= event.status == "draft" ? "En cours de vérification" : "En ligne" %></span>
           <span class="admin-btn"><%= link_to "Editer", edit_event_path(event.id) %></span>
           <span class="admin-btn">
