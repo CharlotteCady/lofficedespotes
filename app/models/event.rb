@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   include Bootsy::Container
+  after_create :send_event_email
 
   belongs_to :user
   scope :approved, -> { where status: 'approved'}
@@ -17,17 +18,7 @@ class Event < ActiveRecord::Base
   validates :category, presence: true
   validates :organiser, presence: true
 
-  # def self.search_event(category, address)
-  #   if category.present? && address.present?
-  #     where(['address ILIKE ? AND category ILIKE ?', "%#{address}%", "%#{category}%"])
-  #   elsif category.present?
-  #     where(['category ILIKE ?', "%#{category}%"])
-  #   elsif address.present?
-  #     where(['address ILIKE ?', "%#{address}%"])
-  #   else
-  #     puts "Il n'y a pas encore d'événements pour votre recherche :)"
-  #   end
-  # end
+
   
   def self.search_event(category, address)
     if category.present? && address.present?
@@ -39,5 +30,9 @@ class Event < ActiveRecord::Base
     else
       puts "Il n'y a pas encore d'événements pour votre recherche :)"
     end
+  end
+
+  def send_event_email
+    UserMailer.new_event(self).deliver_now
   end
 end

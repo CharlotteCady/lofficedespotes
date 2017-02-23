@@ -17,4 +17,15 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Bienvenu chez WorkUp')
     # This will render a view in `app/views/user_mailer`!
   end
+
+  def new_event(event)
+    @event = event
+    mail(to: "team@workup.rocks", subject: "Nouvel événement à modérer")
+  end
+
+  def moderated_event(event)
+    @event = event
+    @user = User.find(@event.user)
+    mail(to: @user.email, subject: "Votre événement est en ligne sur WorkUp")
+  end
 end

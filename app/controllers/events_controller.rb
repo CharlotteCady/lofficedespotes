@@ -61,6 +61,7 @@ class EventsController < ApplicationController
 	def approved
 		@event.update(status: "approved")
 		respond_to do |format|
+		  UserMailer.moderated_event(@event).deliver_now
 		  format.html { redirect_to users_event_path }
 		  format.js { render layout: false }
 		end

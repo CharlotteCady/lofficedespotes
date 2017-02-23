@@ -3,11 +3,10 @@
 <% end %>
 
 <% content_for(:meta_description) do %>
-<% @event.description[0,150] %>
+	<% @event.description[0,150] %>
 <% end %>
 
-<!-- RAJOUTER UNE IMAGE AGENDA -->
-<!-- content_for :meta_image, @ressource.picture.url -->
+<% content_for :meta_image, "evenement-trouver-job-workup.png" %>
 
 <header>
 	<div class="container">
@@ -103,8 +102,20 @@
 <aside>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">
-				<p>Autre événements à venir</p>
+			<div class="col-xs-12 col-sm-offset-2 col-sm-8">
+				<p class="event-title">Autres événements à venir près de chez vous</p>
+				<% @events = Event.where.not(id: @event.id).near(@event.address, 20).limit(4).order(date: :asc, time: :asc) %>
+  				<% @events.each do |event| %>
+       				<div class="row white-block event-item">
+       					<div class="col-xs-3 col-sm-2">
+       						<p class="time"><%= l(event.date, format: '%d/%m').capitalize %></p>
+       					</div>
+       					<div class="col-xs-9 col-sm-10">
+       						<h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: "blank" %></h2>
+       						<p class="content-title">Par <%= event.organiser %></p>
+       					</div>
+       				</div>		
+      			<% end %>
 			</div>
 		</div>
 	</div>

@@ -6,6 +6,8 @@
   Découvrez tous les événements liés à l'emploi, l'orientation, la reconversion et création d'entreprise près de chez vous
 <% end %>
 
+<% content_for :meta_image, "evenement-trouver-job-workup.png" %>
+
 <% if flash[:notice] %>
 	<div class="alert alert-info fade in">
 		<button class="close" data-dismiss="alert">×</button>
@@ -18,7 +20,7 @@
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<h1>L'agenda emploi</h1>
-				<%= link_to "Créer un événement", new_event_path, class: "btn btn-transparent", target: "blank" %>
+				<%= link_to "Créer un événement", new_event_path, class: "btn btn-primary", target: "blank" %>
 			</div>
 		</div>
 	</div>
@@ -36,8 +38,20 @@
 					  <div class="form-group">
 					    <%= text_field_tag :address, params[:address], placeholder: "Ville", class: "form" %>
 					  </div>
-					    <%= submit_tag("Chercher", class: "btn btn-primary") %>
+					    <%= submit_tag("Chercher", class: "btn btn-empty") %>
 					<% end %>
+				</div>
+				<div id="solutions" class="white hidden-xs hidden-sm">
+					<p class="solutions-title">Nos découvertes</p>
+					<div class="listing_ressources">
+					  <% @ressources = Ressource.order("created_at desc").limit(6) %>
+					  <% @ressources.each do |ress| %>
+					    <%= link_to ressource_path(ress.id), target: "blank" do %>
+					      <%= image_tag(ress.picture) %>
+					      <p class= "sub-title"><%= ress.title %></p>
+					    <% end %>
+					  <% end %>
+					</div>
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-9 events">
@@ -47,10 +61,10 @@
 						<span class="date"><%= l(event_date, format: '%A %d %B').capitalize %></span>
 						<% @event_match.each do |event| %>
 							<div class="row white event-item">
-								<div class="col-xs-2">
+								<div class="col-xs-3 col-sm-2">
 									<p class="time"><%= event.time.strftime("%kh%M") %></p>
 								</div>
-								<div class="col-xs-10">
+								<div class="col-xs-9 col-sm-10">
 									<h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: "blank" %></h2>
 									<p class="content-title">Par <%= event.organiser %></p>
 								</div>
