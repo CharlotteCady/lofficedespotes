@@ -114,12 +114,12 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="new">
-            <p class="home-subheader">LES NOUVELLES DÉCOUVERTES</p>
+            <%= link_to "Nouvelles solutions", ressources_path, class: "btn btn-success" %>
             <div class="listing_ressources">
-              <% @ressources = Ressource.order("created_at desc").limit(4) %>
+              <% @ressources = Ressource.order("created_at desc").limit(2) %>
               <% @ressources.each do |ress| %>
               <div class="row item white">
-                <div class="col-xs-2">
+                <div class="col-xs-3 col-sm-2">
                   <div class="desktop-display-logo hidden-xs">
                     <ul class= "list-inline">
                       <li>
@@ -135,46 +135,84 @@
                     </ul>
                   </div>
                 </div>
-                <div class="col-xs-10">
+                <div class="col-xs-9 col-sm-10">
                   <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
                   <p class="content-title"><%= ress.description %></p>
                 </div>
               </div>
               <% end %>
-              <%= link_to "Voir toutes les solutions", ressources_path, class: "btn btn-primary" %>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+      <div class="new">
+        <%= link_to "Avantages négociés", offer_users_path, class: "btn btn-success" %>
+        <div class="listing_ressources">
+          <% Ressource.where(price: 'Promo').order('updated_at DESC').limit(2).each do |ress| %>
+              <div class="row item white">
+                <div class="col-xs-3 col-sm-2">
+                  <div class="desktop-display-logo hidden-xs">
+                    <ul class= "list-inline">
+                      <li>
+                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mobile-display-logo visible-xs">
+                    <ul class= "list-inline">
+                      <li>
+                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xs-9 col-sm-10">
+                  <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
+                  <p class="content-title"><%= ress.offer %></p>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="new">
+            <%= link_to "Événements à venir", events_path, class: "btn btn-primary" %>
+            <div class="listing_ressources">
+              <% @events = Event.order("created_at desc").limit(2) %>
+              <% @events.each do |event| %>
+              <div class="row white item">
+                <div class="col-xs-3 col-sm-2">
+                  <p class="time"><%= event.time.strftime("%kh%M") %></p>
+                </div>
+                <div class="col-xs-9 col-sm-10">
+                  <h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: "blank" %></h2>
+                  <p class="content-title">Par <%= event.organiser %></p>
+                </div>
+              </div>
+              <% end %>
             </div>
         </div>
       </div>
       <div class="col-sm-6">
         <div class="new">
-          <p class="home-subheader">LES OFFRES SPÉCIALES</p>
-          <div class="listing_ressources">
-            <% Ressource.where(price: 'Promo').order('updated_at DESC').limit(4).each do |ress| %>
-                <div class="row item white">
-                  <div class="col-xs-2">
-                    <div class="desktop-display-logo hidden-xs">
-                      <ul class= "list-inline">
-                        <li>
-                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="mobile-display-logo visible-xs">
-                      <ul class= "list-inline">
-                        <li>
-                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-xs-10">
-                    <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
-                    <p class="content-title"><%= ress.offer %></p>
-                  </div>
+            <%= link_to "Derniers articles", articles_path, class: "btn btn-primary" %>
+            <div class="listing_ressources">
+              <% @articles = Article.order("created_at desc").limit(2) %>
+              <% @articles.each do |article| %>
+              <div class="row white item">
+                <div class="col-xs-3 col-sm-2">
+                  <p class="time"><%= article.created_at.strftime('%d/%m') %></p>
                 </div>
-            <% end %>
-            <%= link_to "Voir toutes les offres", offer_users_path, class: "btn btn-primary" %>
-          </div>
+                <div class="col-xs-9 col-sm-10">
+                  <h2 class="sub-title"><%= link_to article.title, article_path(article.slug), target: "blank" %></h2>
+                  <p class="content-title"><%= article.seo_description %></p>
+                </div>
+              </div>
+              <% end %>
+            </div>
         </div>
       </div>
     </div>
@@ -186,36 +224,33 @@
     <div class="row">
       <div class="col-xs-3 trait"></div>
       <div class="col-xs-6">
-        <p class="home-header" >COMMENT ÇA MARCHE ?</p>
+        <p class="home-header" >Le concept</p>
       </div>
       <div class="col-xs-3 trait"></div>
     </div>
     <div class="row">
       <div id="explication" class="col-sm-12 padded text-center">
-        <b><p>
-            Que vous soyez à la recherche d'un emploi, en poste ou en création d'entreprise, nous voulons vous donner toutes les informations et les bons outils pour vous accompagner dans votre réflexion et vous aider à trouver le job qui vous convient.
-          </p></b>
-          <p class="hidden-xs">
-            Parce qu'il n'est pas toujours facile de s'y retrouver, nous testons des outils, des formations, des ateliers, des cours, des MOOCs, nous lisons des articles, des magazines, des blogs, des livres, nous visionnons des vidéos et rencontrons les acteurs de l'emploi pour vous offrir une sélection adaptée à vos besoins et vous faire découvrir des initiatives de qualité.
+        <p>
+            Que vous soyez à la recherche d'un emploi, en reconversion, en poste ou en création d'entreprise, nous voulons vous donner toutes les informations et les bons outils pour vous accompagner dans votre réflexion et vous aider à trouver le job qui vous convient.
           </p>
       </div>
 
       <div class="row">
         <div class="col-xs-12 col-sm-3 bot">
-            <p class="rond">1</p>
+            <p class="rond"><i class="fa fa-heart"></i></p>
             <p class="action"><b>Découvrez les nouvelles initiatives</b><br> que nous avons testé et enregistrez les dans vos favoris</p>
         </div>
         <div class="col-xs-12 col-sm-3 bot">
-            <p class="rond">2</p>
+            <p class="rond"><i class="fa fa-hand-peace-o"></i></p>
             <p class= "action"><b>Bénéficiez des offres spéciales</b><br> que nous négocions pour vous aider à passer à l'action</p>
         </div>
         <div class="col-xs-12 col-sm-3 bot">
-            <p class="rond">3</p>
-            <p class= "action"><b>Poussez votre réflexion</b><br> en contactant les initiatives, utilisant les outils, allant aux événements, etc.</p>
+            <p class="rond"><i class="fa fa-calendar-o"></i></p>
+            <p class= "action"><b>Découvrez les événements</b><br> dédiés à la transition professionnelle qui ont lieu près de chez vous</p>
         </div>
         <div class="col-xs-12 col-sm-3 bot">
-            <p class="rond">4</p>
-            <p class= "action"><b>Restez informé des nouveautés</b><br> en vous abonnant à notre newsletter ou en nous suivant sur les réseaux sociaux</p>
+            <p class="rond"><i class="fa fa-pencil"></i></p>
+            <p class= "action"><b>Accédez à des conseils concrets</b><br> à travers notre blog et nos accompagnements individuels</p>
         </div>
       </div>
     </div>
@@ -233,24 +268,24 @@
     </div>
     <div class="row">
       <div class="col-sm-4">
-        <p class="citation"><i>"Vos articles donnent beaucoup de pistes et informent surtout au sujet d'initiatives originales. Vous faites connaître les idées neuves, c'est vraiment extra"</i><br><b>Marie</b></p>
+        <p class="citation white"><i>"Vos articles donnent beaucoup de pistes et informent surtout au sujet d'initiatives originales. Vous faites connaître les idées neuves, c'est vraiment extra"</i><br><b>Marie</b></p>
       </div>
       <div class="col-sm-4">
-        <p class="citation"><i>"Vos articles permettent de découvrir de nouvelles initiatives d'accompagnement pour changer de métier, trouver son métier ou lancer sa boite, c'est super intéressant. En résumé vous faites notre travail en aidant à trouver les bons réseaux et les bonnes doses d'inspiration"</i><br><b>Romain</b></p>
+        <p class="citation white"><i>"Vos articles permettent de découvrir de nouvelles initiatives d'accompagnement pour changer de métier, trouver son métier ou lancer sa boite, c'est super intéressant. En résumé vous faites notre travail en aidant à trouver les bons réseaux et les bonnes doses d'inspiration"</i><br><b>Romain</b></p>
       </div>
       <div class="col-sm-4">
-        <p class="citation"><i>"WorkUp permet de ne pas avoir à chercher l'info et de la retrouver sur une seule plateforme. Je connaissais déjà quelques bons plans mais là j'ai accès à plein d'autres pistes, franchement merci !"</i><br><b>Jeanne</b></p>
+        <p class="citation white"><i>"WorkUp permet de ne pas avoir à chercher l'info et de la retrouver sur une seule plateforme. Je connaissais déjà quelques bons plans mais là j'ai accès à plein d'autres pistes, franchement merci !"</i><br><b>Jeanne</b></p>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-4">
-        <p class="citation"><i>"Une super boite à outils où aller piocher. Les articles sont un vrai plus dans la présentation de chaque solution, dispositif, livre..."</i><br><b>Matthieu</b></p>
+        <p class="citation white"><i>"Une super boite à outils où aller piocher. Les articles sont un vrai plus dans la présentation de chaque solution, dispositif, livre..."</i><br><b>Matthieu</b></p>
       </div>
       <div class="col-sm-4">
-        <p class="citation"><i>"Une petite bouffée d'oxygène avec des découvertes pour avancer et des sources de bonnes idées auxquelles on a pas forcément pensé !"</i><br><b>Pierre</b></p>
+        <p class="citation white"><i>"Une petite bouffée d'oxygène avec des découvertes pour avancer et des sources de bonnes idées auxquelles on a pas forcément pensé !"</i><br><b>Pierre</b></p>
       </div>
       <div class="col-sm-4">
-        <p class="citation"><i>"WorkUp me permet de confronter ma vision et ma situation à des outils et pratiques pour aller plus vite ou y voir plus clair"</i><br><b>Mathilde</b></p>
+        <p class="citation white"><i>"WorkUp me permet de confronter ma vision et ma situation à des outils et pratiques pour aller plus vite ou y voir plus clair"</i><br><b>Mathilde</b></p>
       </div>
     </div>
   </div>

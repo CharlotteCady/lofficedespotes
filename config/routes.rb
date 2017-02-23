@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   post "category", to: "articles#category"
   get '/mentions-legales', to: "pages#mentions_legales"
   get '/pro', to: "pages#pro"
-  get '/manifeste', to: "pages#manifeste"
-
+  
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :users, only: [:edit, :update] do

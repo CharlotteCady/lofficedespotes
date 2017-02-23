@@ -12,7 +12,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 text-center">
-				<h1><%= @event.title %></h1>
+				<h1 class="hidden-xs" id="title-desktop"><%= @event.title %></h1>
+				<h1 class="visible-xs" id="title-mobile"><%= @event.title %></h1>
 				<%= link_to "Participer à l'événement", (@event.subscription_link), class: "btn btn-primary", target: "blank" %>
 			</div>
 		</div>

@@ -26,7 +26,7 @@
       <div class="row">
         <div class="col-xs-12">
 
-          <div class="publishing-date">
+          <div class="publishing-date hidden-xs">
             <%= @ressource.created_at.strftime("%d #{@mois[@ressource.created_at.strftime("%m").to_i - 1]} %Y") %>
           </div>
           <% @category_list.map do |category| %>
@@ -235,14 +235,13 @@
           <div id="solutions" class="white-block">
             <p class="right-title">Nos découvertes</p>
             <div class="listing_ressources">
-              <% @ressources = Ressource.order("created_at desc").limit(4) %>
+              <% @ressources = Ressource.where.not(id: @ressource.id).order("created_at desc").limit(4) %>
               <% @ressources.each do |ress| %>
                 <%= link_to ressource_path(ress.slug), target: "blank" do %>
                   <%= image_tag(ress.picture) %>
                   <p class= "sub-title"><%= ress.title %></p>
                 <% end %>
               <% end %>
-              <%= link_to "Tout Voir", ressources_path, class: "btn btn-primary" %>
             </div>
           </div>
         </div>
@@ -293,17 +292,15 @@
           <div id="solutions-mobile" class="white-block">
             <p class="right-title">Nos découvertes</p>
             <div class="listing_ressources">
-              <% @ressources = Ressource.order("created_at desc").limit(3) %>
+              <% @ressources = Ressource.where.not(id: @ressource.id).order("created_at desc").limit(3) %>
               <% @ressources.each do |ress| %>
                 <%= link_to ressource_path(ress.slug), target: "blank" do %>
                   <%= image_tag(ress.picture) %>
                   <p class= "sub-title"><%= ress.title %></p>
                 <% end %>
               <% end %>
-              <%= link_to "Tout Voir", ressources_path, class: "btn btn-primary" %>
             </div>
           </div>
-
         </div>
       </div>
     </div>

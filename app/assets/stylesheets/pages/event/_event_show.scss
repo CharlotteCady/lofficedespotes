@@ -8,11 +8,17 @@
     background: image-url("creersaboite.png") repeat fixed;
     min-height: 300px;
     margin-bottom: 20px;
-	    h1 {
+	    h1#title-desktop {
 	      margin-top: 30px;
 	      padding-top: 90px;
-	      font-size: 60px;
+	      font-size: 56px;
 	      color: white;
+	    }
+	    h1#title-mobile {
+	    	margin-top: 30px;
+	    	padding-top: 90px;
+	    	font-size: 36px;
+	    	color: white;
 	    }
 	}
 	section {
@@ -78,7 +84,6 @@
 		  color: white;
 		  background-color: $purple;
 		  padding: 5px 10px;
-		  // width: 180px;
 		  margin: 20px 10px;
 		  border-radius: 3px;
 		}
