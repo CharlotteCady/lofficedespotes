@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
+  extend FriendlyId
   include Bootsy::Container
+  friendly_id :title, use: :slugged
   after_create :send_event_email
 
   belongs_to :user
@@ -17,8 +19,6 @@ class Event < ActiveRecord::Base
   validates :address, presence: true
   validates :category, presence: true
   validates :organiser, presence: true
-
-
   
   def self.search_event(category, address)
     if category.present? && address.present?

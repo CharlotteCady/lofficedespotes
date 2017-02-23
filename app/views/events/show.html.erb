@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for(:meta_description) do %>
-	<% @event.description[0,150] %>
+	<% sanitize @event.description[0,150] %>
 <% end %>
 
 <% content_for :meta_image, "evenement-trouver-job-workup.png" %>

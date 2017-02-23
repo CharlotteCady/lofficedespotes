@@ -6,9 +6,9 @@
           <p class="time"><%= l(event.date, format: '%d %B').capitalize %></p>
         </div>
         <div class="col-xs-9 col-sm-10">
-          <h2 class="sub-title"><%= link_to_if (event.status == "approved"), event.title, event_path(event.id), target: "blank" %></h2>
+          <h2 class="sub-title"><%= link_to_if (event.status == "approved"), event.title, event_path(event), target: "blank" %></h2>
           <span class="status-btn"><%= event.status == "draft" ? "En cours de vérification" : "En ligne" %></span>
-          <span class="admin-btn"><%= link_to "Editer", edit_event_path(event.id) %></span>
+          <span class="admin-btn"><%= link_to "Editer", edit_event_path(event) %></span>
           <span class="admin-btn">
             <%= link_to "Supprimer", event_path(event),
             method: :delete, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %>

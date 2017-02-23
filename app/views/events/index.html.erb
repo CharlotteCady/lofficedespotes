@@ -65,7 +65,7 @@
 									<p class="time"><%= event.time.strftime("%kh%M") %></p>
 								</div>
 								<div class="col-xs-9 col-sm-10">
-									<h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: "blank" %></h2>
+									<h2 class="sub-title"><%= link_to event.title, event_path(event), target: "blank" %></h2>
 									<p class="content-title">Par <%= event.organiser %></p>
 								</div>
 							</div>	

@@ -56,6 +56,7 @@ class EventsController < ApplicationController
 
 	def destroy
 	  @event.destroy
+	  redirect_to event_users_path
 	end
 
 	def approved
@@ -73,6 +74,6 @@ class EventsController < ApplicationController
 			:date, :time, :price, :address, :organiser, :website, :status, :bootsy_image_gallery_id, :category => [])
 	end
 	def set_event
-		@event = Event.find(params[:id])
+		@event = Event.friendly.find(params[:id])
 	end
 end
