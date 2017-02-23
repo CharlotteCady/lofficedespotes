@@ -86,7 +86,7 @@
     color: white;
   }
     h1#title-mobile {
-    font-size: 46px;
+    font-size: 36px;
     margin-top: 0px;
     margin-bottom: 0px;
     color: white;
@@ -95,18 +95,6 @@
   p.cat{
     font-family: $base-font;
     font-size: 16px;
-  }
-  .writer-info {
-    p {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    color: $gray-lighter;
-    font-size: 12px;
-    }
-    img {
-      width: 30px;
-      margin-right: 10px;
-    }
   }
 
     // LEFT SIDE CONTENU DE L'ARTICLE
@@ -154,6 +142,17 @@
       img {
         margin: 50px auto;
       }
+    }
+  }
+
+  .writer-info {
+    padding: 10px 30px;
+    p.name {
+      font-weight: bold;
+      padding-top: 10px;    }
+    img {
+      width: 90px;
+      margin-right: 10px;
     }
   }
 
@@ -245,7 +244,6 @@
   // ========== A LIRE
   #listing_articles {
     margin-bottom: 50px;
-    margin-top: 50px;
     .home-header, .home-header-mobile {
       color: #6679ff;
       margin-bottom: 30px;
@@ -253,11 +251,17 @@
     .home-header-mobile {
       text-align: center;
     }
-    #other-articles {
-      margin-top: 50px;
-      margin-bottom: 50px;
+    p.other-articles {
+      font-family: $my-font;
+      font-size: 28px;
+      color: white;
+      background-color: $purple;
+      padding: 5px 10px;
+      border-radius: 3px;
+      text-align: center;
     }
     .banner {
+      padding: 10px;
       #banner-image {
         width: 100%;
         min-height: 300px;
@@ -266,6 +270,7 @@
       }
     }
     .content-banner {
+      margin: 10px;
       padding-top: 100px;
       position: absolute;
       top: 0;

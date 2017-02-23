@@ -16,7 +16,7 @@
               -moz-background-size: cover; -o-background-size: cover;">
         </div>
         <div class="content-banner">
-          <div class="publishing-date">
+          <div class="publishing-date hidden-xs">
             <%= @article.created_at.strftime("%d #{@mois[@article.created_at.strftime("%m").to_i - 1]} %Y") %>
           </div>
           <% @category_list.map do |category| %>
@@ -35,21 +35,6 @@
           <% end %>
           <h1 class="hidden-xs" id="title-desktop"><%= @article.title %></h1>
           <h1 class="visible-xs" id="title-mobile"><%= @article.title %></h1>
-          <div class="writer-info hidden-xs">
-            <p>
-              <% if @article.user.avatar? %>
-                <%= image_tag(@article.user.avatar.url(:medium), class: "img-circle") %>
-              <% else %>
-                <%=  image_tag "eight_horns.png", class: "img-circle" %>
-              <% end %>
-              Rédigé par
-              <% if @article.user.name? %>
-                <%= @article.user.name %>
-              <% else %>
-                <%= @article.user.first_name + " " + @article.user.last_name %>
-              <% end %>
-            </p>
-          </div>
         </div>
       </div>
     </div>
@@ -74,6 +59,30 @@
             <div class="addthis_sharing_toolbox" id="share"></div>
           </div>
         </div>
+        <div class="row writer-info white">
+          <div class="col-xs-3">
+            <% if @article.user.avatar? %>
+              <%= image_tag(@article.user.avatar.url(:medium), class: "img-circle") %>
+            <% else %>
+              <%=  image_tag "eight_horns.png", class: "img-circle" %>
+            <% end %>
+          </div>
+          <div class="col-xs-9">
+            <p class="name">
+              Rédigé par
+              <% if @article.user.name? %>
+                <%= @article.user.name %>
+              <% else %>
+                <%= @article.user.first_name + " " + @article.user.last_name %>
+              <% end %>
+            </p>
+            <p class="description">
+              <% if @article.user.description? %>
+                <%= @article.user.description %>
+              <% end %>
+            </p>
+          </div>
+        </div>
       </div>
 
       <!-- DESKTOP -->
@@ -89,7 +98,6 @@
                   <p class= "sub-title"><%= ress.title %></p>
                 <% end %>
               <% end %>
-              <%= link_to "Tout Voir", ressources_path, class: "btn btn-primary" %>
             </div>
           </div>
         </div>
@@ -107,7 +115,6 @@
                   <p class= "sub-title"><%= ress.title %></p>
                 <% end %>
               <% end %>
-              <%= link_to "Tout Voir", ressources_path, class: "btn btn-primary" %>
             </div>
           </div>
         </div>
@@ -119,8 +126,7 @@
 <div id="listing_articles">
   <div class="container">
     <div class="row">
-      <p class="home-header hidden-xs">VOUS POURREZ AUSSI AIMER</p>
-      <p class="home-header-mobile visible-xs">VOUS POURREZ AUSSI AIMER</p>
+      <p class="other-articles">Vous pourrez aussi aimer</p>
       <% @articles = Article.where.not(id: @article.id).limit(3).order("RANDOM()") %>
       <% @articles.each do |article| %>
         <div class="col-md-4 banner">
@@ -138,6 +144,6 @@
   </div>
 </div>
 
-<%= render "articles/nl_reseaux_sociaux_blog" %>
+<%= render "pages/nl_reseaux_sociaux_blog" %>
 
 <%= render "pages/footer" %>

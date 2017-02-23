@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123150422) do
+ActiveRecord::Schema.define(version: 20170210093856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,28 @@ ActiveRecord::Schema.define(version: 20161123150422) do
   add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "subscription_link"
+    t.date     "date"
+    t.time     "time"
+    t.integer  "price"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "organiser"
+    t.string   "website"
+    t.integer  "user_id"
+    t.text     "category"
+    t.boolean  "favorite"
+    t.string   "status"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -206,5 +228,6 @@ ActiveRecord::Schema.define(version: 20161123150422) do
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
 
   add_foreign_key "articles", "users"
+  add_foreign_key "events", "users"
   add_foreign_key "ressources", "users"
 end

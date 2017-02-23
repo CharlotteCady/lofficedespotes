@@ -1,0 +1,94 @@
+#events_show {
+	#navbar-workup {
+	  .navbar-nav, .navbar-toggle {
+	    margin-top: 15px;
+	  }
+	}
+	header   {
+    background: image-url("creersaboite.png") repeat fixed;
+    min-height: 300px;
+    margin-bottom: 20px;
+	    h1#title-desktop {
+	      margin-top: 30px;
+	      padding-top: 90px;
+	      font-size: 56px;
+	      color: white;
+	    }
+	    h1#title-mobile {
+	    	margin-top: 30px;
+	    	padding-top: 90px;
+	    	font-size: 36px;
+	    	color: white;
+	    }
+	}
+	section {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		#description {
+			min-height: 479px;
+			#category-btn {
+				font-size: 12px;
+				font-style: italic;
+				color: white;
+				margin-top: 10px;
+				margin-bottom: 35px;
+				span.cat-btn {
+					background-color: $purple;
+					padding: 5px 10px;
+				}
+				span.admin-btn a {
+					color: white;
+					background-color: $gray;
+					padding: 5px 10px;
+					&:hover {
+					  background-color: $gray-darker;
+					}
+				}
+			}
+			#writer {
+				margin-top: 20px;
+			  span {
+			  margin-top: 20px;
+			  margin-bottom: 30px;
+			  font-size: 12px;
+			  }
+			  img {
+			    width: 30px;
+			    margin-right: 10px;
+			  }
+			}
+		}
+		#content-event, #price, #date, #lieu, #organiser {
+				p.event-subtitle {
+					font-weight: bold;
+					font-size: 16px;
+					color: black;
+					margin-bottom: 10px;
+				}
+				p, span, li {
+					color: $gray-light;
+					font-weight: normal;
+					margin-bottom: 0;
+					text-align: justify;
+				}
+				a {
+					color: $blue;
+				}
+			}
+	}
+	aside {
+		margin: 50px 0px;
+		p.event-title {
+		  font-family: $my-font;
+		  font-size: 24px;
+		  color: white;
+		  background-color: $purple;
+		  padding: 5px 10px;
+		  margin: 20px 10px;
+		  border-radius: 3px;
+		}
+		h2, p {
+			margin: 0;
+		}
+	}
+}

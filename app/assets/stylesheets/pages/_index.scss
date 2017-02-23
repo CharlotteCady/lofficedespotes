@@ -20,6 +20,7 @@
 @import "user/user_show";
 @import "user/user_favorites";
 @import "user/user_offer";
+@import "user/user_event";
 @import "user/user_matching";
 @import "user/user_reco_modal";
 @import "user/user_profil_modal";
@@ -38,4 +39,7 @@
 @import "article/article_index";
 @import "article/blog_menu";
 @import "article/article_show";
-@import "article/nl_reseaux_sociaux";
+@import "nl_reseaux_sociaux";
+@import "event/event_form";
+@import "event/event_show";
+@import "event/event_index";

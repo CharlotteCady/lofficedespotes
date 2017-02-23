@@ -19,7 +19,7 @@
       <%= link_to @categories[4],  {controller: "ressources", action: "category", category: @categories[4] } %>
     </li>
   </ul>
-<%= form_tag(ressources_path, method: "get", action: "index", id: "search-form", class: "form-inline") do %>
+  <%= form_tag(ressources_path, method: "get", action: "index", id: "search-form", class: "form-inline") do %>
     <div class="form-group">
       <!-- select_tag(:category, options_for_select(@categories), prompt: "Catégorie", class: "form") %> -->
     </div>

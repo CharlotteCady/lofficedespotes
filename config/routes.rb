@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   post "category", to: "articles#category"
   get '/mentions-legales', to: "pages#mentions_legales"
   get '/pro', to: "pages#pro"
-  get '/manifeste', to: "pages#manifeste"
-
+  
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   resources :users, only: [:edit, :update] do
@@ -22,6 +21,7 @@ Rails.application.routes.draw do
       get 'favorites', to: "users#favorites"
       get 'matching', to: "users#matching"
       get 'offer', to: "users#offer"
+      get 'event', to: "users#event"
       patch 'update_password'
     end
   end
@@ -45,17 +45,14 @@ Rails.application.routes.draw do
   end
 
   resources :articles
+  resources :events do 
+    member do
+      get "approved", to: "events#approved"
+    end
+  end
 
   # Sitemap pour les robots
   get '/sitemap.xml.gz', to: redirect("http://#{ ENV.fetch('S3_BUCKET_NAME') }.s3.amazonaws.com/sitemaps/sitemap.xml.gz")
 
   post '/api/stats/age_repartition' => 'stats#age_repartition'
-
-
-  # resources :ressources do
-  #   member do
-  #     put "like", to: "ressources#like"
-  #     put "dislike", to: "ressources#dislike"
-  #   end
-  # end
 end

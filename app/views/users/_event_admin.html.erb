@@ -1,0 +1,48 @@
+<div class="col-md-6 admin-events">
+  <div class="event-title">Événements à modérer</div>
+  <% if (@moderate_event != nil) %>
+    <% @moderate_event.order(date: :asc, time: :asc).each do |event| %>
+      <div class="row white event-item" id="moderate-event-<%= event.id %>">
+        <div class="col-xs-3 col-sm-2">
+          <p class="time"><%= l(event.date, format: '%d/%m').capitalize %></p>
+        </div>
+        <div class="col-xs-9 col-sm-10">
+          <h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: "blank" %></h2>
+          <span class="status-btn"><%= link_to "Approuver", approved_event_path(event.id), method: :get, remote: true, data: { confirm: "Vous êtes sûr de vouloir approuver cet événement ?" } %></span>
+          <span class="admin-btn"><%= link_to "Editer", edit_event_path(event.id) %></span>
+          <span class="admin-btn">
+            <%= link_to "Supprimer", event_path(event),
+            method: :delete, remote: true, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %>
+          </span>
+        </div>
+      </div>  
+    <% end %>
+  <% else %>
+    <p>Il n'y a pas d'événement en attente de modération</p>
+  <% end %>
+</div>
+
+<div class="col-md-6 admin-events">
+  <div class="event-title">Mes événements</div>
+  <% if (@my_events != nil) %>
+    <% @my_events.each do |event| %>
+      <div class="row white event-item" id="my-event-<%= event.id %>">
+        <div class="col-xs-3 col-sm-2">
+          <p class="time"><%= l(event.date, format: '%d/%m').capitalize %></p>
+        </div>
+        <div class="col-xs-9 col-sm-10">
+          <h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: "blank" %></h2>
+          <span class="status-btn"><%= event.status == "draft" ? "En cours de vérification" : "En ligne" %></span>
+          <span class="admin-btn"><%= link_to "Editer", edit_event_path(event.id) %></span>
+          <span class="admin-btn">
+            <%= link_to "Supprimer", event_path(event),
+            method: :delete, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %>
+          </span>
+        </div>
+      </div>  
+    <% end %>
+  <% else %>
+    <p>Vous n'avez pas encore créé d'événement</p>
+    <%= link_to "Créer mon 1er événement", new_event_path, class: "btn btn-primary" %>
+  <% end %>
+</div>

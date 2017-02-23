@@ -1,0 +1,125 @@
+<% content_for(:title) do %>
+  <% @event.title %>
+<% end %>
+
+<% content_for(:meta_description) do %>
+	<% @event.description[0,150] %>
+<% end %>
+
+<% content_for :meta_image, "evenement-trouver-job-workup.png" %>
+
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<h1 class="hidden-xs" id="title-desktop"><%= @event.title %></h1>
+				<h1 class="visible-xs" id="title-mobile"><%= @event.title %></h1>
+				<%= link_to "Participer à l'événement", (@event.subscription_link), class: "btn btn-primary", target: "blank" %>
+			</div>
+		</div>
+	</div>
+</header>
+<section>
+	<div class="container">
+		<div class="col-xs-12 col-md-8">
+			<div id="description" class="white-block">
+				<div id="category-btn">
+					<% @category_list.map do |category| %>
+					  <span class="cat-btn"><%= category %></span>
+					<% end %>
+
+					<% if user_signed_in?  %>
+					  <% if current_user.admin? || (current_user.id == @event.user.id) %>
+					  <span class="admin-btn"><%= link_to "Editer", edit_event_path(@event.id) %></span>
+					    <span class="admin-btn"><%= link_to "Supprimer", event_path(@event),
+					      method: :delete, data: { confirm: "Vous êtes sûr de vouloir supprimer cet article ?" } %></span>
+					  <% end %>
+					<% end %>
+				</div>
+				<div id="content-event">
+					<p class="event-subtitle">Description</p>
+					<p><%= sanitize @event.description %></p>
+				</div>
+				<div id="writer">
+				    <% if @event.user.avatar? %>
+				      <%= image_tag(@event.user.avatar.url(:medium), class: "img-circle") %>
+				    <% else %>
+				      <%=  image_tag "eight_horns.png", class: "img-circle" %>
+				    <% end %>
+				    <span>Partagé par <%= @event.user.name.capitalize %></span>
+				</div>
+			</div>
+		</div> 	
+		<div class="col-xs-12 col-md-4">
+			<div class="white-block">
+				<div id="price">
+					<p class="event-subtitle">Prix</p>
+					<p><%= @event.price %> €</p>
+				</div>
+			</div>
+			<div class="white-block">
+				<div id="date">
+					<p class="event-subtitle">Date</p>
+					<p><%= l(@event.date, format: '%A %d %B %Y').capitalize%></p>
+					<p><%= @event.time.strftime("%kh%M") %></p>
+				</div>
+			</div>
+			<div class="white-block">
+				<div id="lieu">
+					<p class="event-subtitle">Lieu</p>
+					<p><%= @event.address %></p>
+				</div>
+			</div>
+			<div class="white-block">
+				<div id="organiser">
+					<p class="event-subtitle">Organisateur</p>
+					<p><%= @event.organiser %></p>
+					<% if @event.website %>
+						<%= link_to "Site internet", (@event.website), target: "blank", id: "website" %>
+					<% end %>
+				</div>
+			</div>
+		</div> 	
+	</div>
+</section>
+
+<div id="map" style="width: 100%; height: 300px;"></div>
+<% content_for(:after_js) do %>
+	<%= javascript_tag do %>
+		$(document).on('ready', function() {
+			handler = Gmaps.build('Google');
+			handler.buildMap({ 
+			internal: { id: 'map' } }, 
+			function(){
+				marker = handler.addMarkers(<%= raw @marker.to_json %>);
+				handler.bounds.extendWith(marker);
+				handler.fitMapToBounds();
+				handler.getMap().setZoom(15)
+			});
+		})
+	<% end %>
+<% end %>
+
+<aside>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-offset-2 col-sm-8">
+				<p class="event-title">Autres événements à venir près de chez vous</p>
+				<% @events = Event.where.not(id: @event.id).near(@event.address, 20).limit(4).order(date: :asc, time: :asc) %>
+  				<% @events.each do |event| %>
+       				<div class="row white-block event-item">
+       					<div class="col-xs-3 col-sm-2">
+       						<p class="time"><%= l(event.date, format: '%d/%m').capitalize %></p>
+       					</div>
+       					<div class="col-xs-9 col-sm-10">
+       						<h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: "blank" %></h2>
+       						<p class="content-title">Par <%= event.organiser %></p>
+       					</div>
+       				</div>		
+      			<% end %>
+			</div>
+		</div>
+	</div>
+</aside>
+
+<%= render "pages/footer" %>
