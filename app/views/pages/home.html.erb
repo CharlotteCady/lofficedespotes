@@ -14,15 +14,12 @@
         <div class="content">
           <div class="col-xs-12">
             <h1 id= "baseline" class= "text-center">
-              À LA RECHERCHE DU JOB IDÉAL ?
+              Découvrez les meilleurs sites, outils et solutions pour <br><span class="animate-element"></span>
             </h1>
-            <p class= "trouver-un-emploi">
-              Découvrez les meilleurs sites, outils et solutions pour <span class="animate-element"></span>
-            </p>
           </div>
           <div class="col-xs-12">
             <ul class="list-inline">
-              <%= link_to "Je veux trouver mon job idéal", ressources_path, class: "btn btn-primary" %>
+              <%= link_to "Découvrir les solutions", ressources_path, class: "btn btn-primary" %>
             </ul>
           </div>
         </div>
@@ -42,15 +39,12 @@
         <div class="content">
           <div class="col-xs-12">
             <h1 id= "baseline" class= "text-center">
-              À LA RECHERCHE DU JOB IDÉAL ?
+              Découvrez les meilleurs sites, outils et solutions pour <br><span class="animate-element"></span>
             </h1>
-            <p class= "trouver-un-emploi">
-              Découvrez les meilleurs sites, outils et solutions pour <span class="animate-element"></span>
-            </p>
           </div>
           <div class="col-xs-12">
             <ul class="list-inline">
-              <%= link_to "Je veux trouver mon job idéal", ressources_path, class: "btn btn-primary" %>
+              <%= link_to "Découvrir les solutions", ressources_path, class: "btn btn-primary" %>
             </ul>
           </div>
         </div>
@@ -174,46 +168,6 @@
           <% end %>
         </div>
       </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="new">
-            <%= link_to "Événements à venir", events_path, class: "btn btn-primary" %>
-            <div class="listing_ressources">
-              <% @events = Event.order("created_at desc").limit(2) %>
-              <% @events.each do |event| %>
-              <div class="row white item">
-                <div class="col-xs-3 col-sm-2">
-                  <p class="time"><%= event.time.strftime("%kh%M") %></p>
-                </div>
-                <div class="col-xs-9 col-sm-10">
-                  <h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: "blank" %></h2>
-                  <p class="content-title">Par <%= event.organiser %></p>
-                </div>
-              </div>
-              <% end %>
-            </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="new">
-            <%= link_to "Derniers articles", articles_path, class: "btn btn-primary" %>
-            <div class="listing_ressources">
-              <% @articles = Article.order("created_at desc").limit(2) %>
-              <% @articles.each do |article| %>
-              <div class="row white item">
-                <div class="col-xs-3 col-sm-2">
-                  <p class="time"><%= article.created_at.strftime('%d/%m') %></p>
-                </div>
-                <div class="col-xs-9 col-sm-10">
-                  <h2 class="sub-title"><%= link_to article.title, article_path(article.slug), target: "blank" %></h2>
-                  <p class="content-title"><%= article.seo_description %></p>
-                </div>
-              </div>
-              <% end %>
-            </div>
-        </div>
       </div>
     </div>
   </div>

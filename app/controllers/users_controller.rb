@@ -58,6 +58,7 @@ class UsersController < ApplicationController
 
   def offer
   end
+  
   def event
     @my_events = Event.where(user_id: current_user.id)
     @moderate_event = Event.draft

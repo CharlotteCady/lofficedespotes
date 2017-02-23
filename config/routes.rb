@@ -55,12 +55,4 @@ Rails.application.routes.draw do
   get '/sitemap.xml.gz', to: redirect("http://#{ ENV.fetch('S3_BUCKET_NAME') }.s3.amazonaws.com/sitemaps/sitemap.xml.gz")
 
   post '/api/stats/age_repartition' => 'stats#age_repartition'
-
-
-  # resources :ressources do
-  #   member do
-  #     put "like", to: "ressources#like"
-  #     put "dislike", to: "ressources#dislike"
-  #   end
-  # end
 end
