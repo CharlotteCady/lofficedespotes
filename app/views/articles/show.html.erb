@@ -93,7 +93,7 @@
             <div class="listing_ressources">
               <% @ressources = Ressource.order("created_at desc").limit(6) %>
               <% @ressources.each do |ress| %>
-                <%= link_to ressource_path(ress.slug), target: "blank" do %>
+                <%= link_to ressource_path(ress.slug), target: :_blank do %>
                   <%= image_tag(ress.picture) %>
                   <p class= "sub-title"><%= ress.title %></p>
                 <% end %>
@@ -110,7 +110,7 @@
             <div class="listing_ressources">
               <% @ressources = Ressource.order("created_at desc").limit(3) %>
               <% @ressources.each do |ress| %>
-                <%= link_to ressource_path(ress.slug), target: "blank" do %>
+                <%= link_to ressource_path(ress.slug), target: :_blank do %>
                   <%= image_tag(ress.picture) %>
                   <p class= "sub-title"><%= ress.title %></p>
                 <% end %>
@@ -130,7 +130,7 @@
       <% @articles = Article.where.not(id: @article.id).limit(3).order("RANDOM()") %>
       <% @articles.each do |article| %>
         <div class="col-md-4 banner">
-          <%= link_to article_path(article.slug), target: "blank" do %>
+          <%= link_to article_path(article.slug) do %>
           <div id="banner-image" style="background: url(<%= article.picture.url %>); background-repeat:no-repeat; background-size:cover; -webkit-background-size: cover;
                 -moz-background-size: cover; -o-background-size: cover;">
           </div>

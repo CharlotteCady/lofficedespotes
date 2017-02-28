@@ -14,7 +14,12 @@
 			<div class="col-xs-12 text-center">
 				<h1 class="hidden-xs" id="title-desktop"><%= @event.title %></h1>
 				<h1 class="visible-xs" id="title-mobile"><%= @event.title %></h1>
-				<%= link_to "Participer à l'événement", (@event.subscription_link), class: "btn btn-primary", target: "blank" %>
+				<% if @event.subscription_link.start_with?('http') %>
+					<%= link_to "Participer à l'événement", (@event.subscription_link), class: "btn btn-primary", target: :_blank %>
+				<% else %>
+					<%= link_to "Participer à l'événement", ("http://" + @event.subscription_link), class: "btn btn-primary", target: :_blank %>
+				<% end %>
+				
 			</div>
 		</div>
 	</div>
@@ -38,7 +43,7 @@
 				</div>
 				<div id="content-event">
 					<p class="event-subtitle">Description</p>
-					<p><%= sanitize @event.description %></p>
+					<div class="content-desc"><%= sanitize @event.description %></div>
 				</div>
 				<div id="writer">
 				    <% if @event.user.avatar? %>
@@ -74,8 +79,12 @@
 				<div id="organiser">
 					<p class="event-subtitle">Organisateur</p>
 					<p><%= @event.organiser %></p>
-					<% if @event.website %>
-						<%= link_to "Site internet", (@event.website), target: "blank", id: "website" %>
+					<% if @event.website != "" %>
+						<% if @event.website.start_with?('http') %>
+							<%= link_to "Site internet", (@event.website), target: :_blank, id: "website" %>
+						<% else %>
+							<%= link_to "Site internet", ("http://" + @event.website), target: :_blank, id: "website" %>
+						<% end %>
 					<% end %>
 				</div>
 			</div>
@@ -105,14 +114,14 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-offset-2 col-sm-8">
 				<p class="event-title">Autres événements à venir près de chez vous</p>
-				<% @events = Event.where.not(id: @event.id).near(@event.address, 20).limit(4).order(date: :asc, time: :asc) %>
+				<% @events = Event.approved.where.not(id: @event.id).near(@event.address, 20).limit(4).order(date: :asc, time: :asc) %>
   				<% @events.each do |event| %>
        				<div class="row white-block event-item">
        					<div class="col-xs-3 col-sm-2">
        						<p class="time"><%= l(event.date, format: '%d/%m').capitalize %></p>
        					</div>
        					<div class="col-xs-9 col-sm-10">
-       						<h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: "blank" %></h2>
+       						<h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: :_blank %></h2>
        						<p class="content-title">Par <%= event.organiser %></p>
        					</div>
        				</div>		

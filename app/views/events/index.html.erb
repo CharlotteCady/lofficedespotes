@@ -20,7 +20,8 @@
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<h1>L'agenda emploi</h1>
-				<%= link_to "Créer un événement", new_event_path, class: "btn btn-primary", target: "blank" %>
+				<p class="subtitle-event">Partagez et retrouvez enfin facilement les événements liés à l'emploi, l'orientation, la reconversion et la création d'activité</p>
+				<%= link_to "Créer un événement", new_event_path, class: "btn btn-primary", target: :_blank %>
 			</div>
 		</div>
 	</div>
@@ -46,7 +47,7 @@
 					<div class="listing_ressources">
 					  <% @ressources = Ressource.order("created_at desc").limit(6) %>
 					  <% @ressources.each do |ress| %>
-					    <%= link_to ressource_path(ress.id), target: "blank" do %>
+					    <%= link_to ressource_path(ress.id), target: :_blank do %>
 					      <%= image_tag(ress.picture) %>
 					      <p class= "sub-title"><%= ress.title %></p>
 					    <% end %>
@@ -65,7 +66,7 @@
 									<p class="time"><%= event.time.strftime("%kh%M") %></p>
 								</div>
 								<div class="col-xs-9 col-sm-10">
-									<h2 class="sub-title"><%= link_to event.title, event_path(event), target: "blank" %></h2>
+									<h2 class="sub-title"><%= link_to event.title, event_path(event), target: :_blank %></h2>
 									<p class="content-title">Par <%= event.organiser %></p>
 								</div>
 							</div>	

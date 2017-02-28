@@ -6,7 +6,7 @@
 	}
 	header   {
     background: image-url("creersaboite.png") repeat fixed;
-    min-height: 300px;
+    min-height: 320px;
     margin-bottom: 20px;
 	    h1#title-desktop {
 	      margin-top: 30px;
@@ -64,6 +64,9 @@
 					font-size: 16px;
 					color: black;
 					margin-bottom: 10px;
+				}
+				.content-desc p {
+					color: black;
 				}
 				p, span, li {
 					color: $gray-light;
