@@ -13,4 +13,6 @@ class PagesController < ApplicationController
   end
   def pro
   end
+  def infographie
+  end
 end

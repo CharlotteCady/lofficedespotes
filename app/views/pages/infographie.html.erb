@@ -1,0 +1,25 @@
+<% content_for(:title) do %>
+  L'infographie pour embarquer vers votre job idéal | WorkUp
+<% end %>
+
+<%content_for(:meta_description) do %>
+  Découvrez notre sélection de solutions pour le voyage qui vous convient : emploi, reconversion ou entrepreneuriat !
+<% end %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 white text-center" id="intro">
+			<h1>L'infographie des outils et acteurs de la transition pro</h1>
+			<p>Pour fêter nos 1 an, nous avons créé une infographie qui regroupe des outils et acteurs de l'emploi, de la reconversion et de l'entrepreneuriat que l'on adore ! N'hésitez pas à jeter un oeil aux solutions qui vous intéressent dans <a href="http://workuper.com/ressources/" alt="Boite à outils de WorkUp">notre boite à outils</a>.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 text-center white">
+			<%= image_tag("infographie-workup.png", :alt => "l'infographie des outils et acteurs de la transition professionnelle") %>
+		</div>
+	</div>
+</div>
+
+<%= render "pages/nl_reseaux_sociaux_blog" %>
+
+<%= render "pages/footer" %>

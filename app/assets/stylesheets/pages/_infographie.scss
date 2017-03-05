@@ -1,0 +1,23 @@
+#pages_infographie {
+	#navbar-workup {
+	  .navbar-nav, .navbar-toggle {
+	    margin-top: 15px;
+	  }
+	}
+
+	img {
+		width: 80%;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	#intro {
+		margin-top: 80px;
+		padding: 20px 50px;
+	}
+
+	h1 {
+		color: $purple;
+	}
+}
+

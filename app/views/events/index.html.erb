@@ -47,7 +47,7 @@
 					<div class="listing_ressources">
 					  <% @ressources = Ressource.order("created_at desc").limit(6) %>
 					  <% @ressources.each do |ress| %>
-					    <%= link_to ressource_path(ress.id), target: :_blank do %>
+					    <%= link_to ressource_path(ress.slug), target: :_blank do %>
 					      <%= image_tag(ress.picture) %>
 					      <p class= "sub-title"><%= ress.title %></p>
 					    <% end %>
