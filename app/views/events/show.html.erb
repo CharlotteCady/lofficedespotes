@@ -43,7 +43,7 @@
 				</div>
 				<div id="content-event">
 					<p class="event-subtitle">Description</p>
-					<div class="content-desc"><%= sanitize @event.description %></div>
+					<div class="content-desc"><%= @event.description.html_safe %></div>
 				</div>
 				<div id="writer">
 				    <% if @event.user.avatar? %>

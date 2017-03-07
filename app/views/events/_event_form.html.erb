@@ -4,7 +4,7 @@
 		  <%= event.input :title, label: "Titre", placeholder: 'Startup Career Day, le salon de recrutement des startups et du digital' %>
 		</div>
 		<div class="white-block">
-		  <%= event.input :description, label: "Description", as: :bootsy, editor_options: { font_styles: false, color: false, image: false } ,  placeholder: "Qu'est-ce que c'est ? Pour qui ? Comment il se déroulera ? etc." %>
+		  <%= event.input :description, label: "Description", as: :bootsy, editor_options: { font_styles: false, color: false, image: false, html: true } ,  placeholder: "Qu'est-ce que c'est ? Pour qui ? Comment il se déroulera ? etc." %>
 		</div>
 		<div class="white-block">
 		  <%= event.input :address, label: "Adresse de l'événement" %>
