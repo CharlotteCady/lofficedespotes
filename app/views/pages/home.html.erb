@@ -139,35 +139,78 @@
         </div>
       </div>
       <div class="col-sm-6">
-      <div class="new">
-        <%= link_to "Avantages négociés", offer_users_path, class: "btn btn-success" %>
-        <div class="listing_ressources">
-          <% Ressource.where(price: 'Promo').order('updated_at DESC').limit(2).each do |ress| %>
-              <div class="row item white">
-                <div class="col-xs-3 col-sm-2">
-                  <div class="desktop-display-logo hidden-xs">
-                    <ul class= "list-inline">
-                      <li>
-                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
-                      </li>
-                    </ul>
+        <div class="new">
+          <%= link_to "Avantages négociés", offer_users_path, class: "btn btn-success" %>
+          <div class="listing_ressources">
+            <% Ressource.where(price: 'Promo').order('updated_at DESC').limit(2).each do |ress| %>
+                <div class="row item white">
+                  <div class="col-xs-3 col-sm-2">
+                    <div class="desktop-display-logo hidden-xs">
+                      <ul class= "list-inline">
+                        <li>
+                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mobile-display-logo visible-xs">
+                      <ul class= "list-inline">
+                        <li>
+                          <%= image_tag ress.logo.url(:thumb), class: "logo" %>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="mobile-display-logo visible-xs">
-                    <ul class= "list-inline">
-                      <li>
-                        <%= image_tag ress.logo.url(:thumb), class: "logo" %>
-                      </li>
-                    </ul>
+                  <div class="col-xs-9 col-sm-10">
+                    <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
+                    <p class="content-title"><%= ress.offer %></p>
                   </div>
                 </div>
-                <div class="col-xs-9 col-sm-10">
-                  <h2 class= "sub-title"><%= link_to ress.title, ressource_path(ress.slug)%></h2>
-                  <p class="content-title"><%= ress.offer %></p>
-                </div>
-              </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="new">
+            <%= link_to "Prochains événements", events_path, class: "btn btn-success" %>
+            <div class="listing_ressources">
+              <% (Date.today..(Date.today + 45.days)).each do |event_date| %>
+              <% @event_match = Event.where(["date = ?", event_date]) %>
+                <% if !@event_match.empty? %>
+                  <% @event_match.each do |event| %>
+                    <div class="row white event-item">
+                      <div class="col-xs-3 col-sm-2">
+                        <p class="time"><%= event.date.strftime("%d/%m") %></p>
+                      </div>
+                      <div class="col-xs-9 col-sm-10">
+                        <h2 class="sub-title"><%= link_to event.title, event_path(event), target: :_blank %></h2>
+                        <p class="content-title">Par <%= event.organiser %></p>
+                      </div>
+                    </div>  
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="new">
+          <%= link_to "Articles publiés", articles_path, class: "btn btn-success" %>
+          <div class="listing_ressources">
+            <% Article.order("created_at desc").limit(2).each do |article| %>
+              <div class="row white event-item">
+                <div class="col-xs-3 col-sm-2">
+                  <p class="time"><%= article.created_at.strftime("%d/%m") %></p>
+                </div>
+                <div class="col-xs-9 col-sm-10">
+                  <h2 class="sub-title"><%= link_to article.title, article_path(article), target: :_blank %></h2>
+                  <p class="content-title"><%= sanitize article.content[0,130] + "..." %></p>
+                </div>
+              </div> 
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
