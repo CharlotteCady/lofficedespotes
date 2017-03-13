@@ -178,7 +178,7 @@
               <% (Date.today..(Date.today + 45.days)).each do |event_date| %>
               <% @event_match = Event.where(["date = ?", event_date]) %>
                 <% if !@event_match.empty? %>
-                  <% @event_match.each do |event| %>
+                  <% @event_match.limit(2).each do |event| %>
                     <div class="row white event-item">
                       <div class="col-xs-3 col-sm-2">
                         <p class="time"><%= event.date.strftime("%d/%m") %></p>
@@ -205,7 +205,7 @@
                 </div>
                 <div class="col-xs-9 col-sm-10">
                   <h2 class="sub-title"><%= link_to article.title, article_path(article), target: :_blank %></h2>
-                  <p class="content-title"><%= sanitize article.content[0,130] + "..." %></p>
+                  <p class="content-title"><%= sanitize article.content[0,100] + "..." %></p>
                 </div>
               </div> 
             <% end %>
