@@ -12,8 +12,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 text-center">
-				<h1 class="hidden-xs" id="title-desktop"><%= @event.title %></h1>
-				<h1 class="visible-xs" id="title-mobile"><%= @event.title %></h1>
+				<h1 class="hidden-xs" id="title-desktop"><%= "".html_safe + @event.title %></h1>
+				<h1 class="visible-xs" id="title-mobile"><%= "".html_safe + @event.title %></h1>
 				<% if @event.subscription_link.start_with?('http') %>
 					<%= link_to "Participer à l'événement", (@event.subscription_link), class: "btn btn-primary", target: :_blank %>
 				<% else %>
@@ -43,7 +43,7 @@
 				</div>
 				<div id="content-event">
 					<p class="event-subtitle">Description</p>
-					<div class="content-desc"><%= @event.description.html_safe %></div>
+					<div class="content-desc"><%= "".html_safe + @event.description.html_safe %></div>
 				</div>
 				<div id="writer">
 				    <% if @event.user.avatar? %>
@@ -51,34 +51,38 @@
 				    <% else %>
 				      <%=  image_tag "eight_horns.png", class: "img-circle" %>
 				    <% end %>
-				    <span>Partagé par <%= @event.user.name.capitalize %></span>
+				    <span>Partagé par <%= "".html_safe + @event.user.name.capitalize %></span>
 				</div>
 			</div>
 		</div> 	
 		<div class="col-xs-12 col-md-4">
 			<div class="white-block">
 				<div id="price">
-					<p class="event-subtitle">Prix</p>
+					<p class="event-subtitle">Prix<span> (à partir de)</span></p>
 					<p><%= @event.price %> €</p>
 				</div>
 			</div>
 			<div class="white-block">
 				<div id="date">
 					<p class="event-subtitle">Date</p>
-					<p><%= l(@event.date, format: '%A %d %B %Y').capitalize%></p>
-					<p><%= @event.time.strftime("%kh%M") %></p>
+					<p><%= "".html_safe + l(@event.date, format: '%A %d %B').capitalize %>
+						<% if @event.dateend? %> au 
+						<%= "".html_safe + l(@event.dateend, format: '%A %d %B').capitalize %>
+						<% end %>
+					</p>
+					<p><%= "".html_safe + @event.time.strftime("%kh%M") %></p>
 				</div>
 			</div>
 			<div class="white-block">
 				<div id="lieu">
 					<p class="event-subtitle">Lieu</p>
-					<p><%= @event.address %></p>
+					<p><%= "".html_safe + @event.address %></p>
 				</div>
 			</div>
 			<div class="white-block">
 				<div id="organiser">
 					<p class="event-subtitle">Organisateur</p>
-					<p><%= @event.organiser %></p>
+					<p><%= "".html_safe + @event.organiser %></p>
 					<% if @event.website != "" %>
 						<% if @event.website.start_with?('http') %>
 							<%= link_to "Site internet", (@event.website), target: :_blank, id: "website" %>
@@ -118,11 +122,11 @@
   				<% @events.each do |event| %>
        				<div class="row white-block event-item">
        					<div class="col-xs-3 col-sm-2">
-       						<p class="time"><%= l(event.date, format: '%d/%m').capitalize %></p>
+       						<p class="time"><%= "".html_safe + l(event.date, format: '%d/%m').capitalize %></p>
        					</div>
        					<div class="col-xs-9 col-sm-10">
        						<h2 class="sub-title"><%= link_to event.title, event_path(event.id), target: :_blank %></h2>
-       						<p class="content-title">Par <%= event.organiser %></p>
+       						<p class="content-title">Par <%= "".html_safe + event.organiser %></p>
        					</div>
        				</div>		
       			<% end %>

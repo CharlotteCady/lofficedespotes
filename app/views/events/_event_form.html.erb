@@ -18,8 +18,9 @@
 		  <%= event.input :price, label: "Prix", placeholder: 'Ex: 5 €' %>
 		</div>
 		<div class="white-block">
-		  <%= event.input :date, label: "Date", as: :date, start_year: Date.today.year, end_year: Date.today.year + 1, order: [:day, :month, :year] %>
-		  <%= event.input :time, label: "Heure", as: :time, minute_step: 15 %>
+		  <%= event.input :date, label: "Date de début", as: :date, start_year: Date.today.year, end_year: Date.today.year + 1, order: [:day, :month, :year] %>
+		  <%= event.input :dateend, label: "Date de fin (si sur plusieurs jours)", as: :date, start_year: Date.today.year, end_year: Date.today.year + 1, order: [:day, :month, :year] %>
+		  <%= event.input :time, label: "Heure de début", as: :time, minute_step: 15 %>
 		</div>
 		<div class="white-block">
 		  <%= event.input :organiser, label: "Nom de l'organisateur", placeholder: 'Ex: Startup Career' %>

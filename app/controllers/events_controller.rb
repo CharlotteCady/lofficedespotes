@@ -71,7 +71,7 @@ class EventsController < ApplicationController
 	private
 	def event_params
 		params.require(:event).permit(:title, :description, :subscription_link, 
-			:date, :time, :price, :address, :organiser, :website, :status, :bootsy_image_gallery_id, :category => [])
+			:date, :time, :price, :address, :organiser, :website, :status, :bootsy_image_gallery_id, :dateend, :category => [])
 	end
 	def set_event
 		@event = Event.friendly.find(params[:id])

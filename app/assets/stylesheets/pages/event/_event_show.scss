@@ -67,6 +67,12 @@
 					font-size: 16px;
 					color: black;
 					margin-bottom: 10px;
+					span {
+						font-weight: normal;
+						font-size: 14px;
+						color: black;
+						font-style: italic;
+					}
 				}
 				p, span, li {
 					color: $gray-light;
