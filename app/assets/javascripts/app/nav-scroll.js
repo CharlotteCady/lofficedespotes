@@ -1,6 +1,8 @@
   $(document).ready(function() {
     // navbar transition jQuery script
-    if (location.href == "http://www.workuper.com/") {
+    if ((location.href == "http://www.workuper.com/") || 
+      (location.href == "https://www.workuper.com/") || 
+      (location.href == "http://localhost:3000/")) {
       $(window).scroll(function(e){
         if ($(this).scrollTop() > 100) {
           $(".navbar-wagon").css({
