@@ -66,8 +66,8 @@
 				<div id="date">
 					<p class="event-subtitle">Date</p>
 					<p><%= "".html_safe + l(@event.date, format: '%A %d %B').capitalize %>
-						<% if @event.dateend? %> au 
-						<%= "".html_safe + l(@event.dateend, format: '%A %d %B').capitalize %>
+						<% if @event.dateend != @event.date %> au 
+							<%= "".html_safe + l(@event.dateend, format: '%A %d %B').capitalize %>
 						<% end %>
 					</p>
 					<p><%= "".html_safe + @event.time.strftime("%kh%M") %></p>

@@ -30,7 +30,7 @@ class EventsController < ApplicationController
 
 	def index
 		@start_day = Date.today
-		@end_day = Date.today + 45.days
+		@end_day = Date.today + 90.days
 		@categories = ["Trouver sa voie", "Trouver un job", "Changer de métier", "Changer de boite", "Créer sa boite"]
 		category = params[:category]
 		address = params[:address]
