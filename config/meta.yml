@@ -1,5 +1,5 @@
 # config/meta.yml
 default_title: "Trouvez votre job idéal | WorkUp"
-meta_description: "Des histoires inspirantes, des rencontres, des outils et les meilleures initiatives pour trouver le job qui vous passionne !"
+meta_description: "Les meilleurs sites, outils et événements pour trouver le job qui vous correspond !"
 meta_image: "boite-a-outils-de-l-emploi-workup.png" # Une image dans votre dossier app/assets/images/
 twitter_account: "@charlottecady" #indispensable pour les Twitter Cards
