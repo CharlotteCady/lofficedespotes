@@ -50,6 +50,9 @@ Rails.application.routes.draw do
     member do
       get "approved", to: "events#approved"
     end
+    collection do
+      get "index_json", to: "events#index_json"
+    end
   end
 
   # Sitemap pour les robots

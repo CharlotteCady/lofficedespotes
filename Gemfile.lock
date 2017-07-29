@@ -199,6 +199,9 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
+    json_builder (3.1.7)
+      activesupport (>= 2.0.0)
+      json
     jsonapi-serializers (0.16.1)
       activesupport
     jwt (1.5.1)
@@ -378,6 +381,7 @@ DEPENDENCIES
   gmaps4rails
   high_voltage
   jquery-rails
+  json_builder
   letter_opener
   omniauth-facebook (~> 4.0.0)
   paperclip
