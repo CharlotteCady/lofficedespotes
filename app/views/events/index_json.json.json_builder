@@ -1,0 +1,15 @@
+results @events do |event|
+	if (event.date > Date.today)
+		id event.id
+		title event.title
+		description event.description
+		url event_url(event)
+		subscription_link event.subscription_link
+		date event.date
+		time event.time
+		price event.price
+		address event.address
+		organiser event.organiser
+		category event.category
+	end
+end

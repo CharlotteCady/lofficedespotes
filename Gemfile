@@ -37,6 +37,7 @@ gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
 gem 'postmark-rails'
+gem 'json_builder' # generate JSON datas from events
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

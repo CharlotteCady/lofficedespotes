@@ -118,7 +118,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-offset-2 col-sm-8">
 				<p class="event-title">Autres événements à venir près de chez vous</p>
-				<% @events = Event.approved.where.not(id: @event.id).near(@event.address, 20).limit(4).order(date: :asc, time: :asc) %>
+				<% @events = Event.approved.where.not(id: @event.id).where('date >= ?', Date.today).near(@event.address, 20).limit(4).order(date: :asc, time: :asc) %>
   				<% @events.each do |event| %>
        				<div class="row white-block event-item">
        					<div class="col-xs-3 col-sm-2">

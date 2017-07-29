@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 	before_action :set_event, only: [:show, :edit, :update, :destroy, :approved]
 	# before_filter :check_privileges!, only: [:edit, :update, :destroy]
 	skip_before_filter :authenticate_user!, only: [:index, :show]
+	respond_to :json # generate JSON datas
 
 
 	def new
@@ -66,6 +67,11 @@ class EventsController < ApplicationController
 		  format.html { redirect_to users_event_path }
 		  format.js { render layout: false }
 		end
+	end
+
+	def index_json
+		@events = Event.approved.where('date >= ?', Date.today)
+		respond_with @events # generate JSON datas
 	end
 
 	private
