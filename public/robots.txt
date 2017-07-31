@@ -2,6 +2,5 @@
 #
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-agent: *
-# Disallow:
-
+Disallow: /events/index_json.json
 Sitemap: https://workuper.s3.amazonaws.com/sitemaps/sitemap.xml.gz
