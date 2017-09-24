@@ -381,6 +381,7 @@ DEPENDENCIES
   gmaps4rails
   high_voltage
   jquery-rails
+  json
   json_builder
   letter_opener
   omniauth-facebook (~> 4.0.0)

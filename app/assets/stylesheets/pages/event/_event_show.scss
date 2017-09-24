@@ -22,6 +22,9 @@
 	    }
 	}
 	section {
+		h1, h2, h3, h4, h5, h6 {
+			text-transform: none;
+		}
 		margin-top: 50px;
 		margin-bottom: 50px;
 		#description {
@@ -62,28 +65,28 @@
 			}
 		}
 		#content-event, #price, #date, #lieu, #organiser {
-				p.event-subtitle {
-					font-weight: bold;
-					font-size: 16px;
-					color: black;
-					margin-bottom: 10px;
-					span {
-						font-weight: normal;
-						font-size: 14px;
-						color: black;
-						font-style: italic;
-					}
-				}
-				p, span, li {
-					color: $gray-light;
+			p.event-subtitle {
+				font-weight: bold;
+				font-size: 16px;
+				color: black;
+				margin-bottom: 10px;
+				span {
 					font-weight: normal;
-					margin-bottom: 0;
-					text-align: justify;
-				}
-				a {
-					color: $blue;
+					font-size: 14px;
+					color: black;
+					font-style: italic;
 				}
 			}
+			p, span, li {
+				color: $gray-light;
+				font-weight: normal;
+				margin-bottom: 0;
+				text-align: justify;
+			}
+			a {
+				color: $blue;
+			}
+		}
 	}
 	aside {
 		margin: 50px 0px;

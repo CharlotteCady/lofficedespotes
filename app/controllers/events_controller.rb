@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+	class EventsController < ApplicationController
 	before_action :set_event, only: [:show, :edit, :update, :destroy, :approved]
 	# before_filter :check_privileges!, only: [:edit, :update, :destroy]
 	skip_before_filter :authenticate_user!, only: [:index, :show, :index_json]
@@ -71,6 +71,13 @@ class EventsController < ApplicationController
 
 	def index_json
 		@events = Event.approved.where('date >= ?', Date.today)
+
+		# corriger le double encodage de category
+		@events = @events.as_json
+
+		@events.each do |event|
+			event["category"] = JSON.parse event["category"]
+		end
 		respond_with @events # generate JSON datas
 	end
 
