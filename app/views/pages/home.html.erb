@@ -110,7 +110,7 @@
         <div class="new">
             <%= link_to "Nouvelles solutions", ressources_path, class: "btn btn-success" %>
             <div class="listing_ressources">
-              <% @ressources = Ressource.order("created_at desc").limit(2) %>
+              <% @ressources = Ressource.order("RANDOM()").limit(2) %>
               <% @ressources.each do |ress| %>
               <div class="row item white">
                 <div class="col-xs-3 col-sm-2">
@@ -142,7 +142,7 @@
         <div class="new">
           <%= link_to "Avantages négociés", offer_users_path, class: "btn btn-success" %>
           <div class="listing_ressources">
-            <% Ressource.where(price: 'Promo').order('updated_at DESC').limit(2).each do |ress| %>
+            <% Ressource.where(price: 'Promo').order("RANDOM()").limit(2).each do |ress| %>
                 <div class="row item white">
                   <div class="col-xs-3 col-sm-2">
                     <div class="desktop-display-logo hidden-xs">
